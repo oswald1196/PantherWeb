@@ -1,0 +1,19 @@
+.container{
+	display: flex;
+}
+
+section{
+		flex-direction: row;
+		background-color: white;
+		height: 200px;
+		width: 200px;
+		align-content: space-between;
+		align-items: center;
+	}
+
+section h1{
+	text-align: center;
+	margin-top: 50px;
+	font-size: 20px;
+	padding: 5px;
+}

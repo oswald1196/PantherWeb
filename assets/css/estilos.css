@@ -1,0 +1,20 @@
+/* included only when we don't want to use fonts from google server */
+.logotipo{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content:flex-start;
+}
+
+.logotipo img{
+	width: 15%;
+}
+
+.frmIngreso button{
+	
+	display: flex;
+	flex-direction: row;
+	margin-left: 90px;
+	align-self: center;
+	width: 40%;
+}
