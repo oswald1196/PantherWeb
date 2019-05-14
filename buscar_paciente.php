@@ -36,7 +36,7 @@ require 'conexion.php';
 
 <form class="navbar-form">
       <div class="form-group">
-        <input type="text" class="form-control input-group-text" aria-label="Large" placeholder="Buscar..." name="search" id="search">
+        <input type="text" class="form-control input-group-text" aria-label="Large" name="search" id="search"> <i class="fas fa-plus-square"></i>
       </div>
 </form>
 

@@ -8,16 +8,16 @@ require 'conexion.php';
 
 $sql = "SELECT * FROM CatMedico WHERE vchCorreoMedico = '$sUsuario' AND vchPassword = '$sPassword'";
 
-$result = $conn->query($sql);
+$result = mysqli_query($conn,$sql);
 
-if ($result->num_rows > 0) {
+if (mysqli_num_rows($result) > 0) {
 	
-    	while($row = $result->fetch_assoc()) {
-    	$vchUsuario = $row["vchCorreoMedico"];
+    	while($row = mysqli_fetch_assoc($result)) {
+    	$vchUsuario = $row['vchCorreoMedico'];
     	$vchPassword = $row['vchPassword'];
     	if ($vchUsuario && $vchPassword){
               $_SESSION["autenticado"]= "SI";
-    		header('Location: header.php');
+    		header('Location: home.php');
     	}
         else{
             header('Location: index.php');
