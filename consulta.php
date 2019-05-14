@@ -2,7 +2,7 @@
 require 'conexion.php';
 
 $tabla = "";
-$query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 8";
+$query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 2";
 
 if(isset($POST['afiliado']))
 {

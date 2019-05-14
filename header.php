@@ -21,11 +21,11 @@
   <div class="container-fluid ">
     <div class="navbar-header">
 
-    <a class="navbar-brand">  
+    <a href="home.php" class="navbar-brand">  
     <img src="assets/img/pg-100.png" width="40px" height="40px" alt="">
     </a> 
 
-      <a class="navbar-brand" href="#">Panther</a>
+      <a href="home.php" class="navbar-brand" href="#">Panther</a>
     </div>
 
     <ul class="nav navbar-nav">

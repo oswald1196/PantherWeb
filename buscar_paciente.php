@@ -21,6 +21,7 @@ require 'conexion.php';
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 		<script type="text/javascript" src="peticion.js"></script>
@@ -36,8 +37,8 @@ require 'conexion.php';
 
 <form class="navbar-form">
       <div class="form-group">
-        <input type="text" class="form-control input-group-text" aria-label="Large" name="search" id="search"> <i class="fas fa-plus-square"></i>
-      </div>
+        <input type="text" class="form-control input-group-text" aria-label="Large" placeholder="" name="search" id="search">
+       </div>
 </form>
 
     <style type="text/css">

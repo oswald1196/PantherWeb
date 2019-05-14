@@ -44,7 +44,7 @@ require 'conexion.php';
 </section>
 
 <section>
-	<a href="#"> <h1>Agregar desparacitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
+	<a href="#"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
 </section>
 
 <section>
