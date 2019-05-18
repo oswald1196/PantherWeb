@@ -1,14 +1,12 @@
 <?php
-$servername = "mysql.server302.com";
-$username = "pantherwise";
-$password = "PW150312";
-$BD = "pantherwise_cloud";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $BD);
+$conn = new mysqli("mysql.server302.com", "pantherwise", "PW150312", "pantherwise_cloud");
     
 // Check connection 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+if (mysqli_connect_errno()) {
+    echo "Este sitio está presentando problemas";
 } 
+$conn->set_charset("utf8");
+
 ?>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Panther :: Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="LoginP/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="LoginP/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="LoginP/css/util.css">
+	<link rel="stylesheet" type="text/css" href="LoginP/css/main.css">
+<!--===============================================================================================-->
+
+	<script>
+          //alert("hola");    
+           //var nombre="Brian"
+           //alert("Hola" +' ' + nombre);
+           function fnvalidar() {
+             var sUsuario= document.frmIngreso.correo.value;
+             var sPass= document.frmIngreso.pass.value;
+          	 
+           /* if (sUsuario=="" || sPass==""){
+                alert("Faltan campos por llenar");
+            }*/
+           if (sUsuario=="" || sPass==""){
+				window.alert("Completa los datos");
+				return false;
+			}
+			else{
+				return true;
+			}
+           }
+           
+      </script>
+</head>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('LoginP/images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="login.php" method="POST"  onsubmit="return fnvalidar();">
+					<span class="login100-form-logo">
+						<img src="LoginP/images/rsz_3panther15_logo.png">
+						<i class=""></i>
+					</span>
+
+					<span class="login100-form-title p-b-34 p-t-27">
+						Panther
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+						<input class="input100" type="text" name="usuario" placeholder="Correo">
+						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					</div>
+
+					<div class="wrap-input100 validate-input" data-validate="Enter password">
+						<input class="input100" type="password" name="pass" placeholder="Contraseña">
+						<span class="focus-input100" data-placeholder="&#xf191;"></span>
+					</div>
+
+					<div class="contact100-form-checkbox">
+						<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+						<label class="label-checkbox100" for="ckb1">
+							Recuérdame
+						</label>
+					</div>
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" >
+							Ingresar
+						</button>
+					</div>
+
+					<div class="text-center p-t-90">
+						<a class="txt1" href="#">
+							Olvidaste tu contraseña?
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/bootstrap/js/popper.js"></script>
+	<script src="LoginP/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/daterangepicker/moment.min.js"></script>
+	<script src="LoginP/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="LoginP/js/main.js"></script>
+
+</body>
+</html>

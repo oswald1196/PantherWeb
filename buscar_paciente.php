@@ -1,9 +1,3 @@
-<?php
-
-require 'conexion.php';
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -18,13 +12,17 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+		<link rel="stylesheet" href="assets/css/tablas.css" />
 
+  		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 		<script type="text/javascript" src="peticion.js"></script>
+		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
 
 	</head>
 
@@ -32,12 +30,13 @@ require 'conexion.php';
 
 <?php
 	include('header.php');
-
+	require_once 'conexion.php';
 ?>
 
-<form class="navbar-form">
+<form class="navbar-form form-search" action="buscar_paciente.php" method="POST">
       <div class="form-group">
-        <input type="text" class="form-control input-group-text" aria-label="Large" placeholder="" name="search" id="search">
+        <input type="text" placeholder="Buscar" name="palabra" id="busqueda">
+        <input type="submit" value="Buscar" class="btn-search" />
        </div>
 </form>
 
@@ -47,9 +46,13 @@ require 'conexion.php';
     	}
     </style>
 <h1 class="page-header" align="center">LISTADO DE PACIENTES</h1>
-    
-<section id="tabla_resultado">
+ 
+ <?php
+		if(isset($_POST['palabra'])){
+			require_once 'buscar.php';
+		}
+	?>
 
-</section>
+</table>
 </body>
 </html>

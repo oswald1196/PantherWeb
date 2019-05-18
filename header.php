@@ -6,6 +6,7 @@
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/
   JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
@@ -18,7 +19,7 @@
 <body background="assets/img/Underwater-Shark-Silhouette-Wallpaper.jpg" style="height: auto; width: auto;">
   
 <nav class="navbar navbar" role="navigation">
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <div class="navbar-header">
 
     <a href="home.php" class="navbar-brand">  
@@ -30,21 +31,9 @@
 
     <ul class="nav navbar-nav">
       <li class="active"> <a href="home.php">Home</a></li>
-      <li><a href="altapacientes.php">Alta de paciente</a></li>
+      <li class="altap"><a href="altapacientes.php">Alta de paciente</a></li>
       <li><a href="buscar_paciente.php">Buscar</a></li>
     </ul>
-<style type="text/css">
-  form{
-   display: flex;
-   justify-content: center;
-   align-items: center;
-  }
-
-  nav div ul li {
-    font-size: 40px;
-  }
-
-</style>
 
 
     <ul class="nav navbar-nav navbar-right">
