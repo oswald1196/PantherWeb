@@ -1,0 +1,22 @@
+.main-form {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	
+	margin-top: 10%;
+	height: 500px;
+	width: 90%;	
+	justify-content: space-around;
+	}
+
+div {
+	flex-direction: row;
+}
+
+label, input{
+	font-size: 40px;
+}
+
+form h1 {	
+	color:white;
+}

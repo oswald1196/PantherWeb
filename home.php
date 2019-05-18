@@ -1,3 +1,14 @@
+<?php
+session_start();
+//echo $_SESSION["autenticado"];
+
+if ($_SESSION["autenticado"] != "SI") {
+ 	header("Location: index.php");
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>

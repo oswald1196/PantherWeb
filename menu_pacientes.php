@@ -32,24 +32,26 @@ require 'conexion.php';
 ?>
 <div class="container">
 <section>
-	<h1>Agregar cita </h1> 
-	
+	<a href="agenda_agregar.php"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
 </section>
 
 <section>
-	<h1>Agenda estética</h1>
+	<a href="#"> <h1>Agenda estética <br> <img src="https://img.icons8.com/metro/26/000000/hair-dryer.png"> </h1> </a>
 </section>
 
 <section>
-	<h1>Agregar vacuna</h1>
+	<a href="#"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
 </section>
 
 <section>
-	<h1>Agregar desparacitación</h1>
+	<a href="#"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
 </section>
 
 <section>
-	<h1>Agregar ectoparásito</h1>
+	<a href="#"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
+</section>
+<section>
+	<a href="#"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>
 </section>
 </div>
 </body>
