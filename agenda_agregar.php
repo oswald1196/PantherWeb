@@ -36,9 +36,10 @@ require 'conexion.php';
       <div class="form-group">
         <input type="text" placeholder="&#xe003" name="search">
       </div>
-    </form> 
+</form> 
  <h1 class="page-header" align="center" color="white">AGENDA <i class="fas fa-calendar-alt"></i></h1> 
 
+<div class="principal">
 <form class="main-form">
   <div class="form-row">
     <div class="col-md-5 mb-3">
@@ -66,11 +67,15 @@ require 'conexion.php';
     <label for="inputMotivo">Agregar motivo</label>
     <input type="text" class="form-control" id="inputMotivo" placeholder="Escribe el nuevo motivo">
   	<button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i></button>
-  	</div>    
+  	</div>  
+    <div class="form-group col-md-5">
+      <div class="boton">
+      <button type="submit" class=" form control btn btn-primary">Agregar</button>
+    </div>
+  </div>  
   </div>
-	<div class="form-group col-md-5">
-  		<button type="submit" class=" form control btn btn-primary">Agregar</button>
- 	</div>
-</form>    
+	
+</form>  
+</div>  
 </body>
 </html>
