@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
@@ -16,22 +16,22 @@
 
 </head>
   
-<body background="assets/img/Underwater-Shark-Silhouette-Wallpaper.jpg" style="height: auto; width: auto;">
+<body background="assets/img/astronomy-dark-evening-957061.jpg" style="height: auto; width: auto;">
   
 <nav class="navbar navbar" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
 
     <a href="home.php" class="navbar-brand">  
-    <img src="assets/img/pg-100.png" width="40px" height="40px" alt="">
+    <img src="assets/img/3NL-pantherG.png" width="125px" height="40px" alt="">
     </a> 
 
-      <a href="home.php" class="navbar-brand" href="#">Panther</a>
+      <a href="home.php" class="navbar-brand" href="#"></a>
     </div>
 
     <ul class="nav navbar-nav">
       <li class="active"> <a href="home.php">Home</a></li>
-      <li class="altap"><a href="altapacientes.php">Alta de paciente</a></li>
+      <li class="altap"><a href="alta.html">Alta de paciente</a></li>
       <li><a href="buscar_paciente.php">Buscar</a></li>
     </ul>
 
