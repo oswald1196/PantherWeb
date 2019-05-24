@@ -27,12 +27,14 @@ require 'conexion.php';
 	<body>
 
 <?php
+
+	$codigoPaciente = $_GET['id'];
 	include('header.php');
 
 ?>
 <div class="container">
 <section>
-	<a href="agenda_agregar.php"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
+	<a href="agenda_agregar.php?id=<?php echo $codigoPaciente ?>"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
 </section>
 
 <section>

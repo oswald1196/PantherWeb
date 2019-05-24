@@ -1,7 +1,6 @@
-
 <?php
     $palabra=$_POST['palabra'];
-    $query="SELECT * FROM TranAfiliado WHERE vchNombrePaciente LIKE '%$palabra%' AND iCodEmpresa = 1676";
+    $query="SELECT iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreo, vchTelefono FROM TranAfiliado WHERE vchNombrePaciente LIKE '%$palabra%' AND iCodEmpresa = 106";
     $consulta=$conn->query($query);
     if($consulta->num_rows>=1){
         ?>
@@ -33,9 +32,11 @@
                     </thead>
             <?php
                 while($fila=$consulta->fetch_array(MYSQLI_ASSOC)){
+                        $iCodPac = $fila['iCodPaciente'];
+
             ?>
                 <tr class="table100-head" >
-                    <td class="column1"> <?php echo $fila['vchRaza'] ?> <a href="menu_pacientes.php"> </a> </td>
+                    <td class="column1"> <?php echo $fila['vchRaza'] ?> <a href="menu_pacientes.php?id=<?php echo $iCodPac; ?> "> </a> </td>
                     <td class="column2"> <?php echo $fila['vchNombrePaciente'] ?> </td>
                     <td class="column3"> <?php echo $fila['dtFecNacimiento'] ?> </td>
                     <td class="column4"> <?php echo $fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno'] ?></td>

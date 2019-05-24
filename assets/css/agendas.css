@@ -9,13 +9,13 @@
 	margin-left: 100px;
 	justify-content: space-around;
 	}
-
+ 
 div {
 	flex-direction: row;
 }
 
-label{
-	font-size: 40px;
+div form div div label {
+	font-size: 80px;
 }
 
 h1 {	

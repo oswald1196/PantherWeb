@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -30,9 +31,9 @@
     </div>
 
     <ul class="nav navbar-nav">
-      <li class="active"> <a href="home.php">Home</a></li>
+      <li class="active"> <a href="home.php?id=<?php echo $codigo;?>">Home</a></li>
       <li class="altap"><a href="alta.html">Alta de paciente</a></li>
-      <li><a href="buscar_paciente.php">Buscar</a></li>
+      <li><a href="buscar_paciente.php?id=<?php echo $codigo;?>">Buscar</a></li>
     </ul>
 
 

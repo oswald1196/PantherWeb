@@ -2,6 +2,6 @@
 
 session_start();
 unset($_SESSION["autenticado"]);
-header("Location: index.php");
+header("Location: index.html");
 
 ?>

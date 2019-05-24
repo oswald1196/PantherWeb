@@ -31,6 +31,7 @@
 <?php
 	include('header.php');
 	require_once 'conexion.php';
+
 ?>
 
 <form class="navbar-form form-search" action="buscar_paciente.php" method="POST">

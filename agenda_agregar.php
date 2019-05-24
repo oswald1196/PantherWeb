@@ -44,23 +44,29 @@ require 'conexion.php';
   <div class="form-row">
     <div class="col-md-5 mb-3">
       <label for="inputfecha1">Fecha <i class="fas fa-calendar-alt"></i></label>
-      <input type="date" class="form-control" id="inputfecha1">
+      <input type="date" class="form-control input-append date" id="inputfecha1">
     </div>
     <div class="col-md-3 mb-3">
       <label for="inputhoraini">Hora inicio <i class="fas fa-hourglass-start"></i> </label>
       <input type="time" class="form-control" id="inputhoraini">
     </div>
   <div class="col-md-3 mb-3">
-    <label for="inputHoraFin">Hora fin <i class="fas fa-hourglass-end"></i></label>
-    <input type="time" class="form-control" id="inputHoraFin">
+    <label for="appt">Hora fin <i class="fas fa-hourglass-end"></i></label>
+    <input type="time" class="form-control" id="appt">
   </div>
  </div>
   <div class="form-row">
   	<div class="form-group col-md-5 mb-2">
       <label for="inputMotivos">Motivos</label>
       <select id="inputMotivos" class="form-control">
-        <option selected>Motivo</option>
-        <option>...</option>
+        <option value=0>Seleccione un motivo</option>
+        <?php
+        $consulta = "SELECT * FROM CatMotivos";
+        $result = mysqli_query($conn,$consulta);
+        while ($motivos = mysqli_fetch_array($result)) {
+          echo '<option>'.$motivos['vchMotivo'].'</option>';
+                  }
+        ?>
       </select>
     </div>
   	<div class="form-group col-md-4 mb-2">

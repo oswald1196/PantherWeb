@@ -4,8 +4,9 @@ session_start();
 
 if ($_SESSION["autenticado"] != "SI") {
  	header("Location: index.php");
-
 }
+
+$codigo = $_GET['id'];
 
 ?>
 
@@ -13,7 +14,7 @@ if ($_SESSION["autenticado"] != "SI") {
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Panther :: Buscar Pacientes</title>
+		<title>Panther :: Inicio</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,6 +36,6 @@ if ($_SESSION["autenticado"] != "SI") {
 
 ?>
 
-<h1> Home </h1>
+<h1> Hola </h1>
  </body>
 </html>
