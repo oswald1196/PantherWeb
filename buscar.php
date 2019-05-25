@@ -1,5 +1,7 @@
 <?php
-    $palabra=$_POST['palabra'];
+    $palabra=$_GET['search'];
+    $codigo=$_GET['id'];
+
     $query="SELECT iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreo, vchTelefono FROM TranAfiliado WHERE vchNombrePaciente LIKE '%$palabra%' AND iCodEmpresa = 106";
     $consulta=$conn->query($query);
     if($consulta->num_rows>=1){
@@ -60,5 +62,8 @@
         else{
             echo '<script> swal("No hemos encontrado ningun registro con la palabra ". $palabra </script> )';
        }
-       
+       ?>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
             
