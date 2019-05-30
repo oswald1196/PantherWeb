@@ -18,3 +18,9 @@
 	align-self: center;
 	width: 40%;
 }
+
+h1 {
+  	font-family: 'Nunito', sans-serif;	
+	color: white;
+	text-align: center;
+}

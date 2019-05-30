@@ -152,20 +152,20 @@ table td.r, table th.r {
 }
 
 tbody tr:nth-child(even) {
-  background-color: #000000;
+  background-color: white;
 }
 
 tbody tr {
   font-family: 'Nunito', sans-serif;
   font-size: 15px;
-  color: #808080;
-  background-color: #000000;
+  color: black;
+  background-color: white;
   font-weight: unset;
 }
 
 tbody tr:hover {
-  color: #555555;
-  background-color: white;
+  color: white;
+  background-color: black;
   cursor: pointer;
 }
 

@@ -29,32 +29,33 @@ require 'conexion.php';
 	<body>
 
 <?php
+  $codigoP = $_GET['id'];
 	include('header.php');
-
+  include ('conexion.php');
 ?>
 
- <p class="page-header" align="center" color="white">AGENDA <i class="fas fa-calendar-alt"></i></p> 
+ <p id="titulo-pagina">AGENDA</p> 
 
-<div class="container-fluid">
-<form class="main-form col-xl-12">
-  <div class="form-row">
-    <div class="col-md-3 mb-3">
-      <label for="inputfecha1">Fecha</label>
-      <input type="date" class="form-control input-append date" id="inputfecha1">
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="inputhoraini">Hora inicio </label>
-      <input type="time" class="form-control" id="inputhoraini">
-    </div>
-  <div class="col-md-3 mb-3">
-    <label for="appt">Hora fin <i class="fas fa-hourglass-end"></i></label>
-    <input type="time" class="form-control" id="appt">
+<div class="container">
+<form class="form_add_cita" action="agregar_cita.php?id=<?php echo $codigoP?>" method="POST">
+    <?php $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $query = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($query);
+    ?>
+    <div class="contenedor-titulo">
+    <p id="lblCita"> Cita para <?php echo $row['vchNombrePaciente']; ?> </p>
   </div>
+  <div class="form-row">
+      <label for="inputfecha1" id="lblFecha">Fecha</label>
+      <input type="date" class="input-append date" id="inputfecha1" name="fecha">
+      <label for="inputhoraini" id="lblHoraIni">Hora inicio </label>
+      <input type="time" id="inputhoraini" name="horaInicio">
+      <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
+      <input type="checkbox" id="chkTodoDia" name="dia">
  </div>
   <div class="form-row">
-    <div class="col-md-3 mb-3">
-      <label for="inputMotivos" class="lblMotivos">Motivos</label>
-      <select id="inputMotivos" class="form-control">
+      <label for="inputMotivos" id="lblMotivos">Motivos</label>
+      <select id="inputMotivos" name="motivo">
         <option value=0>Seleccione un motivo</option>
         <?php
         $consulta = "SELECT * FROM CatMotivos";
@@ -64,18 +65,11 @@ require 'conexion.php';
                   }
         ?>
       </select>
-    </div>
-  	<div class="col-md-5">
-    <label for="inputMotivo" class="lblMotivoC">Agregar nueva cita</label>
-    <input type="text" class="form-control" id="inputMotivo" placeholder="Escribe el nuevo motivo">
-  	<button type="submit" class="input-group-append" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
-  	</div>  
+    <label for="inputMotivo" id="lblNuevaCita">Escribe nueva cita</label>
+    <input type="text" id="inputMotivo" placeholder="Escribe el nuevo motivo" name="nuevoMotivo">
+  	<button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
   </div>
-    <div class="form-group col-md-5">
-      <div class="boton">
-      <button type="submit" class="form control btn btn-primary">Agregar cita</button>
-      </div>
-	   </div>
+      <button class="boton" type="submit">Agregar cita</button>
 </form>  
 </div>  
 </body>

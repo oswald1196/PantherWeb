@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Agenda </title>
+	<title> Agenda::Estética </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 	<!--<script src="assets/js/jquery.min.js"></script>-->
 	<script src="assets/js/moment.min.js"></script>
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<h1> Agenda de citas </h1>
+	<h1 align="center"> Agenda de estética </h1>
 	<div class="container">
 		<div class="row">
 			<div class="col"> </div>
