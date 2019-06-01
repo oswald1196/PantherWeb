@@ -34,7 +34,7 @@ require 'conexion.php';
   include ('conexion.php');
 ?>
 
- <p id="titulo-pagina">Agregar vacuna</p> 
+ <p id="titulo-pagina">Agregar ectoparásito</p> 
 
 <script type="text/javascript">
 window.onload = function(){
@@ -50,7 +50,6 @@ window.onload = function(){
   document.getElementById('fechaCita').value=ano+"-"+mes+"-"+dia;
 }
 </script>
-
 <div class="container">
 <form class="form_add_cita" action="" method="POST">
     <?php 
@@ -65,20 +64,9 @@ window.onload = function(){
   <div class="form-left">
       <label id="lblFecha">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
-      <label id="lblLab" for="inputLab"> Laboratorio </label>
-      <select id="inputLab" name="laboratorio" tabindex="2">
-        <option value=0>Elegir laboratorio</option>
-        <?php
-        $consulta = "SELECT * FROM CatMarcas";
-        $result = mysqli_query($conn,$consulta);
-        while ($marcas = mysqli_fetch_array($result)) {
-          echo '<option>'.$marcas['vchMarca'].'</option>';
-                  }
-        ?>
-      </select>
-      <label id="lblProducto"> Vacuna </label>
+      <label id="lblProducto"> Producto </label>
       <select id="inputProducto" name="vacuna">
-        <option value=0>Elegir vacuna</option>
+        <option value=0>Elegir producto</option>
         <?php
         $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5";
         $result = mysqli_query($conn,$consulta);
@@ -99,33 +87,25 @@ window.onload = function(){
         ?>
       </select>
       <label id="lblPrecio">Precio</label>
-      <input type="text" id="inputPrecio" name="precio">
+      <input type="text" id="inputPrecio" name="dia">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
-      <label id="lblPeso">Peso</label>
-      <input type="text" id="inputPeso" name="peso">
   </div>
       <div class="form-right">
         <div class="form-group">
-          <label id="lblCitaP">Programar cita</label>
-          <input type="checkbox" id="inputCitaP" name="cita">
+        <label id="lblCitaP">Programar ectoparásito</label>
+        <input type="checkbox" id="inputCitaP" name="dia">
+      </div>
+        <input type="text" id="motivoCita" name="lote" value="Ectoparásitos">
+      <div class="form-group">
+        <label id="lblFechaCita"> Fecha </label>
+        <input type="date" name="fecha" id="fechaCita">
         </div>
-        <label id="lblCitaP">Próxima vacuna</label>
-        <select id="inputProxima" name="motivoProxima">
-        <option value=0>Vacuna</option>
-        <?php
-        $consulta = "SELECT * FROM RelProductos WHERE iCodTipoProducto = 5";
-        $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchMotivo'].'</option>';
-                  }
-        ?>
-      </select>
-        <label id="lblFechaCita"> Fecha de la cita </label>
-        <input type="date" name="fechaCita" id="fechaCita">
-        <label id="lblFechaCita"> Hora </label>
-        <input type="time" name="horaCita" id="inputHoraCita">
-        <button class="boton" type="submit">Agregar vacuna</button>
+        <div class="form-group">
+        <label id="lblHoraCita"> Hora </label>
+        <input type="time" name="hora" id="inputHoraCita">
+      </div>
+        <button class="boton" type="submit">Agregar ectoparásito</button>
       </div>
     </div>
 </form>  

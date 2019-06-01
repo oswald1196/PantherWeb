@@ -42,15 +42,15 @@ require 'conexion.php';
 </section>
 
 <section>
-	<a href="#"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
+	<a href="vacuna.php"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
 </section>
 
 <section>
-	<a href="#"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
+	<a href="desparasitacion.php"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
 </section>
 
 <section>
-	<a href="#"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
+	<a href="ectoparasito.php"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
 </section>
 <section>
 	<a href="#"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>

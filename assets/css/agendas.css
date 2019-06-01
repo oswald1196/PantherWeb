@@ -36,6 +36,7 @@
 }
 
 .form_add_cita {
+	display: flex;
 	height: 700px;
 	justify-content: space-around;
 }

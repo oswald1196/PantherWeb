@@ -54,6 +54,10 @@ border:.5px solid black;
 	float: left;
 }
 
+#contenedor .form-left label{
+	float: left;
+}
+
 .form-right {
 	height: 620px;
 	width: 50%;
@@ -89,7 +93,7 @@ border:.5px solid black;
 	height: 40px;
 }
 
-#inputVac {
+#inputProducto {
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width: 300px;
@@ -117,6 +121,13 @@ border:.5px solid black;
 	height: 40px;
 }
 
+#inputProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
 #inputPeso{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -124,10 +135,48 @@ border:.5px solid black;
 	height: 40px;
 }
 
+#inputPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+	margin-top: 10px;
+}
+
+#inputCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+}
+
+#motivoCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#fechaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+}
+
+
 #inputCitaP{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width:15px;
+	margin-left: 5px;
 	height:15px;
 }
 
@@ -150,7 +199,7 @@ border:.5px solid black;
 	font-size: 23px;
 }
 
-#lblVac{
+#lblProducto{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
 }
@@ -184,6 +233,23 @@ border:.5px solid black;
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
 }
+
+#lblHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 25px;
+}
+
 /*Botones*/
 
 .boton {
@@ -195,7 +261,6 @@ border:.5px solid black;
     background-color: #1883ba;
     border-radius: 6px;
     border: 1px solid #0016b0;
-
 }
 
 

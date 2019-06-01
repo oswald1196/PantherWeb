@@ -33,9 +33,6 @@ require 'conexion.php';
 	include('header.php');
   include ('conexion.php');
 ?>
-
- <p id="titulo-pagina">Agregar vacuna</p> 
-
 <script type="text/javascript">
 window.onload = function(){
   var fecha = new Date(); //Fecha actual
@@ -50,6 +47,7 @@ window.onload = function(){
   document.getElementById('fechaCita').value=ano+"-"+mes+"-"+dia;
 }
 </script>
+ <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
 <form class="form_add_cita" action="" method="POST">
@@ -65,20 +63,20 @@ window.onload = function(){
   <div class="form-left">
       <label id="lblFecha">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
-      <label id="lblLab" for="inputLab"> Laboratorio </label>
-      <select id="inputLab" name="laboratorio" tabindex="2">
-        <option value=0>Elegir laboratorio</option>
+      <label id="lblProducto"> Servicio </label>
+      <select id="inputProducto" name="vacuna">
+        <option value=0>Elegir servicio</option>
         <?php
-        $consulta = "SELECT * FROM CatMarcas";
+        $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5";
         $result = mysqli_query($conn,$consulta);
-        while ($marcas = mysqli_fetch_array($result)) {
-          echo '<option>'.$marcas['vchMarca'].'</option>';
+        while ($motivos = mysqli_fetch_array($result)) {
+          echo '<option>'.$motivos['vchDescripcion'].'</option>';
                   }
         ?>
       </select>
-      <label id="lblProducto"> Vacuna </label>
+      <label id="lblProducto"> Desparasitante </label>
       <select id="inputProducto" name="vacuna">
-        <option value=0>Elegir vacuna</option>
+        <option value=0>Elegir desparasitante</option>
         <?php
         $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5";
         $result = mysqli_query($conn,$consulta);
@@ -99,33 +97,32 @@ window.onload = function(){
         ?>
       </select>
       <label id="lblPrecio">Precio</label>
-      <input type="text" id="inputPrecio" name="precio">
+      <input type="text" id="inputPrecio" name="dia">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
-      <label id="lblPeso">Peso</label>
-      <input type="text" id="inputPeso" name="peso">
+      <div class="form-group">
+      <label id="lblPesoD">Peso</label>
+      <input type="text" id="inputPesoD" name="peso">
+      <label id="lblCantidad">Cantidad</label>
+      <input type="text" id="inputCantidad" name="peso">
+      </div>
   </div>
       <div class="form-right">
         <div class="form-group">
-          <label id="lblCitaP">Programar cita</label>
-          <input type="checkbox" id="inputCitaP" name="cita">
-        </div>
-        <label id="lblCitaP">Próxima vacuna</label>
-        <select id="inputProxima" name="motivoProxima">
-        <option value=0>Vacuna</option>
-        <?php
-        $consulta = "SELECT * FROM RelProductos WHERE iCodTipoProducto = 5";
-        $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchMotivo'].'</option>';
-                  }
-        ?>
+        <label id="lblCitaP">Programar cita</label>
+        <input type="checkbox" id="inputCitaP" name="dia">
+      </div>
+        <input type="text" name="" id="motivoCita" value="Desparasitación">
       </select>
-        <label id="lblFechaCita"> Fecha de la cita </label>
-        <input type="date" name="fechaCita" id="fechaCita">
-        <label id="lblFechaCita"> Hora </label>
-        <input type="time" name="horaCita" id="inputHoraCita">
-        <button class="boton" type="submit">Agregar vacuna</button>
+        <div class="form-group">
+        <label id="lblFechaCita"> Fecha </label>
+        <input type="date" name="fecha" id="fechaCita">
+        </div>
+        <div class="form-group">
+        <label id="lblHoraCita"> Hora </label>
+        <input type="time" name="hora" id="inputHoraCita">
+      </div>
+        <button class="boton" type="submit">Agregar desparasitación</button>
       </div>
     </div>
 </form>  
