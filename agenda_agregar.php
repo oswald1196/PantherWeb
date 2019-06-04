@@ -14,6 +14,9 @@ require 'conexion.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="assets/css/agendas.css" />
 
@@ -36,19 +39,19 @@ require 'conexion.php';
 
  <p id="titulo-pagina">AGENDA</p> 
 
-<div class="container">
+<div class="contenedor_principal">
 <form class="form_add_cita" action="agregar_cita.php?id=<?php echo $codigoP?>" method="POST">
     <?php $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
-    <div class="contenedor-titulo">
+    <div class="container-titulo">
     <p id="lblCita"> Cita para <?php echo $row['vchNombrePaciente']; ?> </p>
   </div>
   <div class="form-row">
-      <label for="inputfecha1" id="lblFecha">Fecha</label>
+      <label for="inputfecha1" id="lblFechaA">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha1" name="fecha">
-      <label for="inputhoraini" id="lblHoraIni">Hora inicio </label>
+      <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
       <input type="time" id="inputhoraini" name="horaInicio">
       <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
       <input type="checkbox" id="chkTodoDia" name="dia">
@@ -69,7 +72,7 @@ require 'conexion.php';
     <input type="text" id="inputMotivo" placeholder="Escribe el nuevo motivo" name="nuevoMotivo">
   	<button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
   </div>
-      <button class="boton" type="submit">Agregar cita</button>
+      <button class="botonAgregar" type="submit">Agregar cita</button>
 </form>  
 </div>  
 </body>
