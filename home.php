@@ -4,8 +4,9 @@ session_start();
 
 if ($_SESSION["autenticado"] != "SI") {
  	header("Location: index.php");
-
 }
+
+$codigo = $_GET['id'];
 
 ?>
 
@@ -13,7 +14,7 @@ if ($_SESSION["autenticado"] != "SI") {
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Panther :: Buscar Pacientes</title>
+		<title>Panther :: Inicio</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -25,6 +26,8 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+    	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 		<link rel="stylesheet" href="assets/css/estilos.css" />
 	</head>
 
@@ -32,9 +35,14 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <?php
 	include('header.php');
-
+	include('conexion.php');
 ?>
 
-<h1> Home </h1>
+<?php
+$sql = "SELECT vchNombre FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+$result = mysqli_query($conn,$sql);
+$row = mysqli_fetch_assoc($result);
+?>
+<h1> Bienvenido <?php echo $row['vchNombre'];?> </h1>
  </body>
 </html>

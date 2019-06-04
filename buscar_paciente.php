@@ -21,7 +21,6 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
 		<script type="text/javascript" src="peticion.js"></script>
-		<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 	</head>
@@ -29,26 +28,30 @@
 	<body class="login-layout">
 
 <?php
+    $codigoE = $_GET['id'];
 	include('header.php');
 	require_once 'conexion.php';
 ?>
 
-<form class="navbar-form form-search" action="buscar_paciente.php" method="POST">
+<form class="navbar-form form-search" action="buscar_paciente.php?id=<?php echo $codigoE?>" method="GET">
       <div class="form-group">
-        <input type="text" placeholder="Buscar" name="palabra" id="busqueda">
+        <input type="text" placeholder="Buscar" name="search" id="busqueda">
+        <?php echo $codigoE ?>
         <input type="submit" value="Buscar" class="btn-search" />
        </div>
 </form>
 
+
     <style type="text/css">
     	h1 {
     		color: white;
+  			font-family: 'Nunito', sans-serif;	
     	}
     </style>
-<h1 class="page-header" align="center">LISTADO DE PACIENTES</h1>
+<h1 align="center">LISTADO DE PACIENTES</h1>
  
  <?php
-		if(isset($_POST['palabra'])){
+		if(isset($_GET['search'])){
 			require_once 'buscar.php';
 		}
 	?>

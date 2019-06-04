@@ -1,0 +1,266 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	height: 700px;
+	width: 90%;	
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+ 
+.contenedor-titulo {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	color:black;
+}
+
+#div-border {
+position:absolute;
+margin-left:600px;
+margin-right:50%;
+height:620px;
+background-color: #D6D5E1;
+border:.5px solid black;
+}
+
+.form_add_cita {
+	height: 700px;
+}
+
+#contenedor{
+	width: 100%;
+	display: inline;
+	background-color: green;
+}
+
+.form-left {
+	height: 620px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	float: left;
+}
+
+#contenedor .form-left label{
+	float: left;
+}
+
+.form-right {
+	height: 620px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	float: left;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	font-family: 'Nunito', sans-serif;	
+	margin-top: 30px;
+	font-size: 35px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputLab{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputProducto {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputLote{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputPrecio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputFechaCad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputPeso{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+	margin-top: 10px;
+}
+
+#inputCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+}
+
+#motivoCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#fechaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+}
+
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:300px;
+	height:40px;
+}
+
+/*Labels*/
+
+#lblFecha {
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblLab{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblProducto{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblLote{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPeso{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPrecio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblFechaCad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblFechaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 25px;
+}
+
+/*Botones*/
+
+.boton {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+}
+
+

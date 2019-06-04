@@ -14,10 +14,14 @@ require 'conexion.php';
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="assets/css/agendas.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
@@ -28,53 +32,47 @@ require 'conexion.php';
 	<body>
 
 <?php
+  $codigoP = $_GET['id'];
 	include('header.php');
-
+  include ('conexion.php');
 ?>
 
-<form class="navbar-form">
-      <div class="form-group">
-        <input type="text" placeholder="&#xe003" name="search">
-      </div>
-</form> 
- <h1 class="page-header" align="center" color="white">AGENDA <i class="fas fa-calendar-alt"></i></h1> 
+ <p id="titulo-pagina">AGENDA</p> 
 
-<div class="principal">
-<form class="main-form">
-  <div class="form-row">
-    <div class="col-md-5 mb-3">
-      <label for="inputfecha1">Fecha <i class="fas fa-calendar-alt"></i></label>
-      <input type="date" class="form-control" id="inputfecha1">
-    </div>
-    <div class="col-md-3 mb-3">
-      <label for="inputhoraini">Hora inicio <i class="fas fa-hourglass-start"></i> </label>
-      <input type="time" class="form-control" id="inputhoraini">
-    </div>
-  <div class="col-md-3 mb-3">
-    <label for="inputHoraFin">Hora fin <i class="fas fa-hourglass-end"></i></label>
-    <input type="time" class="form-control" id="inputHoraFin">
+<div class="contenedor_principal">
+<form class="form_add_cita" action="agregar_cita.php?id=<?php echo $codigoP?>" method="POST">
+    <?php $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $query = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($query);
+    ?>
+    <div class="container-titulo">
+    <p id="lblCita"> Cita para <?php echo $row['vchNombrePaciente']; ?> </p>
   </div>
+  <div class="form-row">
+      <label for="inputfecha1" id="lblFechaA">Fecha</label>
+      <input type="date" class="input-append date" id="inputfecha1" name="fecha">
+      <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
+      <input type="time" id="inputhoraini" name="horaInicio">
+      <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
+      <input type="checkbox" id="chkTodoDia" name="dia">
  </div>
   <div class="form-row">
-  	<div class="form-group col-md-5 mb-2">
-      <label for="inputMotivos">Motivos</label>
-      <select id="inputMotivos" class="form-control">
-        <option selected>Motivo</option>
-        <option>...</option>
+      <label for="inputMotivos" id="lblMotivos">Motivos</label>
+      <select id="inputMotivos" name="motivo">
+        <option value=0>Seleccione un motivo</option>
+        <?php
+        $consulta = "SELECT * FROM CatMotivos";
+        $result = mysqli_query($conn,$consulta);
+        while ($motivos = mysqli_fetch_array($result)) {
+          echo '<option>'.$motivos['vchMotivo'].'</option>';
+                  }
+        ?>
       </select>
-    </div>
-  	<div class="form-group col-md-4 mb-2">
-    <label for="inputMotivo">Agregar motivo</label>
-    <input type="text" class="form-control" id="inputMotivo" placeholder="Escribe el nuevo motivo">
-  	<button type="submit" class="btn btn-primary"><i class="fas fa-plus-square"></i></button>
-  	</div>  
-    <div class="form-group col-md-5">
-      <div class="boton">
-      <button type="submit" class=" form control btn btn-primary">Agregar</button>
-    </div>
-  </div>  
+    <label for="inputMotivo" id="lblNuevaCita">Escribe nueva cita</label>
+    <input type="text" id="inputMotivo" placeholder="Escribe el nuevo motivo" name="nuevoMotivo">
+  	<button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
   </div>
-	
+      <button class="botonAgregar" type="submit">Agregar cita</button>
 </form>  
 </div>  
 </body>
