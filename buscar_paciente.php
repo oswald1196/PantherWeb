@@ -20,7 +20,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-		<script type="text/javascript" src="peticion.js"></script>
+		<script src="buscar.js"></script>
 
 
 	</head>
@@ -33,29 +33,25 @@
 	require_once 'conexion.php';
 ?>
 
-<form class="navbar-form form-search" action="buscar_paciente.php?id=<?php echo $codigoE?>" method="GET">
-      <div class="form-group">
-        <input type="text" placeholder="Buscar" name="search" id="busqueda">
-        <?php echo $codigoE ?>
-        <input type="submit" value="Buscar" class="btn-search" />
-       </div>
-</form>
+      <div class="form-busqueda">
+     	<label for="caja_busqueda" id="lblBusqueda"> Buscar </label>
+     	<?php echo $codigoE; ?>
+        <input type="text" name="caja_busqueda" id="caja_busqueda">
+      </div>
 
 
     <style type="text/css">
     	h1 {
+    		margin-top: 30px;
     		color: white;
   			font-family: 'Nunito', sans-serif;	
     	}
     </style>
 <h1 align="center">LISTADO DE PACIENTES</h1>
  
- <?php
-		if(isset($_GET['search'])){
-			require_once 'buscar.php';
-		}
-	?>
-
+		<div id="datos">
+			
+		</div>
 </table>
 </body>
 </html>

@@ -1,0 +1,299 @@
+.principal {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 10px;
+	height: 800px;
+	width: 60%;	
+	margin-left: 400px;
+	margin-right: 400px;
+	margin-bottom: 10px;
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+ 
+.title {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	color:black;
+}
+
+.form-alta {
+	height: 800px;
+}
+
+
+.form-paciente {
+	height: 720px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	justify-content:space-between;
+	float: left;
+	border-right: 0.5px solid;
+	border-color: #D6D5E1;
+}
+
+.form-propietario {
+	height: 720px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: baseline;
+	justify-content:space-between;
+	float: left;
+}
+
+.title-paciente{
+	color: black;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 35px;
+	margin-left: 250px;
+}
+
+.title-propietario{
+	color: black;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 35px;
+	margin-left: 220px;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	font-family: 'Nunito', sans-serif;	
+	margin-top: 30px;
+	font-size: 35px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 20px;
+	text-transform: uppercase;
+}
+
+#sltEspecie{
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 25px;
+	text-transform: uppercase;
+}
+
+#sltRaza {
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 52px;
+}
+
+#sltColor {
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 50px;
+}
+
+#inputFechaNac{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputMeses{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	margin-left: 42px;
+	width: 50px;
+	height: 40px;
+}
+
+#inputAnios{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 50px;
+	margin-left: 20px;
+	height: 40px;
+}
+
+
+#inputChip {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 60px;	
+	text-transform: uppercase;
+}
+
+#inputExpediente {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 252px;
+	height: 40px;
+}
+
+#txtObservaciones {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 255px;
+	height: 100px;
+	text-transform: uppercase;
+}
+
+#radioGenero {
+}
+
+
+#inputNombreP {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	margin-left: 20px;
+	width: 300px;
+	height: 40px;
+	text-transform: uppercase;
+}
+
+#inputPaterno{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 285px;
+	height: 40px;
+	margin-left: 10px;
+	text-transform: uppercase;
+}
+
+#inputMaterno{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 285px;
+	height: 40px;
+	margin-left: 5px;
+	text-transform: uppercase;
+}
+
+#inputTelefono{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 15px;
+	text-transform: uppercase;
+}
+
+#inputCorreo{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 33px;
+	text-transform: uppercase;
+}
+
+#inputDireccion{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 5px;
+	text-transform: uppercase;
+}
+
+#inputColonia{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 300px;
+	height: 40px;
+	margin-left: 25px;
+	text-transform: uppercase;
+}
+
+#inputCP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 255px;
+	height: 40px;
+	margin-left: 5px;
+	text-transform: uppercase;
+}
+
+#inputIdioma {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 200px;
+	height: 40px;
+	margin-left: 150px;
+}
+
+#chkEsteril {
+	margin-left: 10px;
+	background-color: #2196F3;
+	height: 20px;
+	width: 20px;
+	margin-top: 5px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 25px;
+}
+
+#lblNombre, #lblEspecie, #lblRaza, #lblGenero, #lblColor, #lblMeses, #lblFNac, #lblChip, #lblExp,
+ #lblObs, #lblEsteril {
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 70px;
+}
+
+
+#lblProp, #lblPaternoP, #lblMaternoP, #lblTel, #lblCorreo, #lblDireccion, #lblColonia, #lblCP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 70px;
+}
+
+#lblAnios{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 120px;
+}
+/*Botones*/
+
+.btnAlta {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+	margin-left: 250px;
+	margin-bottom: 10px;	
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 5px;
+    border: 1px solid #0016b0;
+}
+

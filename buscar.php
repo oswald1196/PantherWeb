@@ -1,12 +1,21 @@
 <?php
-    $palabra=$_GET['search'];
-    $codigo=$_GET['id'];
+    include('conexion.php');
 
-    $query="SELECT iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreo, vchTelefono FROM TranAfiliado WHERE vchNombrePaciente LIKE '%$palabra%' AND iCodEmpresa = 106";
-    $consulta=$conn->query($query);
-    if($consulta->num_rows>=1){
+    $salida = "";
+
+    $codigo = json_decode($_POST['id']);
+
+    $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 5";
+
+    if(isset($_POST['consulta'])){
+    $q = mysqli_real_escape_string($conn,$_POST['consulta']);
+    $query = "SELECT iCodEmpresa,iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreoPaciente, vchTelefono FROM TranAfiliado WHERE (vchRaza LIKE '%$q%' OR vchNombrePaciente LIKE '%$q%' OR dtFecNacimiento LIKE '%$q%' OR vchNombre LIKE '%$q%' OR vchPaterno LIKE '%$q%' OR vchCorreoPaciente LIKE '%$q%') AND iCodEmpresa = 5";
+        }
+    $resultado = mysqli_query($conn,$query);
+
+    if($resultado->num_rows >= 1) {
         ?>
-        <script type="text/javascript">
+        <script type='text/javascript'>
             $(function(){
                 $('#alerta tr>*').click(function(e){
                     var a = $(this).closest('tr').find('a')
@@ -15,15 +24,16 @@
                 })
             })
         </script>
-    <div class="limiter">
-        <div class="container-table100">
-            <div class="wrap-table100">
-                <div class="table100">
-                    <table id="alerta">
+        <?php
+        $salida.="<div class='limiter'>
+        <div class='container-table100'>
+            <div class='wrap-table100'>
+                <div class='table100'>
+                    <table id='alerta'>
                     <tbody>
 
                     <thead>
-                        <tr class="table100-head">
+                        <tr class='table100-head'>
                             <th>Raza</th>
                             <th>Nombre Paciente</th>
                             <th>Fecha de Nacimiento</th>
@@ -31,39 +41,34 @@
                             <th>Teléfono</th>
                             <th>Correo</th>
                         </tr>
-                    </thead>
-            <?php
-                while($fila=$consulta->fetch_array(MYSQLI_ASSOC)){
+                    </thead>";
+
+                while($fila = mysqli_fetch_array($resultado)){
                         $iCodPac = $fila['iCodPaciente'];
-
-            ?>
-                <tr class="table100-head" >
-                    <td class="column1"> <?php echo $fila['vchRaza'] ?> <a href="menu_pacientes.php?id=<?php echo $iCodPac; ?> "> </a> </td>
-                    <td class="column2"> <?php echo $fila['vchNombrePaciente'] ?> </td>
-                    <td class="column3"> <?php echo $fila['dtFecNacimiento'] ?> </td>
-                    <td class="column4"> <?php echo $fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno'] ?></td>
-                    <td class="column5"> <?php echo $fila['vchTelefono'] ?> </td>
-                    <td class="column6"> <?php echo $fila['vchCorreo'] ?> </td>
-                </tr>
-
-
-            <?php
+                        $iCodE = $fila['iCodEmpresa'];
+                $salida.="<tr class='table100-head' >
+                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&codigo=$iCodPac;'</a> </td>
+                    <td class='column2'>".$fila['vchNombrePaciente']."</td>
+                    <td class='column3'>".$fila['dtFecNacimiento']."</td>
+                    <td class='column4'>".$fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno']."</td>
+                    <td class='column5'>".$fila['vchTelefono']." </td>
+                    <td class='column6'>".$fila['vchCorreoPaciente']." </td>
+                </tr>";
             }
-            ?>
-            </tbody>
+
+                $salida.="</tbody>
                     </table>
                 </div>
             </div>
         </div>
-    </div>
-    <?php
-    }
-
+    </div>";
+}
         else{
-            echo '<script> swal("No hemos encontrado ningun registro con la palabra ". $palabra </script> )';
+                $salida.="No hemos encontrado ningun registro";
        }
-       ?>
+       echo $salida;
+    
+    ?>
 
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
             

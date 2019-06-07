@@ -25,15 +25,6 @@
 	color:black;
 }
 
-#div-border {
-position:absolute;
-margin-left:600px;
-margin-right:50%;
-height:620px;
-background-color: #D6D5E1;
-border:.5px solid black;
-}
-
 .form_add_cita {
 	height: 700px;
 }
@@ -107,6 +98,13 @@ border:.5px solid black;
 	height: 40px;
 }
 
+#inputLoteEcto{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
 #inputPrecio{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -150,6 +148,21 @@ border:.5px solid black;
 	height: 40px;
 }
 
+#inputProductoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputProductoE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+
 #inputHoraCita{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -162,6 +175,7 @@ border:.5px solid black;
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
+	text-transform: uppercase;
 }
 
 #fechaCita{

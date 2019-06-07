@@ -29,8 +29,10 @@ require 'conexion.php';
 	<body>
 
 <?php
-  $codigoP = $_GET['id'];
-	include('header.php');
+  $codigoE = base64_decode($_GET['id']);
+  //Codigo Paciente
+  $codigoP = base64_decode($_GET['codigo']);	
+  include('header.php');
   include ('conexion.php');
 ?>
 
@@ -48,6 +50,7 @@ window.onload = function(){
     mes='0'+mes //agrega cero si el menor de 10
   document.getElementById('inputfecha').value=ano+"-"+mes+"-"+dia;
   document.getElementById('fechaCita').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('inputFechaCad').value=ano+"-"+mes+"-"+dia;
 }
 </script>
 <div class="container">
@@ -65,38 +68,60 @@ window.onload = function(){
       <label id="lblFecha">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
       <label id="lblProducto"> Producto </label>
-      <select id="inputProducto" name="vacuna">
-        <option value=0>Elegir producto</option>
+      <select id="inputProductoE" name="ecto" onchange="ShowSelected();">
+        <option value="0">Elegir producto</option>
         <?php
-        $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5";
+        $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchDescripcion'].'</option>';
+        while ($producto = mysqli_fetch_array($result)) {
+          ?>
+          <option value="<?php echo $producto['iCodProducto']; ?>"> <?php echo $producto['vchDescripcion']; ?></option>
+          <?php
                   }
         ?>
       </select>
+
+      <script type="text/javascript">
+          function ShowSelected(){
+          var iCodProducto = document.getElementById("inputProductoE").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerLote_Ecto.php', { iCodProducto: iCodProducto, id: id }, function(data){
+              $('#inputLoteEcto').html(data);
+                  }); 
+          }
+        </script>
+
       <label id="lblLote"> Lote </label>
-      <select id="inputLote" name="lote">
-        <option value=0>Elegir Lote</option>
-        <?php
-        $consulta = "SELECT * FROM RelProductos WHERE iCodTipoProducto = 5";
-        $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchMotivo'].'</option>';
-                  }
-        ?>
-      </select>
+      <select id="inputLoteEcto" name="lote"> </select>
       <label id="lblPrecio">Precio</label>
       <input type="text" id="inputPrecio" name="dia">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
   </div>
+  <script>
+        function habilitar(value)
+        {
+        if(value==true)
+        {
+        document.getElementById("motivoCita").disabled=false;
+        document.getElementById("fechaCita").disabled=false;
+        document.getElementById("inputHoraCita").disabled=false;
+
+        }else if(value==false){
+        // deshabilitamos
+        document.getElementById("motivoCita").disabled=true;
+        document.getElementById("fechaCita").disabled=true;
+        document.getElementById("inputHoraCita").disabled=true;
+
+      }
+    }
+  </script>
       <div class="form-right">
         <div class="form-group">
         <label id="lblCitaP">Programar ectoparásito</label>
-        <input type="checkbox" id="inputCitaP" name="dia">
+        <input type="checkbox" id="inputCitaP" name="dia" onchange="habilitar(this.checked);" checked>
       </div>
-        <input type="text" id="motivoCita" name="lote" value="Ectoparásitos">
+        <input type="text" id="motivoCita" name="lote" value="ECTOPARÁSITOS">
       <div class="form-group">
         <label id="lblFechaCita"> Fecha </label>
         <input type="date" name="fecha" id="fechaCita">

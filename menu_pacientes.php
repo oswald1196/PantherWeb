@@ -27,30 +27,31 @@ require 'conexion.php';
 	<body>
 
 <?php
-
-	$codigoPaciente = $_GET['id'];
+	$codigoE = $_GET['id'];
+	$codigoPaciente = $_GET['codigo'];
 	include('header.php');
 
 ?>
 <div class="container">
 <section>
-	<a href="agenda_agregar.php?id=<?php echo $codigoPaciente ?>"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
+	<?php echo $codigoE; ?>
+	<a href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
 </section>
 
 <section>
-	<a href="#"> <h1>Agenda estética <br> <img src="https://img.icons8.com/metro/26/000000/hair-dryer.png"> </h1> </a>
+	<a href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agenda estética <br> <img src="https://img.icons8.com/metro/26/000000/hair-dryer.png"> </h1> </a>
 </section>
 
 <section>
-	<a href="vacuna.php"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
+	<a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
 </section>
 
 <section>
-	<a href="desparasitacion.php"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
+	<a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
 </section>
 
 <section>
-	<a href="ectoparasito.php"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
+	<a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
 </section>
 <section>
 	<a href="#"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>
