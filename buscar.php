@@ -3,7 +3,7 @@
 
     $salida = "";
 
-    $codigo = json_decode($_POST['id']);
+    $codigo = $_POST['id'];
 
     $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 5";
 
@@ -47,7 +47,7 @@
                         $iCodPac = $fila['iCodPaciente'];
                         $iCodE = $fila['iCodEmpresa'];
                 $salida.="<tr class='table100-head' >
-                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&codigo=$iCodPac;'</a> </td>
+                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&codigo=$iCodPac'</a> </td>
                     <td class='column2'>".$fila['vchNombrePaciente']."</td>
                     <td class='column3'>".$fila['dtFecNacimiento']."</td>
                     <td class='column4'>".$fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno']."</td>

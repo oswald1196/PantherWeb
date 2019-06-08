@@ -54,7 +54,7 @@ require 'conexion.php';
 	<a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
 </section>
 <section>
-	<a href="#"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>
+	<a href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>
 </section>
 </div>
 </body>

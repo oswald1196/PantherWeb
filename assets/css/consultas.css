@@ -1,0 +1,101 @@
+.contenedor_imedico {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	height: 800px;
+	width: 90%;	
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+ 
+.titulo_page {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.form-consulta {
+	height: 700px;
+}
+
+#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+	font-family: 'Nunito', sans-serif;	
+	font-size: 20px;
+}
+
+#lblDetalle, #lblIniSintomas, #lblAtencion, #lblPad, #lblServicio, #lblCostoS, #lblFechaC,
+ #lblMotivo, #lblExamen, #lblReceta {
+	font-family: 'Nunito', sans-serif;	
+	font-size: 20px;
+}
+
+.detalle{
+	width: 25%;
+	height: 720px;
+	/*background-color: green;*/
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	border-right: .5px solid;
+	border-color: #D6D5E1;
+}
+
+.informeMedico{
+	width: 25%;
+	height: 720px;
+	/*background-color: blue;*/
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+
+}
+
+#txtExamen {
+	height: 200px;
+	width: 300px;
+}
+
+#txtReceta {
+	height: 200px;
+	width: 300px;
+}
+
+#txtMotivo{
+	height: 200px;
+	width: 300px;
+}
+
+.div-estado{
+	width: 25%;
+	height: 400px;
+	/*background-color: red;*/
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+
+}
+
+.div-diagnostico{
+	width: 25%;
+	height: 400px;
+	/*background-color: yellow;*/
+	float: left;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+}
