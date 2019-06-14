@@ -23,7 +23,7 @@
 	font-family: 'Nunito', sans-serif;	
 	font-size: 30px;
 	color:white;
-	background-image: url(img/header-midnightBlue.jpg);
+	background-image: url(img/blue.jpg);
 }
 
 #div-border {
@@ -462,7 +462,7 @@ body {
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 1px solid #527486;
 }
 
 

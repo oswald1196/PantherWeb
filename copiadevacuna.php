@@ -15,7 +15,7 @@ require 'conexion.php';
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/preventivos.css" />
+		<link rel="stylesheet" href="assets/css/copiadepreventivos.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
