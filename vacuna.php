@@ -32,7 +32,10 @@ require 'conexion.php';
 	<body>
 
 <?php
-  $codigoP = $_GET['id'];
+//Codigo Empresa
+  $codigoE = base64_decode($_GET['id']);
+  //Codigo Paciente
+  $codigoP = base64_decode($_GET['codigo']);
 	include('header.php');
   include ('conexion.php');
 ?>
@@ -51,11 +54,12 @@ window.onload = function(){
     mes='0'+mes //agrega cero si el menor de 10
   document.getElementById('inputfecha').value=ano+"-"+mes+"-"+dia;
   document.getElementById('fechaCita').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('inputFechaCad').value=ano+"-"+mes+"-"+dia;
 }
 </script>
 
 <div class="container">
-<form class="form_add_cita" action="" method="POST">
+<form class="form_add_cita" action="insertar_vacuna.php" method="POST">
     <?php 
     $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -68,17 +72,46 @@ window.onload = function(){
   <div class="form-left">
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
+      <label id="lblLab" for="inputLab"> Laboratorio </label>
+      <select id="inputLab" name="laboratorio" tabindex="2" onchange="ShowSelected();">
+        <option value="0">Elegir laboratorio</option>
+
       <label id="lblLab" for="inputLab"><i class="fas fa-vials"></i>&nbsp;&nbsp;Laboratorio</label>
       <select id="inputLab" name="laboratorio" tabindex="2">
         <option value=0>Elegir laboratorio</option>
         <?php
-        $consulta = "SELECT * FROM CatMarcas";
+        $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigoE'ORDER BY vchMarca ASC";
         $result = mysqli_query($conn,$consulta);
         while ($marcas = mysqli_fetch_array($result)) {
-          echo '<option>'.$marcas['vchMarca'].'</option>';
-                  }
+          ?>
+          <option value="<?php echo $marcas['iCodMarca']; ?>"> <?php echo $marcas['vchMarca']; ?></option>
+          <?php
+            }
         ?>
       </select>
+      <script type="text/javascript">
+          function ShowSelected(){
+          var codigoMarca = document.getElementById("inputLab").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtener_vacuna.php', { iCodMarca: codigoMarca, id: id }, function(data){
+              $('#inputProducto').html(data);
+                  }); 
+          }
+
+          function ShowSelectedTwo(){
+          var codigoProducto = document.getElementById("inputProducto").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtener_lote.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#inputLote').html(data);
+                  });  
+          }                                   
+      </script>
+      <label id="lblProducto"> Vacuna </label>
+      <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo();"> </select>
+
+      <label id="lblLote"> Lote </label>
+      <select id="inputLote" name="lote"> </select>
+      <label id="lblPrecio">Precio</label>
       <label id="lblProducto"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Vacuna</label>
       <select id="inputProducto" name="vacuna">
         <option value=0>Elegir vacuna</option>
@@ -110,6 +143,28 @@ window.onload = function(){
   </div>
       <div class="form-right">
         <div class="form-group">
+          <label id="lblCitaP">Programar cita</label>
+          <input type="checkbox" id="inputCitaP" name="cita" onchange="habilitar(this.checked);" checked>
+        </div>
+        <script>
+        function habilitar(value)
+        {
+        if(value==true)
+        {
+        document.getElementById("inputProxima").disabled=false;
+        document.getElementById("fechaCita").disabled=false;
+        document.getElementById("inputHoraCita").disabled=false;
+
+        }else if(value==false){
+        // deshabilitamos
+        document.getElementById("inputProxima").disabled=true;
+        document.getElementById("fechaCita").disabled=true;
+        document.getElementById("inputHoraCita").disabled=true;
+
+      }
+    }
+  </script>
+        <label id="lblCitaP">Próxima vacuna</label>
           <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
 
           <!--Checkbox sin estilo->
@@ -134,12 +189,12 @@ window.onload = function(){
 
         <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>
         <select id="inputProxima" name="motivoProxima">
-        <option value=0>Vacuna</option>
+        <option value=0>VACUNA</option>
         <?php
-        $consulta = "SELECT * FROM RelProductos WHERE iCodTipoProducto = 5";
+        $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5 AND iCodMarca = 1000 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
         $result = mysqli_query($conn,$consulta);
         while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchMotivo'].'</option>';
+          echo '<option>'.$motivos['vchDescripcion'].'</option>';
                   }
         ?>
       </select>

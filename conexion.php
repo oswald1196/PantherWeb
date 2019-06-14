@@ -1,7 +1,7 @@
 <?php
 
 // Create connection
-$conn = new mysqli("mysql.server302.com", "pantherwise", "PW150312", "pantherwise_cloud");
+$conn = new mysqli("192.168.100.150", "root", "mysql", "pantherwise_cloud");
     
 // Check connection 
 if (mysqli_connect_errno()) {

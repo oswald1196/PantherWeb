@@ -42,6 +42,29 @@ ul, li {
 
 
 /* ------------------------------------ */
+
+#caja_busqueda {
+  font-family: 'Nunito', sans-serif;
+  font-size: 15px;
+  height: 35px;
+  width: 300px;
+  border-radius: 5px;
+}
+
+#lblBusqueda {
+  color: white;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.form-busqueda{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+}
 input {
   display: block;
 	outline: none;
@@ -78,14 +101,7 @@ iframe {
 }
 
 .container-table100 {
-  /*width: 100%;
-  min-height: 100vh;
-  background: #c850c0;
-  background: -webkit-linear-gradient(180deg, #000000, #D6D5E1);
-  background: -o-linear-gradient(180deg, #000000, #D6D5E1);
-  background: -moz-linear-gradient(180deg, #000000, #D6D5E1);
-  background: linear-gradient(180deg, #000000, #D6D5E1);*/
-
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

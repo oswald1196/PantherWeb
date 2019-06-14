@@ -1,0 +1,495 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	height: 710px;
+	width: 90%;	
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+ 
+.contenedor-titulo {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	color:white;
+	background-image: url(img/header-midnightBlue.jpg);
+}
+
+#div-border {
+    position:absolute;
+    margin-left:600px;
+    margin-right:50%;
+    height:620px;
+    background-color: #D6D5E1;
+    border:.5px solid black;
+}
+.form_add_cita {
+	height: 700px;
+}
+
+#contenedor{
+	width: 100%;
+	display: inline;
+	background-color: green;
+}
+
+.form-left {
+	height: 620px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	float: left;
+	border-right: 0.5px solid;
+	border-color: #D6D5E1;
+
+}
+
+#contenedor .form-left label{
+	float: left;
+}
+
+.form-right {
+	height: 620px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content:space-around;
+	float: left;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	font-family: 'Nunito', sans-serif;	
+	margin-top: 30px;
+	font-size: 35px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3.1px solid;
+}
+
+#inputLab{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputProducto {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputLote{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputLoteEcto{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputPrecio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+}
+
+#inputFechaCad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+}
+
+#inputProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputPeso{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+}
+
+#inputPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputCantidadD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputProductoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+#inputProductoE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+}
+
+
+#inputHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+}
+
+#motivoCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	text-transform: uppercase;
+}
+
+#fechaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+}
+
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+
+/***************************************** Checkbox style **********************************************************/
+
+/***************************************** Checkbox style **********************************************************/
+
+/***************************************** Checkbox style **********************************************************/
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900');
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+.card {
+    width: 500px;
+    margin: 50px auto;
+    clear: both;
+    display: block;
+    padding: 0px 0px;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.card::after {
+    clear: both;
+    display: block;
+    content: "";
+}
+.card .checkbox-container {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    text-align:center;
+  padding: 40px 0px;
+}
+.card .circular-container {
+  background-color:#0067FF;
+}
+
+.input-title {
+    clear: both;
+    padding: 22px 0px 0px 0px;
+    font-size: 16px;
+    color: rgba(255,255,255,.6);
+    font-weight: 300;
+}
+
+
+/* Styling Checkbox Starts */
+.checkbox-label {
+    display: block;
+    position: relative;
+    margin: auto;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 24px;
+    height: 24px;
+    width: 24px;
+    clear: both;
+}
+
+.checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox-label .checkbox-custom {
+    position: absolute;
+    top: -73px;
+    left: 107px;
+    height: 24px;
+    width: 24px;
+    margin-left: 15px;
+    background-color: #B8B8B8;
+    border-radius: 5px;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    border: 2px solid #FFFFFF;
+}
+
+
+.checkbox-label input:checked ~ .checkbox-custom {
+    background-color: #000;
+    border-radius: 5px;
+    -webkit-transform: rotate(0deg) scale(1);
+    -ms-transform: rotate(0deg) scale(1);
+    transform: rotate(0deg) scale(1);
+    opacity:1;
+    border: 2px solid #FFFFFF;
+}
+
+
+.checkbox-label .checkbox-custom::after {
+    position: absolute;
+    content: "";
+    left: 12px;
+    top: 12px;
+    height: 0px;
+    width: 0px;
+    border-radius: 5px;
+    border: solid #009BFF;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(0deg) scale(0);
+    -ms-transform: rotate(0deg) scale(0);
+    transform: rotate(0deg) scale(0);
+    opacity:1;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+
+.checkbox-label input:checked ~ .checkbox-custom::after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity:1;
+  left: 8px;
+  top: 3px;
+  width: 6px;
+  height: 12px;
+  border: solid #009BFF;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+
+
+/* For Ripple Effect */
+.checkbox-label .checkbox-custom::before {
+    position: absolute;
+    content: "";
+    left: 10px;
+    top: 10px;
+    width: 0px;
+    height: 0px;
+    border-radius: 5px;
+    border: 2px solid #FFFFFF;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);    
+}
+
+.checkbox-label input:checked ~ .checkbox-custom::before {
+    left: -3px;
+    top: -3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    -webkit-transform: scale(3);
+    -ms-transform: scale(3);
+    transform: scale(3);
+    opacity:0;
+    z-index: 999;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+}
+
+/***************************************** End Checkbox style **********************************************************/
+
+/***************************************** End Checkbox style **********************************************************/
+
+/***************************************** End Checkbox style **********************************************************/
+
+
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:300px;
+	height:40px;
+}
+
+/*Labels*/
+
+#lblFecha {
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblLab{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblProducto{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblLote{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPeso{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPrecio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblFechaCad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblFechaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblPesoD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+/*Botones*/
+
+.boton {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+}
+
+

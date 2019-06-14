@@ -31,9 +31,11 @@
     </div>
 
     <ul class="nav navbar-nav">
-      <li class="active"> <a href="home.php?id=<?php echo $codigo;?>">Home</a></li>
-      <li class="altap"><a href="alta.html">Alta de paciente</a></li>
-      <li><a href="buscar_paciente.php?id=<?php echo $codigo;?>">Buscar</a></li>
+      <li class="active"> <a href="home.php?id=<?php echo base64_encode($codigo)?>&mail=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&c=<?php echo base64_encode($ciudad)?>&r=<?php echo($recibido)?>&e=<?php echo($enviado);?>">Home</a></li>
+      
+      <li class="altap"><a href="altapacientesac.php?id=<?php echo base64_encode($codigo)?>&mail=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&c=<?php echo base64_encode($ciudad)?>&r=<?php echo($recibido)?>&e=<?php echo($enviado);?>">Alta de paciente</a></li>
+
+      <li><a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>&mail=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&c=<?php echo base64_encode($ciudad)?>&r=<?php echo($recibido)?>&e=<?php echo($enviado);?>">Buscar</a></li>
     </ul>
 
 

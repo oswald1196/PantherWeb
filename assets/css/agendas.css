@@ -7,15 +7,27 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	margin-top: 10px;
-	height: 700px;
+	margin-top: 2%;
+	height: 70%;
 	width: 60%;	
-	margin-left: 400px;
-	margin-right: 400px;
+	margin-left: 20%;
+	margin-right: 20%;
 	margin-bottom: 10px;
 	padding-right: 0px;
 	padding-left: 0px;
 	}
+
+#fechas_cita {
+	height: 33%;
+}
+
+#div_motivos {
+	height: 33%;
+}
+
+#div_boton {
+	height: 22%;
+}
  
 .container-titulo {
 	display: -webkit-box;
@@ -25,7 +37,7 @@
 	display: flex;
 	border-radius: 10px;
 	background-color: #D6D5E1;
-	height: 80px;
+	height: 12%;
 	width: 100%;
 	align-items: center;
 	justify-content: center;
@@ -42,7 +54,7 @@
 /*Titulo pagina*/
 #titulo-pagina {
   	font-family: 'Nunito', sans-serif;	
-	margin-top: 30px;
+	margin-top: 3%;
 	font-size: 35px;
 	color:white;
 	text-align: center;
@@ -53,17 +65,18 @@
 #inputfecha1{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 170px;
-	height: 40px;
-	margin-left: 20px;
-	margin-top: 100px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
 }
 
 #inputhoraini{
 	font-size: 17px;
-	width: 160px;
-	height: 40px;
-	margin-left: 40px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
 }
 
 #inputServicio {
@@ -74,57 +87,59 @@
 }
 
 #chkTodoDia {
-	margin-left: 40px;
+	margin-left: 2%;
+	margin-top: 8%;
 }
 
 #inputMotivos{
 	font-family: 'Nunito', sans-serif;
-	font-size: 17px;
-	width: 200px;
+	font-size: 15px;
+	width: 35%;
 	height: 40px;
 	margin-left: 10px;
-	margin-top: 100px;
+	margin-top: 7%;
 }
 
 #inputMotivo {
 	font-family: 'Nunito', sans-serif;
-	font-size: 17px;
-	width: 200px;
+	font-size: 15px;
+	width: 20%;
 	height: 40px;
 	margin-left: 10px;
-	margin-top: 100px;
+	margin-top: 7%;
+	text-transform: uppercase;
 }
 
 /*Labels*/
 
 #lblFechaA {
 	font-family: 'Nunito', sans-serif;
-	font-size: 25px;
-	margin-left: 120px;
+	font-size: 23px;
+	margin-left: 13%;
 }
 
 #lblHoraInicio{
-	margin-left: 50px;	
+	margin-left: 5%;	
 	font-family: 'Nunito', sans-serif;
-	font-size: 25px;
+	font-size: 23px;
 }
 
 #lblTodoDia{
-	margin-left: 50px;	
+	margin-left: 5%;	
 	font-family: 'Nunito', sans-serif;
-	font-size: 25px;
+	font-size: 23px;
 }
 
 #lblMotivos{
 	font-family: 'Nunito', sans-serif;
-	font-size: 25px;
-	margin-left: 120px;
+	font-size: 23px;
+	margin-left: 5%;
 }
 
 #lblNuevaCita{
 	font-family: 'Nunito', sans-serif;
-	font-size: 25px;
-	margin-left: 120px;
+	font-size: 23px;
+	margin-left: 3%;
 }
 
 
@@ -132,9 +147,8 @@
 
 .botonAgregar {
  	font-family: 'Nunito', sans-serif;
-	margin-left: 510px;
-	margin-top: 100px;
-	margin-bottom: 100px;
+	margin-left: 45%;
+	margin-top: 5%;
 	text-decoration: none;
     padding: 10px;
     font-size: 20px;
@@ -146,15 +160,15 @@
 }
 
 #btnAddMotivo {
-	margin-left: 10px;
+	margin-left: 1%;
 	text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     font-size: 20px;
-    width: 50px;
-    width: 50px;
+    width: 45px;
+    height: 45px;
     color: #ffffff;
     background-color: #1883ba;
-    border-radius: 6px;
+    border-radius: 1px;
     border: 1px solid #0016b0;
 
 }

@@ -9,7 +9,7 @@ require 'conexion.php';
 	<head>
 		<meta charset="utf-8" />
 
-		<title>Panther :: Buscar Pacientes</title>
+		<title>Panther :: Menú Pacientes</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,33 +27,39 @@ require 'conexion.php';
 	<body>
 
 <?php
+	$codigoE = $_GET['id'];
+	$codigoPaciente = $_GET['cod'];
+	$correo = $_GET['mail'];
+    $pais = $_GET['p'];
+    $estado = $_GET['e'];
+    $ciudad = $_GET['c'];
 
-	$codigoPaciente = $_GET['id'];
 	include('header.php');
 
 ?>
 <div class="container">
-<section>
-	<a href="agenda_agregar.php?id=<?php echo $codigoPaciente ?>"> <h1>Agregar cita <br> <i class="fas fa-calendar-alt"></i></h1> </a>
-</section>
+<div id="opc_agenda">
+	<a id="a_ecto" href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Citas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>
+</div>
 
-<section>
-	<a href="#"> <h1>Agenda estética <br> <img src="https://img.icons8.com/metro/26/000000/hair-dryer.png"> </h1> </a>
-</section>
+<div id="opc_estetica">
+	<a id="a_ecto" href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Estéticas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/hair-dryer.png"> </a>
+</div>
 
-<section>
-	<a href="vacuna.php"> <h1>Agregar vacuna <br> <i class="fas fa-syringe"></i></h1> </a>
-</section>
+<div id="opc_vacuna">
+	<a id="a_ecto" href="vacunas_carnet.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Vacunas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/syringe.png"> </a>
+</div>
 
-<section>
-	<a href="desparasitacion.php"> <h1>Agregar desparasitación <br> <img src="https://img.icons8.com/metro/26/000000/caterpillar.png"> </h1> </a>
-</section>
+<div id="opc_desp">
+	<a id="a_ecto" href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Desparasitaciones </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/caterpillar.png"> </a>
+</div>
 
-<section>
-	<a href="ectoparasito.php"> <h1>Agregar ectoparásito <br> <i class="fas fa-bug"></i></h1> </a>
-</section>
-<section>
-	<a href="#"> <h1>Agregar consulta <br> <i class="fas fa-stethoscope"></i> </h1> </a>
-</section>
+
+<div id="opc_ecto">
+	<a id="a_ecto" href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Ectoparásitos </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/insect.png"> </a>
+</div>
+<div id="opc_consulta">
+	<a id="a_consulta" href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Consultas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/stethoscope.png">  </a>
+</div>
 </div>
 </body>
