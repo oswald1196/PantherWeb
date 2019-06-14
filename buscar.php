@@ -2,14 +2,13 @@
     include('conexion.php');
 
     $salida = "";
-
-    $codigo = $_POST['id'];
+    $codigoE = base64_decode($_GET['id']);
 
     $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 5";
 
     if(isset($_POST['consulta'])){
     $q = mysqli_real_escape_string($conn,$_POST['consulta']);
-    $query = "SELECT iCodEmpresa,iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreoPaciente, vchTelefono FROM TranAfiliado WHERE (vchRaza LIKE '%$q%' OR vchNombrePaciente LIKE '%$q%' OR dtFecNacimiento LIKE '%$q%' OR vchNombre LIKE '%$q%' OR vchPaterno LIKE '%$q%' OR vchCorreoPaciente LIKE '%$q%') AND iCodEmpresa = 5";
+    $query = "SELECT iCodEmpresa, vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreoPaciente, vchTelefono FROM TranAfiliado WHERE (vchRaza LIKE '%$q%' OR vchNombrePaciente LIKE '%$q%' OR dtFecNacimiento LIKE '%$q%' OR vchNombre LIKE '%$q%' OR vchPaterno LIKE '%$q%' OR vchCorreoPaciente LIKE '%$q%') AND iCodEmpresa = 5";
         }
     $resultado = mysqli_query($conn,$query);
 
@@ -46,8 +45,13 @@
                 while($fila = mysqli_fetch_array($resultado)){
                         $iCodPac = $fila['iCodPaciente'];
                         $iCodE = $fila['iCodEmpresa'];
+                        $correo = $fila['vchCorreo'];
+                        $pais = $fila['vchPais'];
+                        $estado = $fila['vchEstado'];
+                        $ciudad = $fila['vchCiudad'];
+
                 $salida.="<tr class='table100-head' >
-                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&codigo=$iCodPac'</a> </td>
+                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&mail=$correo&p=$pais&e=$estado&c=$ciudad&cod=$iCodPac'</a> </td>
                     <td class='column2'>".$fila['vchNombrePaciente']."</td>
                     <td class='column3'>".$fila['dtFecNacimiento']."</td>
                     <td class='column4'>".$fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno']."</td>

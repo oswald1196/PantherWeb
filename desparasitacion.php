@@ -8,7 +8,7 @@ require 'conexion.php';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Panther :: Vacuna</title>
+		<title>Panther :: Desparasitación</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -108,11 +108,10 @@ window.onload = function(){
       <input type="text" id="inputPrecio" name="dia">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
-      <div class="form-group">
       <label id="lblPesoD">Peso</label>
       <input type="text" id="inputPesoD" name="peso">
       <label id="lblCantidad">Cantidad</label>
-      <input type="text" id="inputCantidad" name="peso">
+      <input type="text" id="inputCantidadD" name="peso">
       </div>
   </div>
   <script>

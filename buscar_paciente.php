@@ -28,14 +28,14 @@
 	<body class="login-layout">
 
 <?php
-    $codigoE = $_GET['id'];
+    $codigoE = base64_decode($_GET['id']);
 	include('header.php');
-	require_once 'conexion.php';
+	include('conexion.php');
 ?>
 
       <div class="form-busqueda">
      	<label for="caja_busqueda" id="lblBusqueda"> Buscar </label>
-     	<?php echo $codigoE; ?>
+     	<?php echo $codigoE?>
         <input type="text" name="caja_busqueda" id="caja_busqueda">
       </div>
 

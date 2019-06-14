@@ -1,7 +1,7 @@
 <?php
 	require ('conexion.php');
 
-	$codigoPaciente = $_GET['id'];
+	$codigoPaciente = $_POST['id'];
 	$fecha = $_POST['fecha'];
 	$laboratorio = $_POST['laboratorio'];
 	$producto = $_POST['vacuna'];
@@ -14,8 +14,8 @@
 	$fechaCita = $_POST['fechaCita'];
 	$horaCita = $_POST['horaCita'];
 
-	$sql = "INSERT INTO TranRegistroVacuna (iCodPaciente,dtFecha,sVacunaAplicada,sNumeroLote,
-	sProximaVacuna,dtFechaProgramada, iCodLaboratorio, dPrecioMenudeo, dtFechaCaducidad, dPeso)
+	$sql = "INSERT INTO TranRegistroVacuna (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodVacuna, iCodPaciente, sFecha, sVacunaAplicada, sNumeroLote,
+ sProximaVacuna,sFechaProgramada, iCodLaboratorio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iCodProducto, iCodProductoLote, sFechaCaducidad, dCantidad, vchUnidadMedida, dIVA, dSubtotal, dPorcentajeIVA, bVacunasAnteriores, dPeso, iEnvioCloud, dNoTransaccionCloud)
 	VALUES ('$codigoPaciente',$fecha', '$producto', '$lote','$costo','$caducidad', '$peso',
 	'$cita', '$motivoP', '$fechaCita')";
 

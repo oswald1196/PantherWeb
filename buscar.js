@@ -2,12 +2,10 @@ $(buscar_datos());
 
 function buscar_datos(consulta){
 	$.ajax({
-		var id = <?= json_encode($codigo) ?>;
-
 		url: 'buscar.php',
 		type: 'POST',
 		dataType: 'html',
-		data: {consulta: consulta, id: id},
+		data: {consulta: consulta},
 	})
 	.done(function(respuesta){
 		$('#datos').html(respuesta);

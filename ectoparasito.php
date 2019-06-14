@@ -8,7 +8,7 @@ require 'conexion.php';
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Panther :: Vacuna</title>
+		<title>Panther :: Ectoparásito</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -36,7 +36,7 @@ require 'conexion.php';
   include ('conexion.php');
 ?>
 
- <p id="titulo-pagina">Agregar ectoparásito</p> 
+ <p id="titulo-pagina">Agregar ectoparásito </p> 
 
 <script type="text/javascript">
 window.onload = function(){

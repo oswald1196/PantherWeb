@@ -23,7 +23,7 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/estilos.css" />
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	</head>
 
 	<body>
@@ -49,7 +49,7 @@ window.onload = function(){
   document.getElementById('inputFechaConsulta').value=ano+"-"+mes+"-"+dia;
 }
 </script>
- <p id="titulo-pagina">Agregar informe médico</p> 
+ <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
 <form class="form-consulta" action="" method="POST">
@@ -68,10 +68,66 @@ window.onload = function(){
 
     </div>
   <div id="contenedor_divs">
+    <!--Funcion para ocultar boton-->
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+       $("#boton_estado").click(function(){
+        $("#div-estado").toggle(1000);
+          });
+     });
+    </script>
+    <div id="boton_estado">
+      <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
+    </div>
+    <div id="div-estado">
+      <p id="lblEstado">Signos y estado</p>
+      <div class="form-group">
+      <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
+      <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
+      </div>
+      <div class="form-group">
+      <input type="text" id="inputPresion" name="presion" placeholder="Presión arterial">
+      <input type="text" id="inputLlenado" name="llenado" placeholder="Tiempo llenado capilar">
+      </div>
+      <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
+      <select id="selectMucosas" name="mucosas">
+        <option value="apn">APN (Aparentemente Normal)</option>
+        <option value="icterica">Ictérica</option>
+        <option value="hp">Hemorrágicas profusas</option>
+        <option value="hpet">Hemorrágicas petequiales</option>
+        <option value="congest">Congestionadas</option>
+        <option value="otras">Otras</option>
+        <option value="cianoticas">Cianóticas</option>
+      </select>
+      <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
+    </div>
+    <!--Funcion para ocultar boton-->
+    <script type="text/javascript">
+      $(document).ready(function(){
+       $("#boton_diagnostico").click(function(){
+        $("#div-diagnostico").toggle(1000);
+          });
+     });
+    </script>
+
+    <div id="boton_diagnostico">
+        <a> <img id="imagen" src="https://img.icons8.com/ultraviolet/64/000000/treatment-plan.png"> Diagnóstico </a>
+    </div>
+    <div id="div-diagnostico">
+      <textarea type="text" id="diagnosticoP" name="dp" placeholder="Diagnóstico presuntivo"></textarea>
+      <textarea type="text" id="diagnosticoD" name="dd"  placeholder="Diagnóstico diferencial"></textarea>
+      <textarea type="text" id="inputPruebas" name="pruebas" placeholder="Pruebas laboratorio y gabinete (Resultados)"></textarea>  
+      <textarea type="text" id="diagnosticoDef" name="ddef" placeholder="Diagnóstico definitivo"></textarea>
+      <textarea type="text" id="inputMed" name="medicacion" placeholder="Medicación"></textarea>
+      
+    </div>
+    </div>
     <div class="detalle">
       <p id="lblDetalle">Detalle</p>
-      <select id="inputProducto" name="medico">
+      <select id="selectMedico" name="medico">
         <?php
+        //Consulta para obtener medicos
         $consulta = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
         $result = mysqli_query($conn,$consulta);
         while ($medico = mysqli_fetch_array($result)) {
@@ -83,16 +139,17 @@ window.onload = function(){
         <input type="date" class="input-append date" id="inputFechaSintomas" name="fecha">
       <div class="form-group">        
       <label for="inputfecha" id="lblAtencion"> Atención en clínica </label>
-      <input type="checkbox" id="inputAtencion" name="atencionClinica">
+      <input type="checkbox" id="inputAtencion" name="atencionClinica" checked>
     </div>
       <div class="form-group">        
       <label for="inputPad" id="lblPad"> Padecimiento de primera vez </label>
-      <input type="checkbox" id="inputPad" name="padecimiento">
+      <input type="checkbox" id="inputPad" name="padecimiento" checked>
     </div>
       <label id="lblServicio"> Servicio </label>
       <select id="selectServicio" name="servicio" onchange="cambioOpciones();">
         <?php
-        $consulta = "SELECT iCodServicio,dPrecioMenudeo,vchDescripcion FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = 4 ORDER BY iCodServicio";
+        //Consulta para obtener servicios
+        $consulta = "SELECT iCodServicio,dPrecioMenudeo,vchDescripcion FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = 4 ORDER BY vchDescripcion";
         $result = mysqli_query($conn,$consulta);
         while ($servicio = mysqli_fetch_array($result)) {
           ?>
@@ -101,20 +158,16 @@ window.onload = function(){
                   }
         ?>
       </select>
-
       <script type="text/javascript">
-
-        // funcion que se ejecuta cada vez que se selecciona una opción
-
         function cambioOpciones()
 
         {
-            document.getElementById('inputCostoS').value=document.getElementById('selectServicio').value;
+            document.getElementById('inputCostoServicio').value = document.getElementById('selectServicio').value;
         }
 
     </script>
       <label id="lblCostoS"> Costo </label>
-      <input id="inputCostoS" name="costoS" value="">
+      <input type="text" id="inputCostoServicio" name="costoS">
     </div>  
     <div class="informeMedico">
       <label for="inputFechaConsulta" id="lblFechaC"> Fecha </label>
@@ -125,41 +178,10 @@ window.onload = function(){
       <textarea id="txtExamen" name="examen"> </textarea>
       <p id="lblReceta"> Receta </p>
       <textarea id="txtReceta" name="receta"> </textarea>
-    </div>
-    <div class="div-estado">
-      <p id="lblEstado">Estado</p>
-      <p id="lblEstado">Signos y estado</p>
-      <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
-      <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
-      <input type="text" id="inputPresion" name="presion" placeholder="Presión arterial">
-      <input type="text" id="inputLlenado" name="llenado" placeholder="Tiempo llenado capilar">
-      <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
-      <select id="selectServicio" name="mucosas">
-        <option value="apn">APN (Aparentemente Normal)</option>
-        <option value="icterica">Ictérica</option>
-        <option value="hp">Hemorrágicas profusas</option>
-        <option value="hpet">Hemorrágicas petequiales</option>
-        <option value="congest">Congestionadas</option>
-        <option value="otras">Otras</option>
-        <option value="cianoticas">Cianóticas</option>
-      </select>
-      <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
-    </div>
-    <div class="div-diagnostico">
-      <label id="lbldp"> Diagnóstico presuntivo </label>
-      <textarea id="diagnosticoP" name="dp"> </textarea>  
-      <label id="lbldd"> Diagnóstico diferencial </label>
-      <textarea id="diagnosticoD" name="dd"> </textarea>  
-      <label id="lblPruebas"> Pruebas laboratorio y gabinete (Resultados) </label>
-      <textarea id="diagnosticoP" name="pruebas"> </textarea>  
-      <label id="lblddef"> Diagnóstico definitivo </label>
-      <textarea id="diagnosticoDef" name="ddef"> </textarea>  
+      <button class="botonAConsulta" type="submit">Agregar informe</button>
 
-      <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
-      <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
-      <button class="boton" type="submit">Agregar informe</button>
-      
     </div>
+    
   
       </div>
 </form>  

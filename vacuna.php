@@ -56,7 +56,7 @@ window.onload = function(){
 </script>
 
 <div class="container">
-<form class="form_add_cita" action="" method="POST">
+<form class="form_add_cita" action="insertar_vacuna.php" method="POST">
     <?php 
     $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);

@@ -3,7 +3,7 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	height: 700px;
+	height: 710px;
 	width: 90%;	
 	padding-right: 0px;
 	padding-left: 0px;
@@ -138,10 +138,16 @@
 	font-size: 15px;
 	width: 60px;
 	height: 40px;
-	margin-top: 10px;
 }
 
 #inputCantidad{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 60px;
+	height: 40px;
+}
+
+#inputCantidadD{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width: 60px;
@@ -261,7 +267,6 @@
 #lblCantidad{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
-	margin-left: 25px;
 }
 
 /*Botones*/
