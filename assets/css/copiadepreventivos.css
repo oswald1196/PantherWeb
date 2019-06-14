@@ -3,7 +3,7 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	height: 710px;
+	height: 700px;
 	width: 90%;	
 	padding-right: 0px;
 	padding-left: 0px;
@@ -23,7 +23,7 @@
 	font-family: 'Nunito', sans-serif;	
 	font-size: 30px;
 	color:white;
-	background-image: url(img/header-midnightBlue.jpg);
+	background-image: url(img/blue.jpg);
 }
 
 #div-border {
@@ -34,6 +34,7 @@
     background-color: #D6D5E1;
     border:.5px solid black;
 }
+
 .form_add_cita {
 	height: 700px;
 }
@@ -121,13 +122,6 @@
 	border: 3px solid #40444745;
 }
 
-#inputLoteEcto{
-	font-family: 'Nunito', sans-serif;
-	font-size: 15px;
-	width: 300px;
-	height: 40px;
-}
-
 #inputPrecio{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -170,6 +164,7 @@
 	font-size: 15px;
 	width: 60px;
 	height: 40px;
+	margin-top: 10px;
 }
 
 #inputCantidad{
@@ -178,28 +173,6 @@
 	width: 60px;
 	height: 40px;
 }
-
-#inputCantidadD{
-	font-family: 'Nunito', sans-serif;
-	font-size: 15px;
-	width: 60px;
-	height: 40px;
-}
-
-#inputProductoD{
-	font-family: 'Nunito', sans-serif;
-	font-size: 15px;
-	width: 300px;
-	height: 40px;
-}
-
-#inputProductoE{
-	font-family: 'Nunito', sans-serif;
-	font-size: 15px;
-	width: 300px;
-	height: 40px;
-}
-
 
 #inputHoraCita{
 	font-family: 'Nunito', sans-serif;
@@ -215,7 +188,6 @@
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
-	text-transform: uppercase;
 }
 
 #fechaCita{
@@ -477,6 +449,7 @@ body {
 #lblCantidad{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
+	margin-left: 25px;
 }
 
 /*Botones*/
@@ -489,7 +462,7 @@ body {
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 1px solid #527486;
 }
 
 
