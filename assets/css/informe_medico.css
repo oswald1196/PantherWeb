@@ -1,0 +1,167 @@
+.caja_principal{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 10px;
+  height: 900px;
+  width: 100%; 
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.titulo_header {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  border-radius: 10px;
+  background-color: #D6D5E1;
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 30px;
+  color:black;
+}
+
+#tabla_informe {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  margin-top: 2%;
+  width: 100%;
+  background-color: green;
+}
+
+#motivo_receta {
+  width: 100%;
+}
+
+#motivo_receta_mostrar{
+  width: 100%;
+}
+
+#examen_med {
+  width: 100%;
+}
+
+#examen_med_mostrar{
+  width: 1000%;
+  height: 100px;
+}
+
+#cabecera_motivo {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  background-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  text-align: center; 
+  width: 50%;
+  height: 40%;
+}
+
+#cabecera_receta {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  background-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  text-align: center;
+  width: 80%;
+}
+
+#cabecera_examen {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  background-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+#cabecera_medicacion {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  background-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  text-align: center;
+  width: 50%;
+}
+
+#signos{
+  border: 1px solid;
+  background-color: #D6D5E1;
+  border-color: red;
+  width: 30%;
+}
+
+#column_date {
+  width: 10%;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+}
+
+#column_medico{
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+}
+
+#column_temp {
+  width: 5%;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+}
+
+#column_fc, #column_fr, #column_pa, #column_tllc, #column_peso, #column_edit, #column_delete {
+  width: 5%;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+}
+
+#column_motivo{
+  border: 1px solid;
+  border-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 17px;
+}
+
+#column_receta{
+  border: 1px solid;
+  border-color: #D6D5E1;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 17px;
+}
+
+#column_ef{
+  border: 1px solid;
+  border-color: #D6D5E1;
+  width: 50%;
+  height: 40%;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 17px;
+}
+
+#column_med {
+  border: 1px solid;
+  border-color: #D6D5E1;
+  width: 50%;
+  height: 40%;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 17px;
+}
+
+.botonAddInforme {
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 90%;
+    margin-top: 1%;  
+    color: black;
+    background-color: #D6D5E1;
+    border-radius: 5px;
+    border: 1px solid black;
+}

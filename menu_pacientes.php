@@ -47,19 +47,19 @@ require 'conexion.php';
 </div>
 
 <div id="opc_vacuna">
-	<a id="a_ecto" href="vacunas_carnet.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Vacunas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/syringe.png"> </a>
+	<a id="a_ecto" href="vacunas_carnet.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Vacunas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/syringe.png"> </a>
 </div>
 
 <div id="opc_desp">
-	<a id="a_ecto" href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Desparasitaciones </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/caterpillar.png"> </a>
+	<a id="a_ecto" href="desp_carnet.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Desparasitaciones </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/caterpillar.png"> </a>
 </div>
 
 
 <div id="opc_ecto">
-	<a id="a_ecto" href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Ectoparásitos </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/insect.png"> </a>
+	<a id="a_ecto" href="ecto_carnet.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Ectoparásitos </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/insect.png"> </a>
 </div>
 <div id="opc_consulta">
-	<a id="a_consulta" href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Consultas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/stethoscope.png">  </a>
+	<a id="a_consulta" href="informe_medico.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Consultas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/stethoscope.png">  </a>
 </div>
 </div>
 </body>

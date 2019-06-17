@@ -9,7 +9,7 @@ require 'conexion.php';
 	<head>
 		<meta charset="utf-8" />
 
-		<title>Panther :: Vacunas</title>
+		<title>Panther :: Desparasitaciones</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,7 +37,6 @@ require 'conexion.php';
 	include('header.php');
 ?>
 
-
 <div class="forma_principal">
 
     <?php 
@@ -47,10 +46,10 @@ require 'conexion.php';
     ?>
     <div class="cabecera">
     	
-      <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
+      <p id="lblCita"> Desparasitaciones de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -68,10 +67,7 @@ require 'conexion.php';
                         </tr>
                     </thead>
                 <?php
-
-                $query = "SELECT DISTINCT TRV.sVacunaAplicada, CL.vchDescripcion, TRV.sNumeroLote, TRV.sFecha, TRV.sFechaCaducidad, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.dPeso FROM TranRegistroVacunas TRV INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TRV.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodVacuna DESC";
-
-              
+                  $query = "SELECT DISTINCT TD.sProductoAplicado, CL.vchDescripcion, TD.sNumeroLote, TD.sFecha, TD.sFechaCaducidad, TD.sObservaciones, TD.sFechaProxima, TD.dPeso FROM TranDesparacitacion TD INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TD.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
@@ -79,10 +75,10 @@ require 'conexion.php';
                         ?>
                 <tr>
                     <td class="columna1"> <?php echo $fila['sFecha'] ?></td>
-                    <td class="columna2"> <?php echo $fila['sVacunaAplicada'] ?> </td>
-                    <td class="columna3"> <?php echo $fila['sProximaVacuna'] ?></td>
+                    <td class="columna2"> <?php echo $fila['sProductoAplicado'] ?> </td>
+                    <td class="columna3"> <?php echo $fila['sObservaciones'] ?></td>
                     <td class="columna4"> <?php echo $fila['dPeso'] ?></td>
-                    <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
+                    <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
                     <td>  </td>
