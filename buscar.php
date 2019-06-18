@@ -2,13 +2,14 @@
     include('conexion.php');
 
     $salida = "";
-    $codigoE = base64_decode($_GET['id']);
+    //$codigoE = base64_decode($_GET['id']);
+    $codigo = json_decode($_POST['id']);
 
-    $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = 5";
+    $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigo'";
 
     if(isset($_POST['consulta'])){
     $q = mysqli_real_escape_string($conn,$_POST['consulta']);
-    $query = "SELECT iCodEmpresa, vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreoPaciente, vchTelefono FROM TranAfiliado WHERE (vchRaza LIKE '%$q%' OR vchNombrePaciente LIKE '%$q%' OR dtFecNacimiento LIKE '%$q%' OR vchNombre LIKE '%$q%' OR vchPaterno LIKE '%$q%' OR vchCorreoPaciente LIKE '%$q%') AND iCodEmpresa = 5";
+    $query = "SELECT iCodEmpresa, vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodPaciente, vchRaza, vchNombrePaciente, dtFecNacimiento, vchNombre, vchPaterno, vchMaterno, vchCorreoPaciente, vchTelefono FROM TranAfiliado WHERE (vchRaza LIKE '%$q%' OR vchNombrePaciente LIKE '%$q%' OR dtFecNacimiento LIKE '%$q%' OR vchNombre LIKE '%$q%' OR vchPaterno LIKE '%$q%' OR vchCorreoPaciente LIKE '%$q%') AND iCodEmpresa = '$codigo'";
         }
     $resultado = mysqli_query($conn,$query);
 
