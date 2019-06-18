@@ -53,46 +53,51 @@ require 'conexion.php';
 	
 	<?php
 
-    $query = "SELECT DISTINCT TI.iCodPaciente, TI.iCodInformeMedico, TI.iCodMedico, TI.vchNumInformeMedico, TI.vchProblema,  TI.dtFechaInformeMedico, TI.siAtencion, TI.vchMotivo As sMotivoConsulta, TI.dtFechaSintomatologia, TI.vchNota, TI.iInformeMedico, CM.vchNombre + ' ' + CM.vchPaterno + ' ' + CM.vchMaterno As vchMedico, TI.siFrecuenciaCardiaca, TI.dTemperatura, TI.siFrecuenciaRespiratoria, TI.siCodMucosa, TI.sMucosa, TI.iTiempoLlenadoCapilar, TI.dPeso, TI.siPadecimiento, TI.sDiagnosticoPresuntivo, TI.sDiagnosticoDiferencial, TI.sPruebasRequeridas, TI.sResultado, TI.siDiagnostico, TI.vchProblema, TI.iCodServicio, TI.vchServicio, TI.dPrecioMenudeo, TI.dPrecioCosto, TI.iCodCuentaCliente, TI.vchReceta, TI.dMeses, TI.dAltura, TI.sPresionArterial, TI.dPerimetroCefalico, TI.dNoTransaccionCloud, TI.dtFechaInformeMedico FROM TranInformeMedico TI INNER JOIN CatMedico CM ON CM.iCodMedico = TI.iCodMedico WHERE TI.iCodPaciente = '$codigoPaciente' ORDER BY dtFechaInformeMedico DESC";
+    $query = "SELECT DISTINCT TI.iCodPaciente, TI.iCodInformeMedico, TI.iCodMedico, TI.vchNumInformeMedico, TI.vchProblema,  TI.dtFechaInformeMedico, TI.siAtencion, TI.vchMotivo As sMotivoConsulta, TI.dtFechaSintomatologia, TI.vchNota, TI.iInformeMedico, CONCAT (CM.vchNombre, ' ', CM.vchPaterno, ' ', CM.vchMaterno) As vchMedico, TI.siFrecuenciaCardiaca, TI.dTemperatura, TI.siFrecuenciaRespiratoria, TI.siCodMucosa, TI.sMucosa, TI.iTiempoLlenadoCapilar, TI.dPeso, TI.siPadecimiento, TI.sDiagnosticoPresuntivo, TI.sDiagnosticoDiferencial, TI.sPruebasRequeridas, TI.sResultado, TI.siDiagnostico, TI.vchProblema, TI.iCodServicio, TI.vchServicio, TI.dPrecioMenudeo, TI.dPrecioCosto, TI.iCodCuentaCliente, TI.vchReceta, TI.dMeses, TI.dAltura, TI.sPresionArterial, TI.dPerimetroCefalico, TI.dNoTransaccionCloud, TI.dtFechaInformeMedico FROM TranInformeMedico TI INNER JOIN CatMedico CM ON CM.iCodMedico = TI.iCodMedico WHERE TI.iCodPaciente = '$codigoPaciente' AND CM.iCodEmpresa = '$codigoE' ORDER BY dtFechaInformeMedico DESC";
 
    	$resultado = mysqli_query($conn,$query);
     while($fila = mysqli_fetch_assoc($resultado)){
 
                 ?>
+                <span id="titulo_informe"> Consulta del <?php echo $fila ['dtFechaInformeMedico']?> </span>
 	<table id="tabla_informe">
 
    		<tr id="signos">
-   			<td id="column_date"> Consulta del <?php echo $fila ['dtFechaInformeMedico']?> </td>
+   			<td id="column_date">  </td>
    			<td id="column_temp"> Temp. <?php echo $fila ['dTemperatura']?> </td>
    			<td id="column_fc"> F.C. <?php echo $fila ['siFrecuenciaCardiaca']?> </td>
    			<td id="column_fr"> F.R. <?php echo $fila ['siFrecuenciaRespiratoria']?> </td>
    			<td id="column_pa"> P.A. <?php echo $fila ['sPresionArterial']?> </td>
    			<td id="column_tllc"> TLLC. <?php echo $fila ['iTiempoLlenadoCapilar']?> </td>
-   			<td id="column_peso"> Peso <?php echo $fila ['dPeso']?> </td>
+   			<td id="column_peso"> Peso. <?php echo $fila ['dPeso']. ' kg'?> </td>
    			<td id="column_edit"> <img src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
    			<td id="column_delete"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
    		</tr>
    		<tr>
    			<td id="column_date"> </td>
-   			<td id="column_medico"> <img src="https://img.icons8.com/ultraviolet/30/000000/doctor-male.png"> <?php echo $fila ['vchMedico']?> </td>
+   			<td id="column_medico" colspan="8"> <img src="https://img.icons8.com/ultraviolet/30/000000/doctor-male.png"> <?php echo $fila ['vchMedico']?> </td>
    		</tr>
    		<tr id="motivo_receta">
-    		<th id="cabecera_motivo">Motivo consulta</th>
-    		<th id="cabecera_receta">Receta</th>
+    		<th id="cabecera_motivo" colspan="2">Motivo consulta</th>
+    		<th id="cabecera_receta" colspan="7">Receta</th>
   		</tr>
    		<tr id="motivo_receta_mostrar">
-   			<td id="column_motivo"> <?php echo $fila ['sMotivoConsulta']?> </td>
-   			<td id="column_receta"> <?php echo $fila ['vchReceta']?> </td>
+   			<td id="column_motivo" colspan="2"> <?php echo $fila ['sMotivoConsulta']?> </td>
+   			<td id="column_receta" colspan="7"> <?php echo $fila ['vchReceta']?> </td>
    		</tr>
    		<tr id="examen_med">
-    		<th id="cabecera_examen">Examen físico</th>
-    		<th id="cabecera_medicacion">Medicación</th>
+    		<th id="cabecera_examen" colspan="2">Examen físico</th>
+    		<th id="cabecera_medicacion" colspan="7">Medicación</th>
   		</tr>
    		<tr id="examen_med_mostrar">	
-   			<td id="column_ef"> <?php echo $fila ['vchNota']?> </td>
-   			<td id="column_med"> <?php echo $fila ['vchProblema']?> </td>
+   			<td id="column_ef" colspan="2"> <?php echo $fila ['vchNota']?> </td>
+   			<td id="column_med" colspan="7"> <?php echo $fila ['vchProblema']?> </td>
    		</tr>
  
    </table>
-<?php }
+   <?php 
+	}
 ?>
+</div>
+</body>
+</html>
