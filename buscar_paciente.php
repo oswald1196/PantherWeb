@@ -34,9 +34,10 @@
 ?>
 
       <div class="form-busqueda">
-     	<label for="caja_busqueda" id="lblBusqueda"> Buscar </label>
-     	<?php echo $codigoE?>
+     	<label for="caja_busqueda" id="lblBusqueda" > Buscar </label>
+     	<div data-tip="Puedes realizar la búsqueda por raza, nombre de paciente, fecha de nacimiento; nombre, apellido paterno, teléfono o correo del propietario">
         <input type="text" name="caja_busqueda" id="caja_busqueda">
+    	</div>
       </div>
 
 

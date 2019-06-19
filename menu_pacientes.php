@@ -39,11 +39,11 @@ require 'conexion.php';
 ?>
 <div class="container">
 <div id="opc_agenda">
-	<a id="a_ecto" href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Citas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>
+	<a id="a_ecto" href="panel_agenda.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Citas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>
 </div>
 
 <div id="opc_estetica">
-	<a id="a_ecto" href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Estéticas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/hair-dryer.png"> </a>
+	<a id="a_ecto" href="panel_estetica.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Estéticas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/hair-dryer.png"> </a>
 </div>
 
 <div id="opc_vacuna">

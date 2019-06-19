@@ -1,0 +1,128 @@
+.contenedor_est {
+	display: flex;
+  	flex-direction: column;
+  	background-color: white;
+  	border-radius: 10px;
+  	width: 100%;
+    min-height: 900px; 
+    height: auto;
+ 	  padding-right: 0px;
+  	padding-left: 0px;
+}
+
+.header_titleE {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+  	border-radius: 10px;
+  	background-color: #D6D5E1;
+  	height: 80px;
+  	width: 100%;
+  	align-items: center;
+  	justify-content: center;
+  	font-family: 'Nunito', sans-serif;  
+  	font-size: 30px;
+  	color:black;
+}
+
+#tbl_estetica {
+  margin-top: 2%;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  border-top: 1px solid;
+  border-color: #D6D5E1;
+  border-bottom: 2%;
+}
+
+#tbl_headerE{
+  border-top: 1px solid;
+  border-color: #D6D5E1;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 25px;
+  height: 30%; 
+}
+
+#c_fechaE{
+  width: 10%;
+    border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_motivoE{
+  width: 30%;
+  margin-left: 2%;
+}
+
+#c_horaE{
+  width: 10%;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_precio{
+  width: 10%;
+    border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_notas{
+  width: 20%;
+    border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_borrar{
+  width: 4%;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_estado{
+  width: 7%;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+#c_terminar{
+  width: 7%;
+
+}
+
+.columnades, .columnaf, .columnah, .columnad {
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  border-bottom: 1px solid;
+  border-color: #D6D5E1;
+  text-align: left;
+  margin-left: 2%;
+}
+
+
+#thead_estetica {
+  width: 1000px;
+  height: 250px;
+  border-bottom: 1px solid;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  font-weight: lighter;
+  border-color: #D6D5E1;
+
+}
+
+
+.botonAEst{
+  font-family: 'Nunito', sans-serif;
+  text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    margin-left: 90%;
+    margin-top: 1%;  
+    color: black;
+    background-color: #D6D5E1;
+    border-radius: 5px;
+    border: 1px solid black;
+}

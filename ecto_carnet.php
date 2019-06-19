@@ -82,7 +82,7 @@ require 'conexion.php';
                     <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td>  </td>
+                    <td class="columna8"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
                 </tr>
             <?php
       			}

@@ -59,7 +59,7 @@ require 'conexion.php';
     while($fila = mysqli_fetch_assoc($resultado)){
 
                 ?>
-                <span id="titulo_informe"> Consulta del <?php echo $fila ['dtFechaInformeMedico']?> </span>
+  <span id="titulo_informe"> Consulta del <?php echo $fila ['dtFechaInformeMedico']?> </span>
 	<table id="tabla_informe">
 
    		<tr id="signos">

@@ -4,7 +4,8 @@
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  height: 900px;
+  height: auto;
+  min-height: 900px;
   width: 100%; 
   padding-right: 0px;
   padding-left: 0px;
@@ -48,52 +49,60 @@ thead {
   border-bottom: 1px solid;
   text-align: center;
   font-family: 'Nunito', sans-serif;  
-  font-size: 20px;
+  font-size: 25px;
   font-weight: lighter;
   border-color: #D6D5E1;
 
 }
 
-.columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7 {
+.columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
   font-family: 'Nunito', sans-serif;  
   font-size: 20px;
   border-bottom: 1px solid;
   border-color: #D6D5E1;
+  text-align: left;
 }
 
 #c_fecha{
   width: 15%;
-  text-align: center;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 #c_descripcion {
   width: 25%;
-  text-align: center;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 #c_proxima {
   width: 25%;
-  text-align: center;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 #c_peso {
   width: 5%;
-  text-align: center;
+  border: 1px solid;
+  border-color: #D6D5E1;  
 }
 
 #c_cita {
-  width: 15%;
-  text-align: center;
+  width: 12%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 #c_lote {
-  width: 5%;  
-  text-align: center;
+  width: 8%; 
+  border: 1px solid;
+  border-color: #D6D5E1; 
 }
 
 #c_cad{ 
   width: 20%;
-  text-align: center;
+   border: 1px solid;
+  border-color: #D6D5E1; 
  }
 
 
