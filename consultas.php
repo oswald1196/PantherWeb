@@ -178,7 +178,7 @@ window.onload = function(){
       <textarea id="txtExamen" name="examen"> </textarea>
       <p id="lblReceta"> Receta </p>
       <textarea id="txtReceta" name="receta"> </textarea>
-      <button class="botonAConsulta" type="submit">Agregar informe</button>
+      <button class="botonAConsulta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar informe</button>
 
     </div>
     

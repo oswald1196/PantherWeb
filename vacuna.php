@@ -72,15 +72,13 @@ window.onload = function(){
   <div class="form-left">
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
-      <label id="lblLab" for="inputLab"> Laboratorio </label>
+      <label id="lblLab" for="inputLab"> <i class="fas fa-vials"></i>&nbsp;&nbsp; Laboratorio </label>
       <select id="inputLab" name="laboratorio" tabindex="2" onchange="ShowSelected();">
-        <option value="0">Elegir laboratorio</option>
-
-      <label id="lblLab" for="inputLab"><i class="fas fa-vials"></i>&nbsp;&nbsp;Laboratorio</label>
-      <select id="inputLab" name="laboratorio" tabindex="2">
-        <option value=0>Elegir laboratorio</option>
+        <!--:v-->
+        <option value="0">Elegir Laboratorio</option>
+        <!--:v-->
         <?php
-        $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigoE'ORDER BY vchMarca ASC";
+        $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigoE' ORDER BY vchMarca ASC";
         $result = mysqli_query($conn,$consulta);
         while ($marcas = mysqli_fetch_array($result)) {
           ?>
@@ -106,34 +104,11 @@ window.onload = function(){
                   });  
           }                                   
       </script>
-      <label id="lblProducto"> Vacuna </label>
+      <label id="lblProducto"> <i class="fas fa-syringe"></i>&nbsp;&nbsp; Vacuna </label>
       <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo();"> </select>
 
-      <label id="lblLote"> Lote </label>
-      <select id="inputLote" name="lote"> </select>
-      <label id="lblPrecio">Precio</label>
-      <label id="lblProducto"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Vacuna</label>
-      <select id="inputProducto" name="vacuna">
-        <option value=0>Elegir vacuna</option>
-        <?php
-        $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5";
-        $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchDescripcion'].'</option>';
-                  }
-        ?>
-      </select>
-      <label id="lblLote"><i class="fas fa-boxes"></i>&nbsp;&nbsp;Lote</label>
-      <select id="inputLote" name="lote">
-        <option value=0>Elegir Lote</option>
-        <?php
-        $consulta = "SELECT * FROM RelProductos WHERE iCodTipoProducto = 5";
-        $result = mysqli_query($conn,$consulta);
-        while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchMotivo'].'</option>';
-                  }
-        ?>
-      </select>
+      <label id="lblLote"> <i class="fas fa-boxes"></i>&nbsp;&nbsp; Lote </label>
+      <select id="inputLote" name="lote"> </select>      
       <label id="lblPrecio"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;Precio</label>
       <input type="text" id="inputPrecio" name="precio">
       <label for="inputfechacad" id="lblFechaCad"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Caducidad</label>
@@ -141,12 +116,13 @@ window.onload = function(){
       <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
       <input type="text" id="inputPeso" name="peso">
   </div>
+  <!--Panel derecho -->
       <div class="form-right">
         <div class="form-group">
-          <label id="lblCitaP">Programar cita</label>
+          <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
           <input type="checkbox" id="inputCitaP" name="cita" onchange="habilitar(this.checked);" checked>
         </div>
-        <script>
+        <script text/javascript>
         function habilitar(value)
         {
         if(value==true)
@@ -164,16 +140,12 @@ window.onload = function(){
       }
     }
   </script>
-        <label id="lblCitaP">Próxima vacuna</label>
-          <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
 
           <!--Checkbox sin estilo->
           <input type="checkbox" id="inputCitaP" name="cita">
           <!-Checkbox sin estilo-->
 
-        </div>
-
-        <div class="">
+        <!--<div class="">
         <div class="">
         <label class="checkbox-label">
             <input type="checkbox">
@@ -184,9 +156,8 @@ window.onload = function(){
         <label class="checkbox-label">
             
         </div>
-      <!-- <div class="clear"></div> -->
-    </div>
-
+       <div class="clear"></div> -->
+       
         <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>
         <select id="inputProxima" name="motivoProxima">
         <option value=0>VACUNA</option>
