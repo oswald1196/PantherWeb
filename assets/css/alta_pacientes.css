@@ -10,9 +10,8 @@
 	margin-top: 10px;
 	height: 800px;
 	width: 60%;	
-	margin-left: 400px;
-	margin-right: 400px;
-	margin-bottom: 10px;
+	margin-left: 20%;
+	margin-bottom: 2%;
 	padding-right: 0px;
 	padding-left: 0px;
 	}
@@ -65,14 +64,14 @@
 	color: black;
 	font-family: 'Nunito', sans-serif;	
 	font-size: 35px;
-	margin-left: 250px;
+	margin-left: 45%;
 }
 
 .title-propietario{
 	color: black;
 	font-family: 'Nunito', sans-serif;	
 	font-size: 35px;
-	margin-left: 220px;
+	margin-left: 35%;
 }
 
 /*Titulo pagina*/

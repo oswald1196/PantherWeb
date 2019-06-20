@@ -1,17 +1,11 @@
-.limiter {
-  width: 100%;
-  margin: 0 auto;
-}
 
-body {
-  background-color: pink;
-}
 .forma_principal{
   display: flex;
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  height: 700px;
+  height: auto;
+  min-height: 900px;
   width: 100%; 
   padding-right: 0px;
   padding-left: 0px;
@@ -33,219 +27,94 @@ body {
   color:black;
 }
 
-.table100-head th{
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  color: #000000;
-  line-height: 1.2;
-  font-weight: unset;
+#carnet_vacuna {
+  margin-top: 2%;
+  height: 100%;
+  width: 100%;
   text-align: center;
+  border-top: 1px solid;
+  border-color: #D6D5E1;
 }
 
-.container-table100 {
-  width: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  padding: 33px 30px;
+#cabecera_tabla {
+  border-top: 1px solid;
+  border-color: #D6D5E1;
+  text-align: center;
+  height: 30%;  
 }
 
-.wrap-table100 {
-  width: 1170px;
+thead {
+  width: 1000px;
+  height: 250px;
+  border-bottom: 1px solid;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 25px;
+  font-weight: lighter;
+  border-color: #D6D5E1;
+
 }
 
-table {
-  border-spacing: 1;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 10px;
-  overflow: hidden;
-  width: 100%;
-  margin: 0 auto;
-  position: relative;
-}
-table * {
-  position: relative;
-}
-table td, table th {
-  padding-left: 8px;
-}
-table thead tr {
-  height: 60px;
-  background: #D6D5E1;
-}
-table tbody tr {
-  height: 50px;
-}
-table tbody tr:last-child {
-  border: 0;
-}
-
-table td, table th {
+.columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  border-bottom: 1px solid;
+  border-color: #D6D5E1;
   text-align: left;
 }
-table td.l, table th.l {
-  text-align: right;
-}
-table td.c, table th.c {
-  text-align: center;
-}
-table td.r, table th.r {
-  text-align: center;
+
+#c_fecha{
+  width: 15%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
-
-.table100-head th{
-  font-family: 'Nunito', sans-serif;
-  font-size: 20px;
-  color: #000000;
-  line-height: 1.2;
-  font-weight: unset;
-  text-align: center;
+#c_descripcion {
+  width: 25%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
-tbody tr:nth-child(even) {
-  background-color: white;
+#c_proxima {
+  width: 25%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
-tbody tr {
-  font-family: 'Nunito', sans-serif;
-  font-size: 15px;
-  color: black;
-  background-color: white;
-  font-weight: unset;
+#c_peso {
+  width: 5%;
+  border: 1px solid;
+  border-color: #D6D5E1;  
 }
 
-tbody tr:hover {
-  color: white;
-  background-color: black;
-  cursor: pointer;
+#c_cita {
+  width: 12%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
-.column1 {
-  width: 60px;
-  text-align: center;
+#c_lote {
+  width: 8%; 
+  border: 1px solid;
+  border-color: #D6D5E1; 
 }
 
-.column2 {
-  width: 160px;
-  text-align: center;
-}
-
-.column3 {
-  width: 115px;
-  text-align: center;
-}
-
-.column4 {
-  width: 110px;
-  text-align: center;
-}
-
-.column5 {
-  width: 170px;
-  text-align: center;
-}
-
-.column6 {
-  width: 222px;
-  text-align: center;
-  padding-right: 62px;
-}
+#c_cad{ 
+  width: 20%;
+   border: 1px solid;
+  border-color: #D6D5E1; 
+ }
 
 
-@media screen and (max-width: 992px) {
-  table {
-    display: block;
-  }
-  table > *, table tr, table td, table th {
-    display: block;
-  }
-  table thead {
-    display: none;
-  }
-  table tbody tr {
-    height: auto;
-    padding: 37px 0;
-  }
-  table tbody tr td {
-    padding-left: 40% !important;
-    margin-bottom: 24px;
-  }
-  table tbody tr td:last-child {
-    margin-bottom: 0;
-  }
-  table tbody tr td:before {
-    font-family: OpenSans-Regular;
-    font-size: 14px;
-    color: #999999;
-    line-height: 1.2;
-    font-weight: unset;
-    position: absolute;
-    width: 40%;
-    left: 30px;
-    top: 0;
-  }
-  table tbody tr td:nth-child(1):before {
-    content: "Raza";
-  }
-  table tbody tr td:nth-child(2):before {
-    content: "Nombre Paciente";
-  }
-  table tbody tr td:nth-child(3):before {
-    content: "Fecha de Nacimiento";
-  }
-  table tbody tr td:nth-child(4):before {
-    content: "Propietario";
-  }
-  table tbody tr td:nth-child(5):before {
-    content: "Telefono";
-  }
-  table tbody tr td:nth-child(6):before {
-    content: "Correo";
-  }
-
-  .column4,
-  .column5,
-  .column6 {
-    text-align: center;
-  }
-
-  .column4,
-  .column5,
-  .column6,
-  .column1,
-  .column2,
-  .column3 {
-    width: 100%;
-  }
-
-  tbody tr {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 576px) {
-  .container-table100 {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-}
-
-
-.boton {
+.botonAddVacuna {
   font-family: 'Nunito', sans-serif;
   text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    margin-left: 78%;  
-    color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 6px;
-    border: 1px solid #0016b0;
+    margin-left: 90%;
+    margin-top: 1%;  
+    color: black;
+    background-color: #D6D5E1;
+    border-radius: 5px;
+    border: 1px solid black;
 }

@@ -20,7 +20,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-		<script src="buscar.js"></script>
+		<!--<script src="buscar.js"></script>-->
 
 
 	</head>
@@ -34,9 +34,10 @@
 ?>
 
       <div class="form-busqueda">
-     	<label for="caja_busqueda" id="lblBusqueda"> Buscar </label>
-     	<?php echo $codigoE?>
+     	<label for="caja_busqueda" id="lblBusqueda" > Buscar </label>
+     	<div data-tip="Puedes realizar la búsqueda por raza, nombre de paciente, fecha de nacimiento; nombre, apellido paterno, teléfono o correo del propietario">
         <input type="text" name="caja_busqueda" id="caja_busqueda">
+    	</div>
       </div>
 
 
@@ -52,6 +53,37 @@
 		<div id="datos">
 			
 		</div>
+
+<script type="text/javascript">
+$(buscar_datos());
+
+function buscar_datos(consulta){
+    var id = <?= json_encode($codigoE) ?>;
+	$.ajax({
+		url: 'buscar.php',
+		type: 'POST',
+		dataType: 'html',
+		data: {consulta: consulta, id: id},
+	})
+	.done(function(respuesta){
+		$('#datos').html(respuesta);
+	});
+}
+
+$(document).on('keyup', '#caja_busqueda', function(){
+	var valor = $(this).val();
+
+	if (valor != "") {
+		buscar_datos(valor);
+	}
+	else{
+		buscar_datos();
+	}
+
+});
+
+</script>
+
 </table>
 </body>
 </html>
