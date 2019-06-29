@@ -1,7 +1,7 @@
 <?php
 
 require 'conexion.php';
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +21,9 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/paneles_cita.css" />
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <link rel="stylesheet" href="dist/sweetalert2.min.css">
+
 
 	</head>
 
@@ -29,10 +32,6 @@ require 'conexion.php';
 <?php
 	$codigoE = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
-	$correo = base64_decode($_GET['co']);
-	$pais = base64_decode($_GET['p']);
-	$estado = base64_decode($_GET['e']);
-	$ciudad = base64_decode($_GET['c']);
 
 	include('header.php');
 ?>
@@ -50,7 +49,7 @@ require 'conexion.php';
       <p id="lblCita"> Citas de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button id="botonACita"> <a href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button id="botonACita"> <a href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="tbl_citas">
                     <tbody>
@@ -65,26 +64,39 @@ require 'conexion.php';
                     </thead>
                 <?php
 
-                $query = "SELECT TC.iCalendario, TC.iCodPaciente, TA.Imagen, TA.vchNombrePaciente, TA.vchRaza, TA.vchNombre, TA.vchPaterno, TA.vchMaterno, TA.vchTelefono, TC.dtFecha, TC.vchTipoMotivo, TC.vchHora, TC.iCodEstado, TC.iCodServicio FROM (TranCalendario TC LEFT JOIN TranAfiliado TA ON TA.iCodPaciente = TC.iCodPaciente) WHERE TC.iCodPaciente = '$codigoPaciente' ORDER BY TC.dtFecha DESC";
+                $query = "SELECT TC.iCodTranCalendario, TC.iCalendario, TC.iCodPaciente, TA.Imagen, TA.vchNombrePaciente, TA.vchRaza, TA.vchNombre, TA.vchPaterno, TA.vchMaterno, TA.vchTelefono, TC.dtFecha, TC.vchTipoMotivo, TC.vchHora, TC.iCodEstado, TC.iCodServicio FROM (TranCalendario TC LEFT JOIN TranAfiliado TA ON TA.iCodPaciente = TC.iCodPaciente) WHERE TC.iCodPaciente = '$codigoPaciente' ORDER BY TC.dtFecha DESC";
               
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
                 	
                         ?>
-                <tr>
+                <tr id="registro">
                     <td class="columnades"> <?php echo $fila['vchTipoMotivo'] ?></td>
                     <td class="columnaf"> <?php echo $fila['dtFecha'] ?> </td>
                     <td class="columnah"> <?php echo $fila['vchHora'] ?></td>
-                    <td class="columnad"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columnad"> <a href="eliminar_cita.php?id=<?php echo $fila['iCodTranCalendario'] ?>" onclick="return alert_eliminarCita();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
-        ?>
+      ?>
+      <script type="text/javascript">
+        function alert_eliminarCita(){
+            var respuesta = confirm("Estás seguro de eliminar la cita?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+          
+      </script>
+
 
               		</tbody>
                     </table>
                 </div>
+        
   			
     </div>
 </body>

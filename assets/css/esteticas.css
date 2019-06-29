@@ -127,6 +127,15 @@
 	margin-left: 40px;
 }
 
+#inputPrecioS {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 7%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 4%;
+}
+
 #inputHoraInicio{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
@@ -178,12 +187,18 @@
 	font-size: 19px;
 }
 
+#lblPrecioS {
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-top: 5%;
+	margin-left: 5%;
+}
 
 #lblFechaE{
 	font-family: 'Nunito', sans-serif;
 	font-size: 19px;
 	margin-top: 5%;
-	margin-left: 10%;	
+	margin-left: 3%;	
 }
 
 #lblHoraInicio{

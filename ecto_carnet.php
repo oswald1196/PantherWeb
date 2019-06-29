@@ -29,11 +29,6 @@ require 'conexion.php';
 <?php
 	$codigoE = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
-	$correo = base64_decode($_GET['co']);
-	$pais = base64_decode($_GET['p']);
-	$estado = base64_decode($_GET['e']);
-	$ciudad = base64_decode($_GET['c']);
-
 	include('header.php');
 ?>
 
@@ -50,7 +45,7 @@ require 'conexion.php';
       <p id="lblCita"> Ectoparásitos de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -67,9 +62,8 @@ require 'conexion.php';
                         </tr>
                     </thead>
                 <?php
-                //$query = "SELECT DISTINCT TRV.iCodVacuna, TRV.iCodPaciente, TRV.sFecha, TRV.sVacunaAplicada, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.iCodServicio, TRV.iCodProductoLote, TRV.dPeso, TRV.sFechaCaducidad, TRV.iCodCuentaCliente, TRV.iCodProducto, TRV.iCodProductoLote, TRV.dNoTransaccionCloud, TC.iCodCalendario FROM TranRegistroVacunas AS TRV INNER JOIN TranCalendario TC ON TRV.iCodVacuna=TC.iCodCalendario WHERE TRV.iCodPaciente = '$codigoPaciente' ORDER BY iCodVacuna DESC";
 
-                $query = "SELECT DISTINCT TE.sProductoAplicado, CL.vchDescripcion, TE.sNumeroLote, TE.sFecha, TE.sFechaCaducidad, TE.sObservaciones, TE.sFechaProxima FROM TranHecto TE INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TE.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodHecto DESC";
+                $query = "SELECT DISTINCT TE.iCodTranHecto, TE.sProductoAplicado, CL.vchDescripcion, TE.sNumeroLote, TE.sFecha, TE.sFechaCaducidad, TE.sObservaciones, TE.sFechaProxima FROM TranHecto TE INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TE.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodHecto DESC";
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
@@ -82,11 +76,21 @@ require 'conexion.php';
                     <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columna8"> <a href="eliminar_ecto.php?id=<?php echo $fila['iCodTranHecto'] ?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
                 </tr>
             <?php
       			}
         ?>
+        <script type="text/javascript">
+        function alert_eliminarEcto(){
+            var respuesta = confirm("Estás seguro de eliminar el ectoparásito?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }     
+        </script>
 
               		</tbody>
                     </table>

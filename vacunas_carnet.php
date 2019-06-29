@@ -29,10 +29,6 @@ require 'conexion.php';
 <?php
 	$codigoE = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
-	$correo = base64_decode($_GET['co']);
-	$pais = base64_decode($_GET['p']);
-	$estado = base64_decode($_GET['e']);
-	$ciudad = base64_decode($_GET['c']);
 
 	include('header.php');
 ?>
@@ -50,7 +46,7 @@ require 'conexion.php';
       <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -69,7 +65,7 @@ require 'conexion.php';
                     </thead>
                 <?php
 
-                $query = "SELECT DISTINCT TRV.sVacunaAplicada, CL.vchDescripcion, TRV.sNumeroLote, TRV.sFecha, TRV.sFechaCaducidad, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.dPeso FROM TranRegistroVacunas TRV INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TRV.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodVacuna DESC";
+                $query = "SELECT DISTINCT TRV.iCodTranRegistroVacunas, TRV.sVacunaAplicada, CL.vchDescripcion, TRV.sNumeroLote, TRV.sFecha, TRV.sFechaCaducidad, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.dPeso FROM TranRegistroVacunas TRV INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TRV.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodVacuna DESC";
 
               
 
@@ -85,11 +81,22 @@ require 'conexion.php';
                     <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columna8"> <a href="eliminar_vacuna.php?id=<?php echo $fila['iCodTranRegistroVacunas'] ?>" onclick="return alert_eliminarVacuna();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
         ?>
+        <script type="text/javascript">
+        function alert_eliminarVacuna(){
+            var respuesta = confirm("Estás seguro de eliminar la vacuna?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+          
+        </script>
 
               		</tbody>
                     </table>

@@ -29,10 +29,6 @@ require 'conexion.php';
 <?php
 	$codigoE = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
-	$correo = base64_decode($_GET['co']);
-	$pais = base64_decode($_GET['p']);
-	$estado = base64_decode($_GET['e']);
-	$ciudad = base64_decode($_GET['c']);
 
 	include('header.php');
 ?>
@@ -50,7 +46,7 @@ require 'conexion.php';
       <p id="lblCita"> Estéticas de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor_citas">
-      	 <button class="botonAEst"> <a href="agenda_agregar.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAEst"> <a href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="tbl_estetica">
                     <tbody>
@@ -68,7 +64,7 @@ require 'conexion.php';
                     </thead>
                 <?php
 
-                $query = "SELECT TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
+                $query = "SELECT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
               
 
     			$resultado = mysqli_query($conn,$query);
@@ -81,12 +77,24 @@ require 'conexion.php';
                     <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
                     <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
                     <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
-                    <td class="columnad"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columnad"> <a href="eliminar_estetica.php?id=<?php echo $fila['iCodTranAgendaEstetica'] ?>" onclick="return alert_eliminarEstetica();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                     <td class="columnah"> <?php echo $fila['vchEstatus'] ?></td>
                 </tr>
             <?php
       			}
         ?>
+
+        <script type="text/javascript">
+        function alert_eliminarEstetica(){
+            var respuesta = confirm("Estás seguro de eliminar el servicio de estética?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+          
+        </script>
 
               		</tbody>
                     </table>
