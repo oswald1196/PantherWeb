@@ -362,7 +362,7 @@
 	font-size: 17px;
 	width: 200px;
 	height: 40px;
-	margin-left: 150px;
+	margin-left: 175px;
 	border-radius: 10px;
 	border: 2px solid #40444745
 }
@@ -405,7 +405,7 @@
 .btnAlta {
  	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
-	margin-left: 250px;
+	margin-left: 230px;
 	margin-bottom: 10px;	
     padding: 10px;
     font-size: 20px;
