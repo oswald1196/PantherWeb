@@ -31,6 +31,7 @@
 	font-family: 'Nunito', sans-serif;	
 	font-size: 30px;
 	color:black;
+	background-image: url(img/header-midnightBlue.jpg);
 }
 
 .form-alta {
@@ -88,156 +89,272 @@
 #nombrePaciente{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 20px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #sltEspecie{
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 25px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #sltRaza {
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 52px;
+	margin-left: 70px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #sltColor {
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 50px;
+	margin-left: 70px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputFechaNac{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
+	margin-left: 70px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputMeses{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	margin-left: 42px;
-	width: 50px;
+	margin-left: 70px;
+	width: 193px;
 	height: 40px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputAnios{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 50px;
+	width: 193px;
 	margin-left: 20px;
 	height: 40px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 
 #inputChip {
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 60px;	
+	margin-left: 70px;	
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputExpediente {
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 252px;
+	width: 411px;
 	height: 40px;
+	margin-left: 70px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #txtObservaciones {
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
-	width: 255px;
+	width: 411px;
 	height: 100px;
 	text-transform: uppercase;
+	margin-left: 70px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #radioGenero {
 }
 
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: #666;
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+.form-radio:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.form-radio:hover
+{
+     background-color: #f7f7f7;
+}
+.form-radio:checked
+{
+     background-color: #DCDCDC;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: #666;
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 3px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+.form-checkbox:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+.form-checkbox:hover
+{
+     background-color: #f7f7f7;
+}
+.form-checkbox:checked
+{
+     background-color: #DCDCDC;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
 
 #inputNombreP {
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	margin-left: 20px;
-	width: 300px;
+	margin-left: 70px;
+	width: 411px;
 	height: 40px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputPaterno{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 285px;
+	width: 411px;
 	height: 40px;
-	margin-left: 10px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputMaterno{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 285px;
+	width: 411px;
 	height: 40px;
-	margin-left: 5px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputTelefono{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 15px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputCorreo{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 33px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputDireccion{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 5px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputColonia{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 300px;
+	width: 411px;
 	height: 40px;
-	margin-left: 25px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputCP{
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
-	width: 255px;
+	width: 411px;
 	height: 40px;
-	margin-left: 5px;
+	margin-left: 70px;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #inputIdioma {
@@ -246,6 +363,8 @@
 	width: 200px;
 	height: 40px;
 	margin-left: 150px;
+	border-radius: 10px;
+	border: 2px solid #40444745
 }
 
 #chkEsteril {
@@ -291,8 +410,8 @@
     padding: 10px;
     font-size: 20px;
     color: #ffffff;
-    background-color: #1883ba;
+    background-color: #527486;
     border-radius: 5px;
-    border: 1px solid #0016b0;
+    border: 1px solid #527486;
 }
 
