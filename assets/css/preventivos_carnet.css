@@ -37,22 +37,26 @@
 }
 
 #cabecera_tabla {
-  border-top: 1px solid;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  border-top:0.5px solid;
   border-color: #D6D5E1;
-  text-align: center;
-  height: 30%;  
-}
-
-thead {
-  width: 1000px;
-  height: 250px;
-  border-bottom: 1px solid;
   text-align: center;
   font-family: 'Nunito', sans-serif;  
-  font-size: 25px;
+  font-size: 23px;
+  height: 50px;
+}
+
+#contenedor_cabecera {
+  width: 1000px;
+  border-bottom: .5px solid;
+  text-align: center;
+  font-family: 'Nunito', sans-serif;  
+  font-size: 23px;
   font-weight: lighter;
   border-color: #D6D5E1;
-
 }
 
 .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
@@ -67,42 +71,55 @@ thead {
   width: 15%;
   border: 1px solid;
   border-color: #D6D5E1;
+  height: auto;
 }
 
 #c_descripcion {
   width: 25%;
   border: 1px solid;
   border-color: #D6D5E1;
+  height: auto;
+
 }
 
 #c_proxima {
   width: 25%;
   border: 1px solid;
   border-color: #D6D5E1;
+  height: auto;
+
 }
 
 #c_peso {
   width: 5%;
   border: 1px solid;
-  border-color: #D6D5E1;  
+  border-color: #D6D5E1;
+  height: auto;
+
 }
 
 #c_cita {
   width: 12%;
   border: 1px solid;
   border-color: #D6D5E1;
+  height: auto;
+
 }
 
 #c_lote {
   width: 8%; 
   border: 1px solid;
   border-color: #D6D5E1; 
+  height: auto;
+
 }
 
 #c_cad{ 
   width: 20%;
-   border: 1px solid;
+  border: 1px solid;
   border-color: #D6D5E1; 
+  height: auto;
+
  }
 
 

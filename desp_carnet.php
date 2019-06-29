@@ -50,7 +50,7 @@ require 'conexion.php';
                     <table id="carnet_vacuna">
                     <tbody>
 
-                    <thead>
+                    <thead id="contenedor_cabecera">
                         <tr id="cabecera_tabla">
                             <th id="c_fecha">Fecha</th>
                             <th id="c_descripcion">Descripción</th>
