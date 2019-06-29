@@ -5,7 +5,7 @@ require 'conexion.php';
 $sUsuario= $_POST['usuario'];
 $sPassword= $_POST['pass'];
 
-$sql = "SELECT vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, vchCorreoMedico, vchPassword FROM CatMedico WHERE vchCorreoMedico = '$sUsuario' AND vchPassword = '$sPassword'";
+$sql = "SELECT iCodMedico, vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, vchCorreoMedico, vchPassword FROM CatMedico WHERE vchCorreoMedico = '$sUsuario' AND vchPassword = '$sPassword'";
 
 $result = mysqli_query($conn,$sql);
 	    
@@ -14,6 +14,7 @@ $result = mysqli_query($conn,$sql);
     	if ($row['vchPassword'] == $sPassword){
             session_start();
             $_SESSION["autenticado"]= "SI";
+            $codigoM = $row['iCodMedico'];
             $iCodEmpresa = $row['iCodEmpresa'];
             $correo = $row['vchCorreo'];
             $pais = $row['vchPais'];
@@ -22,7 +23,7 @@ $result = mysqli_query($conn,$sql);
             $recibe = $row['iRecibido'];
             $envia = $row['iEnviado'];
 
-    		header("Location: home.php?id=".base64_encode($iCodEmpresa)."&mail=".base64_encode($correo)."&p=".base64_encode($pais)."&es=".base64_encode($estado)."&c=".base64_encode($ciudad)."&r=$recibe&e=$envia");    	
+    		header("Location: home.php?id=".base64_encode($iCodEmpresa)."&cm=".base64_encode($codigoM));    	
         }
         else{
             header('Location: index.html');

@@ -7,13 +7,7 @@ if ($_SESSION["autenticado"] != "SI") {
 }
 
 $codigo = base64_decode($_GET['id']);
-$correo = base64_decode($_GET['mail']);
-$pais = base64_decode($_GET['p']);
-$ciudad = base64_decode($_GET['c']);
-$recibido = $_GET['r'];
-$enviado = $_GET['e'];
-
-
+$cMedico = base64_decode($_GET['cm']);
 ?>
 
 <!DOCTYPE html>
@@ -45,10 +39,10 @@ $enviado = $_GET['e'];
 ?>
 
 <?php
-$sql = "SELECT vchNombre FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+$sql = "SELECT vchNombre FROM CatMedico WHERE iCodEmpresa = '$codigo' AND iCodMedico = '$cMedico'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result);
 ?>
-<h1> Bienvenido <?php echo $row['vchNombre'];?> </h1>
+<h1> HOLA <?php echo $row['vchNombre'];?> </h1>
  </body>
 </html>

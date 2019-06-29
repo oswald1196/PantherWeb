@@ -52,8 +52,8 @@ window.onload = function(){
 </script>
 
 <div class="contenedor-principal">
-<form class="form_estetica" action="agregar_cita.php?id=<?php echo $codigoP?>" method="POST">
-    <?php $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP' AND iCodEmpresa = '$codigoE'";
+<form class="form_estetica" action="insertar_estetica.php" method="POST">
+    <?php $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP' AND iCodEmpresa = '$codigoE'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
@@ -61,29 +61,40 @@ window.onload = function(){
     <p id="lblCita"> Estética de <?php echo $row['vchNombrePaciente']; ?> </p>
   </div>
   <div id="datos_citaE">
+        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
+        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
+        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
+        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
+        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
+        <input type="hidden" name="especie" value="<?php echo $row['iCodEspecie'] ?>">
+        <input type="hidden" name="raza" value="<?php echo $row['vchRaza'] ?>">
+
       <label for="inputEstilista" id="lblEstilista">Estilista</label>
       <select id="inputEstilista" name="estilista">
-        <option value="0">SELECCIONE EL ESTILISTA</option>
         <?php
-        $consulta = "SELECT vchNombre FROM CatEstilistas WHERE iCodEmpresa = '$codigoE'";
+        $consulta = "SELECT iCodEstilista, vchNombre FROM CatEstilistas WHERE iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
         while ($estilistas = mysqli_fetch_array($result)) {
-          echo '<option>'.$estilistas['vchNombre'].'</option>';
+          ?>
+          <option value="<?php echo $estilistas['iCodEstilista']; ?>"> <?php echo $estilistas['vchNombre']; ?></option>
+          <?php
                   }
         ?>
       </select>
+
       <label for="inputTipoServicio" id="lblTipo">Tipo servicio</label>
-      <select id="inputTipoServicio" name="servicio" onchange="ShowSelected();">
+      <select id="inputTipoServicio" name="codigoServicio" onchange="ShowSelected();">
         <?php
-        $consulta = "SELECT * FROM CatServicios WHERE iCodEmpresa = 4";
+        $consulta = "SELECT * FROM CatServicios WHERE iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
         $row = mysqli_fetch_assoc($result);
         ?>
-        <option value="0">ELIGE EL TIPO DE SERVICIO</option>
-        <option value="<?php echo $row['iCodTipoServicio'] = 1 ?>">BAÑO </option>
-        <option value="<?php echo $row['iCodTipoServicio'] = 2 ?>">CORTE </option>
-        <option value="<?php echo $row['iCodTipoServicio'] = 3 ?>">CORTE & BAÑO</option>
-        <option value="<?php echo $row['iCodTipoServicio'] = 4 ?>">OTROS</option>
+        <option value="<?php echo $row['iCodLaboratorio'] = 1 ?>">BAÑO </option>
+        <option value="<?php echo $row['iCodLaboratorio'] = 2 ?>">CORTE </option>
+        <option value="<?php echo $row['iCodLaboratorio'] = 3 ?>">CORTE & BAÑO</option>
+        <option value="<?php echo $row['iCodLaboratorio'] = 4 ?>">OTROS</option>
       </select>
 
       <script type="text/javascript">
@@ -100,8 +111,10 @@ window.onload = function(){
       <select id="inputServicioE" name="servicio"> </select>
   </div>
      <div id="datos_horario">
+      <label for="inputPrecio" id="lblPrecioS">$</label>
+      <input type="text" id="inputPrecioS" name="precioServicio">
       <label for="inputhoraini" id="lblFechaE">Fecha </label>
-      <input type="date" class="input-append date" id="inputFechaE" name="fecha">
+      <input type="date" class="input-append date" id="inputFechaE" name="fechaEst">
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
       <input type="time" id="inputHoraInicio" name="horaInicio">
       <label for="inputHoraFin" id="lblHoraFinE">Hora Fin </label>
@@ -109,7 +122,7 @@ window.onload = function(){
       </div>
   <div id="notasyobs">
       <label for="inputNotas" id="lblNotas">Notas y observaciones</label>
-      <textarea id="inputNotas" name="motivo"> </textarea>
+      <textarea id="inputNotas" name="notas"> </textarea>
   </div>
   <div id="botonAgregar">
       <button class="botonAgregar" type="submit">Agregar estética</button>    

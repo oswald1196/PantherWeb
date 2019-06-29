@@ -29,7 +29,7 @@ require 'conexion.php';
 	<body>
 
 <?php
-$codigoE = base64_decode($_GET['id']);
+  $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
   $codigoP = base64_decode($_GET['codigo']);	
   include('header.php');
@@ -52,7 +52,7 @@ window.onload = function(){
  <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-<form class="form-consulta" action="" method="POST">
+<form class="form-consulta" action="insertar_consulta.php" method="POST">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -83,6 +83,13 @@ window.onload = function(){
     <div id="div-estado">
       <p id="lblEstado">Signos y estado</p>
       <div class="form-group">
+        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
+        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
+        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
+        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
+        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+
       <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
       <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
       </div>
@@ -92,13 +99,13 @@ window.onload = function(){
       </div>
       <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
       <select id="selectMucosas" name="mucosas">
-        <option value="apn">APN (Aparentemente Normal)</option>
-        <option value="icterica">Ictérica</option>
-        <option value="hp">Hemorrágicas profusas</option>
-        <option value="hpet">Hemorrágicas petequiales</option>
-        <option value="congest">Congestionadas</option>
-        <option value="otras">Otras</option>
-        <option value="cianoticas">Cianóticas</option>
+        <option value="APN (Aparentemente Normal)">APN (Aparentemente Normal)</option>
+        <option value="Ictérica">Ictérica</option>
+        <option value="Hemorrágicas profusas">Hemorrágicas profusas</option>
+        <option value="Hemorrágicas petequiales">Hemorrágicas petequiales</option>
+        <option value="Congestionadas">Congestionadas</option>
+        <option value="Otras">Otras</option>
+        <option value="Cianóticas">Cianóticas</option>
       </select>
       <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
     </div>
@@ -125,18 +132,23 @@ window.onload = function(){
     </div>
     <div class="detalle">
       <p id="lblDetalle">Detalle</p>
-      <select id="selectMedico" name="medico">
+      <select id="selectMedico" name="medico" required>
+        <option value="0" selected="hidden">MÉDICO</option>
         <?php
         //Consulta para obtener medicos
-        $consulta = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
+        $consulta = "SELECT iCodMedico, vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
+
         $result = mysqli_query($conn,$consulta);
         while ($medico = mysqli_fetch_array($result)) {
-          echo '<option>'.$medico['vchNombre'].' '.$medico['vchPaterno'].' '.$medico['vchMaterno'].'</option>';
+          ?>
+          <option value="<?php $medico['iCodMedico']?>"><?php echo $medico['vchNombre'].' '.$medico['vchPaterno'].' '.$medico['vchMaterno']; ?></option>
+          <?php
                   }
         ?>
       </select>
+      <input type="hidden" name="codigoM" value="<?php echo $medico['iCodMedico'] ?>">
         <label for="inputFechaSintomas" id="lblIniSintomas"> Inicio síntomas </label>
-        <input type="date" class="input-append date" id="inputFechaSintomas" name="fecha">
+        <input type="date" class="input-append date" id="inputFechaSintomas" name="fechaS">
       <div class="form-group">        
       <label for="inputfecha" id="lblAtencion"> Atención en clínica </label>
       <input type="checkbox" id="inputAtencion" name="atencionClinica" checked>
@@ -145,35 +157,51 @@ window.onload = function(){
       <label for="inputPad" id="lblPad"> Padecimiento de primera vez </label>
       <input type="checkbox" id="inputPad" name="padecimiento" checked>
     </div>
-      <label id="lblServicio"> Servicio </label>
+    
       <select id="selectServicio" name="servicio" onchange="cambioOpciones();">
+        <option value="0" selected="hidden">SERVICIO</option> 
+
         <?php
-        //Consulta para obtener servicios
-        $consulta = "SELECT iCodServicio,dPrecioMenudeo,vchDescripcion FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = 4 ORDER BY vchDescripcion";
+        $consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
         $result = mysqli_query($conn,$consulta);
         while ($servicio = mysqli_fetch_array($result)) {
           ?>
-          <option value="<?php echo $servicio['dPrecioMenudeo'];?>"> <?php echo $servicio['vchDescripcion'] ?></option>
+
+          <option value="<?php $servicio['iCodServicio']?> <?php echo $servicio['dPrecioMenudeo']?> "> <?php echo $servicio['vchDescripcion']; ?></option>
+          
           <?php
-                  }
-        ?>
+              }
+          ?>
       </select>
+
       <script type="text/javascript">
-        function cambioOpciones()
-
-        {
+        function cambioOpciones() {
             document.getElementById('inputCostoServicio').value = document.getElementById('selectServicio').value;
-        }
-
+          }
     </script>
+
+      <?php 
+    /*$consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigoE' AND iCodServicio = '$codigoS'";
+    $query = mysqli_query($conn,$consulta);
+    $row = mysqli_fetch_assoc($query);
+
+    $costo = $row['dPrecioMenudeo'];
+    $desc = $row['vchDescripcion'];
+    $comision = $row['dPrecioCosto'];*/
+
+
+      ?>
+
       <label id="lblCostoS"> Costo </label>
-      <input type="text" id="inputCostoServicio" name="costoS">
+      <input type="text" id="inputCostoServicio" name="costoS" value="">
+
     </div>  
+    
     <div class="informeMedico">
       <label for="inputFechaConsulta" id="lblFechaC"> Fecha </label>
       <input type="date" class="input-append date" id="inputFechaConsulta" name="fechaConsulta">
       <p id="lblMotivo"> Motivo Consulta </p>
-      <textarea id="txtMotivo" name="motivo"> </textarea>
+      <textarea id="txtMotivo" name="motivo" required> </textarea>
       <p id="lblExamen"> Examen físico </p>
       <textarea id="txtExamen" name="examen"> </textarea>
       <p id="lblReceta"> Receta </p>
@@ -181,8 +209,6 @@ window.onload = function(){
       <button class="botonAConsulta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar informe</button>
 
     </div>
-    
-  
       </div>
 </form>  
 </div>  

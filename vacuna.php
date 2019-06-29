@@ -19,6 +19,7 @@ require 'conexion.php';
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
@@ -36,6 +37,7 @@ require 'conexion.php';
   $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
   $codigoP = base64_decode($_GET['codigo']);
+
 	include('header.php');
   include ('conexion.php');
 ?>
@@ -61,7 +63,7 @@ window.onload = function(){
 <div class="container">
 <form class="form_add_cita" action="insertar_vacuna.php" method="POST">
     <?php 
-    $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
@@ -70,8 +72,15 @@ window.onload = function(){
     </div>
   <div id="contenedor">
   <div class="form-left">
+        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
+        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
+        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
+        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
+        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
-      <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
+      <input type="date" class="input-append date" id="inputfecha" name="fechaVacuna" tabindex="1">
       <label id="lblLab" for="inputLab"> <i class="fas fa-vials"></i>&nbsp;&nbsp; Laboratorio </label>
       <select id="inputLab" name="laboratorio" tabindex="2" onchange="ShowSelected();">
         <!--:v-->
@@ -93,10 +102,11 @@ window.onload = function(){
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtener_vacuna.php', { iCodMarca: codigoMarca, id: id }, function(data){
               $('#inputProducto').html(data);
-                  }); 
+                  });
           }
 
           function ShowSelectedTwo(){
+
           var codigoProducto = document.getElementById("inputProducto").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtener_lote.php', { iCodProducto: codigoProducto, id: id }, function(data){
@@ -104,15 +114,27 @@ window.onload = function(){
                   });  
           }                                   
       </script>
+
+      <script type="text/javascript">
+        function cambioOpciones()
+        {
+            document.getElementById('inputPrecio').value = document.getElementById('inputProducto')[1].value;
+        }
+    </script>
+
       <label id="lblProducto"> <i class="fas fa-syringe"></i>&nbsp;&nbsp; Vacuna </label>
-      <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo();"> </select>
+      <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); cambioOpciones();"> </select>
 
       <label id="lblLote"> <i class="fas fa-boxes"></i>&nbsp;&nbsp; Lote </label>
       <select id="inputLote" name="lote"> </select>      
       <label id="lblPrecio"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;Precio</label>
       <input type="text" id="inputPrecio" name="precio">
+
+    
+
       <label for="inputfechacad" id="lblFechaCad"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+      <p id="msg"></p>
       <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
       <input type="text" id="inputPeso" name="peso">
   </div>
@@ -120,7 +142,7 @@ window.onload = function(){
       <div class="form-right">
         <div class="form-group">
           <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
-          <input type="checkbox" id="inputCitaP" name="cita" onchange="habilitar(this.checked);" checked>
+          <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" checked>
         </div>
         <script text/javascript>
         function habilitar(value)
@@ -140,23 +162,6 @@ window.onload = function(){
       }
     }
   </script>
-
-          <!--Checkbox sin estilo->
-          <input type="checkbox" id="inputCitaP" name="cita">
-          <!-Checkbox sin estilo-->
-
-        <!--<div class="">
-        <div class="">
-        <label class="checkbox-label">
-            <input type="checkbox">
-            <span class="checkbox-custom rectangular"></span>
-        </label>
-        </div>
-        <div class="checkbox-container circular-container">
-        <label class="checkbox-label">
-            
-        </div>
-       <div class="clear"></div> -->
        
         <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>
         <select id="inputProxima" name="motivoProxima">

@@ -56,12 +56,18 @@ window.onload = function(){
 <div class="container">
 <form class="form_add_cita" action="" method="POST">
     <?php 
-    $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
     <div class="contenedor-titulo">
       <p id="lblCita"> Paciente: <?php echo $row['vchNombrePaciente']; ?> </p>
+      <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
+        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
+        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
+        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
+        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
     </div>
   <div id="contenedor">
   <div class="form-left">

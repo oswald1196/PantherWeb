@@ -46,13 +46,10 @@
                 while($fila = mysqli_fetch_array($resultado)){
                         $iCodPac = $fila['iCodPaciente'];
                         $iCodE = $fila['iCodEmpresa'];
-                        $correo = $fila['vchCorreo'];
-                        $pais = $fila['vchPais'];
-                        $estado = $fila['vchEstado'];
-                        $ciudad = $fila['vchCiudad'];
+                    
                         
                 $salida.="<tr class='table100-head' >
-                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&mail=$correo&p=$pais&e=$estado&c=$ciudad&cod=$iCodPac'</a> </td>
+                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&cod=$iCodPac'</a> </td>
                     <td class='column2'>".$fila['vchNombrePaciente']."</td>
                     <td class='column3'>".$fila['dtFecNacimiento']."</td>
                     <td class='column4'>".$fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno']."</td>

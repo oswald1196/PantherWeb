@@ -29,10 +29,6 @@ require 'conexion.php';
 <?php
 	$codigoE = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
-	$correo = base64_decode($_GET['co']);
-	$pais = base64_decode($_GET['p']);
-	$estado = base64_decode($_GET['e']);
-	$ciudad = base64_decode($_GET['c']);
 
 	include('header.php');
 ?>
@@ -49,7 +45,7 @@ require 'conexion.php';
       <p id="lblCita"> Desparasitaciones de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&co=<?php echo base64_encode($correo)?>&p=<?php echo base64_encode($pais)?>&e=<?php echo base64_encode($estado)?>&c=<?php echo base64_encode($ciudad)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -67,7 +63,7 @@ require 'conexion.php';
                         </tr>
                     </thead>
                 <?php
-                  $query = "SELECT DISTINCT TD.sProductoAplicado, CL.vchDescripcion, TD.sNumeroLote, TD.sFecha, TD.sFechaCaducidad, TD.sObservaciones, TD.sFechaProxima, TD.dPeso FROM TranDesparacitacion TD INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TD.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";
+                  $query = "SELECT DISTINCT TD.iCodTranDesparacitacion, TD.sProductoAplicado, CL.vchDescripcion, TD.sNumeroLote, TD.sFecha, TD.sFechaCaducidad, TD.sObservaciones, TD.sFechaProxima, TD.dPeso FROM TranDesparacitacion TD INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TD.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
@@ -81,11 +77,24 @@ require 'conexion.php';
                     <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columna8"> <a href="eliminar_desp.php?id=<?php echo $fila['iCodTranDesparacitacion'] ?>" onclick="return alert_eliminarDesp();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
         ?>
+
+        <script type="text/javascript">
+        function alert_eliminarDesp(){
+            var respuesta = confirm("Estás seguro de eliminar la desparasitacion?");
+            if (respuesta == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+          
+        </script>
+
 
               		</tbody>
                     </table>
