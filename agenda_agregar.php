@@ -26,7 +26,11 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/estilos.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+
 	</head>
 
 	<body>
@@ -55,7 +59,7 @@ window.onload = function(){
  <p id="titulo-pagina">AGENDA</p> 
 
 <div class="contenedor_principal">
-<form class="form_add_cita" id="frmAgenda" action="insertar_cita.php" method="POST">
+<form class="form_add_cita" id="frmAgenda" action="insertar_cita.php" method="POST" onsubmit="return validarForm();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -78,9 +82,9 @@ window.onload = function(){
   </div>
   <div id="fechas_cita">
       <label for="inputfecha1" id="lblFechaA">Fecha</label>
-      <input type="date" class="input-append date" id="inputfecha1" name="fechaAgenda" required>
+      <input type="date" class="input-append date" id="inputfecha1" name="fechaAgenda">
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
-      <input type="time" id="inputhoraini" name="horaInicio" value="" required>
+      <input type="time" id="inputhoraini" name="horaInicio" value="" >
       <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
       <input type="checkbox" id="chkTodoDia" name="diaCita" onchange="validar(this.checked);">
 
@@ -102,8 +106,8 @@ window.onload = function(){
  </div>
   <div id="div_motivos">
       <label for="inputMotivos" id="lblMotivos">Motivos</label>
-      <select id="inputMotivos" name="codigoMotivo" required>
-        <option value="0">SELECCIONE UN MOTIVO</option>
+      <select id="inputMotivos" name="codigoMotivo">
+        <option value="">SELECCIONE UN MOTIVO</option>
         <?php
         $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
@@ -122,13 +126,40 @@ window.onload = function(){
     <input type="hidden" name="empresa" value="<?php //echo $motivos['iCodEmpresa'] ?>">
     <input type="hidden" name="pais" value="<?php //echo $motivos['vchPais'] ?>">
     <input type="hidden" name="estado" value="<?php //echo $motivos['vchEstado'] ?>">
-    <input type="hidden" name="ciudad" value="<?php //echo $motivos['vchCiudad'] ?>">
-  	<button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>-->
+    <input type="hidden" name="ciudad" value="<?php //echo $motivos['vchCiudad'] ?>">horaInicio-->
+  	<button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
     </form>
     </div>
   <div id="div_boton">
       <button class="botonAgregar" id="btnAgregarCita" type="submit">Agregar cita</button>
     </div>
+    <script type="text/javascript">
+      function validarForm() {
+      var motivos = document.getElementById("inputMotivos").value;
+      var txtHoraCita = document.getElementById("inputhoraini").value;
+
+      if(txtHoraCita == ""){
+        Swal.fire({
+          type:'error',
+          title: 'ERROR',
+          text:'Elige la hora'
+        });       
+        return false;
+      }
+
+      if(motivos == ""){
+        Swal.fire({
+          type:'error',
+          title: 'ERROR',
+          text:'Elige el motivo'
+        });      
+        return false;
+      }
+
+      return true;
+      
+        }
+      </script>
 </form> 
 
 </div>  

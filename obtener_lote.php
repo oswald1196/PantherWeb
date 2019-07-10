@@ -6,7 +6,7 @@
 
 	$consulta = "SELECT iCodProductoLote, vchLote FROM RelProductos WHERE iCodProducto = '$iCodProducto' AND iCodEmpresa = '$codigo' ORDER BY vchLote ASC";
 	$result = mysqli_query($conn,$consulta);
-	$html = "<option value='0'>SELECCIONAR LOTE</option>";
+	$html = "<option value=''>SELECCIONAR LOTE</option>";
 	while($row = $result->fetch_assoc()){
 		$html .= "<option value='".$row['iCodProductoLote']."'>".$row['vchLote']."</option>";
 	}

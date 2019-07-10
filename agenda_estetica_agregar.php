@@ -23,6 +23,10 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/estilos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 	</head>
 
@@ -47,12 +51,12 @@ window.onload = function(){
     dia='0'+dia; //agrega cero si el menor de 10
   if(mes<10)
     mes='0'+mes //agrega cero si el menor de 10
-  document.getElementById('inputFecha').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('inputFechaE').value=ano+"-"+mes+"-"+dia;
 }
 </script>
 
 <div class="contenedor-principal">
-<form class="form_estetica" action="insertar_estetica.php" method="POST">
+<form class="form_estetica" action="insertar_estetica.php" method="POST" onsubmit="return validarCitaEst();">
     <?php $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP' AND iCodEmpresa = '$codigoE'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
@@ -71,8 +75,8 @@ window.onload = function(){
         <input type="hidden" name="especie" value="<?php echo $row['iCodEspecie'] ?>">
         <input type="hidden" name="raza" value="<?php echo $row['vchRaza'] ?>">
 
-      <label for="inputEstilista" id="lblEstilista">Estilista</label>
       <select id="inputEstilista" name="estilista">
+        <option value=""> ESTILISTA </option>
         <?php
         $consulta = "SELECT iCodEstilista, vchNombre FROM CatEstilistas WHERE iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
@@ -84,8 +88,65 @@ window.onload = function(){
         ?>
       </select>
 
-      <label for="inputTipoServicio" id="lblTipo">Tipo servicio</label>
+      <script type="text/javascript">
+      function validarCitaEst() {
+      var valorEstilista = document.getElementById("inputEstilista").value;
+      var valorServicio = document.getElementById("inputTipoServicio").value;
+      var txtServicio = document.getElementById("inputServicioE").value;
+      var txtHoraIni = document.getElementById("inputHoraInicio").value;
+      var txtHoraFin = document.getElementById("inputHoraFinE").value;
+
+      if(valorEstilista == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige estilista'
+        });
+        return false;
+      }
+
+      if(valorServicio == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige tipo de servicio'
+        });
+        return false;
+      }
+
+      if(txtServicio == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige servicio'
+        });
+        return false;
+      }
+
+      if(txtHoraIni == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige hora de inicio'
+        });
+        return false;
+      }
+
+      if(txtHoraFin == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige hora de fin'
+        });
+        return false;
+      }
+
+            return true;
+        }
+      </script>
+
       <select id="inputTipoServicio" name="codigoServicio" onchange="ShowSelected();">
+        <option value=""> TIPO SERVICIO </option>
         <?php
         $consulta = "SELECT * FROM CatServicios WHERE iCodEmpresa = '$codigoE'";
         $result = mysqli_query($conn,$consulta);
@@ -107,8 +168,18 @@ window.onload = function(){
           }
         </script>
 
-      <label for="inputServicioE" id="lblTipo">Servicio</label>
-      <select id="inputServicioE" name="servicio"> </select>
+      <select id="inputServicioE" name="servicio" onchange="getPrecioServicio();"> </select>
+
+      <script type="text/javascript">
+          function getPrecioServicio(){
+          var iCodServicio = document.getElementById("inputServicioE").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerPrecioEstetica.php', { iCodServicio: iCodServicio, id: id }, function(data){
+              $("#inputPrecioS").html(data);
+              document.getElementById("inputPrecioS").value = data;
+                  }); 
+          }
+        </script>
   </div>
      <div id="datos_horario">
       <label for="inputPrecio" id="lblPrecioS">$</label>

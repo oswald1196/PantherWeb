@@ -33,7 +33,7 @@
     <ul class="nav navbar-nav">
       <li class="active"> <a href="home.php?id=<?php echo base64_encode($codigo)?>">Home</a></li>
       
-      <li class="altap"><a href="altapacientesac.php?id=<?php echo base64_encode($codigo)?>">Alta de paciente</a></li>
+      <li class="altap"><a href="altapacientesac.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a></li>
 
       <li><a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>">Buscar</a></li>
     </ul>

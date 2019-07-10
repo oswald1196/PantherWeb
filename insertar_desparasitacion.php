@@ -8,18 +8,41 @@
 	$cEmpresa = $_POST['empresa'];
 	$codPaciente = $_POST['paciente'];
 	$fecha = $_POST['fecha'];
-	$producto = $_POST['vacuna'];
-	$laboratorio = $_POST['laboratorio'];
-	$lote = $_POST['lote'];
-	$costo = $_POST['precio'];
+	$codigoDesp = $_POST['codigoDesp'];
+	$lote = $_POST['codLote'];
+	$precioVenta = $_POST['precio'];
 	$caducidad = $_POST['fechaC'];
 	$peso = $_POST['peso'];
-	$cita = $_POST['cita'];
-	$motivoP = $_POST['motivoProxima'];
-	$fechaCita = $_POST['fechaCita'];
-	$horaCita = $_POST['horaCita'];
+	$cantidad = $_POST['cantidad'];
+	$motivoP = $_POST['motivoCita'];
+	$fechaCita = $_POST['fecha'];
 
-	$sql = "INSERT INTO TranHecto (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodDesparacitacion, iCodPaciente, sFecha, sProductoAplicado, sFechaProxima, sObservaciones, iCodLaboratorio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iCodProducto, iCodProductoLote, sNumeroLote, sFechaCaducidad, dCantidad, vchUnidadMedida, dIVA, dSubtotal, dPorcentajeIVA, iEnvioCloud, dNoTransaccionCloud)
-	VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$producto', '$lote', '$motivoP', '$fechaCita', '$laboratorio', '$costo', '0', '0', '0', '0' '$caducidad', '0', 'PZA.', '0', '0', '0', '0', '$peso', '0', '0')";
+	if($cantidad == ""){
+		$cantidad = "0";
+	}
+
+	if($peso == ""){
+		$peso = "0";
+	}
+
+	$query = "SELECT vchDescripcion, dPrecioCosto, iCodTipoProducto FROM CatProductos WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
+
+	$resultado = mysqli_query($conn,$query);
+	$row = mysqli_fetch_assoc($resultado);
+
+	$nombreDesp = $row['vchDescripcion'];
+	$precioCosto = $row['dPrecioCosto'];
+	$iCodServicio = $row['iCodTipoProducto'];
+
+	$consulta = "SELECT vchLote FROM RelProductos WHERE iCodProductoLote = '$lote' AND iCodEmpresa = '$cEmpresa'";
+
+	$result = mysqli_query($conn,$consulta);
+	$fila = mysqli_fetch_assoc($result);
+
+	$nombreLote = $fila['vchLote'];
+
+	$sql = "INSERT INTO TranDesparacitacion (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodDesparacitacion, iCodPaciente, sFecha, sProductoAplicado, sFechaProxima, sObservaciones, iCodLaboratorio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iCodProducto, iCodProductoLote, sNumeroLote, sFechaCaducidad, dCantidad, vchUnidadMedida, vchServicio, dIVA, dSubtotal, dPorcentajeIVA, dPeso, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$nombreDesp', '$fechaCita', '$motivoP', '0', '$precioVenta', '$precioCosto', '$iCodServicio', '0', '$codigoDesp', '$lote', '$nombreLote', '$caducidad', '$cantidad', 'PZA.', '$motivoP', '0', '0', '0', '$peso', '2', '0')";
+
+ 	//$new = mysqli_query($conn,$sql);	
 
 ?>

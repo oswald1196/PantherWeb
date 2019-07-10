@@ -1,5 +1,7 @@
 <?php
     $codigo = base64_decode($_GET['id']);
+    $codigoM = base64_decode($_GET['cm']);
+
     include('conexion.php');
     include('header.php');
 ?>
@@ -23,6 +25,8 @@
     <link rel="stylesheet" href="assets/css/ace.min.css" />
     <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="assets/css/estilos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </head>
 <body>
@@ -41,13 +45,30 @@ window.onload = function(){
 }
 </script>
 
+<?php 
+$fecha_actual = date("Y-m-d");
+?>
+
         <div class="principal">
-            <form method="POST" class="form-alta" id="register-form">
+            <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php">
               
             <div class="title">
                 <p id="lblCita" style="color: white;"> Alta Paciente </p>
             </div>
               <div class="form-row">
+                <?php 
+                $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo' AND iCodMedico = '$codigoM'";
+                $query = mysqli_query($conn,$sql);
+                $datos = mysqli_fetch_assoc($query);
+                ?>
+                <input type="hidden" name="correo" value="<?php echo $datos['vchCorreo'] ?>">
+                <input type="hidden" name="empresa" value="<?php echo $datos['iCodEmpresa'] ?>">
+                <input type="hidden" name="pais" value="<?php echo $datos['vchPais'] ?>">
+                <input type="hidden" name="estado" value="<?php echo $datos['vchEstado'] ?>">
+                <input type="hidden" name="ciudad" value="<?php echo $datos['vchCiudad'] ?>">
+                <input type="hidden" name="codigoM" value="<?php echo $datos['iCodMedico'] ?>">
+                <input type="hidden" name="fecha_hoy" value="<?php echo $fecha_actual ?>">
+
                             <div class="form-paciente">
                               <span class="title-paciente"> Paciente </span>
 
@@ -55,21 +76,38 @@ window.onload = function(){
                                     <!--:->
                                     <label for="nombrePaciente" id="lblNombre" class="required">Nombre</label>
                                     <!-:-->
-                                    <input type="text" name="nombre" id="nombrePaciente" placeholder="Nombre" />
+                                    <input type="text" name="nombrePaciente" id="nombrePaciente" placeholder="Nombre" required/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label class="required" id="lblEspecie">Especie</label>
                                     <!-:-->
-                                    <select id="sltEspecie" name="sltEspecie" onchange="ShowSelected();"> 
-                                    <option value="0">Seleccionar Especie</option>
+                                    <select id="sltEspecie" name="codigoEspecie" onchange="ShowSelected();"> 
+                                    <option id="optEspecie" value="" selected="selected">Seleccionar Especie</option>
                                         <?php
                                           $consulta = "SELECT iCodEspecie, vchEspecie FROM CatEspecies WHERE iCodEmpresa = '$codigo' ORDER BY vchEspecie ASC";
                                           $result = mysqli_query($conn,$consulta); 
                                         while($especies = $result->fetch_assoc()) { ?>
-                                        <option value="<?php echo $especies['iCodEspecie']; ?>"> <?php echo $especies['vchEspecie']; ?> </option>
+                                        <option id="optEspecie" value="<?php echo $especies['iCodEspecie']; ?>"> <?php echo $especies['vchEspecie']; ?> </option>
                                         <?php } ?>
                                     </select>
+
+                                <script type="text/javascript">    
+                                function validar() {
+                                    var select = document.getElementById("sltEspecie").value;
+                                    var raza = document.getElementById("sltRaza").value;
+
+                                if(select == ""  || raza == ""){
+                                    alert("Faltan datos");
+                                    return false;
+                                }
+                                else {
+                                    return true;
+                                    }
+                                }    
+                                </script>
+                                
+
                                 <script type="text/javascript">
                                     function ShowSelected(){
                                     var cod = document.getElementById("sltEspecie").value;
@@ -80,13 +118,42 @@ window.onload = function(){
                                         }
                                 </script>
 
+                                <script>
+                                    function soloLetras(e){
+                                        key = e.keyCode || e.which;
+                                        tecla = String.fromCharCode(key).toLowerCase();
+                                        letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
+                                        especiales = "8-37-39-46";
+
+                                        tecla_especial = false
+                                        for(var i in especiales){
+                                            if(key == especiales[i]){
+                                                tecla_especial = true;
+                                            break;
+                                            }
+                                        }
+                                        if(letras.indexOf(tecla)==-1 && !tecla_especial){
+                                            return false;
+                                        }
+                                    }
+                                </script>
+
+                                <!--<script type="text/javascript">
+                                function validaNumericos(event) {
+                                    if(event.charCode >= 48 && event.charCode <= 57){
+                                        return true;
+                                        }
+                                    return false;        
+                                }
+                                </script>-->
+
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="sltRaza" class="required" id="lblRaza">Raza</label>
                                     <!-:-->
-                                    <select id="sltRaza" placeholder="Selecciona Raza">
-                                    <option value="0">SELECCIONA RAZA</option>   
+                                    <select id="sltRaza" placeholder="Selecciona Raza" name="codigoRaza">
+                                    <option id="optRaza" value="0">SELECCIONA RAZA</option>   
                                     </select>
                                 </div>
 
@@ -94,13 +161,15 @@ window.onload = function(){
                                     <!--:->
                                     <label for="sltColor" class="required" id="lblColor">Color</label>
                                     <!-:-->
-                                    <select id="sltColor"> 
-                                    <option value=0>Color</option>
+                                    <select id="sltColor" name="iCodColor" required="true"> 
+                                    <option value="0">COLOR</option>
                                         <?php
                                           $consulta = "SELECT * FROM CatColor ORDER BY vchColor ASC";
                                           $result = mysqli_query($conn,$consulta);
                                           while ($color = mysqli_fetch_array($result)) {
-                                          echo '<option>'.$color['vchColor'].'</option>';
+                                            ?>
+                                         <option id="optColor" value="<?php echo $color['iCodColor'];?>"><?php echo $color['vchColor']; ?></option>;
+                                         <?php
                                         }
                                         ?>
                                     </select>
@@ -112,61 +181,61 @@ window.onload = function(){
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="tipoServicio" id="radioGenero">
                                     <!-Radio original-->
 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked><label for="radio-one"></label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="MACHO" id="radio-one" class="form-radio" checked><label for="radio-one"></label>
 
 
 
-                                    <label for="radioGenero" class="required" id="lblGenero">Hembra</label>
+                                    <label for="radioGenero" class="required" id="lblGenero" value="HEMBRA">Hembra</label>
 
                                     <!--Radio original->
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="tipoServicio" id="radioGenero">
                                     <!-Radio original-->
 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="demo" value="one" id="radio-one" class="form-radio" checked><label for="radio-one"></label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio"><label for="radio-one"></label>
                                   </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputMeses" class="required" id="lblMeses">Meses</label>
                                     <!-:-->
-                                    <input type="text" name="tipoServicio" id="inputMeses" placeholder="Meses">
+                                    <input type="text" name="tipoServicio" id="inputMeses" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="MESES">
                                     <!--:->
                                     <label for="inputAnios" class="required" id="lblAnios">Años</label>  
                                     <!-:-->
-                                    <input type="text" name="tipoServicio" id="inputAnios" placeholder="Años">        
+                                    <input type="text" name="tipoServicio" id="inputAnios" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="AÑOS">        
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputFechaNac" class="required" id="lblFNac">Fecha Nac</label>
                                     <!-:-->
-                                    <input type="date" name="last_name" id="inputFechaNac" />
+                                    <input type="date" name="fechaNac" id="inputFechaNac" />
                                 </div>
 
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputChip" class="required" id="lblChip">Chip</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputChip" placeholder="Chip" />
+                                    <input type="text" name="chip" id="inputChip" placeholder="Chip" />
                                 </div>
 
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputExpediente" class="required" id="lblExp">No. Expediente</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputExpediente" placeholder="No. Expediente" />
+                                    <input type="text" name="expediente" id="inputExpediente" placeholder="NO. EXPEDIENTE" />
                                 </div>
 
                                 <div class="form-input">
                                     <!--:->
                                     <label for="company" class="required" id="lblObs">Observaciones</label>
                                     <!-:-->
-                                    <textarea id="txtObservaciones" placeholder="Observaciones"></textarea> 
+                                    <textarea id="txtObservaciones" name="observaciones" placeholder="Observaciones"></textarea> 
                                 </div>
                                 <div class="form-input">
                                     <label for="email" class="required" id="lblEsteril">Esterilizado</label>
                                     <!--:->
                                     <input type="checkbox" id="chkEsteril" name="email" id="email" />
                                     <!-:-->
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-checkbox" id="check-one" checked><label for="check-one"></label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="castrado" class="form-checkbox" id="check-one"><label for="check-one"></label>
                                 </div>
                             </div>
                             <div class="form-propietario">
@@ -175,59 +244,65 @@ window.onload = function(){
                                     <!--:->
                                     <label for="inputNombreP" class="required" id="lblProp">Nombre</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputNombreP" placeholder="Nombre" />
+                                    <input type="text" onkeypress="return soloLetras(event)" name="nombreProp" id="inputNombreP" placeholder="Nombre" required/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputPaterno" class="required" id="lblPaternoP">A. Paterno</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputPaterno" placeholder="A. Paterno" />
+                                    <input type="text" onkeypress="return soloLetras(event)" name="paternoProp" id="inputPaterno" placeholder="A. Paterno" required/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputMaterno" class="required" id="lblMaternoP">A. Materno</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputMaterno" placeholder="A. Materno" />
+                                    <input type="text" name="maternoProp" id="inputMaterno" placeholder="A. Materno"/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputTelefono" class="required" id="lblTel">Teléfono</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputTelefono" placeholder="Teléfono" />
+                                    <input type="text" name="telefonoProp" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="inputTelefono" placeholder="Teléfono" required/>
+                                </div>
+                                <div class="form-input">
+                                    <!--:->
+                                    <label for="inputTelefono" class="required" id="lblTel">Teléfono</label>
+                                    <!-:-->
+                                    <input type="text" name="telefonoDos" id="inputTelefonoDos" placeholder="Otro teléfono" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputCorreo" class="required" id="lblCorreo">Correo</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputCorreo" placeholder="Correo" />
+                                    <input type="text" name="correoProp" id="inputCorreo" placeholder="Correo"/>
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputDireccion" class="required" id="lblDireccion">Dirección</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputDireccion" placeholder="Dirección" />
+                                    <input type="text" name="direccionProp" id="inputDireccion" placeholder="Dirección" />
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputColonia" class="required" id="lblColonia">Colonia</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputColonia" placeholder="Colonia" />
+                                    <input type="text" name="coloniaProp" id="inputColonia" placeholder="Colonia" />
                                 </div>
                                 <div class="form-input">
                                     <!--:->
                                     <label for="inputCP" class="required" id="lblCP">Código Postal</label>
                                     <!-:-->
-                                    <input type="text" name="company" id="inputCP" placeholder="Código Postal" />
+                                    <input type="text" name="cpProp" id="inputCP" placeholder="Código Postal" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                                   </div>
-                                <div class="form-input">
-                                 <select id="inputIdioma"> 
+                                <!--<div class="form-input">
+                                 <select id="inputIdioma" disabled="true" => 
                                     <option value="">Enviar citas en</option>
                                     <option value="1">Español</option>
                                     <option value="2">Inglés</option>
                                   </select>
-                                </div>
+                                </div>-->
                                 <!--Btn con input-->
-                                   <input type="submit" value="Agregar" class="btnAlta" id="submit" name="" />
+                                   <input type="submit" value="Agregar" class="btnAlta" id="btnAltaPac" name="" onclick="return validar();"/>
                                 <!--Btn con input-->
 
                                 <!--Btn con icono->
@@ -239,6 +314,5 @@ window.onload = function(){
                     </form>
                 </div>
       
-
     </body>
 </html>

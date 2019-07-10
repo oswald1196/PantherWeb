@@ -12,13 +12,18 @@
 	$codProp = $_POST['propietario'];
 	$iCodServicio = $_POST['codigoServicio'];
 	$fecha = $_POST['fechaEst'];
+	$servicio = $_POST['servicio'];
 	$horaInicio = $_POST['horaInicio'];
 	$horaFin = $_POST['horaFin'];
 	$notas = $_POST['notas'];
 	$estilista = $_POST['estilista'];
 	$precio = $_POST['precioServicio'];
 
-	//Obtener codigo de raza
+      if(strlen($notas) <= 1){
+      	$notas = "-";
+      }
+
+		//Obtener codigo de raza
 	$consulta = "SELECT iCodRaza FROM CatRazas WHERE vchRaza = '$raza' AND iCodEmpresa = '$cEmpresa'";
 	
 	$resultado = mysqli_query($conn,$consulta);
@@ -34,6 +39,18 @@
 
     $nombreEst = $fila['vchNombre'];
 
-	//$sql = "INSERT INTO TranAgendaEstetica (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodAgenda, iCodPaciente, iCodEspecie, iCodRaza, iCodPropietario, iCodServicio, dtFecha, dtHoraIni, dtHoraFin, vchObservaciones, iCodMatrizIni, iCodMatrizFin, iCodEstatus, iCodEstilista, vchNombre, iCodServicioPago, vchDescripcion, dPrecio, dPrecioCosto, iCodServicios, iCodUrgencias, iEstatusServicio, dIVA, dSubtotal, dPorcentajeIVA, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$codEspecie', '$codigoRaza', '$codProp', '$iCodServicio', '$fecha', '$horaInicio', '$horaFin', '$notas', '0', '0', '1', '$estilista', '$nombreEst', '$producto', '0', '$precio', '0', '0', '0', '0', '0', '0', '0', '0')";
+    //Obtener datos de servicio
+    $service = "SELECT vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodServicio = '$servicio' AND iCodEmpresa = '$cEmpresa'";
 
+    $resultado2 = mysqli_query($conn,$service);
+    $services = mysqli_fetch_assoc($resultado2);
+
+    $nombreServ = $services['vchDescripcion'];
+    $comision = $services['dPrecioCosto'];
+
+	$sql = "INSERT INTO TranAgendaEstetica (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodAgenda, iCodPaciente, iCodEspecie, iCodRaza, iCodPropietario, iCodServicio, dtFecha, dtHoraIni, dtHoraFin, vchObservaciones, iCodMatrizIni, iCodMatrizFin, iCodEstatus, iCodEstilista, vchNombre, iCodServicioPago, vchDescripcion, dPrecio, dPrecioCosto, iCodServicios, iCodUrgencias, iEstatusServicio, dIVA, dSubtotal, dPorcentajeIVA, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$codEspecie', '$codigoRaza', '$codProp', '$iCodServicio', '$fecha', '$horaInicio', '$horaFin', '$notas', '0', '0', '1', '$estilista', '$nombreEst', '0', '$nombreServ', '$precio', '$comision', '0', '0', '0', '0', '0', '0', '2', '0')";
+
+	echo $sql;
+
+ 	//$new = mysqli_query($conn,$sql);	
 ?>
