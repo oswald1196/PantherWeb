@@ -51,7 +51,7 @@ require 'conexion.php';
                     <tbody>
 
                     <thead id="contenedor_cabecera">
-                        <tr id="cabecera_tabla">
+                        <tr valign="bottom" id="cabecera_tabla">
                             <th id="c_fecha">Fecha</th>
                             <th id="c_descripcion">Descripción</th>
                             <th id="c_proxima">Próxima</th>

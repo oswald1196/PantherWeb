@@ -13,7 +13,10 @@
   JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-
+  
+  <!--Iconos-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Iconos--> 
 
 </head>
   
@@ -40,8 +43,17 @@
 
 
     <ul class="nav navbar-nav navbar-right">
+      
+
+      <li><a href="#"><i class="material-icons" style="color: white; font-size: 13px;">person</i> Perfil</a></li>
+
+      <!--:->
       <li><a href="#"><span class="glyphicon glyphicon-user"></span> Perfil</a></li>
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-in"></span> Salir</a></li>
+      <!-:-->
+      
+      <li><a href="logout.php"><i class="material-icons" style="color: white; font-size: 13px;">exit_to_app</i>Salir</a></li>   
+
     </ul>
   </div>
 </nav>
