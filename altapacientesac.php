@@ -26,7 +26,9 @@
     <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
     <link rel="stylesheet" href="assets/css/estilos.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
 <body>
@@ -50,7 +52,7 @@ $fecha_actual = date("Y-m-d");
 ?>
 
         <div class="principal">
-            <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php">
+            <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php" onsubmit="return validarPaciente();">
               
             <div class="title">
                 <p id="lblCita" style="color: white;"> Alta Paciente </p>
@@ -73,15 +75,11 @@ $fecha_actual = date("Y-m-d");
                               <span class="title-paciente"> Paciente </span>
 
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="nombrePaciente" id="lblNombre" class="required">Nombre</label>
-                                    <!-:-->
-                                    <input type="text" name="nombrePaciente" id="nombrePaciente" placeholder="Nombre" required/>
+                                   
+                                    <input type="text" name="nombrePaciente" id="nombrePaciente" placeholder="Nombre"/>
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label class="required" id="lblEspecie">Especie</label>
-                                    <!-:-->
+                                    
                                     <select id="sltEspecie" name="codigoEspecie" onchange="ShowSelected();"> 
                                     <option id="optEspecie" value="" selected="selected">Seleccionar Especie</option>
                                         <?php
@@ -90,23 +88,7 @@ $fecha_actual = date("Y-m-d");
                                         while($especies = $result->fetch_assoc()) { ?>
                                         <option id="optEspecie" value="<?php echo $especies['iCodEspecie']; ?>"> <?php echo $especies['vchEspecie']; ?> </option>
                                         <?php } ?>
-                                    </select>
-
-                                <script type="text/javascript">    
-                                function validar() {
-                                    var select = document.getElementById("sltEspecie").value;
-                                    var raza = document.getElementById("sltRaza").value;
-
-                                if(select == ""  || raza == ""){
-                                    alert("Faltan datos");
-                                    return false;
-                                }
-                                else {
-                                    return true;
-                                    }
-                                }    
-                                </script>
-                                
+                                    </select>                            
 
                                 <script type="text/javascript">
                                     function ShowSelected(){
@@ -138,31 +120,18 @@ $fecha_actual = date("Y-m-d");
                                     }
                                 </script>
 
-                                <!--<script type="text/javascript">
-                                function validaNumericos(event) {
-                                    if(event.charCode >= 48 && event.charCode <= 57){
-                                        return true;
-                                        }
-                                    return false;        
-                                }
-                                </script>-->
-
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="sltRaza" class="required" id="lblRaza">Raza</label>
-                                    <!-:-->
+                                   
                                     <select id="sltRaza" placeholder="Selecciona Raza" name="codigoRaza">
                                     <option id="optRaza" value="0">SELECCIONA RAZA</option>   
                                     </select>
                                 </div>
 
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="sltColor" class="required" id="lblColor">Color</label>
-                                    <!-:-->
-                                    <select id="sltColor" name="iCodColor" required="true"> 
-                                    <option value="0">COLOR</option>
+                                    
+                                    <select id="sltColor" name="iCodColor"> 
+                                    <option value="">COLOR</option>
                                         <?php
                                           $consulta = "SELECT * FROM CatColor ORDER BY vchColor ASC";
                                           $result = mysqli_query($conn,$consulta);
@@ -177,121 +146,78 @@ $fecha_actual = date("Y-m-d");
                                     <div class="form-input">
                                     <label for="radioGenero" class="required" id="lblGenero">Macho</label>
 
-                                    <!--Radio original->
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="tipoServicio" id="radioGenero">
-                                    <!-Radio original-->
-
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="MACHO" id="radio-one" class="form-radio" checked><label for="radio-one"></label>
 
-
-
                                     <label for="radioGenero" class="required" id="lblGenero" value="HEMBRA">Hembra</label>
-
-                                    <!--Radio original->
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="tipoServicio" id="radioGenero">
-                                    <!-Radio original-->
 
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio"><label for="radio-one"></label>
                                   </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputMeses" class="required" id="lblMeses">Meses</label>
-                                    <!-:-->
+                                  
                                     <input type="text" name="tipoServicio" id="inputMeses" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="MESES">
-                                    <!--:->
-                                    <label for="inputAnios" class="required" id="lblAnios">Años</label>  
-                                    <!-:-->
+                                  
                                     <input type="text" name="tipoServicio" id="inputAnios" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="AÑOS">        
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputFechaNac" class="required" id="lblFNac">Fecha Nac</label>
-                                    <!-:-->
+                                   
                                     <input type="date" name="fechaNac" id="inputFechaNac" />
                                 </div>
 
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputChip" class="required" id="lblChip">Chip</label>
-                                    <!-:-->
+                                  
                                     <input type="text" name="chip" id="inputChip" placeholder="Chip" />
                                 </div>
 
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputExpediente" class="required" id="lblExp">No. Expediente</label>
-                                    <!-:-->
+                                    
                                     <input type="text" name="expediente" id="inputExpediente" placeholder="NO. EXPEDIENTE" />
                                 </div>
 
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="company" class="required" id="lblObs">Observaciones</label>
-                                    <!-:-->
+                                  
                                     <textarea id="txtObservaciones" name="observaciones" placeholder="Observaciones"></textarea> 
                                 </div>
                                 <div class="form-input">
                                     <label for="email" class="required" id="lblEsteril">Esterilizado</label>
-                                    <!--:->
-                                    <input type="checkbox" id="chkEsteril" name="email" id="email" />
-                                    <!-:-->
+                            
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="castrado" class="form-checkbox" id="check-one"><label for="check-one"></label>
                                 </div>
                             </div>
                             <div class="form-propietario">
                               <span class="title-propietario"> Propietario </span>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputNombreP" class="required" id="lblProp">Nombre</label>
-                                    <!-:-->
-                                    <input type="text" onkeypress="return soloLetras(event)" name="nombreProp" id="inputNombreP" placeholder="Nombre" required/>
+                                    
+                                    <input type="text" onkeypress="return soloLetras(event)" name="nombreProp" id="inputNombreP" placeholder="Nombre" />
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputPaterno" class="required" id="lblPaternoP">A. Paterno</label>
-                                    <!-:-->
-                                    <input type="text" onkeypress="return soloLetras(event)" name="paternoProp" id="inputPaterno" placeholder="A. Paterno" required/>
+                                 
+                                    <input type="text" onkeypress="return soloLetras(event)" name="paternoProp" id="inputPaterno" placeholder="A. Paterno"/>
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputMaterno" class="required" id="lblMaternoP">A. Materno</label>
-                                    <!-:-->
+                                    
                                     <input type="text" name="maternoProp" id="inputMaterno" placeholder="A. Materno"/>
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputTelefono" class="required" id="lblTel">Teléfono</label>
-                                    <!-:-->
-                                    <input type="text" name="telefonoProp" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="inputTelefono" placeholder="Teléfono" required/>
+                                    
+                                    <input type="text" name="telefonoProp" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="inputTelefono" placeholder="Teléfono" />
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputTelefono" class="required" id="lblTel">Teléfono</label>
-                                    <!-:-->
+                                  
                                     <input type="text" name="telefonoDos" id="inputTelefonoDos" placeholder="Otro teléfono" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputCorreo" class="required" id="lblCorreo">Correo</label>
-                                    <!-:-->
+                                 
                                     <input type="text" name="correoProp" id="inputCorreo" placeholder="Correo"/>
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputDireccion" class="required" id="lblDireccion">Dirección</label>
-                                    <!-:-->
+                                   
                                     <input type="text" name="direccionProp" id="inputDireccion" placeholder="Dirección" />
                                 </div>
                                 <div class="form-input">
-                                    <!--:->
-                                    <label for="inputColonia" class="required" id="lblColonia">Colonia</label>
-                                    <!-:-->
+                                   
                                     <input type="text" name="coloniaProp" id="inputColonia" placeholder="Colonia" />
                                 </div>
-                                <div class="form-input">
-                                    <!--:->
-                                    <label for="inputCP" class="required" id="lblCP">Código Postal</label>
-                                    <!-:-->
+                                <div class="form-input">                                    
                                     <input type="text" name="cpProp" id="inputCP" placeholder="Código Postal" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
                                   </div>
                                 <!--<div class="form-input">
@@ -301,13 +227,96 @@ $fecha_actual = date("Y-m-d");
                                     <option value="2">Inglés</option>
                                   </select>
                                 </div>-->
-                                <!--Btn con input-->
-                                   <input type="submit" value="Agregar" class="btnAlta" id="btnAltaPac" name="" onclick="return validar();"/>
-                                <!--Btn con input-->
+                                   <input type="submit" value="Agregar" class="btnAlta" id="btnAltaPac" name=""/>
+                                
+    <script type="text/javascript">
+        function validarPaciente() {
+        var nPaciente = document.getElementById("nombrePaciente").value;
+        var especie = document.getElementById("sltEspecie").value;
+        var raza = document.getElementById("sltRaza").value;
+        var color = document.getElementById("sltColor").value;
+        var nPropietario = document.getElementById("inputNombreP").value;
+        var aPropietario = document.getElementById("inputPaterno").value;
+        var tPropietario = document.getElementById("inputTelefono").value;
+        var cPropietario = document.getElementById("inputCorreo").value;
 
-                                <!--Btn con icono->
-                                <button class="btnAlta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar</button>   
-                                <!-Btn con icono-->
+
+        if(nPaciente == ""){
+            Swal.fire({
+            type:'error',
+            title:'ERROR',
+            text:'Falta nombre de paciente'
+            });
+        return false;
+        }
+
+        if(especie == ""){
+            Swal.fire({
+            type:'error',
+            title:'ERROR',
+            text:'Falta especie'
+            });
+         //$('#inputLab').css("background-color","red"); 
+            return false;
+        }
+
+      if(raza == ""){
+         Swal.fire({
+          type:'warning',
+          title:'ERROR',
+          text:'Falta raza'
+        });
+          return false;
+        }
+
+        if(color == ""){
+         Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta color'
+        });
+          return false;
+        }
+
+        if(nPropietario == ""){
+          Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta nombre del propietario'
+        });
+          return false;
+        }
+
+        if(aPropietario == ""){
+          Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta apellido paterno del propietario'
+        });
+          return false;
+        }
+
+        if(tPropietario == ""){
+          Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta teléfono del propietario'
+        });
+          return false;
+        }
+
+        if(cPropietario == ""){
+          Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta correo del propietario, en caso de no tener agregar el de su clínica'
+        });
+          return false;
+        }
+
+            return true;
+        }
+      </script>
 
                             </div>
                     </div>

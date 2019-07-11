@@ -92,7 +92,7 @@
 	width: 411px;
 	height: 40px;
 	margin-left: 70px;
-	color: #FA8072;
+	color: gray;
 	text-transform: uppercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
@@ -106,7 +106,7 @@
 	text-transform: uppercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	color: #FA8072;
+	color: gray;
 }
 
 #sltRaza {
@@ -116,7 +116,7 @@
 	margin-left: 70px;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	color: #FA8072;
+	color: gray;
 }
 
 #sltColor {
@@ -126,7 +126,7 @@
 	margin-left: 70px;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-    color: #FA8072;
+    color: gray;
 }
 
 #inputFechaNac{
@@ -278,27 +278,6 @@
 }
 /*EndCheckbox*/
 /***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-#inputNombreP::-webkit-input-placeholder, #inputPaterno::-webkit-input-placeholder, 
-#inputTelefono::-webkit-input-placeholder, #nombrePaciente::-webkit-input-placeholder
-  { /* WebKit, Blink, Edge */
-    color: #FA8072;
-}
-
-#inputCorreo::-webkit-input-placeholder
-  { /* WebKit, Blink, Edge */
-    color: gold;
-}
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #FA8072;
-   opacity: 1 /* esto es porque Firefox le reduce la opacidad por defecto */;
-}
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #FA8072;
-   opacity:  1;
-}
-:-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: #FA8072;
-}
 
 #optColor {
     color: gray;

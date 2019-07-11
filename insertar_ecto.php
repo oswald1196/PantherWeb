@@ -15,10 +15,16 @@
 	if (isset($_POST['motivoCitaEcto']) == ""){
 		$motivoP = "-";
 	} 
+	else {
+		$motivoP = $_POST['motivoCitaEcto'];
+	}
 
 	if (isset($_POST['fechaProx']) == ""){
 		$fechaCitaProx = "01-01-1900";
 	} 
+	else {
+		$fechaCitaProx = $_POST['fechaProx'];
+	}
 
 	$query = "SELECT iCodProducto, vchDescripcion, iCodTipoProducto, dPrecioVenta, dPrecioCosto FROM CatProductos WHERE iCodProducto = '$ecto' AND iCodEmpresa = '$cEmpresa'";
 

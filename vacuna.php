@@ -267,6 +267,17 @@ $fecha_actual = date("Y-m-d");
         });
           return false;
         }
+
+        /*if(fechaCita < fechaHoy){
+          Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:' Fecha'
+        });
+          return false;
+        }*/
+
+
             return true;
         }
       </script>

@@ -198,7 +198,7 @@ window.onload = function(){
 
         document.getElementById("motivoCita").disabled=true;
         document.getElementById("fechaCita").disabled=true;
-        document.getElementById("fechaCita").value="1900-01-01";
+        document.getElementById("fechaCita").value="-";
         document.getElementById("inputHoraCita").disabled=true;
         document.getElementById("inputHoraCita").value="00:00";
 

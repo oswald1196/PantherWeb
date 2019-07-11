@@ -59,7 +59,7 @@ window.onload = function(){
  <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
-<form class="form_add_cita" action="insertar_desparasitacion.php" method="POST" onsubmit=" return validadDesp();">
+<form class="form_add_cita" action="" method="POST" onsubmit=" return validadDesp();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -174,9 +174,13 @@ window.onload = function(){
         }else if(value==false){
         // deshabilitamos
         document.getElementById("motivoCita").disabled=true;
-        document.getElementById("fechaCita").disabled=true;
-        document.getElementById("inputHoraCita").disabled=true;
+        document.getElementById("motivoCita").value="-";
 
+        document.getElementById("fechaCita").disabled=true;
+        document.getElementById("fechaCita").value="-";
+        
+        document.getElementById("inputHoraCita").disabled=true;
+        document.getElementById("inputHoraCita").value="00:00";
       }
     }
   </script>
@@ -238,13 +242,13 @@ window.onload = function(){
       </select>
         <div class="form-group">
         <label id="lblFechaCita"> Fecha </label>
-        <input type="date" name="fecha" id="fechaCita">
+        <input type="date" name="fechaCita" id="fechaCita">
         </div>
         <div class="form-group">
         <label id="lblHoraCita"> Hora </label>
         <input type="time" name="hora" id="inputHoraCita">
       </div>
-        <button class="boton" type="submit">Agregar desparasitación</button>
+        <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
       </div>
     </div>
 </form>  
