@@ -25,6 +25,10 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/estilos.css" />
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+    <link rel="stylesheet" href="dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -60,8 +64,13 @@ window.onload = function(){
 }
 </script>
 
+<?php 
+$fecha_actual = date("Y-m-d");
+?>
+
+
 <div class="container">
-<form class="form_add_cita" action="insertar_vacuna.php" method="POST">
+<form class="form_add_cita" action="insertar_vacuna.php" method="POST" onsubmit="return validarVacuna();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -82,9 +91,9 @@ window.onload = function(){
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fechaVacuna" tabindex="1">
       <label id="lblLab" for="inputLab"> <i class="fas fa-vials"></i>&nbsp;&nbsp; Laboratorio </label>
-      <select id="inputLab" name="laboratorio" tabindex="2" onchange="ShowSelected();">
+      <select id="inputLab" name="laboratorio" onchange="ShowSelected();">
         <!--:v-->
-        <option value="0">Elegir Laboratorio</option>
+        <option value="">Elegir Laboratorio</option>
         <!--:v-->
         <?php
         $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigoE' ORDER BY vchMarca ASC";
@@ -110,26 +119,52 @@ window.onload = function(){
           var codigoProducto = document.getElementById("inputProducto").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtener_lote.php', { iCodProducto: codigoProducto, id: id }, function(data){
-              $('#inputLote').html(data);
+              $('#inputLoteVac').html(data);
                   });  
           }                                   
       </script>
 
-      <script type="text/javascript">
-        function cambioOpciones()
-        {
-            document.getElementById('inputPrecio').value = document.getElementById('inputProducto')[1].value;
-        }
-    </script>
+       <script type="text/javascript">
+          function precioVacuna(){
+          var codigoProducto = document.getElementById("inputProducto").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerPrecioVacuna.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#inputPrecioVac').html(data);
+              document.getElementById("inputPrecioVac").value = data;
+
+                  });
+          }
+
+          function precioVacunaLote(){
+          var codigoProducto = document.getElementById("inputLoteVac").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerPrecioLoteVacuna.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
+              $('#PrecioLote').html(data);
+              document.getElementById("inputPrecioVac").value = data;
+
+                  });
+          }
+
+          function caducidadVacuna(){
+          var codigoProducto = document.getElementById("inputLoteVac").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerCaducidadVacuna.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
+              $('#cad').html(data);
+              document.getElementById("inputFechaCad").value = data;
+
+                  });
+          }
+       </script>
 
       <label id="lblProducto"> <i class="fas fa-syringe"></i>&nbsp;&nbsp; Vacuna </label>
-      <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); cambioOpciones();"> </select>
+      <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); precioVacuna();"> </select>
 
       <label id="lblLote"> <i class="fas fa-boxes"></i>&nbsp;&nbsp; Lote </label>
-      <select id="inputLote" name="lote"> </select>      
+      <select id="inputLoteVac" name="lote" onchange="precioVacunaLote(); caducidadVacuna();"> </select>      
       <label id="lblPrecio"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;Precio</label>
-      <input type="text" id="inputPrecio" name="precio">
+      <input type="text" id="inputPrecioVac" name="precio">
 
+      <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
     
 
       <label for="inputfechacad" id="lblFechaCad"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Caducidad</label>
@@ -156,8 +191,13 @@ window.onload = function(){
         }else if(value==false){
         // deshabilitamos
         document.getElementById("inputProxima").disabled=true;
+        document.getElementById("inputProxima").value="-";
         document.getElementById("fechaCita").disabled=true;
+        document.getElementById("fechaCita").value="-";
+
         document.getElementById("inputHoraCita").disabled=true;
+        document.getElementById("inputHoraCita").value="00:00";
+
 
       }
     }
@@ -165,12 +205,14 @@ window.onload = function(){
        
         <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>
         <select id="inputProxima" name="motivoProxima">
-        <option value=0>VACUNA</option>
+        <option value="">VACUNA</option>
         <?php
         $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5 AND iCodMarca = 1000 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
         $result = mysqli_query($conn,$consulta);
         while ($motivos = mysqli_fetch_array($result)) {
-          echo '<option>'.$motivos['vchDescripcion'].'</option>';
+          ?>
+          <option value="<?php echo $motivos['vchDescripcion'] ?>"> <?php echo $motivos['vchDescripcion'] ?> </option>
+          <?php
                   }
         ?>
       </select>
@@ -180,6 +222,55 @@ window.onload = function(){
         <input type="time" name="horaCita" id="inputHoraCita">
         <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar vacuna</button>
       </div>
+
+      <script type="text/javascript">
+      function validarVacuna() {
+      var txtLab = document.getElementById("inputLab").value;
+      var txtVacuna = document.getElementById("inputProducto").value;
+      var txtLote = document.getElementById("inputLoteVac").value;
+      var fechaCad = document.getElementById("inputFechaCad").value;
+      var fechaHoy = document.getElementById("fechaActual").value;
+
+      if(fechaCad < fechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Producto caducado'
+        });
+        return false;
+      }
+
+      if(txtLab == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige laboratorio'
+        });
+         //$('#inputLab').css("background-color","red"); 
+          return false;
+      }
+
+      if(txtVacuna == ""){
+         Swal.fire({
+          type:'warning',
+          title:'ERROR',
+          text:' Elige vacuna'
+        });
+          return false;
+        }
+
+        if(txtLote == ""){
+         Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:' Elige lote'
+        });
+          return false;
+        }
+            return true;
+        }
+      </script>
+
     </div>
 </form>  
 </div>  

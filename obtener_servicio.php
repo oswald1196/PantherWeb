@@ -6,7 +6,7 @@
 
 	$consulta = "SELECT iCodServicio, vchDescripcion FROM CatServicios WHERE iCodLaboratorio = '$iCodTipoServicio' AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion ASC";
 	$result = mysqli_query($conn,$consulta);
-	$html = "<option value='0'>ELIGE EL SERVICIO</option>";
+	$html = "<option value=''>ELIGE EL SERVICIO</option>";
 	while($row = $result->fetch_assoc()){
 		$html .= "<option value='".$row['iCodServicio']."'>".$row['vchDescripcion']."</option>";
 	}

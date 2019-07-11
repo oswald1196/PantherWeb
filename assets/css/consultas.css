@@ -94,21 +94,25 @@
 	height: 90%;
 	width: 90%;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #txtReceta {
 	height: 200%;
 	width: 90%;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
+
 }
 
 #txtMotivo{
 	height: 90%;
 	width: 90%;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputFechaConsulta {
@@ -117,7 +121,8 @@
 	margin-left: 78%;
 	margin-right: 1%;
 	border-radius: 10px;
-	border: 3px solid #40444745	
+	border: 3px solid #40444745;
+	color:gray;	
 }
 
 a {
@@ -157,7 +162,9 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
+
 }
 
 #inputFR {
@@ -168,7 +175,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputPresion{
@@ -178,7 +186,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 } 
 
 #inputLlenado{
@@ -188,7 +197,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputTemp {
@@ -199,7 +209,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #selectMucosas{
@@ -210,7 +221,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputPesoC{
@@ -221,7 +233,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 /*Div diagnostico*/
@@ -248,7 +261,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 } 
 
 #diagnosticoD {
@@ -259,7 +273,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputPruebas{
@@ -270,7 +285,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #diagnosticoDef{
@@ -281,7 +297,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputMed{
@@ -292,7 +309,8 @@ a {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 /*#diagnosticoDef{
@@ -326,9 +344,10 @@ a {
 	font-size: 13px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
-#selectMedico{
+#sltMedico{
 	width: 70%;
 	height: 5%;
 	font-family: 'Nunito', sans-serif;	
@@ -337,11 +356,12 @@ a {
 	border: 3px solid #40444745;
 }
 
-#inputCostoServicio{
+#inputCostoS{
 	height: 5%;
 	width: 30%;
 	border-radius: 10px;
-	border: 3px solid #40444745
+	border: 3px solid #40444745;
+	color:gray;
 }
 
 i{

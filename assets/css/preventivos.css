@@ -88,7 +88,8 @@
 	width: 300px;
 	height: 40px;
 	border-radius: 10px;
-	border: 3.1px solid;
+	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputLab{
@@ -99,6 +100,8 @@
 	border-radius: 10px;
 	padding: 6px;
 	border: 3px solid #40444745;
+	color: gray;
+
 }
 
 #inputProducto {
@@ -109,6 +112,8 @@
 	border-radius: 10px;
 	padding: 6px;
 	border: 3px solid #40444745;
+	color: gray;
+
 }
 
 #inputLote{
@@ -119,6 +124,18 @@
 	border-radius: 10px;
 	padding: 6px;
 	border: 3px solid #40444745;
+	color: gray;
+}
+
+#inputLoteVac{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputLoteEcto{
@@ -126,6 +143,10 @@
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
+	color: gray;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
 }
 
 #inputPrecio{
@@ -135,7 +156,19 @@
 	height: 40px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
+
+#inputPrecioVac{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+	color: gray;
+}
+
 
 #inputFechaCad{
 	font-family: 'Nunito', sans-serif;
@@ -144,6 +177,7 @@
 	height: 40px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputProxima{
@@ -154,6 +188,7 @@
 	border-radius: 10px;
 	padding: 6px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputPeso{
@@ -163,6 +198,7 @@
 	height: 40px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputPesoD{
@@ -170,6 +206,10 @@
 	font-size: 15px;
 	width: 60px;
 	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputCantidad{
@@ -177,6 +217,10 @@
 	font-size: 15px;
 	width: 60px;
 	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputCantidadD{
@@ -184,6 +228,10 @@
 	font-size: 15px;
 	width: 60px;
 	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+	color: gray;
 }
 
 #inputProductoD{
@@ -191,6 +239,10 @@
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	color: gray;
+	border: 3px solid #40444745;
 }
 
 #inputProductoE{
@@ -198,6 +250,10 @@
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	color: gray;
+	border: 3px solid #40444745;
 }
 
 
@@ -208,6 +264,7 @@
 	height: 40px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
 #motivoCita{
@@ -215,7 +272,10 @@
 	font-size: 15px;
 	width: 300px;
 	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
 	text-transform: uppercase;
+	color: gray;
 }
 
 #fechaCita{
@@ -225,6 +285,7 @@
 	height: 40px;
 	border-radius: 10px;
 	border: 3px solid #40444745;
+	color: gray;
 }
 
 

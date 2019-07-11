@@ -92,9 +92,10 @@
 	width: 411px;
 	height: 40px;
 	margin-left: 70px;
+	color: #FA8072;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
 }
 
 #sltEspecie{
@@ -104,7 +105,8 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: #FA8072;
 }
 
 #sltRaza {
@@ -113,7 +115,8 @@
 	height: 40px;
 	margin-left: 70px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: #FA8072;
 }
 
 #sltColor {
@@ -122,7 +125,8 @@
 	height: 40px;
 	margin-left: 70px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+    color: #FA8072;
 }
 
 #inputFechaNac{
@@ -132,7 +136,8 @@
 	height: 40px;
 	margin-left: 70px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputMeses{
@@ -142,7 +147,8 @@
 	width: 193px;
 	height: 40px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputAnios{
@@ -152,7 +158,8 @@
 	margin-left: 20px;
 	height: 40px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 
@@ -164,7 +171,8 @@
 	margin-left: 70px;	
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #inputExpediente {
@@ -174,7 +182,8 @@
 	height: 40px;
 	margin-left: 70px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #txtObservaciones {
@@ -185,7 +194,8 @@
 	text-transform: uppercase;
 	margin-left: 70px;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color:gray;
 }
 
 #radioGenero {
@@ -268,7 +278,39 @@
 }
 /*EndCheckbox*/
 /***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+#inputNombreP::-webkit-input-placeholder, #inputPaterno::-webkit-input-placeholder, 
+#inputTelefono::-webkit-input-placeholder, #nombrePaciente::-webkit-input-placeholder
+  { /* WebKit, Blink, Edge */
+    color: #FA8072;
+}
 
+#inputCorreo::-webkit-input-placeholder
+  { /* WebKit, Blink, Edge */
+    color: gold;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #FA8072;
+   opacity: 1 /* esto es porque Firefox le reduce la opacidad por defecto */;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #FA8072;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #FA8072;
+}
+
+#optColor {
+    color: gray;
+}
+
+#optEspecie{
+    color: gray;
+}
+
+#optRaza{
+	color: gray;
+}
 #inputNombreP {
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
@@ -277,7 +319,8 @@
 	height: 40px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: #FA8072;
 }
 
 #inputPaterno{
@@ -288,7 +331,8 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: #FA8072;
 }
 
 #inputMaterno{
@@ -299,7 +343,8 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: gray;
 }
 
 #inputTelefono{
@@ -310,7 +355,21 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: #FA8072;
+
+}
+
+#inputTelefonoDos {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 411px;
+	height: 40px;
+	margin-left: 70px;
+	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+	color: gray;
 }
 
 #inputCorreo{
@@ -321,7 +380,8 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: gray;
 }
 
 #inputDireccion{
@@ -332,7 +392,9 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
+	color: gray;
+
 }
 
 #inputColonia{
