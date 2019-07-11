@@ -41,7 +41,7 @@
   display: -webkit-flex;
   display: -moz-box;
   display: -ms-flexbox;
-  border-top:0.5px solid;
+  border-top:-0.5px solid;
   border-color: #D6D5E1;
   text-align: center;
   font-family: 'Nunito', sans-serif;  
