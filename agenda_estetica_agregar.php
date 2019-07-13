@@ -56,7 +56,7 @@ window.onload = function(){
 </script>
 
 <div class="contenedor-principal">
-<form class="form_estetica" action="insertar_estetica.php" method="POST" onsubmit="return validarCitaEst();">
+<form class="form_estetica" id="frmEstetica" action="insertar_estetica.php" method="POST" onsubmit="return validarCitaEst();">
     <?php $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP' AND iCodEmpresa = '$codigoE'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
@@ -95,6 +95,7 @@ window.onload = function(){
       var txtServicio = document.getElementById("inputServicioE").value;
       var txtHoraIni = document.getElementById("inputHoraInicio").value;
       var txtHoraFin = document.getElementById("inputHoraFinE").value;
+      var datos = $('#frmEstetica').serialize();
 
       if(valorEstilista == ""){
         Swal.fire({
@@ -140,6 +141,25 @@ window.onload = function(){
         });
         return false;
       }
+
+      $.ajax({
+        type: "POST",
+        url: "insertar_estetica.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Cita de estética agregada correctamente'
+          }) 
+          }
+        }
+      });
+      return false;
 
             return true;
         }

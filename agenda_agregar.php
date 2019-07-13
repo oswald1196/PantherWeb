@@ -67,17 +67,17 @@ window.onload = function(){
     ?>
     <div class="container-titulo">
     <p id="lblCita"> Cita para <?php echo $row['vchNombrePaciente']; ?> </p>
-        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
-        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
-        <input type="hidden" name="nombrePac" value="<?php echo $row['vchNombrePaciente'] ?>">
-        <input type="hidden" name="raza" value="<?php echo $row['vchRaza'] ?>">
-        <input type="hidden" name="nombreProp" value="<?php echo $row['vchNombre'] ?>">
-        <input type="hidden" name="telefono" value="<?php echo $row['vchTelefono'] ?>">
+        <input type="hidden" name="correo" id="correoEmpresa" value="<?php echo $row['vchCorreo'] ?>">
+        <input type="hidden" name="empresa" id="codigoEmpresa" value="<?php echo $row['iCodEmpresa'] ?>">
+        <input type="hidden" name="pais"  id="paisEmp" value="<?php echo $row['vchPais'] ?>">
+        <input type="hidden" name="estado" id="estadoEmp" value="<?php echo $row['vchEstado'] ?>">
+        <input type="hidden" name="ciudad" id="ciudadEmp" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="paciente" id="codPaciente" value="<?php echo $row['iCodPaciente'] ?>">
+        <input type="hidden" name="propietario" id="codPropietario" value="<?php echo $row['iCodPropietario'] ?>">
+        <input type="hidden" name="nombrePac" id="nombrePaciente" value="<?php echo $row['vchNombrePaciente'] ?>">
+        <input type="hidden" name="raza" id="razaPaciente" value="<?php echo $row['vchRaza'] ?>">
+        <input type="hidden" name="nombreProp" id="nombrePropietario" value="<?php echo $row['vchNombre'] ?>">
+        <input type="hidden" name="telefono" id="telProp" value="<?php echo $row['vchTelefono'] ?>">
 
   </div>
   <div id="fechas_cita">
@@ -131,12 +131,13 @@ window.onload = function(){
     </form>
     </div>
   <div id="div_boton">
-      <button class="botonAgregar" id="btnAgregarCita" type="submit">Agregar cita</button>
+      <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit">Agregar cita</button>
     </div>
     <script type="text/javascript">
-      function validarForm() {
+      function validarFormCita() {
       var motivos = document.getElementById("inputMotivos").value;
       var txtHoraCita = document.getElementById("inputhoraini").value;
+      var datos = $('#frmAgenda').serialize();
 
       if(txtHoraCita == ""){
         Swal.fire({
@@ -156,8 +157,25 @@ window.onload = function(){
         return false;
       }
 
-      return true;
-      
+      $.ajax({
+        type: "POST",
+        url: "insertar_cita.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Cita agregada correctamente'
+          }) 
+          }
+        }
+      });
+      return false;
+        return true;
         }
       </script>
 </form> 
@@ -166,26 +184,5 @@ window.onload = function(){
 </body>
 </html>
 
-<!--<script type="text/javascript">
-  $(document).ready(function(){
-    $('#btnAgregarCita').click(function(event){
-      event.preventDefault();
-      var datos = $('#frmAgenda').serialize();
-      $.ajax({
-        type: "POST",
-        url: "insertar_cita.php",
-        data: datos,
-        success:function(r){
-          if (r==1){
-            alert("Agregado con exito");
-          }
-          else{
-            alert("Error");
-          }
-        }
-      });
-      return false;
-    });
-  });
-</script>->
+
 

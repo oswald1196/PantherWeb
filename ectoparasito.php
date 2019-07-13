@@ -62,7 +62,7 @@ window.onload = function(){
 }
 </script>
 <div class="container">
-<form class="form_add_cita" action="insertar_ecto.php" method="POST" onsubmit="return validarEcto();">
+<form class="form_add_cita" id="frmEcto" action="insertar_ecto.php" method="POST" onsubmit="return validarEcto();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -102,8 +102,8 @@ window.onload = function(){
       var fechaCad = document.getElementById("inputFechaCad").value;
       var fechaHoy = document.getElementById("fechaActual").value;
       var fechaDeCita = document.getElementById("fechaCita").value;
-      alert(fechaDeCita);
-      
+      var datos = $('#frmEcto').serialize();
+
       if(txtEcto == ""){
         Swal.fire({
           type:'error',
@@ -130,6 +130,26 @@ window.onload = function(){
         });
         return false;
       }
+
+      $.ajax({
+        type: "POST",
+        url: "insertar_ecto.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Ectoparásito agregado correctamente'
+          }) 
+          }
+        }
+      });
+      return false;
+
             return true;
         }
       </script>

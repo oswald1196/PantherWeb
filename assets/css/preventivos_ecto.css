@@ -1,5 +1,4 @@
-
-.forma_principal{
+.forma_principalE{
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -11,7 +10,7 @@
   padding-left: 0px;
 }
 
-.cabecera {
+.cabeceraE {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -27,16 +26,8 @@
   color:black;
 }
 
-#carnet_vacuna {
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#cabecera_tabla {
-  border-top:1px solid;
+#cabecera_tablaE {
+  border-top: 1px solid;
   border-color: #D6D5E1;
   text-align: center;
   font-family: 'Nunito', sans-serif;  
@@ -44,7 +35,15 @@
   width: 100%;
 }
 
-.columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+#carnet_ecto {
+  margin-top: 2%;
+  width: 100%;
+  text-align: center;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
   font-family: 'Nunito', sans-serif;  
   font-size: 20px;
   border-bottom: 1px solid;
@@ -52,56 +51,44 @@
   text-align: left;
 }
 
-#c_fecha{
-  width: 12%;
+#c_fechaD{
+  width: 15%;
+  border: 1px solid;
+  border-color: #D6D5E1;
+
+}
+
+#c_descripcionD {
+  width: 35%;
   border: 1px solid;
   border-color: #D6D5E1;
 }
 
-#c_descripcion {
-  width: 25%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_proxima {
+#c_proximaD {
   width: 20%;
   border: 1px solid;
   border-color: #D6D5E1;
 }
 
-#c_peso {
-  width: 5%;
+#c_citaD{
+  width: 10%;
   border: 1px solid;
   border-color: #D6D5E1;
 }
 
-#c_cita {
-  width: 15%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_lote {
-  width: 6%; 
+#c_loteD{
+  width: 8%; 
   border: 1px solid;
   border-color: #D6D5E1; 
 }
 
-#c_cad{ 
-  width: 15%;
+#c_cadD{ 
+  width: 10%;
   border: 1px solid;
   border-color: #D6D5E1; 
  }
 
-#c_del{
-  width: 5%;
-  border: 1px solid;
-  border-color: #D6D5E1; 
- }
-
-
-.botonAddVacuna {
+.botonAddEcto {
   font-family: 'Nunito', sans-serif;
   text-decoration: none;
     padding: 10px;

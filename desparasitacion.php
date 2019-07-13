@@ -59,7 +59,7 @@ window.onload = function(){
  <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
-<form class="form_add_cita" action="" method="POST" onsubmit=" return validadDesp();">
+<form class="form_add_cita" action="" id="frmDesp" method="POST" onsubmit=" return validadDesp();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -192,7 +192,7 @@ window.onload = function(){
       var txtLote = document.getElementById("inputLote").value;
       var fechaCad = document.getElementById("inputFechaCad").value;
       var fechaHoy = document.getElementById("fechaActual").value;
-
+      var datos = $('#frmDesp').serialize();
       
       if(txtServicio == ""){
         Swal.fire({
@@ -227,9 +227,28 @@ window.onload = function(){
           title:'ERROR',
           text:'ERROR: Producto caducado'
       });
-
         return false;
       }
+
+      $.ajax({
+        type: "POST",
+        url: "insertar_desparasitacion.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Desparasitación agregada correctamente'
+          }) 
+          }
+        }
+      });
+      return false;
+
           return true;
         }
       </script>

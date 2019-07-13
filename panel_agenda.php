@@ -21,9 +21,10 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/paneles_cita.css" />
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
         <link rel="stylesheet" href="dist/sweetalert2.min.css">
-
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 	</head>
 
@@ -54,8 +55,8 @@ require 'conexion.php';
                     <table id="tbl_citas">
                     <tbody>
 
-                    <thead id="thead_cita">
-                        <tr id="tbl_header">
+                    <thead id="tbl_header">
+                        <tr >
                             <th id="c_motivo">Descripción</th>
                             <th id="c_fechaC">Fecha</th>
                             <th id="c_horaC">Hora</th>
@@ -75,21 +76,47 @@ require 'conexion.php';
                     <td class="columnades"> <?php echo $fila['vchTipoMotivo'] ?></td>
                     <td class="columnaf"> <?php echo $fila['dtFecha'] ?> </td>
                     <td class="columnah"> <?php echo $fila['vchHora'] ?></td>
-                    <td class="columnad"> <a href="eliminar_cita.php?id=<?php echo $fila['iCodTranCalendario'] ?>" onclick="return alert_eliminarCita();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columnad"> <a onclick="return alert_eliminarCita();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
       ?>
       <script type="text/javascript">
-        function alert_eliminarCita(){
-            var respuesta = confirm("Estás seguro de eliminar la cita?");
-            if (respuesta == true) {
-                return true;
-            } else {
-                return false;
+         function eliminarCita(codigo) {
+        parametros = { "id":codigo } 
+        $.ajax({
+            data:parametros,
+            url:'eliminar_cita.php',
+            type: 'POST',
+            beforeSend:function(){},
+            success:function() {
+            table.ajax.reload();
+            Swal.fire(
+            'Eliminada',
+            'La cita ha sido eliminada.',
+            'success'
+            )
             }
+        });
+    }
+    
+        function alert_eliminarCita(codigo){
+            
+            Swal.fire({
+                title: 'Estás seguro de eliminar?',
+                text: "La cita se borrará!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: '¡Si, borrar!'
+            }).then((result) => {
+            if (result.value){
+                eliminarCita(codigo);
         }
-          
+        })
+    }       
+           
       </script>
 
 

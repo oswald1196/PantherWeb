@@ -50,7 +50,5 @@
 
 	$sql = "INSERT INTO TranAgendaEstetica (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodAgenda, iCodPaciente, iCodEspecie, iCodRaza, iCodPropietario, iCodServicio, dtFecha, dtHoraIni, dtHoraFin, vchObservaciones, iCodMatrizIni, iCodMatrizFin, iCodEstatus, iCodEstilista, vchNombre, iCodServicioPago, vchDescripcion, dPrecio, dPrecioCosto, iCodServicios, iCodUrgencias, iEstatusServicio, dIVA, dSubtotal, dPorcentajeIVA, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$codEspecie', '$codigoRaza', '$codProp', '$iCodServicio', '$fecha', '$horaInicio', '$horaFin', '$notas', '0', '0', '1', '$estilista', '$nombreEst', '0', '$nombreServ', '$precio', '$comision', '0', '0', '0', '0', '0', '0', '2', '0')";
 
-	echo $sql;
-
- 	//$new = mysqli_query($conn,$sql);	
+ 	$new = mysqli_query($conn,$sql);	
 ?>

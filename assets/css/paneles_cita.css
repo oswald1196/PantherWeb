@@ -27,26 +27,28 @@
 
 #tbl_citas {
   margin-top: 2%;
-  height: 100%;
   width: 100%;
   text-align: center;
-  border-top: 1px solid;
+  border: 1px solid;
   border-color: #D6D5E1;
 }
 
 #tbl_header{
-  border-top: 1px solid;
+  
+  border: 1px solid;
   border-color: #D6D5E1;
   text-align: center;
   font-family: 'Nunito', sans-serif;  
   font-size: 25px;
-  height: 30%; 
+  width: 100%;
 }
 
 
 #c_motivo{
   width: 45%;
   margin-left: 2%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 #c_fechaC{
@@ -64,6 +66,8 @@
 
 #c_del{
   width: 5%;
+  border: 1px solid;
+  border-color: #D6D5E1;
 }
 
 .columnades, .columnaf, .columnah, .columnad {

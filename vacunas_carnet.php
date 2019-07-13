@@ -60,7 +60,7 @@ require 'conexion.php';
                             <th id="c_cita">Cita</th>
                             <th id="c_lote">Lote</th>
                             <th id="c_cad">Caducidad</th>
-                            <th></th>
+                            <th id="c_del"></th>
                         </tr>
                     </thead>
                 <?php

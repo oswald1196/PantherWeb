@@ -50,8 +50,8 @@ require 'conexion.php';
                     <table id="carnet_vacuna">
                     <tbody>
 
-                    <thead id="contenedor_cabecera">
-                        <tr valign="bottom" id="cabecera_tabla">
+                    <thead id="cabecera_tabla">
+                        <tr>
                             <th id="c_fecha">Fecha</th>
                             <th id="c_descripcion">Descripción</th>
                             <th id="c_proxima">Próxima</th>
@@ -94,8 +94,6 @@ require 'conexion.php';
         }
           
         </script>
-
-
               		</tbody>
                     </table>
                 </div>

@@ -35,6 +35,8 @@ require 'conexion.php';
 <?php
   $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
+  $fecha_actual = date("Y-m-d");
+
   $codigoP = base64_decode($_GET['codigo']);	
   include('header.php');
   include ('conexion.php');
@@ -56,7 +58,7 @@ window.onload = function(){
  <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-<form class="form-consulta" name="formulario" action="insertar_consulta.php" method="POST" onsubmit="return valida();">
+<form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta.php" method="POST" onsubmit="return valida();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -154,6 +156,8 @@ window.onload = function(){
 
         <label for="inputFechaSintomas" id="lblIniSintomas"> Inicio síntomas </label>
         <input type="date" class="input-append date" id="inputFechaSintomas" name="fechaS">
+        <input type="hidden" name="" id="inputFechaHoy" value="<?php echo $fecha_actual?>">
+
       <div class="form-group">        
       <label for="inputfecha" id="lblAtencion"> Atención en clínica </label>
       <input type="checkbox" id="inputAtencion" name="atencionClinica" value="0" checked>
@@ -222,9 +226,44 @@ window.onload = function(){
       var inputMotivo = document.getElementById("txtMotivo").value;
       var inputReceta = document.getElementById("txtReceta").value;
       var txtSelectServicio = document.getElementById("selectServicio").value;
-
       var medicoC = document.getElementById("sltMedico").value;
+      var txtSintomas = document.getElementById("inputFechaSintomas").value;
+      var txtFechaHoy = document.getElementById("inputFechaHoy").value;
+      var idE = <?= json_encode($codigoE) ?>;
+      var codP = <?= json_encode($codigoP) ?>;
+      var datos = $('#frmConsulta').serialize();
+      var idE = <?= json_encode($codigoE) ?>;
+      alert(idE);
+      var codP = <?= json_encode($codigoP) ?>;
+      alert(codP);
 
+      if (medicoC == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta médico'
+        });
+            return false;
+        }
+
+        if(txtSintomas > txtFechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'La fecha de inicio de síntomas no puede ser mayor al día de hoy'
+        });
+        return false;
+        }
+
+      if (txtSelectServicio == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Falta servicio'
+        });
+            return false;
+        }
+        
       if(inputMotivo.length <= 1){
         Swal.fire({
           type:'error',
@@ -252,23 +291,25 @@ window.onload = function(){
         return false;
         }
 
-      if (medicoC == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Falta médico'
-        });
-            return false;
+        $.ajax({
+        type: "POST",
+        url: "insertar_consulta.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Consulta agregada correctamente'
+          }) 
+            window.location.href = "informe_medico.php?id="+idE+"&codigo="+codP;
+          }
         }
-
-      if (txtSelectServicio == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Falta servicio'
-        });
-            return false;
-        }
+      });
+        return false;
             return true;
         }
       </script>

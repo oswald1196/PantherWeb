@@ -30,8 +30,6 @@ require 'conexion.php';
     <link rel="stylesheet" href="dist/sweetalert2.min.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 	</head>
 
 	<body>
@@ -70,7 +68,7 @@ $fecha_actual = date("Y-m-d");
 
 
 <div class="container">
-<form class="form_add_cita" action="insertar_vacuna.php" method="POST" onsubmit="return validarVacuna();">
+<form class="form_add_cita" id="frmVacuna" action="insertar_vacuna.php" method="POST" onsubmit="return validarVacuna();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -230,6 +228,7 @@ $fecha_actual = date("Y-m-d");
       var txtLote = document.getElementById("inputLoteVac").value;
       var fechaCad = document.getElementById("inputFechaCad").value;
       var fechaHoy = document.getElementById("fechaActual").value;
+      var datos = $('#frmVacuna').serialize();
 
       if(fechaCad < fechaHoy){
         Swal.fire({
@@ -246,7 +245,6 @@ $fecha_actual = date("Y-m-d");
           title:'ERROR',
           text:'Elige laboratorio'
         });
-         //$('#inputLab').css("background-color","red"); 
           return false;
       }
 
@@ -268,14 +266,25 @@ $fecha_actual = date("Y-m-d");
           return false;
         }
 
-        /*if(fechaCita < fechaHoy){
-          Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:' Fecha'
-        });
-          return false;
-        }*/
+        $.ajax({
+        type: "POST",
+        url: "insertar_vacuna.php",
+        data: datos,
+        success:function(r){
+          if (r==1){
+            alert("Error");
+          }
+          else{
+            Swal.fire({
+          type:'success',
+          title: 'Correcto',
+          text:'Vacuna agregada correctamente'
+          }) 
+            window.location.href = 'vacunas_carnet.php'
+          }
+        }
+      });
+      return false;
 
 
             return true;
