@@ -92,6 +92,17 @@
 		margin-top: 18%;
 }
 
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+	margin-top: 10px;
+	font-family: 'Nunito', sans-serif;  
+  	font-size: 30px;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+	margin-top: 10px;
+}
+
+
 h1{
 	text-align: center;
 	color: black;
@@ -100,4 +111,203 @@ h1{
 a {
 	color: black;
 	text-decoration: none;
+}
+
+@media (min-width: 1025px) and (max-width: 1367px){
+	.container{
+	height: 700px;
+	margin-top: 10%;
+	margin-left: 7%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 40%;
+	}
+
+#opc_desp, #opc_ecto, #opc_consulta {
+		height: 40%;
+		margin-top: 1%;
+}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+}
+}
+
+@media (min-width: 850px) and (max-width: 1024px){
+	.container{
+	height: 700px;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 35%;
+	}
+
+#opc_desp, #opc_ecto, #opc_consulta {
+		height: 35%;
+		margin-top: 1%;
+}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+}
+}
+
+@media (min-width: 768px) and (max-width: 845px){
+	.container{
+	height: 700px;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna, #opc_desp, #opc_ecto, #opc_consulta{
+		height: 35%;
+	}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+	}
+}
+
+/*Horizontales*/
+
+@media (min-width: 655px) and (max-width: 767px){
+	.container{
+	height: 500px;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 50px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 35%;
+		width: 32%;
+		margin-top: 5%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 35%;
+	width: 32%;
+	margin-left: 0%;
+		margin-top: 5%;
+
+
+}
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 11px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+	margin-top: 14%;
+}
+
+}
+
+
+@media (min-width: 565px) and (max-width: 650px){
+	.container{
+	height: 700px;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna, #opc_desp, #opc_ecto, #opc_consulta{
+		height: 30%;
+	}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+	}
+}
+
+
+@media (min-width: 365px) and (max-width: 415px){
+	.container{
+	height: 300px;
+	margin-top: 15%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 50px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 50%;
+		width: 32%;
+		margin-top: 5%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 50%;
+	width: 32%;
+	margin-left: 0%;
+		margin-top: 5%;
+
+
+}
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 11px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+	margin-top: 14%;
+}
+
+}
+
+@media (max-width: 360px){
+	.container{
+	height: 300px;
+	margin-top: 15%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 50px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 40%;
+		width: 32%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 40%;
+	width: 31%;
+	margin-left: 0%;
+}
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 11px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+
+		margin-top: 14%;
+}
+
 }

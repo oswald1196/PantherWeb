@@ -1,0 +1,198 @@
+.contenedor_principal {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 60%;	
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 10px;
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+
+#fechas_citaG {
+	margin-top: 2%;
+	height: 33%;
+}
+
+#div_motivos {
+	height: 33%;
+}
+
+#div_boton {
+	margin-top: 5%;
+	height: 22%;
+}
+ 
+#div_nuevo_motivo {
+	width: 45%;
+	margin-top: 4%;
+	float: right;
+}
+
+.container-titulo {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 12%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	color:black;
+}
+
+.form_add_cita {
+	height: 700px;
+	justify-content: space-around;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	font-family: 'Nunito', sans-serif;	
+	margin-top: 3%;
+	font-size: 35px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+#inputServicio {
+	font-size: 17px;
+	width: 160px;
+	height: 40px;
+	margin-left: 40px;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+#inputMotivos{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 30%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+
+#selectPacientes{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 35%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+
+
+#inputMotivo {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 40%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+	text-transform: uppercase;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 10%;
+}
+
+#lblHoraInicio{
+	margin-left: 5%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblTodoDia{
+	margin-left: 5%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblMotivos{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 30%;
+}
+
+#lblNuevaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 3%;
+}
+
+/*Botones*/
+
+.botonAgregar {
+ 	font-family: 'Nunito', sans-serif;
+	margin-left: 45%;
+	margin-top: 5%;
+	text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 1px;
+    border: 1px solid #0016b0;
+
+}
+

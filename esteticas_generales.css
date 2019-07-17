@@ -1,0 +1,241 @@
+.contenedor-principal {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 10px;
+	height: 700px;
+	width: 60%;	
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-bottom: 10px;
+	padding-right: 0px;
+	padding-left: 0px;
+	}
+ 
+.contenedor-title {
+	display: -webkit-box;
+  	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 80px;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	color:black;
+}
+
+.form_estetica {
+	height: 700px;
+	justify-content: space-around;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	font-family: 'Nunito', sans-serif;	
+	margin-top: 30px;
+	font-size: 35px;
+	color:white;
+	text-align: center;
+}
+
+#datos_citaE{
+	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 25%;
+}
+
+#datos_horario{
+	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 25%;
+	flex-direction: row;
+}
+
+#notasyobs{
+	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 25%;
+	border-radius: 10px;
+}
+
+#botonAgregar {
+	display: -webkit-flex;
+  	display: -moz-box;
+  	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 25%;
+	border-radius: 10px;
+}
+
+#inputEstilista{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 19%;
+	height: 25%;
+	margin-left: 10%;
+	margin-top: 5%;
+	color: gray;
+}
+
+#inputTipoServicio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 20%;
+	height: 25%;
+	margin-left: 10%;
+	margin-top: 5%;
+	color: gray;
+}
+
+#inputFechaE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 15%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 4%;
+	color: gray;
+}
+
+#inputServicioE {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 20%;
+	height: 25%;
+	margin-left: 10%;
+	margin-top: 5%;
+	color: gray;
+}
+
+#chkTodoDia {
+	margin-left: 40px;
+}
+
+#inputPrecioS {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 7%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 4%;
+	color: gray;
+}
+
+#inputHoraInicio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 15%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 4%;
+	color: gray;
+}
+
+#inputHoraFinE {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 15%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 4%;
+	color: gray;
+}
+
+#inputNotas {
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 50%;
+	height: 100%;
+	margin-left: 2%;
+	text-transform: uppercase;
+	color: gray;
+}
+
+
+/*Labels*/
+
+#lblEstilista {
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-left: 6%;
+	margin-top: 6%;	
+}
+
+#lblTipo{
+	margin-left: 2%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-top: 6%;	
+}
+
+#lblNotas{
+	margin-left: 15%;	
+	margin-top: 6%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+}
+
+#lblPrecioS {
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-top: 5%;
+	margin-left: 5%;
+}
+
+#lblFechaE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-top: 5%;
+	margin-left: 3%;	
+}
+
+#lblHoraInicio{
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-left: 3%;
+	margin-top: 5%;	
+}
+
+#lblHoraFinE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 19px;
+	margin-left: 3%;
+	margin-top: 5%;	
+}
+
+/*Botones*/
+
+.botonAgregar {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    height: 30%;
+    background-color: #1883ba;
+    border-radius: 4px;
+    border: 1px solid #0016b0;
+    margin-left: 45%;
+    margin-top: 3%;
+}
+
