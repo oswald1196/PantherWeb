@@ -7,7 +7,7 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	margin-top: 10px;
+	margin-top: 5%;
 	height: 800px;
 	width: 60%;	
 	margin-left: 20%;
@@ -221,6 +221,26 @@
      margin-right: 7px;
      outline: none;
 }
+
+.form-radio-hembra
+{
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+     display: inline-block;
+     position: relative;
+     background-color: #f1f1f1;
+     color: #666;
+     top: 10px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     cursor: pointer;     
+     margin-right: 7px;
+     outline: none;
+}
+
 .form-radio:checked::before
 {
      position: absolute;
@@ -230,11 +250,31 @@
      content: '\02143';
      transform: rotate(40deg);
 }
+
+.form-radio-hembra:checked::before
+{
+     position: absolute;
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+     content: '\02143';
+     transform: rotate(40deg);
+}
+
 .form-radio:hover
 {
      background-color: #f7f7f7;
 }
 .form-radio:checked
+{
+     background-color: #DCDCDC;
+}
+
+.form-radio-hembra:hover
+{
+     background-color: #f7f7f7;
+}
+.form-radio-hembra:checked
 {
      background-color: #DCDCDC;
 }
@@ -422,13 +462,24 @@
 	font-size: 25px;
 }
 
-#lblNombre, #lblEspecie, #lblRaza, #lblGenero, #lblColor, #lblMeses, #lblFNac, #lblChip, #lblExp,
+#lblNombre, #lblEspecie, #lblRaza, #lblColor, #lblMeses, #lblFNac, #lblChip, #lblExp,
  #lblObs, #lblEsteril {
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
 	margin-left: 70px;
 }
 
+#lblGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 110px;
+}
+
+#lblGeneroH{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 70px;
+}
 
 #lblProp, #lblPaternoP, #lblMaternoP, #lblTel, #lblCorreo, #lblDireccion, #lblColonia, #lblCP{
 	font-family: 'Nunito', sans-serif;
@@ -456,3 +507,1884 @@
     border: 1px solid #527486;
 }
 
+@media (min-width: 1300px) and (max-width: 1366px){
+.principal {
+	margin-top: 2%;
+	height: 800px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+ 
+.title {
+	height: 75px;
+	font-size: 30px;
+}
+
+.form-paciente {
+	height: 725px;
+}
+
+.form-propietario {
+	height: 725px;
+}
+
+.title-paciente{	
+	font-size: 30px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 30px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 16px;
+	width: 400px;
+	height: 35px;
+	margin-left: 30px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 16px;
+	margin-left: 110px;
+	width: 100px;
+	height: 35px;
+}
+
+#inputAnios{
+	font-size: 16px;
+	width: 100px;
+	margin-left: 50px;
+	height: 35px;	
+	border-radius: 9px;
+}
+
+#txtObservaciones {
+	width: 400px;
+	height: 100px;
+	margin-left: 30px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 5px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*EndRadio*/
+
+.form-radio-hembra
+{
+     top: 5px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*Checkbox*/
+.form-checkbox
+{
+     height: 25px;
+     width: 25px;
+     margin-right: 9px;
+     top:4px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 16px;
+	margin-left: 30px;
+	width: 400px;
+	height: 35px;
+	border-radius: 9px;
+}
+
+#lblGenero {
+	margin-left: 100px;
+	font-size: 22px;
+}
+
+#lblGeneroH {
+	margin-left: 30px;
+	font-size: 22px;
+}
+
+#lblEsteril {
+	margin-left: 30px;
+	font-size: 22px;
+}
+
+/*Botones*/
+
+.btnAlta {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+	margin-left: 40%;
+	margin-bottom: 10px;	
+    padding: 10px;
+    font-size: 22px;    
+}
+
+}
+
+@media (min-width: 1200px) and (max-width: 1299px){
+.principal {
+	margin-top: 2%;
+	height: 800px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+ 
+.title {
+	height: 75px;
+	font-size: 30px;
+}
+
+.form-paciente {
+	height: 725px;
+}
+
+.form-propietario {
+	height: 725px;
+}
+
+.title-paciente{	
+	font-size: 30px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 30px;
+	margin-left: 30%;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 16px;
+	width: 370px;
+	height: 35px;
+	margin-left: 25px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 16px;
+	margin-left: 90px;
+	width: 100px;
+	height: 35px;
+}
+
+#inputAnios{
+	font-size: 16px;
+	width: 100px;
+	margin-left: 45px;
+	height: 35px;	
+	border-radius: 9px;
+}
+
+#txtObservaciones {
+	width: 370px;
+	height: 100px;
+	margin-left: 25px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 5px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*EndRadio*/
+
+.form-radio-hembra
+{
+     top: 5px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*Checkbox*/
+.form-checkbox
+{
+     height: 25px;
+     width: 25px;
+     margin-right: 9px;
+     top:4px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 16px;
+	margin-left: 25px;
+	width: 370px;
+	height: 35px;
+	border-radius: 9px;
+}
+
+#lblGenero {
+	margin-left: 60px;
+	font-size: 22px;
+}
+
+
+
+#lblEsteril {
+	margin-left: 25px;
+	font-size: 22px;
+}
+
+
+#lblGeneroH {
+	margin-left: 50px;
+	font-size: 22px;
+}
+
+/*Botones*/
+
+.btnAlta {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+	margin-left: 40%;
+	margin-bottom: 10px;	
+    padding: 10px;
+    font-size: 22px;    
+}
+
+}
+
+@media (min-width: 1100px) and (max-width: 1199px){
+.principal {
+	margin-top: 8%;
+	height: 800px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+ 
+.title {
+	height: 75px;
+	font-size: 27px;
+}
+
+.form-paciente {
+	height: 725px;
+}
+
+.form-propietario {
+	height: 725px;
+}
+
+
+.title-paciente{	
+	font-size: 30px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 30px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 16px;
+	width: 330px;
+	height: 35px;
+	margin-left: 25px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 16px;
+	margin-left: 85px;
+	width: 100px;
+	height: 35px;
+}
+
+#inputAnios{
+	font-size: 16px;
+	width: 100px;
+	margin-left: 20px;
+	height: 35px;	
+	border-radius: 9px;
+}
+
+#txtObservaciones {
+	width: 330px;
+	height: 100px;
+	margin-left: 25px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 4px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*EndRadio*/
+
+.form-radio-hembra
+{
+     top: 4px;
+     height: 30px;
+     width: 30px;
+     border: 0;
+     border-radius: 50px;
+     margin-right: 7px;
+}
+
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 11px;
+     top: 7px;
+}
+/*Checkbox*/
+.form-checkbox
+{
+     height: 25px;
+     width: 25px;
+     margin-right: 9px;
+     top:4px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 16px;
+	margin-left: 25px;
+	width: 330px;
+	height: 35px;
+	border-radius: 9px;
+}
+
+#lblGenero {
+	margin-left: 70px;
+	font-size: 20px;
+}
+
+#lblEsteril {
+	margin-left: 25px;
+	font-size: 20px;
+}
+
+#lblGeneroH {
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+/*Botones*/
+
+.btnAlta {
+ 	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+	margin-left: 40%;
+	margin-bottom: 10px;	
+    padding: 10px;
+    font-size: 15px;    
+}
+
+}
+
+@media (min-width: 1024px) and (max-width: 1099px){
+.principal {
+	margin-top: 8%;
+	height: 730px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+
+.form-paciente {
+	height: 670px;
+}
+
+.form-propietario {
+	height: 670px;
+}
+ 
+.title {
+	height: 60px;
+	font-size: 23px;
+}
+
+.title-paciente{	
+	font-size: 25px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 25px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 15px;
+	width: 320px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 15px;
+	margin-left: 65px;
+	width: 100px;
+	height: 30px;
+}
+
+#inputAnios{
+	font-size: 15px;
+	width: 100px;
+	margin-left: 20px;
+	height: 30px;	
+}
+
+#txtObservaciones {
+	width: 320px;
+	height: 100px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 5px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     margin-left: 1px; 
+     border-radius: 50px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+
+.form-radio-hembra
+{
+     top: 5px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     margin-left: 1px; 
+     border-radius: 50px;
+}
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: 2px;
+     height: 25px;
+     width: 25px;
+     margin-right: 1px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 15px;
+	margin-left: 20px;
+	width: 320px;
+	height: 30px;
+	border-radius: 9px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+#lblEsteril {
+	margin-left: 20px;
+	font-size: 20px;
+}
+
+#lblGeneroH {
+	margin-left: 40px;
+	font-size: 20px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 10px;
+    font-size: 15px;    
+}
+}
+
+@media (min-width: 900px) and (max-width: 1023px){
+.principal {
+	margin-top: 2%;
+	height: 730px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+
+.form-paciente {
+	height: 670px;
+}
+
+.form-propietario {
+	height: 670px;
+}
+ 
+.title {
+	height: 60px;
+	font-size: 23px;
+}
+
+.title-paciente{	
+	font-size: 25px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 25px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 15px;
+	width: 275px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 15px;
+	margin-left: 70px;
+	width: 70px;
+	height: 30px;
+}
+
+#inputAnios{
+	font-size: 15px;
+	width: 70px;
+	margin-left: 30px;
+	height: 30px;	
+}
+
+#txtObservaciones {
+	width: 275px;
+	height: 100px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 2px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+
+.form-radio-hembra
+{
+     top: 2px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: 5px;
+     height: 25px;
+     width: 25px;
+     margin-right: 1px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 15px;
+	margin-left: 20px;
+	width: 275px;
+	height: 30px;
+	border-radius: 9px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 50px;
+	font-size: 20px;
+}
+
+ #lblEsteril{
+ 	margin-left: 20px;
+	font-size: 20px;
+ }
+
+#lblGeneroH {
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 10px;
+    font-size: 15px;    
+}
+}
+
+@media (min-width: 768px) and (max-width: 899px){
+.principal {
+	margin-top: 10%;
+	height: 730px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+
+.form-paciente {
+	height: 670px;
+}
+
+.form-propietario {
+	height: 670px;
+}
+ 
+.title {
+	height: 60px;
+	font-size: 23px;
+}
+
+.title-paciente{
+	margin-top: 5%;	
+	font-size: 22px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	margin-top: 5%;	
+	font-size: 22px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 15px;
+	width: 230px;
+	height: 30px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 15px;
+	margin-left: 55px;
+	width: 70px;
+	height: 30px;
+}
+
+#inputAnios{
+	font-size: 15px;
+	width: 70px;
+	margin-left: 20px;
+	height: 30px;	
+}
+
+#txtObservaciones {
+	width: 230px;
+	height: 100px;
+	margin-left: 20px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 3px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+
+.form-radio-hembra
+{
+     top: 3px;
+     height: 25px;
+     width: 25px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 9px;
+     top: 5px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: 3px;
+     height: 25px;
+     width: 25px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 9px;
+     top: 5px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 15px;
+	margin-left: 20px;
+	width: 230px;
+	height: 30px;
+	border-radius: 9px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 40px;
+	font-size: 17px;
+}
+
+#lblEsteril{
+	margin-left: 20px;
+	font-size: 17px;
+}
+
+
+#lblGeneroH {
+	margin-left: 10px;
+	font-size: 17px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 10px;
+    font-size: 15px;    
+}
+}
+
+@media (min-width: 667px) and (max-width: 767px){
+.principal {
+	margin-top: 10%;
+	height: 730px;
+	width: 70%;	
+	margin-left: 15%;
+	}
+
+.form-paciente {
+	height: 670px;
+}
+
+.form-propietario {
+	height: 670px;
+}
+ 
+.title {
+	height: 60px;
+	font-size: 23px;
+}
+
+.title-paciente{	
+	font-size: 20px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 20px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 15px;
+	width: 200px;
+	height: 30px;
+	margin-left: 15px;
+	border-radius: 9px;
+}
+
+#inputMeses{
+	font-size: 15px;
+	margin-left: 40px;
+	width: 70px;
+	height: 30px;
+}
+
+#inputAnios{
+	font-size: 15px;
+	width: 70px;
+	margin-left: 10px;
+	height: 30px;	
+}
+
+#txtObservaciones {
+	width: 200px;
+	height: 100px;
+	margin-left: 15px;
+	border-radius: 9px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 0px;
+     height: 22px;
+     width: 22px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 7px;
+     top: 4px;
+}
+
+.form-radio-hembra
+{
+     top: 0px;
+     height: 22px;
+     width: 22px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio-hembra:checked::before
+{
+     font: 13px/1 'Open Sans', sans-serif;
+     left: 7px;
+     top: 4px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: 1px;
+     height: 22px;
+     width: 22px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 7px;
+     top: 4px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 15px;
+	margin-left: 15px;
+	width: 200px;
+	height: 30px;
+	border-radius: 9px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+#lblEsteril{
+	margin-left: 20px;
+	font-size: 18px;
+}
+
+#lblGeneroH {
+	margin-left: 1px;
+	font-size: 18px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 10px;
+    font-size: 15px;    
+}
+}
+
+@media (min-width: 568px) and (max-width: 666px){
+.principal {
+	margin-top: 10%;
+	height: 600px;
+	width: 90%;	
+	margin-left: 5%;
+	}
+
+.form-paciente {
+	height: 555px;
+}
+
+.form-propietario {
+	height: 555px;
+}
+ 
+.title {
+	height: 45px;
+	font-size: 18px;
+	border-radius: 7px;
+	justify-content: center;
+}
+
+.title-paciente{	
+	font-size: 16px;
+	margin-left: 35%;
+}
+
+.title-propietario{
+	font-size: 16px;
+	margin-left: 30%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 12px;
+	width: 230px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+#inputMeses{
+	font-size: 12px;
+	margin-left: 60px;
+	width: 60px;
+	height: 25px;
+	border-radius: 8px;
+}
+
+#inputAnios{
+	font-size: 12px;
+	width: 60px;
+	margin-left: 25px;
+	height: 25px;
+	border-radius: 8px;	
+}
+
+#txtObservaciones {
+	width: 225px;
+	height: 90px;
+	margin-left: 17px;
+	font-size: 12px;
+	border-radius: 8px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top:-2px;
+     height: 20px;
+     width: 20px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+
+.form-radio-hembra
+{
+     top: -2px;
+     height: 20px;
+     width: 20px;
+     border: 0;
+     left: -10px; 
+     border-radius: 50px;
+}
+
+.form-radio:checked::before
+{
+     font: 12px/1 'Open Sans', sans-serif;
+     left: 6px;
+     top: 3px;
+}
+
+.form-radio-hembra:checked::before
+{
+     font: 12px/1 'Open Sans', sans-serif;
+     left: 6px;
+     top: 3px;
+}
+
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: 1px;
+     height: 20px;
+     width: 20px;
+     margin-right: 1px;
+}
+.form-checkbox:checked::before
+{
+     left: 6px;
+     font: 12px/1 'Open Sans', sans-serif;
+     top: 2px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 12px;
+	width: 230px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 13px;
+}
+
+#lblEsteril {
+	margin-left: 20px;
+	font-size: 13px;
+}
+
+#lblGeneroH {
+	margin-left: 10px;
+	font-size: 13px;
+}
+
+#lblGenero {
+	margin-left: 50px;
+	font-size: 13px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 7px;
+    font-size: 13px;    
+}
+}
+
+@media (min-width:500px) and (max-width: 567px){
+.principal {
+	margin-top: 10%;
+	height: 550px;
+	width: 94%;	
+	margin-left: 3%;
+	}
+
+.form-paciente {
+	height: 525px;
+}
+
+.form-propietario {
+	height: 525px;
+}
+ 
+.title {
+	height: 25px;
+	font-size: 16px;
+}
+
+.title-paciente{	
+	font-size: 15px;
+	margin-left: 35%;
+	margin-top: 5%;
+}
+
+.title-propietario{
+	font-size: 15px;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 11px;
+	width: 200px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+#inputMeses{
+	font-size: 11px;
+	margin-left: 50px;
+	width: 60px;
+	height: 25px;
+}
+
+#inputAnios{
+	font-size: 11px;
+	width: 60px;
+	margin-left: 15px;
+	height: 25px;	
+}
+
+#txtObservaciones {
+	width: 200px;
+	height: 80px;
+	font-size: 11px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 1px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+
+.form-radio-hembra
+{
+     top: 1px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+.form-radio:checked::before, .form-radio-hembra:checked::before
+{
+     font: 11px/1 'Open Sans', sans-serif;
+     left: 5px;
+     top: 1px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: -2px;
+     height: 15px;
+     width: 15px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 4px;
+     top: 0px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 11px;
+	margin-left: 15px;
+	width: 200px;
+	height: 25px;
+	border-radius: 8px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 55px;
+	font-size: 11px;
+}
+
+#lblEsteril{
+	margin-left: 15px;
+	font-size: 11px;
+}
+
+#lblGeneroH {
+	margin-left: 2px;
+	font-size: 11px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 5px;
+    font-size: 11px;    
+}
+}
+
+@media (min-width:414px) and (max-width: 499px){
+.principal {
+	margin-top: 10%;
+	height: 550px;
+	width: 94%;	
+	margin-left: 3%;
+	}
+
+.form-paciente {
+	height: 525px;
+}
+
+.form-propietario {
+	height: 525px;
+}
+ 
+.title {
+	height: 25px;
+	font-size: 16px;
+}
+
+.title-paciente{	
+	font-size: 15px;
+	margin-left: 35%;
+	margin-top: 5%;
+}
+
+.title-propietario{
+	font-size: 15px;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 11px;
+	width: 170px;
+	height: 25px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+#inputMeses{
+	font-size: 11px;
+	margin-left: 30px;
+	width: 60px;
+	height: 25px;
+}
+
+#inputAnios{
+	font-size: 11px;
+	width: 60px;
+	margin-left: 15px;
+	height: 25px;	
+}
+
+#txtObservaciones {
+	width: 170px;
+	height: 80px;
+	font-size: 11px;
+	margin-left: 15px;
+	border-radius: 8px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: 1px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+
+.form-radio-hembra
+{
+     top: 1px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+.form-radio:checked::before, .form-radio-hembra:checked::before
+{
+     font: 11px/1 'Open Sans', sans-serif;
+     left: 5px;
+     top: 1px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: -2px;
+     height: 15px;
+     width: 15px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 4px;
+     top: 0px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 11px;
+	margin-left: 15px;
+	width: 170px;
+	height: 25px;
+	border-radius: 8px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 35px;
+	font-size: 11px;
+}
+
+#lblEsteril{
+	margin-left: 15px;
+	font-size: 11px;
+}
+
+#lblGeneroH {
+	margin-left: 2px;
+	font-size: 11px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 5px;
+    font-size: 11px;    
+}
+}
+
+@media (min-width:360px) and (max-width: 413px){
+.principal {
+	margin-top: 10%;
+	height: 550px;
+	width: 94%;	
+	margin-left: 3%;
+	}
+
+.form-paciente {
+	height: 525px;
+}
+
+.form-propietario {
+	height: 525px;
+}
+ 
+.title {
+	height: 25px;
+	font-size: 16px;
+}
+
+.title-paciente{	
+	font-size: 15px;
+	margin-left: 35%;
+	margin-top: 5%;
+}
+
+.title-propietario{
+	font-size: 15px;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 11px;
+	width: 150px;
+	height: 25px;
+	margin-left: 10px;
+	border-radius: 8px;
+}
+
+#inputMeses{
+	font-size: 11px;
+	margin-left: 20px;
+	width: 60px;
+	height: 25px;
+	border-radius: 8px;
+}
+
+#inputAnios{
+	font-size: 11px;
+	width: 60px;
+	margin-left: 5px;
+	height: 25px;
+	border-radius: 8px;	
+}
+
+#txtObservaciones {
+	width: 150px;
+	height: 80px;
+	font-size: 11px;
+	margin-left: 10px;
+	border-radius: 8px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: -2px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+
+.form-radio-hembra
+{
+     top: -2px;
+     height: 15px;
+     width: 15px;
+     margin-right: 100px; 
+     border-radius: 50px;
+     left: -14px;
+}
+.form-radio:checked::before, .form-radio-hembra:checked::before
+{
+     font: 11px/1 'Open Sans', sans-serif;
+     left: 5px;
+     top: 1px;
+}
+/*EndRadio*/
+
+/*Checkbox*/
+.form-checkbox
+{
+     top: -2px;
+     height: 15px;
+     width: 15px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 4px;
+     top: 0px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 11px;
+	margin-left: 10px;
+	width: 150px;
+	height: 25px;
+	border-radius: 8px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 25px;
+	font-size: 11px;
+}
+
+#lblEsteril{
+	margin-left: 15px;
+	font-size: 11px;
+}
+
+#lblGeneroH {
+	margin-left: 2px;
+	font-size: 11px;
+}
+
+.btnAlta {
+	margin-left: 40%;
+	margin-bottom: 5px;	
+    padding: 5px;
+    font-size: 11px;    
+}
+}
+
+@media (min-width:320px) and (max-width: 359px){
+.principal {
+	margin-top: 10%;
+	height: 470px;
+	width: 94%;	
+	margin-left: 3%;
+	}
+
+.form-paciente {
+	height: 450px;
+}
+
+.form-propietario {
+	height: 450px;
+}
+ 
+.title {
+	height: 20px;
+	font-size: 15px;
+	border-radius: 5px;
+	justify-content: center;
+	align-items: center;
+}
+
+.title-paciente{	
+	font-size: 13px;
+	margin-left: 35%;
+	margin-top: 5%;
+}
+
+.title-propietario{
+	font-size: 13px;
+	margin-left: 30%;
+	margin-top: 5%;
+}
+
+/*Titulo pagina*/
+#titulo-pagina {
+  	text-align: center;
+}
+
+/*Inputs*/
+
+#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	font-size: 9px;
+	width: 130px;
+	height: 25px;
+	margin-left: 10px;
+	border-radius: 8px;
+}
+
+#inputMeses{
+	font-size: 10px;
+	margin-left: 10px;
+	width: 60px;
+	height: 25px;
+	border-radius: 8px;
+}
+
+#inputAnios{
+	font-size: 10px;
+	width: 60px;
+	margin-left: 6px;
+	height: 25px;
+	border-radius: 8px;	
+}
+
+#txtObservaciones {
+	width: 130px;
+	height: 80px;
+	font-size: 10px;
+	margin-left: 10px;
+	border-radius: 8px;
+}
+
+/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+/*Radio*/
+.form-radio
+{
+     top: -3px;
+     height: 12px;
+     width: 12px;
+     left: -10px; 
+     border-radius: 50px;
+}
+.form-radio:checked::before
+{
+     font: 8px/1 'Open Sans', sans-serif;
+     left: 4px;
+     top: 1px;
+}
+/*EndRadio*/
+
+.form-radio-hembra{
+	top: -3px;
+    height: 12px;
+    width: 12px;
+    left: -12px; 
+    border-radius: 50px;
+}
+
+.form-radio-hembra:checked::before
+{
+     font: 8px/1 'Open Sans', sans-serif;
+     left: 4px;
+     top: 1px;
+}
+/*Checkbox*/
+.form-checkbox
+{
+     top: -2px;
+     height: 12px;
+     width: 12px;
+     left: -10px;
+}
+.form-checkbox:checked::before
+{
+     left: 4px;
+     font: 8px/1 'Open Sans', sans-serif;
+     top: 1px;
+}
+/*EndCheckbox*/
+/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+ #inputDireccion, #inputColonia, #inputCP{
+	font-size: 10px;
+	margin-left: 10px;
+	width: 130px;
+	height: 25px;
+	border-radius: 8px;
+}
+/*Labels*/
+
+.radioGenero{
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+#lblGenero {
+	margin-left: 10px;
+	font-size: 11px;
+}
+
+#lblEsteril {
+	margin-left: 10px;
+	font-size: 11px;
+}
+
+#lblGeneroH {
+	margin-left: 5px;
+	font-size: 11px;
+}
+
+.btnAlta {
+	margin-left: 30%;
+	margin-bottom: 4px;	
+    padding: 5px;
+    font-size: 10px;    
+}
+}

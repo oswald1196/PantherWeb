@@ -100,3 +100,271 @@
     border-radius: 5px;
     border: 1px solid black;
 }
+/*------ MEDIA QUERIES ----------- */
+@media (min-width: 1024px) and (max-width: 1366px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 7%;
+}
+
+#carnet_ecto {
+  margin-top: 2%;
+  width: 100%;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-family: 'Nunito', sans-serif;  
+  font-size: 20px;
+  border-bottom: 1px solid;
+  border-color: #D6D5E1;
+  text-align: left;
+}
+
+#c_descripcionD {
+  width: 30%;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+.botonAddEcto {
+     padding: 10px;
+    font-size: 20px;
+    margin-left: 85%;
+}
+
+
+ #simbolo_addD{
+  height: 13px;
+ }
+ }
+
+@media (min-width: 768px) and (max-width: 1023px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.cabeceraE {
+  height: 70px;
+  width: 100%; 
+  font-size: 25px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 18px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 18px;
+}
+
+#c_descripcionD {
+  width: 30%;
+  font-size: 18px;
+  border: 1px solid;
+  border-color: #D6D5E1;
+}
+
+.botonAddEcto {
+     padding: 10px;
+    font-size: 18px;
+    margin-left: 80%;
+}
+
+ #simbolo_addE{
+  height: 17px;
+ }
+ }
+
+@media (min-width: 666px) and (max-width: 767px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.cabeceraE {
+  height: 60px;
+  width: 100%; 
+  font-size: 22px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 17px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 17px;
+}
+
+#c_descripcionD {
+  width: 30%;
+  font-size: 17px;
+}
+
+.botonAddEcto {
+     padding: 8px;
+    font-size: 17px;
+    margin-left: 82%;
+}
+
+ #simbolo_addE{
+  height: 17px;
+ }
+ }
+
+@media (min-width: 565px) and (max-width: 665px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 8%;
+}
+
+.cabeceraE {
+  height: 50px;
+  width: 100%; 
+  font-size: 20px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 15px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 15px;
+}
+
+#c_descripcionD {
+  width: 30%;
+  font-size: 15px;
+}
+
+.botonAddEcto {
+     padding: 8px;
+    font-size: 15px;
+    margin-left: 80%;
+}
+
+ #simbolo_addE{
+  height: 15px;
+ }
+ }
+
+@media (min-width: 416px) and (max-width: 564px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 8%;
+}
+
+.cabeceraE {
+  height: 50px;
+  width: 100%; 
+  font-size: 20px;
+  border-radius: 5px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 15px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 15px;
+}
+
+#c_descripcionD {
+  width: 30%;
+  font-size: 15px;
+}
+
+.botonAddEcto {
+     padding: 8px;
+    font-size: 15px;
+    margin-left: 75%;
+}
+
+ #simbolo_addE{
+  height: 15px;
+ }
+ }
+
+@media (min-width: 360px) and (max-width: 415px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 8%;
+}
+
+.cabeceraE {
+  height: 40px;
+  width: 100%; 
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 14px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 14px;
+}
+
+#c_descripcionD {
+  width: 30%;
+  font-size: 14px;
+}
+
+.botonAddEcto {
+     padding: 5px;
+    font-size: 14px;
+    margin-left: 75%;
+}
+
+ #simbolo_addE{
+  height: 13px;
+ }
+ }
+
+
+@media (max-width: 359px){
+.forma_principalE{
+  width: 98%; 
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.cabeceraE {
+  height: 35px;
+  width: 100%; 
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
+  font-size: 12px;
+}
+
+#c_fechaD, #c_proximaD, #c_loteD, #c_cadD, #c_citaD {
+  font-size: 12px;
+}
+
+#c_descripcionD {
+  width: 23%;
+  font-size: 12px;
+}
+
+.botonAddEcto {
+     padding: 3px;
+    font-size: 12px;
+    margin-left: 75%;
+}
+
+ #simbolo_addE{
+  height: 10px;
+ }
+ }
+
+

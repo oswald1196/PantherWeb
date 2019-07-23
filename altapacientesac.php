@@ -148,9 +148,9 @@ $fecha_actual = date("Y-m-d");
 
                                     &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="MACHO" id="radio-one" class="form-radio" checked><label for="radio-one"></label>
 
-                                    <label for="radioGenero" class="required" id="lblGenero" value="HEMBRA">Hembra</label>
+                                    <label for="radioGenero" class="required" id="lblGeneroH" value="HEMBRA">Hembra</label>
 
-                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio"><label for="radio-one"></label>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio-hembra"><label for="radio-one"></label>
                                   </div>
                                 <div class="form-input">
                                   
