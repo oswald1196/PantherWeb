@@ -33,7 +33,7 @@
  
 #div_nuevo_motivo {
 	width: 45%;
-	margin-top: 4%;
+	margin-top: 5%;
 	float: right;
 }
 
@@ -77,6 +77,176 @@
 	height: 15%;
 	margin-left: 2%;
 	margin-top: 8%;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#inputServicio {
+	font-size: 17px;
+	width: 160px;
+	height: 40px;
+	margin-left: 40px;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 8%;
+	height: 20px;
+	width: 20px;
+}
+
+#inputMotivos{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 30%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+#selectPacientes{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 35%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+
+#inputMotivo {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 40%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+	text-transform: uppercase;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 10%;
+}
+
+#lblHoraInicio{
+	margin-left: 5%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblTodoDia{
+	margin-left: 5%;	
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblMotivos{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 35%;
+}
+
+#lblNuevaCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+	margin-left: 3%;
+}
+
+/*Botones*/
+
+.botonAgregar {
+ 	font-family: 'Nunito', sans-serif;
+	margin-left: 45%;
+	margin-top: 5%;
+	text-decoration: none;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+
+}
+
+#btnAddMotivo {
+	text-decoration: none;
+    padding: 2px;
+    font-size: 15px;
+    width: 45px;
+    height: 45px;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 5px;
+    border: 1px solid #0016b0;
+}
+
+
+@media(min-width: 1100px) and (max-width: 1366px){
+.contenedor_principal {
+	height: 70%;
+	width: 70%;	
+	margin-left: 15%;
+	margin-right: 20%;	
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	font-size: 27px;
+}
+
+#div_nuevo_motivo {
+	width: 45%;
+	margin-top: 6%;
+	float: right;
+}
+
+#fechas_citaG {
+	margin-top: 5%;
+	height: 33%;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 20%;
+	height: 15%;
+	margin-left: 1%;
+	margin-top: 8%;
 }
 
 #inputhoraini{
@@ -113,86 +283,894 @@
 	font-size: 15px;
 	width: 35%;
 	height: 40px;
-	margin-left: 10px;
+	margin-left: 5px;
 	margin-top: 7%;
 }
 
 
 #inputMotivo {
-	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width: 40%;
 	height: 40px;
 	margin-left: 10px;
-	margin-top: 7%;
+	margin-top: 8%;
 	text-transform: uppercase;
 }
 
 /*Labels*/
 
 #lblFechaA {
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
-	margin-left: 10%;
+	font-size: 21px;
+	margin-left: 8%;
 }
 
 #lblHoraInicio{
 	margin-left: 5%;	
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
+	font-size: 21px;
 }
 
 #lblTodoDia{
 	margin-left: 5%;	
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
+	font-size: 21px;
 }
 
 #lblMotivos{
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
+	font-size: 21px;
 	margin-left: 5%;
 }
 
 #lblPacientes{
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
-	margin-left: 30%;
+	font-size: 21px;
+	margin-left: 27%;
 }
 
 #lblNuevaCita{
-	font-family: 'Nunito', sans-serif;
-	font-size: 23px;
-	margin-left: 3%;
+	font-size: 21px;
+	margin-left: 0px;
+}
+ 
+#div_nuevo_motivo {
+	width: 50%;
+	margin-top: 3%;
+	float: right;
 }
 
 /*Botones*/
 
 .botonAgregar {
- 	font-family: 'Nunito', sans-serif;
 	margin-left: 45%;
 	margin-top: 5%;
-	text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 6px;
-    border: 1px solid #0016b0;
-
 }
 
 #btnAddMotivo {
 	margin-left: 1%;
-	text-decoration: none;
     padding: 5px;
-    font-size: 20px;
-    width: 45px;
-    height: 45px;
-    color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 1px;
-    border: 1px solid #0016b0;
-
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+	}
 }
 
+
+@media(min-width: 1024px) and (max-width: 1099px){
+.contenedor_principal {
+	height: 70%;
+	width: 80%;	
+	margin-left: 10%;
+	margin-right: 20%;	
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	font-size: 27px;
+}
+
+#div_nuevo_motivo {
+	width: 45%;
+	margin-top: 6%;
+	float: right;
+}
+
+#fechas_citaG {
+	margin-top: 5%;
+	height: 33%;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-family: 'Nunito', sans-serif;
+	font-size: 17px;
+	width: 20%;
+	height: 15%;
+	margin-left: 1%;
+	margin-top: 8%;
+}
+
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+#inputServicio {
+	font-size: 17px;
+	width: 160px;
+	height: 40px;
+	margin-left: 40px;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+#inputMotivos{
+	font-size: 15px;
+	width: 30%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+
+#selectPacientes{
+	font-size: 15px;
+	width: 35%;
+	height: 40px;
+	margin-left: 5px;
+	margin-top: 7%;
+}
+
+
+#inputMotivo {
+	font-size: 15px;
+	width: 40%;
+	height: 40px;
+	margin-left: 10px;
+	margin-top: 8%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 21px;
+	margin-left: 8%;
+}
+
+#lblHoraInicio{
+	margin-left: 4%;	
+	font-size: 21px;
+}
+
+#lblTodoDia{
+	margin-left: 5%;	
+	font-size: 21px;
+}
+
+#lblMotivos{
+	font-size: 21px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-size: 21px;
+	margin-left: 27%;
+}
+
+#lblNuevaCita{
+	font-size: 21px;
+	margin-left: 0px;
+}
+ 
+#div_nuevo_motivo {
+	width: 50%;
+	margin-top: 3%;
+	float: right;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 45%;
+	margin-top: 5%;
+    padding: 10px;
+    font-size: 20px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+	}
+}
+
+@media(min-width: 768px) and (max-width: 1024px){
+.contenedor_principal {
+	width: 80%;
+	margin-top: 5%;	
+	margin-left: 10%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 10%;
+	font-size: 25px;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-size: 15px;
+	width: 25%;
+	height: 20%;
+	margin-left: 0%;
+	margin-top: 8%;
+}
+
+#inputhoraini{
+	font-size: 15px;
+	width: 17%;
+	height: 20%;
+	margin-left: 1%;
+	margin-top: 8%;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 10%;
+}
+
+#inputMotivos{
+	font-size: 15px;
+	width: 55%;
+	height: 15%;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+
+#selectPacientes{
+	font-size: 15px;
+	width: 40%;
+	height: 40px;
+	margin-left: 5px;
+	margin-top: 7%;
+}
+
+
+#inputMotivo {
+	font-size: 15px;
+	width: 40%;
+	height: 35%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 18px;
+	margin-left: 2%;
+}
+
+#lblHoraInicio{
+	margin-left: 3%;	
+	font-size: 18px;
+}
+
+#lblTodoDia{
+	margin-left: 4%;	
+	font-size: 18px;
+}
+
+#lblMotivos{
+	font-size: 18px;
+	margin-left: 17%;
+}
+
+#lblPacientes{
+	font-size: 18px;
+	margin-left: 27%;
+}
+
+#lblNuevaCita{
+	font-size: 18px;
+	margin-left: 13%;
+}
+ 
+#fechas_citaG {
+	margin-top: 5%;
+	width: 100%;
+	height: 25%;
+}
+
+#div_motivos {
+	margin-top: -5%;
+	height: 35%;
+	width: 100%;
+}
+
+#div_boton {
+	margin-top: 35%;
+	height: 35%;
+}
+
+#div_nuevo_motivo {
+	width: 100%;
+	margin-top: 10%;
+	height: 45%;
+	float: center;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 45%;
+	margin-top: 10%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+	}
+}
+
+@media(min-width: 568px) and (max-width: 767px){
+.contenedor_principal {
+	width: 80%;
+	margin-top: 5%;	
+	margin-left: 10%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 5%;
+	font-size: 25px;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-size: 15px;
+	width: 35%;
+	height: 20%;
+	margin-left: 0%;
+	margin-top: 8%;
+}
+
+#inputhoraini{
+	font-size: 15px;
+	width: 25%;
+	height: 20%;
+	margin-left: 1%;
+	margin-top: 8%;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 15%;
+}
+
+#inputMotivos{
+	font-size: 13px;
+	width: 70%;
+	height: 13%;
+	margin-left: 10px;
+	margin-top: 20%;
+}
+
+#selectPacientes{
+	font-size: 13px;
+	width: 55%;
+	height: 35px;
+	margin-left: 5px;
+	margin-top: 7%;
+}
+
+
+#inputMotivo {
+	font-size: 15px;
+	width: 40%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 18px;
+	margin-left: 2%;
+}
+
+#lblHoraInicio{
+	margin-left: 3%;	
+	font-size: 18px;
+}
+
+#lblTodoDia{
+	margin-left: 40%;	
+	font-size: 18px;
+}
+
+#lblMotivos{
+	font-size: 18px;
+	margin-left: 7%;
+}
+
+#lblPacientes{
+	font-size: 18px;
+	margin-left: 15%;
+}
+
+#lblNuevaCita{
+	font-size: 18px;
+	margin-left: 9%;
+}
+ 
+#fechas_citaG {
+	margin-top: 5%;
+	width: 100%;
+	height: 25%;
+}
+
+#div_motivos {
+	margin-top: -5%;
+	height: 35%;
+	width: 100%;
+}
+
+#div_boton {
+	margin-top: 35%;
+	height: 35%;
+}
+
+#div_nuevo_motivo {
+	width: 100%;
+	margin-top: 10%;
+	height: 45%;
+	float: center;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 45%;
+	margin-top: 15%;
+    padding: 10px;
+    font-size: 18px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    margin-top: 4%;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+	}
+}
+
+@media(min-width: 415px) and (max-width: 567px){
+.contenedor_principal {
+	width: 80%;
+	background-color: honeydew;
+	margin-top: 0%;	
+	margin-left: 10%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 5%;
+	font-size: 25px;
+}
+
+/*Inputs*/
+
+#inputfecha1{
+	font-size: 12px;
+	width: 55%;
+	height: 35px;
+	margin-left: 0%;
+	margin-top: 8%;
+}
+
+#inputhoraini{
+	font-size: 12px;
+	width: 30%;
+	height: 20%;
+	margin-left: 1%;
+	margin-top: 20%;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 20%;
+	height: 15px;
+	width: 15px;
+}
+
+#inputMotivos{
+	font-size: 12px;
+	width: 70%;
+	height: 35px;
+	margin-left: 10px;
+	margin-top: 40%;
+}
+
+#selectPacientes{
+	font-size: 12px;
+	width: 60%;
+	height: 35px;
+	margin-left: 5px;
+	margin-top: 15%;
+}
+
+
+#inputMotivo {
+	font-size: 12px;
+	width: 40%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 15%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 15px;
+	margin-left: 15%;
+}
+
+#lblHoraInicio{
+	margin-left: 22%;	
+	font-size: 15px;
+}
+
+#lblTodoDia{
+	margin-left: 35%;	
+	font-size: 15px;
+}
+
+#lblMotivos{
+	font-size: 15px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-size: 15px;
+	margin-left: 10%;
+}
+
+#lblNuevaCita{
+	font-size: 15px;
+	margin-left: 5%;
+}
+ 
+#fechas_citaG {
+	margin-top: 5%;
+	width: 100%;
+	height: 25%;
+}
+
+#div_motivos {
+	margin-top: -5%;
+	height: 35%;
+	width: 100%;
+}
+
+#div_boton {
+	margin-top: 35%;
+	height: 35%;
+}
+
+#div_nuevo_motivo {
+	width: 100%;
+	margin-top: 10%;
+	height: 45%;
+	float: center;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 35%;
+	margin-top: 5%;
+    padding: 8px;
+    font-size: 15px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    margin-top: 4%;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+	}
+}
+
+@media(min-width: 360px) and (max-width: 414px){
+.contenedor_principal {
+	width: 80%;
+	background-color: azure;
+	margin-top: 5%;	
+	margin-left: 10%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 5%;
+	font-size: 25px;
+}
+/*Inputs*/
+
+#inputfecha1{
+	font-size: 11px;
+	width: 55%;
+	height: 30px;
+	margin-left: 0%;
+	margin-top: 10%;
+}
+
+#inputhoraini{
+	font-size: 11px;
+	width: 35%;
+	height: 18%;
+	margin-left: 1%;
+	margin-top: 20%;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 20%;
+	height: 15px;
+	width: 15px;
+}
+
+#inputMotivos{
+	font-size: 11px;
+	width: 70%;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 40%;
+}
+
+#selectPacientes{
+	font-size: 11px;
+	width: 68%;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 15%;
+}
+
+
+#inputMotivo {
+	font-size: 11px;
+	width: 40%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 15%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 13px;
+	margin-left: 15%;
+	margin-top: 4%;
+}
+
+#lblHoraInicio{
+	margin-left: 22%;	
+	margin-top: 4%;
+	font-size: 13px;
+}
+
+#lblTodoDia{
+	margin-left: 35%;	
+	font-size: 13px;
+}
+
+#lblMotivos{
+	font-size: 13px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-size: 13px;
+	margin-left: 5%;
+}
+
+#lblNuevaCita{
+	font-size: 13px;
+	margin-left: 5%;
+}
+ 
+#fechas_citaG {
+	margin-top: 5%;
+	width: 100%;
+	height: 25%;
+}
+
+#div_motivos {
+	margin-top: -5%;
+	height: 35%;
+	width: 100%;
+}
+
+#div_boton {
+	margin-top: 35%;
+	height: 35%;
+}
+
+#div_nuevo_motivo {
+	width: 100%;
+	margin-top: 10%;
+	height: 45%;
+	float: center;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 35%;
+	margin-top: 20%;
+    padding: 8px;
+    font-size: 15px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    margin-top: 4%;
+    font-size: 15px;
+    width: 30px;
+    height: 30px;
+	}
+}
+
+@media(max-width: 359px){
+.contenedor_principal {
+	width: 80%;
+	background-color: azure;
+	margin-top: 5%;	
+	margin-left: 10%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 10%;
+	font-size: 15px;
+}
+/*Inputs*/
+
+#inputfecha1{
+	font-size: 10px;
+	width: 55%;
+	height: 30px;
+	margin-left: 0%;
+	margin-top: 10%;
+}
+
+#inputhoraini{
+	font-size: 10px;
+	width: 35%;
+	height: 18%;
+	margin-left: 1%;
+	margin-top: 20%;
+}
+
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 20%;
+	height: 15px;
+	width: 15px;
+}
+
+#inputMotivos{
+	font-size: 10px;
+	width: 70%;
+	height: 30px;
+	margin-left: 10px;
+	margin-top: 40%;
+}
+
+#selectPacientes{
+	font-size: 10px;
+	width: 68%;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 15%;
+}
+
+
+#inputMotivo {
+	font-size: 10px;
+	width: 40%;
+	height: 25%;
+	margin-left: 2%;
+	margin-top: 15%;
+}
+
+/*Labels*/
+
+#lblFechaA {
+	font-size: 12px;
+	margin-left: 15%;
+	margin-top: 4%;
+}
+
+#lblHoraInicio{
+	margin-left: 22%;	
+	margin-top: 4%;
+	font-size: 12px;
+}
+
+#lblTodoDia{
+	margin-left: 35%;	
+	font-size: 12px;
+}
+
+#lblMotivos{
+	font-size: 12px;
+	margin-left: 5%;
+}
+
+#lblPacientes{
+	font-size: 12px;
+	margin-left: 5%;
+}
+
+#lblNuevaCita{
+	font-size: 12px;
+	margin-left: 3%;
+	margin-top: 3%;
+}
+ 
+#fechas_citaG {
+	margin-top: 5%;
+	width: 100%;
+	height: 25%;
+}
+
+#div_motivos {
+	margin-top: -5%;
+	height: 35%;
+	width: 100%;
+}
+
+#div_boton {
+	margin-top: 35%;
+	height: 35%;
+}
+
+#div_nuevo_motivo {
+	width: 100%;
+	margin-top: 10%;
+	height: 45%;
+	float: center;
+}
+
+/*Botones*/
+
+.botonAgregar {
+	margin-left: 35%;
+	margin-top: 20%;
+    padding: 6px;
+    font-size: 13px;
+}
+
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 3px;
+    margin-top: 14%;
+    font-size: 13px;
+    width: 27px;
+    height: 27px;
+	}
+}
