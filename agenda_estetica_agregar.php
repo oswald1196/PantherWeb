@@ -28,6 +28,7 @@ require 'conexion.php';
     <link rel="stylesheet" href="dist/sweetalert2.min.css">    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
+
 	</head>
 
 	<body>
@@ -196,7 +197,7 @@ window.onload = function(){
       <textarea id="inputNotas" name="notas"> </textarea>
   </div>
   <div id="botonAgregar">
-      <button class="botonAgregar" type="submit">Agregar estética</button>    
+      <button class="botonAgregar" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar estética</button>    
   </div>
 </form>  
 </div>  

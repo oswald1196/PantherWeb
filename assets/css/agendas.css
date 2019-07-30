@@ -76,6 +76,8 @@
 	height: 15%;
 	margin-left: 2%;
 	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
 }
 
 #inputhoraini{
@@ -84,6 +86,8 @@
 	height: 15%;
 	margin-left: 2%;
 	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
 }
 
 #inputServicio {
@@ -105,6 +109,8 @@
 	height: 40px;
 	margin-left: 10px;
 	margin-top: 7%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
 }
 
 #inputMotivo {
@@ -115,6 +121,8 @@
 	margin-left: 10px;
 	margin-top: 7%;
 	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745;
 }
 
 /*Labels*/
@@ -175,8 +183,882 @@
     height: 45px;
     color: #ffffff;
     background-color: #1883ba;
-    border-radius: 1px;
-    border: 1px solid #0016b0;
+    border-radius: 28px;
+    border: 1px solid #0016b047;
 
 }
 
+/*iPad*/
+@media(min-width: 768px) and (max-width: 808px){   
+#titulo-pagina {
+	margin-top: 3%;
+	font-size: 20px;
+}
+.container-titulo {
+	border-radius: 10px;
+	height: 8%;
+	font-size: 22px;
+}
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 90%;	
+	margin-left: 5%;
+}
+#lblFechaA {
+	font-size: 24px;
+	margin-left: 13%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 66%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+#lblHoraInicio{
+	margin-left: 6%;	
+	font-size: 24px;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 66%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}	
+#lblTodoDia{
+	margin-left: 6%;	
+	font-size: 24px;
+	margin-top: -1%;
+}
+#chkTodoDia {
+	margin-left: 3%;
+	margin-top: 9%;
+}
+#lblMotivos{
+	font-size: 24px;
+	margin-left: 10%;
+	margin-top: -1%;
+}
+#inputMotivos{
+	font-size: 15px;
+	width: 66%;
+	height: 14%;
+	margin-left: 2%;
+	margin-top: 14%;
+}
+#lblNuevaCita{
+	font-size: 24px;
+	margin-left: -108%;
+}
+.botonAgregar {
+	margin-left: 40%;
+	margin-top: 8%;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 10px;
+    border: 1px solid #0016b0;
+}
+#inputMotivo {
+	font-size: 17px;
+	width: 146%;
+	height: 15%;
+	margin-left: 4%;
+	margin-top: 18%;
+}
+#div_motivos {
+	height: 37%;
+}
+.form_add_cita {
+	height: 750px;
+}
+}
+/*END-iPad*/
+
+
+/*iPad Rotado*/
+@media(min-width: 1024px) and (max-width: 1064px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 71%;
+	width: 98%;	
+	margin-left: 1%;
+	margin-bottom: 10px;
+}
+.form_add_cita {
+	height: 604px;
+}
+#inputfecha1{
+	width: 15%;
+	height: 24%;
+}
+#inputhoraini{
+	width: 15%;
+	height: 24%;
+}
+.botonAgregar {
+	margin-left: 42%;
+	margin-top: 2%;
+}
+}
+/*END-iPad Rotado*/
+
+
+@media(max-width: 552px){
+.contenedor_principal {
+	margin-top: 2%;
+	height: 70%;
+	width: 90%;	
+	margin-left: 5%;
+	margin-right: 5%;
+}
+.form_add_cita {
+	height: 547px;
+}
+#chkTodoDia {
+	margin-top: 12%;
+}
+#inputfecha1{
+	height: 20%;
+}
+#inputhoraini{
+	width: 49%;
+	height: 20%;
+	margin-top: 12%;
+}
+#inputMotivos{
+	font-size: 10px;
+	width: 55%;
+	height: 20%;
+	margin-left: 2%;
+	margin-top: 20%;
+	font-size: 15px;
+}
+#inputMotivo {
+	font-size: 17px;
+	width: 108%;
+	height: 20%;
+	margin-left: 3%;
+	margin-top: 20%;
+}
+.botonAgregar {
+	margin-left: 31%;
+	margin-top: 8%;
+}
+}
+
+
+/*iPhone 5/SE*/
+@media(min-width: 320px) and (max-width: 560px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 90%;	
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 10px;
+}
+.form_add_cita {
+	height: 532px;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 56%;
+	height: 23%;
+	margin-left: 2%;
+	margin-top: 4%;
+}
+#lblFechaA {
+	font-size: 23px;
+	margin-left: 10%;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 44%;
+	height: 23%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 10%;
+}
+#inputMotivos{
+	font-size: 10px;
+	width: 53%;
+	height: 23%;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+#inputMotivo {
+	font-size: 16px;
+	width: 84%;
+	height: 41%;
+	margin-left: 7px;
+	margin-top: 7%;
+}
+#btnAddMotivo {
+	margin-left: 1%;
+    padding: 5px;
+    font-size: 20px;
+    width: 43px;
+    height: 43px;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -113%;
+}
+.botonAgregar {
+	margin-left: 25%;
+	margin-top: 15%;
+    padding: 6px;
+    font-size: 20px;
+}
+}
+/*END-iPhone 5/SE*/
+
+
+/*iPhone 5/SE Rotado*/
+@media(min-width: 568px) and (max-width: 598px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 90%;	
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-bottom: 10px;
+}
+.form_add_cita {
+	height: 303px;
+}
+#lblFechaA {
+	font-size: 23px;
+	margin-left: 3%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 25%;
+	height: 35%;
+	margin-left: 2%;
+	margin-top: 4%;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 25%;
+	height: 35%;
+	margin-left: 2%;
+	margin-top: 3%
+}
+#lblTodoDia{
+	margin-left: 3%;	
+	font-size: 23px;
+}
+#chkTodoDia {
+	margin-left: 1%;
+	margin-top: 9%;
+}
+#lblMotivos{
+	font-size: 23px;
+	margin-left: 36%;
+	margin-top: -4px;
+}
+#inputMotivos{
+	font-size: 14px;
+	width: 43%;
+	height: 35%;
+	margin-left: 2%;
+	margin-top: -1%;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -113%;
+}
+#inputMotivo {
+	font-size: 16px;
+	width: 134%;
+	height: 41%;
+	margin-left: 7%;
+	margin-top: 4%;
+}
+.botonAgregar {
+	margin-left: 35%;
+	margin-top: 2%;
+    padding: 6px;
+}	
+}
+/*iPhone 5/SE Rotado*/
+
+
+/*iPhone 6/7/8 Rotado*/
+@media(min-width: 667px) and (max-width: 708px){
+.contenedor_principal {
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 96%;	
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+}	
+.container-titulo {
+	border-radius: 10px;
+	background-color: #D6D5E1;
+	height: 15%;
+	width: 100%;
+	align-items: center;
+	justify-content: center;	
+	font-size: 30px;
+	color:black;
+}
+.form_add_cita {
+	height: 390px;
+}
+#inputfecha1{
+	font-size: 15px;
+	width: 21%;
+	height: 32%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 53%;
+	height: 32%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#lblFechaA {
+	font-size: 20px;
+	margin-left: 1%;
+}
+#lblHoraInicio{
+	margin-left: 3%;	
+	font-size: 23px;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 13%;
+	height: 32%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#lblMotivos{
+	font-size: 23px;
+	margin-left: 2%;
+}
+#inputMotivos{
+	font-size: 14px;
+	width: 33%;
+	height: 30%;
+	margin-left: 1%;
+	margin-top: 7%;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -9%;
+}
+#inputMotivo {
+	font-size: 17px;
+	width: 49%;
+	height: 41%;
+	margin-left: 2%;
+	margin-top: 7%;
+}
+#btnAddMotivo {
+	margin-left: 2%;
+    padding: 5px;
+    font-size: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #1883ba;
+}
+.botonAgregar {
+	margin-left: 38%;
+	margin-top: 1%;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #1883ba;
+}
+}
+/*END-iPhone 6/7/8 Rotado*/
+
+
+/*LG Optimus L70/
+@media(min-width: 384px) and (max-width: 640px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 94%;	
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-bottom: 10px;
+}
+.form_add_cita {
+	height: 369px;
+}
+#lblFechaA {
+	font-size: 23px;
+	margin-left: 1%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 23%;
+	height: 30%;
+	margin-left: 1%;
+	margin-top: 8%;
+}
+#lblHoraInicio{
+	margin-left: 1%;	
+	font-size: 23px;
+}
+#inputhoraini{
+	width: 15%;
+	height: 30%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#lblTodoDia{
+	margin-left: 1%;	
+	font-size: 23px;
+}
+#lblMotivos{
+	font-size: 23px;
+	margin-left: 1%;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -9%;
+}
+#inputMotivo {
+	font-size: 15px;
+	width: 47%;
+	height: 40%;
+	margin-left: 3px;
+	margin-top: 7%;
+}
+#inputMotivos{
+	font-size: 15px;
+	width: 35%;
+	height: 34px;
+	margin-left: 4px;
+	margin-top: 7%;
+}
+.botonAgregar {
+	margin-left: 37%;
+	margin-top: 1%;
+}	
+}
+/*END-LG Optimus L70*/
+
+
+/*Nexus 5X/
+@media(max-width: 733px){
+.contenedor_principal {
+	margin-top: 2%;
+	height: 70%;
+	width: 94%;	
+	margin-left: 3%;
+	margin-right: 3%;
+	margin-bottom: 10px;
+}
+.form_add_cita {
+	height: 394px;
+}
+#lblFechaA {
+	font-size: 23px;
+	margin-left: 4%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 20%;
+	height: 30%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#lblHoraInicio{
+	margin-left: 3%;	
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 30%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#lblTodoDia{
+	margin-left: 3%;	
+	font-size: 23px;
+}
+#inputMotivos{
+	width: 31%;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -10%;
+}
+#inputMotivo {
+	font-size: 19px;
+	width: 50%;
+	height: 30%;
+	margin-left: 8px;
+}
+#lblMotivos{
+	font-size: 23px;
+	margin-left: 3%;
+}
+#btnAddMotivo {
+	margin-left: 3%;
+}
+.botonAgregar {
+	margin-left: 40%;
+	margin-top: 1%;
+}
+}
+/*END-Nexus 5X*/
+
+
+
+
+
+/*Responsivo 2/
+@media(max-width: 734px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 94%;	
+	margin-left: 3%;
+	margin-right: 3%;
+}	
+.form_add_cita {
+	height: 640px;
+}
+#inputMotivos{
+	font-size: 15px;
+	width: 31%;
+	height: 19%;
+	margin-left: 2%;
+	margin-top: 5%;
+}
+#lblMotivos{
+	font-size: 24px;
+	margin-left: 3%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 15%;
+	height: 19%;
+}
+#lblHoraInicio{
+	margin-left: 4%;	
+	font-size: 23px;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 19%;
+}
+.botonAgregar {
+	margin-left: 39%;
+	margin-top: 7%;
+}
+/*END-Responsivo 2*/
+
+
+
+/*iPhone 6/7/8 Plus Rotado*/
+@media(min-width: 736px) and (max-width: 766px){
+.contenedor_principal {
+	margin-top: 2%;
+	height: 70%;
+	width: 96%;	
+	margin-left: 2%;
+	margin-right: 2%;
+	margin-bottom: 10px;
+}
+.container-titulo {
+	height: 12%;
+}
+.form_add_cita {
+	height: 400px;
+}
+#lblFechaA {
+	font-size: 23px;
+	margin-left: 2%;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 20%;
+	height: 29%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 29%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+.botonAgregar {
+	margin-left: 39%;
+	margin-top: 1%;
+}
+#lblNuevaCita{
+	font-size: 23px;
+	margin-left: -7%;
+}
+#btnAddMotivo {
+	margin-left: 5%;
+}
+#inputMotivo {
+	font-size: 17px;
+	width: 45%;
+	height: 40%;
+	margin-left: 10px;
+	margin-top: 7%;
+}
+}
+/*END-iPhone 6/7/8 Plus Rotado*/
+
+
+/*iPhone X/XS*/
+@media(min-width: 375px) and (max-width: 415px){   
+#titulo-pagina {
+	margin-top: 2%;
+	font-size: 20px;
+}
+.container-titulo {
+	border-radius: 10px;
+	height: 10%;
+	font-size: 20px;
+}
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 80%;	
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 10px;
+	}
+#lblFechaA {
+	font-size: 20px;
+	margin-left: 17%;
+}
+#inputfecha1{
+	font-size: 15px;
+	width: 53%;
+	height: 18%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+#lblHoraInicio{
+	margin-left: 3%;	
+	font-size: 20px;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 53%;
+	height: 18%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+#chkTodoDia {
+	margin-left: 2%;
+	margin-top: 17%;
+}
+#lblTodoDia{
+	margin-left: 3%;	
+	font-size: 20px;
+}
+#lblMotivos{
+	font-size: 20px;
+	margin-left: 12%;
+}
+#inputMotivos{
+	font-size: 10px;
+	width: 53%;
+	height: 16%;
+	margin-left: 2%;
+	margin-top: 7%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+#lblNuevaCita{
+	font-size: 20px;
+	margin-left: -117%;
+}
+#inputMotivo {
+	font-size: 15px;
+	width: 95%;
+	height: 18%;
+	margin-left: 9%;
+	margin-top: 18%;
+	text-transform: uppercase;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+#btnAddMotivo {
+	margin-left: 2%;
+	text-decoration: none;
+    padding: 4px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 28px;
+    border: 1px solid #0016b047;
+}
+.botonAgregar {
+	margin-left: 31%;
+	margin-top: 20%;
+	text-decoration: none;
+    padding: 7px;
+    font-size: 18px;
+    color: #ffffff;
+    background-color: #1883ba;
+    border-radius: 10px;
+    border: 1px solid #0016b0;
+}
+.form_add_cita {
+	height: 700px;
+	justify-content: space-around;
+}
+}
+/*END-iPhone X/XS*/
+
+
+/*iPhone X/XS MAX*/
+@media(min-width: 376px) and (max-width: 425px){
+#lblHoraInicio{
+	margin-left: 4%;	
+}
+#inputhoraini{
+	width: 53%;
+	height: 18%;
+	margin-left: 2%;
+	margin-top: 16%;
+}
+#lblTodoDia{
+	margin-left: 4%;	
+}
+#chkTodoDia {
+	margin-top: 19%;
+}
+#inputMotivos{
+	width: 53%;
+	height: 15%;
+	margin-left: 2%;
+	margin-top: 20%;
+}
+#lblNuevaCita{
+	margin-left: -112%;
+}
+#inputMotivo {
+	font-size: 17px;
+	width: 108%;
+	height: 20%;
+	margin-left: 3%;
+	margin-top: 32%;
+}
+}
+/*END-iPhone X/XS MAX*/
+
+
+/*iPhone X/XS Rotado*/
+@media(min-width: 782px) and (max-width: 812px){
+.contenedor_principal {
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 98%;	
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 10px;
+	}
+.form_add_cita {
+	height: 366px;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 15%;
+	height: 34%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 34%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+.botonAgregar {
+	margin-left: 41%;
+	margin-top: -1%;
+    padding: 10px;
+    font-size: 20px;
+}	
+}
+/*END iPhone X/XS Rotado*/
+
+
+/*iPhone X/XS MAX rotado*/
+@media(min-width: 820px) and (max-width: 897px){
+.contenedor_principal {
+	background-color: white;
+	border-radius: 10px;
+	margin-top: 2%;
+	height: 70%;
+	width: 98%;	
+	margin-left: 1%;
+	margin-right: 1%;
+	margin-bottom: 10px;
+}
+#inputfecha1{
+	font-size: 17px;
+	width: 15%;
+	height: 31%;
+	margin-left: 2%;
+	margin-top: 8%;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
+.form_add_cita {
+	height: 400px;
+}
+#inputhoraini{
+	font-size: 17px;
+	width: 15%;
+	height: 31%;
+	margin-left: 2%;
+	margin-top: 8%;
+}
+.botonAgregar {
+	margin-left: 45%;
+	margin-top: 0%;
+    padding: 10px;
+    font-size: 20px;
+    color: #ffffff;
+}
+}
+/*END-iPhone X/XS MAX rotado*/

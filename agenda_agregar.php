@@ -86,7 +86,10 @@ window.onload = function(){
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
       <input type="time" id="inputhoraini" name="horaInicio" value="" >
       <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
+
+      <!--Original-->
       <input type="checkbox" id="chkTodoDia" name="diaCita" onchange="validar(this.checked);">
+      <!--Original-->
 
       <script type="text/javascript">
       function validar(value)
@@ -120,7 +123,7 @@ window.onload = function(){
       </select>
     <div id="div_nuevo_motivo">
     <form id="form_add_motivo" action="insertar_motivo_nuevo.php">
-    <label for="inputMotivo" id="lblNuevaCita">Escribe nueva cita</label>
+    <label for="inputMotivo" id="lblNuevaCita">Nueva cita</label>
     <input type="text" id="inputMotivo" placeholder="Nuevo motivo" name="nuevoMotivo">
     <!--<input type="hidden" name="correo" value="<?php //echo $motivos['vchCorreo'] ?>">
     <input type="hidden" name="empresa" value="<?php //echo $motivos['iCodEmpresa'] ?>">
@@ -131,7 +134,7 @@ window.onload = function(){
     </form>
     </div>
   <div id="div_boton">
-      <button class="botonAgregar" id="btnAgregarCita" type="submit">Agregar cita</button>
+      <button class="botonAgregar" id="btnAgregarCita" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar cita</button>
     </div>
     <script type="text/javascript">
       function validarForm() {

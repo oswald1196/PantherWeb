@@ -95,6 +95,8 @@
 	margin-left: 10%;
 	margin-top: 5%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputTipoServicio{
@@ -105,6 +107,8 @@
 	margin-left: 10%;
 	margin-top: 5%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputFechaE{
@@ -115,6 +119,8 @@
 	margin-left: 2%;
 	margin-top: 4%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputServicioE {
@@ -125,6 +131,8 @@
 	margin-left: 10%;
 	margin-top: 5%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #chkTodoDia {
@@ -139,6 +147,8 @@
 	margin-left: 2%;
 	margin-top: 4%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputHoraInicio{
@@ -149,6 +159,8 @@
 	margin-left: 2%;
 	margin-top: 4%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputHoraFinE {
@@ -159,6 +171,8 @@
 	margin-left: 2%;
 	margin-top: 4%;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 #inputNotas {
@@ -169,6 +183,8 @@
 	margin-left: 2%;
 	text-transform: uppercase;
 	color: gray;
+	border-radius: 10px;
+    border: 2px solid #40444745;
 }
 
 
