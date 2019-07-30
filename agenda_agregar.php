@@ -140,8 +140,7 @@ window.onload = function(){
     </form>
     </div>
   <div id="div_boton">
-      <button class="botonAgregar" id="btnAgregarCita" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar cita</button>
-      <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit">Agregar cita</button>
+      <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit"> <i class="fas fa-plus-square"></i>&nbsp;&nbsp; Agregar cita</button>
     </div>
     <script type="text/javascript">
       function validarFormCita() {
