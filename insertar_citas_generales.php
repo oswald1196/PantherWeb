@@ -1,21 +1,22 @@
 <?php
 	require ('conexion.php');
 
-	$correo = $_POST['correo'];
-	$pais = $_POST['pais'];
-	$estado = $_POST['estado'];
-	$ciudad = $_POST['ciudad'];
-	$cEmpresa = $_POST['empresa'];
 	$codPaciente = $_POST['paciente'];
 	$fecha = $_POST['fechaAgenda'];
 	$horaIni = $_POST['horaInicio'];
 	$codMotivo = $_POST['codigoMotivo'];
-	$codPropietario = $_POST['propietario'];
-	$nombrePaciente = $_POST['nombrePac'];
-	$raza = $_POST['raza'];
-	$nombrePropietario = $_POST['nombreProp'];
-	$telefono = $_POST['telefono'];
+	$cEmpresa = $_POST['empresa'];
     
+    $pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
+    $pac = mysqli_query($conn,$pacientes);
+    $newPac = mysqli_fetch_assoc($pac);
+
+    $correo = $newPac['vchCorreo'];
+    $pais = $newPac['vchPais'];
+    $estado = $newPac['vchEstado'];
+    $ciudad = $newPac['vchCiudad'];
+    $codPropietario = $newPac['iCodPropietario'];
+
     $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$cEmpresa' AND iCodMotivo = '$codMotivo'";
     $resultado = mysqli_query($conn,$consulta);
     $fila = mysqli_fetch_assoc($resultado);

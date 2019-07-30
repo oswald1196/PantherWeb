@@ -1,7 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
 
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -51,8 +55,8 @@ require 'conexion.php';
                     <table id="tbl_estetica">
                     <tbody>
 
-                    <thead id="thead_estetica">
-                        <tr id="tbl_headerE">
+                    <thead id="tbl_headerE">
+                        <tr>
                             <th id="c_fechaE">Fecha</th>
                             <th id="c_motivoE">Descripción</th>
                             <th id="c_horaE">Hora</th>

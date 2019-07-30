@@ -20,7 +20,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/preventivos.css" />
+		<link rel="stylesheet" href="assets/css/preventivos_grales.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -42,7 +42,6 @@ if ($_SESSION["autenticado"] != "SI") {
 <?php
   $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
-  $codigoP = base64_decode($_GET['codigo']);	
   $fecha_actual = date("Y-m-d");
 
   include('header.php');
@@ -67,26 +66,27 @@ window.onload = function(){
 }
 </script>
 <div class="container">
-<form class="form_add_cita" id="frmEcto" action="insertar_ecto.php" method="POST" onsubmit="return validarEcto();">
+<form class="form_add_cita" id="frmEcto" action="insertar_ecto_general.php" method="POST" onsubmit="return validarEcto();">
+    <div>
+    <label id="lblPacientesV">Paciente</label>
+    <select id="selectPacienteV" name="paciente">
+        <option value="">Elige paciente</option>
     <?php 
-    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
     $query = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($query);
-    ?>
-    <div class="contenedor-titulo">
-      <p id="lblCita"> Paciente: <?php echo $row['vchNombrePaciente']; ?> </p>
-      <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
-        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
+        while ($pacientes = mysqli_fetch_array($query)) {
+          ?>
+          <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
+          <?php
+            }
+        ?>
+      </select>    
     </div>
   <div id="contenedor">
-  <div class="form-left">
+  <div class="form-leftV">
       <label id="lblFecha">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
+      <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
       <label id="lblProducto"> Producto </label>
       <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto();">
         <option value="">ELEGIR PRODUCTO</option>
@@ -108,7 +108,17 @@ window.onload = function(){
       var fechaCad = document.getElementById("inputFechaCad").value;
       var fechaHoy = document.getElementById("fechaActual").value;
       var fechaDeCita = document.getElementById("fechaCita").value;
+      var valorPaciente = document.getElementById("selectPacienteV").value;
       var datos = $('#frmEcto').serialize();
+
+      if(valorPaciente == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige paciente'
+        });
+        return false;
+      }
 
       if(txtEcto == ""){
         Swal.fire({
@@ -139,7 +149,7 @@ window.onload = function(){
 
       $.ajax({
         type: "POST",
-        url: "insertar_ecto.php",
+        url: "insertar_ecto_general.php",
         data: datos,
         success:function(r){
           if (r==1){
@@ -239,14 +249,10 @@ window.onload = function(){
         <input type="checkbox" id="inputCitaP" name="dia" onchange="habilitar(this.checked);" checked>
       </div>
         <input type="text" id="motivoCita" name="motivoCitaEcto" value="ECTOPARÁSITOS">
-      <div class="form-group">
         <label id="lblFechaCita"> Fecha </label>
         <input type="date" id="fechaCita" name="fechaProx">
-        </div>
-        <div class="form-group">
         <label id="lblHoraCita"> Hora </label>
         <input type="time" name="horaProx" id="inputHoraCita">
-      </div>
         <button class="boton" type="submit">Agregar ectoparásito</button>
       </div>
     </div>

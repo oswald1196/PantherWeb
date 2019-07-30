@@ -3,7 +3,7 @@ session_start();
 //echo $_SESSION["autenticado"];
 
 if ($_SESSION["autenticado"] != "SI") {
- 	header("Location: index.php");
+ 	header("Location: index.html");
 }
 
 $codigo = base64_decode($_GET['id']);
@@ -43,6 +43,6 @@ $sql = "SELECT vchNombre FROM CatMedico WHERE iCodEmpresa = '$codigo' AND iCodMe
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result);
 ?>
-<h1> HOLA <?php echo $row['vchNombre'];?> </h1>
+<p class="saludo"> HOLA <?php echo $row['vchNombre']?> </p>
  </body>
 </html>

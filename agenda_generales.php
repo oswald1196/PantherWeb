@@ -1,12 +1,6 @@
 <?php
 
 require 'conexion.php';
-session_start();
-//echo $_SESSION["autenticado"];
-
-if ($_SESSION["autenticado"] != "SI") {
-  header("Location: index.html");
-}
 
 ?>
 
@@ -24,7 +18,7 @@ if ($_SESSION["autenticado"] != "SI") {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/agendas.css" />
+		<link rel="stylesheet" href="assets/css/agenda_generales.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -43,7 +37,6 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <?php
   $codigoE = base64_decode($_GET['id']);
-  $codigoP = base64_decode($_GET['codigo']);
   include('header.php');
   include ('conexion.php');
 ?>
@@ -62,40 +55,32 @@ window.onload = function(){
 }
 </script>
 
- <p id="titulo-pagina">AGENDA</p> 
+ <p id="titulo-pagina">AGENDA GENERAL</p> 
 
 <div class="contenedor_principal">
-<form class="form_add_cita" id="frmAgenda" action="insertar_cita.php" method="POST" onsubmit="return validarForm();">
-    <?php 
-    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
-    $query = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($query);
-    ?>
-    <div class="container-titulo">
-    <p id="lblCita"> Cita para <?php echo $row['vchNombrePaciente']; ?> </p>
-        <input type="hidden" name="correo" id="correoEmpresa" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" id="codigoEmpresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais"  id="paisEmp" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" id="estadoEmp" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="ciudad" id="ciudadEmp" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="paciente" id="codPaciente" value="<?php echo $row['iCodPaciente'] ?>">
-        <input type="hidden" name="propietario" id="codPropietario" value="<?php echo $row['iCodPropietario'] ?>">
-        <input type="hidden" name="nombrePac" id="nombrePaciente" value="<?php echo $row['vchNombrePaciente'] ?>">
-        <input type="hidden" name="raza" id="razaPaciente" value="<?php echo $row['vchRaza'] ?>">
-        <input type="hidden" name="nombreProp" id="nombrePropietario" value="<?php echo $row['vchNombre'] ?>">
-        <input type="hidden" name="telefono" id="telProp" value="<?php echo $row['vchTelefono'] ?>">
+<form class="form_add_cita" id="frmAgenda" action="insertar_citas_generales.php" method="POST" onsubmit="return validarForm();">
+      <input type="hidden" name="empresa" value="<?php echo $codigoE?>">
+        <label id="lblPacientes">Paciente</label>
+      <select id="selectPacientes" name="paciente">
+        <option value="">SELECCIONE UN PACIENTE</option>
+        <?php
+        $paciente = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
+        $resultado = mysqli_query($conn,$paciente);
+        while ($pacientes = mysqli_fetch_array($resultado)) {
+          ?>
+          <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
+          <?php
+                  }
+        ?>
+      </select>
 
-  </div>
-  <div id="fechas_cita">
+<div id="fechas_citaG">
       <label for="inputfecha1" id="lblFechaA">Fecha</label>
       <input type="date" class="input-append date" id="inputfecha1" name="fechaAgenda">
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
       <input type="time" id="inputhoraini" name="horaInicio" value="" >
       <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
-
-      <!--Original-->
       <input type="checkbox" id="chkTodoDia" name="diaCita" onchange="validar(this.checked);">
-      <!--Original-->
 
       <script type="text/javascript">
       function validar(value)
@@ -114,6 +99,7 @@ window.onload = function(){
 
  </div>
   <div id="div_motivos">
+
       <label for="inputMotivos" id="lblMotivos">Motivos</label>
       <select id="inputMotivos" name="codigoMotivo">
         <option value="">SELECCIONE UN MOTIVO</option>
@@ -129,7 +115,7 @@ window.onload = function(){
       </select>
     <div id="div_nuevo_motivo">
     <form id="form_add_motivo" action="insertar_motivo_nuevo.php">
-    <label for="inputMotivo" id="lblNuevaCita">Nueva cita</label>
+    <label for="inputMotivo" id="lblNuevaCita">Escribe nueva cita</label>
     <input type="text" id="inputMotivo" placeholder="Nuevo motivo" name="nuevoMotivo">
     <!--<input type="hidden" name="correo" value="<?php //echo $motivos['vchCorreo'] ?>">
     <input type="hidden" name="empresa" value="<?php //echo $motivos['iCodEmpresa'] ?>">
@@ -140,14 +126,23 @@ window.onload = function(){
     </form>
     </div>
   <div id="div_boton">
-      <button class="botonAgregar" id="btnAgregarCita" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar cita</button>
       <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit">Agregar cita</button>
     </div>
     <script type="text/javascript">
       function validarFormCita() {
       var motivos = document.getElementById("inputMotivos").value;
+      var txtCodPaciente = document.getElementById("selectPacientes").value;
       var txtHoraCita = document.getElementById("inputhoraini").value;
       var datos = $('#frmAgenda').serialize();
+
+      if(txtCodPaciente == ""){
+        Swal.fire({
+          type:'error',
+          title: 'ERROR',
+          text:'Elige paciente'
+        });      
+        return false;
+      }
 
       if(txtHoraCita == ""){
         Swal.fire({
@@ -169,7 +164,7 @@ window.onload = function(){
 
       $.ajax({
         type: "POST",
-        url: "insertar_cita.php",
+        url: "insertar_citas_generales.php",
         data: datos,
         success:function(r){
           if (r==1){

@@ -20,7 +20,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/consultas.css" />
+		<link rel="stylesheet" href="assets/css/consultas_generales.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -42,7 +42,6 @@ if ($_SESSION["autenticado"] != "SI") {
   //Codigo Paciente
   $fecha_actual = date("Y-m-d");
 
-  $codigoP = base64_decode($_GET['codigo']);	
   include('header.php');
   include ('conexion.php');
 ?>
@@ -63,22 +62,22 @@ window.onload = function(){
  <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-<form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta.php" method="POST" onsubmit="return valida();">
+<form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta_general.php" method="POST" onsubmit="return valida();">
+    <div class="div_opt_paciente">
+    <label id="lblPacientesC">Paciente</label>
+    <select id="selectPacienteC" name="paciente">
+        <option value="">Elige paciente</option>
     <?php 
-    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
     $query = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($query);
-    ?>
-    <div class="titulo_page">
-      <p id="lblNombrePaciente"> <?php echo $row['vchNombrePaciente']; ?> </p>
-      <p id="lblRazaP"> <?php echo $row['vchRaza'] ?></p>
-      <p id="lblColorP"> <?php echo $row['vchColor'] ?></p>
-      <p id="lblNombreProp"> <?php echo $row['vchNombre'].' '.$row['vchPaterno'] ?></p>
-      <p id="lblFechaNMascota"> <?php echo $row['dtFecNacimiento'] ?></p>
-      <p id="lblObs"> <?php echo $row['vchObservaciones'] ?></p>
-
-    </div>
-  <div id="contenedor_divs">
+        while ($pacientes = mysqli_fetch_array($query)) {
+          ?>
+          <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
+          <?php
+            }
+        ?>
+      </select>    </div>
+  <div id="contenedor_divsC">
     <!--Funcion para ocultar boton-->
 
     <script type="text/javascript">
@@ -89,25 +88,19 @@ window.onload = function(){
      });
     </script>
     
-<?php 
-$fecha_actual = date("Y-m-d");
-?>
-
-  <input type="hidden" name="fecha" id="fechaActual" value="<?php echo $fecha_actual?>">
-
     <div id="boton_estado">
       <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
     </div>
     <div id="div-estado">
       <p id="lblEstado">Signos y estado</p>
       <div class="form-group">
-        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
-        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
+<?php 
+$fecha_actual = date("Y-m-d");
+?>
+
+        <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+        <input type="text" name="fecha" value="<?php echo $fecha_actual ?>">
+       
 
       <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
       <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
@@ -223,31 +216,30 @@ $fecha_actual = date("Y-m-d");
       <textarea id="txtReceta" name="receta"> </textarea>
       <button class="botonAConsulta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar informe</button>
 
-    </div>
-
-    <!--<script type="text/javascript">
-      function cuenta() {
-        var numCaracteres = document.formulario.motivo.value.length;
-        alert(numCaracteres);
-      }
-    </script>-->
+    </div>  
     
     <!--<script type="text/javascript">
       function valida() {
-      var inputExamen = document.getElementById("txtExamen").value;
-      var inputMotivo = document.getElementById("txtMotivo").value;
-      var inputReceta = document.getElementById("txtReceta").value;
+      var inputExamen = document.getElementById("txtExamen").value.trim();
+      var inputMotivo = document.getElementById("txtMotivo").value.trim();
+      var inputReceta = document.getElementById("txtReceta").value.trim();
       var txtSelectServicio = document.getElementById("selectServicio").value;
       var medicoC = document.getElementById("sltMedico").value;
       var txtSintomas = document.getElementById("inputFechaSintomas").value;
       var txtFechaHoy = document.getElementById("inputFechaHoy").value;
-      var idE = <?= json_encode($codigoE) ?>;
-      var codP = <?= json_encode($codigoP) ?>;
-      var datos = $('#frmConsulta').serialize();
-      var idE = <?= json_encode($codigoE) ?>;
+      var idE = <?= $codigoE ?>;
       alert(idE);
-      var codP = <?= json_encode($codigoP) ?>;
-      alert(codP);
+      var valorPaciente = document.getElementById("selectPacienteC").value;
+      var datos = $('#frmConsulta').serialize();
+
+      if (valorPaciente == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige paciente'
+        });
+            return false;
+        }
 
       if (medicoC == ""){
         Swal.fire({
@@ -305,7 +297,7 @@ $fecha_actual = date("Y-m-d");
 
         $.ajax({
         type: "POST",
-        url: "insertar_consulta.php",
+        url: "insertar_consulta_general.php",
         data: datos,
         success:function(r){
           if (r==1){
@@ -317,7 +309,7 @@ $fecha_actual = date("Y-m-d");
           title: 'Correcto',
           text:'Consulta agregada correctamente'
           }) 
-            window.location.href = "informe_medico.php?id="+idE+"&codigo="+codP;
+            window.location.href = "buscar_paciente.php?id="+idE;
           }
         }
       });

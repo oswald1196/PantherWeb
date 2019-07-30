@@ -20,7 +20,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/esteticas.css" />
+		<link rel="stylesheet" href="assets/css/esteticas_generales.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -33,14 +33,12 @@ if ($_SESSION["autenticado"] != "SI") {
     <link rel="stylesheet" href="dist/sweetalert2.min.css">    
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
-
 	</head>
 
 	<body>
 
 <?php
   $codigoE = base64_decode($_GET['id']);
-  $codigoP = base64_decode($_GET['codigo']);
 	include('header.php');
   include ('conexion.php');
 ?>
@@ -62,26 +60,24 @@ window.onload = function(){
 </script>
 
 <div class="contenedor-principal">
-<form class="form_estetica" id="frmEstetica" action="insertar_estetica.php" method="POST" onsubmit="return validarCitaEst();">
-    <?php $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP' AND iCodEmpresa = '$codigoE'";
-    $query = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($query);
-    ?>
-    <div class="contenedor-title">
-    <p id="lblCita"> Estética de <?php echo $row['vchNombrePaciente']; ?> </p>
-  </div>
-  <div id="datos_citaE">
-        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
-        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
-        <input type="hidden" name="especie" value="<?php echo $row['iCodEspecie'] ?>">
-        <input type="hidden" name="raza" value="<?php echo $row['vchRaza'] ?>">
+<form class="form_estetica" id="frmEstetica" action="insertar_esteticas_generales.php" method="POST" onsubmit="return validarCitaEst();">
+    <div id="datos_citaG">
 
-      <select id="inputEstilista" name="estilista">
+  <select id="inputPacienteEstetica" name="paciente">
+        <option value=""> PACIENTE </option>
+    <?php 
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
+    $query = mysqli_query($conn,$sql);
+    while ($pacientes = mysqli_fetch_array($query)) {
+          ?>
+          <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
+          <?php
+                  }
+        ?>
+      </select>
+        <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+
+      <select id="inputEstilistaG" name="estilista">
         <option value=""> ESTILISTA </option>
         <?php
         $consulta = "SELECT iCodEstilista, vchNombre FROM CatEstilistas WHERE iCodEmpresa = '$codigoE'";
@@ -94,14 +90,25 @@ window.onload = function(){
         ?>
       </select>
 
-      <!--<script type="text/javascript">
+      <script type="text/javascript">
       function validarCitaEst() {
-      var valorEstilista = document.getElementById("inputEstilista").value;
-      var valorServicio = document.getElementById("inputTipoServicio").value;
-      var txtServicio = document.getElementById("inputServicioE").value;
+      var valorEstilista = document.getElementById("inputEstilistaG").value;
+      var valorServicio = document.getElementById("inputTipoServicioG").value;
+      var txtServicio = document.getElementById("inputServicioG").value;
       var txtHoraIni = document.getElementById("inputHoraInicio").value;
       var txtHoraFin = document.getElementById("inputHoraFinE").value;
+      var txtValorPaciente = document.getElementById("inputPacienteEstetica").value;
+
       var datos = $('#frmEstetica').serialize();
+
+      if(txtValorPaciente == ""){
+        Swal.fire({
+          type: 'error',
+          title: 'ERROR',
+          text: 'Elige paciente'
+        });
+        return false;
+      }
 
       if(valorEstilista == ""){
         Swal.fire({
@@ -150,7 +157,7 @@ window.onload = function(){
 
       $.ajax({
         type: "POST",
-        url: "insertar_estetica.php",
+        url: "insertar_esteticas_generales.php",
         data: datos,
         success:function(r){
           if (r==1){
@@ -169,9 +176,9 @@ window.onload = function(){
 
             return true;
         }
-      </script>-->
+      </script>
 
-      <select id="inputTipoServicio" name="codigoServicio" onchange="ShowSelected();">
+      <select id="inputTipoServicioG" name="codigoServicio" onchange="ShowSelected();">
         <option value=""> TIPO SERVICIO </option>
         <?php
         $consulta = "SELECT * FROM CatServicios WHERE iCodEmpresa = '$codigoE'";
@@ -186,19 +193,18 @@ window.onload = function(){
 
       <script type="text/javascript">
           function ShowSelected(){
-          var codServicio = document.getElementById("inputTipoServicio").value;
+          var codServicio = document.getElementById("inputTipoServicioG").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtener_servicio.php', { iCodTipoServicio: codServicio, id: id }, function(data){
-              $('#inputServicioE').html(data);
+              $('#inputServicioG').html(data);
                   }); 
           }
         </script>
 
-      <select id="inputServicioE" name="servicio" onchange="getPrecioServicio();"> </select>
 
       <script type="text/javascript">
           function getPrecioServicio(){
-          var iCodServicio = document.getElementById("inputServicioE").value;
+          var iCodServicio = document.getElementById("inputServicioG").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtenerPrecioEstetica.php', { iCodServicio: iCodServicio, id: id }, function(data){
               $("#inputPrecioS").html(data);
@@ -207,22 +213,25 @@ window.onload = function(){
           }
         </script>
   </div>
-     <div id="datos_horario">
-      <label for="inputPrecio" id="lblPrecioS">$</label>
+     <div id="datos_otrosG">
+      <select id="inputServicioG" name="servicio" onchange="getPrecioServicio();"> </select>
+      <label for="inputPrecioS" id="lblPrecioS">$</label>
       <input type="text" id="inputPrecioS" name="precioServicio">
       <label for="inputhoraini" id="lblFechaE">Fecha </label>
       <input type="date" class="input-append date" id="inputFechaE" name="fechaEst">
+    </div>
+     <div id="datos_horarioG">
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
-      <input type="time" id="inputHoraInicio" name="horaInicio">
+      <input type="time" id="inputHoraInicio" name="horaInicio" value="00:00">
       <label for="inputHoraFin" id="lblHoraFinE">Hora Fin </label>
-      <input type="time" id="inputHoraFinE" name="horaFin">
+      <input type="time" id="inputHoraFinE" name="horaFin" value="00:00">
       </div>
-  <div id="notasyobs">
+    <div id="notasyobs">
       <label for="inputNotas" id="lblNotas">Notas y observaciones</label>
       <textarea id="inputNotas" name="notas"> </textarea>
   </div>
-  <div id="botonAgregar">
-      <button class="botonAgregar" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar estética</button>    
+  <div id="botonAgregarEG">
+      <button class="botonAgregarG" type="submit">Agregar estética</button>    
   </div>
 </form>  
 </div>  

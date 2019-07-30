@@ -3,9 +3,11 @@
   flex-direction: column;
   background-color: white;
   border-radius: 10px;
-  width: 100%;
+  width: 98%;
   min-height: 900px; 
   height: auto;
+  margin-left: 1%;
+  margin-top: 1%;
   padding-right: 0px;
   padding-left: 0px;
 }
@@ -168,7 +170,7 @@
   border: 1px solid;
   border-color: #D6D5E1;
   font-family: 'Nunito', sans-serif;  
-  font-size: 17%;
+  font-size: 17px;
 }
 
 #column_med {
@@ -178,12 +180,13 @@
   font-size: 17px;
 }
 
-.botonAddInforme {
+.botonAddInformeM {
   font-family: 'Nunito', sans-serif;
   text-decoration: none;
     padding: 10px;
-    font-size: 20px;
+    font-size: 18px;
     margin-left: 90%;
+    margin-right: 2%;
     margin-top: 1%;  
     color: black;
     background-color: #D6D5E1;
@@ -198,4 +201,607 @@
 #signos {
   border-bottom: 0.5px solid;
   border-color: #D6D5E1;
+}
+
+/*  --------- MEDIA QUERIES --------------- */
+@media (min-width: 1024px) and (max-width: 1366px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 2%;
+}
+
+.titulo_header {
+  height: 60px;
+  font-size: 25px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 22px;
+  width: 28%;
+} 
+
+#cabecera_motivo {
+  font-size: 19px;
+ }
+
+#cabecera_receta {;  
+  font-size: 19px;
+}
+
+#cabecera_examen {
+  font-size: 19px;
+}
+
+#cabecera_medicacion {  
+  font-size: 19px;
+}
+
+#column_medico{
+  font-size: 16px;
+}
+
+#column_temp {
+  font-size: 16px; 
+  width: 20%;
+}
+
+#column_fc {
+  font-size: 16px;
+}
+
+#column_fr {
+  font-size: 17px;
+}
+
+#column_pa {
+  font-size: 17px;
+}
+
+#column_tllc {
+  font-size: 16px;
+}
+
+#column_peso {
+  font-size: 16px;
+}
+
+#column_motivo{ 
+  font-size: 16px;
+}
+
+#column_receta{  
+  font-size: 16px;
+}
+
+#column_ef{  
+  font-size: 16px;
+}
+
+#column_med {  
+  font-size: 16px;
+}
+
+.botonAddInformeM {
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 85%;
+    margin-right: 2%;
+    margin-top: 1%;  
+    color: black;
+    background-color: #D6D5E1;
+    border-radius: 5px;
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 18px;
+ }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 5%;
+}
+
+.titulo_header {
+  height: 60px;
+  font-size: 23px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 20px;
+  width: 35%;
+} 
+
+#cabecera_motivo {
+  font-size: 18px;
+ }
+
+#cabecera_receta {;  
+  font-size: 18px;
+}
+
+#cabecera_examen {
+  font-size: 18px;
+}
+
+#cabecera_medicacion {  
+  font-size: 18px;
+}
+
+#column_medico{
+  font-size: 15px;
+}
+
+#column_temp {
+  font-size: 15px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 15px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_motivo, #column_receta, #column_ef, #column_med {
+  font-size: 15px;
+}
+
+#img_medico {
+  height: 25px;
+}
+
+.botonAddInformeM {
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 80%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 18px;
+ }
+
+ #pencil, #trash {
+  height: 25px;
+ }
+}
+
+@media (min-width: 666px) and (max-width: 767px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.titulo_header {
+  height: 60px;
+  font-size: 23px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 20px;
+  width: 35%;
+} 
+
+#cabecera_motivo {
+  font-size: 18px;
+ }
+
+#cabecera_receta {;  
+  font-size: 18px;
+}
+
+#cabecera_examen {
+  font-size: 18px;
+}
+
+#cabecera_medicacion {  
+  font-size: 18px;
+}
+
+#column_medico{
+  font-size: 15px;
+}
+
+#column_temp {
+  font-size: 15px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 15px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_motivo, #column_receta, #column_ef, #column_med {
+  font-size: 15px;
+}
+
+#img_medico {
+  height: 25px;
+}
+
+.botonAddInformeM {
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 80%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 18px;
+ }
+
+ #pencil, #trash {
+  height: 25px;
+ }
+}
+
+@media (min-width: 565px) and (max-width: 665px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.titulo_header {
+  height: 60px;
+  font-size: 23px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 20px;
+  width: 35%;
+} 
+
+#cabecera_motivo {
+  font-size: 18px;
+ }
+
+#cabecera_receta {;  
+  font-size: 18px;
+}
+
+#cabecera_examen {
+  font-size: 18px;
+}
+
+#cabecera_medicacion {  
+  font-size: 18px;
+}
+
+#column_medico{
+  font-size: 15px;
+}
+
+#column_temp {
+  font-size: 15px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 15px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_motivo, #column_receta, #column_ef, #column_med {
+  font-size: 15px;
+}
+
+#img_medico {
+  height: 25px;
+}
+
+.botonAddInformeM {
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 80%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 18px;
+ }
+
+ #pencil, #trash {
+  height: 25px;
+ }
+}
+
+@media (min-width: 416px) and (max-width: 564px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.titulo_header {
+  height: 60px;
+  font-size: 23px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 20px;
+  width: 35%;
+} 
+
+#cabecera_motivo {
+  font-size: 18px;
+ }
+
+#cabecera_receta {;  
+  font-size: 18px;
+}
+
+#cabecera_examen {
+  font-size: 18px;
+}
+
+#cabecera_medicacion {  
+  font-size: 18px;
+}
+
+#column_medico{
+  font-size: 15px;
+}
+
+#column_temp {
+  font-size: 15px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 15px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_motivo, #column_receta, #column_ef, #column_med {
+  font-size: 15px;
+}
+
+#img_medico {
+  height: 25px;
+}
+
+.botonAddInformeM {
+    padding: 10px;
+    font-size: 17px;
+    margin-left: 80%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 18px;
+ }
+
+ #pencil, #trash {
+  height: 25px;
+ }
+}
+
+@media (min-width: 360px) and (max-width: 415px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.titulo_header {
+  height: 40px;
+  font-size: 18px;
+  border-radius: 8px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 15px;
+  width: 50%;
+} 
+
+#cabecera_motivo {
+  font-size: 14px;
+ }
+
+#cabecera_receta {;  
+  font-size: 14px;
+}
+
+#cabecera_examen {
+  font-size: 14px;
+}
+
+#cabecera_medicacion {  
+  font-size: 14px;
+}
+
+#column_medico{
+  font-size: 12px;
+}
+
+#column_temp {
+  font-size: 12px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 12px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_receta, #column_ef, #column_med {
+  font-size: 12px;
+}
+
+#column_motivo{
+  width: 50%;
+  font-size: 12px;
+}
+
+#img_medico {
+  height: 20px;
+}
+
+.botonAddInformeM {
+    padding: 5px;
+    font-size: 13px;
+    margin-left: 75%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 15px;
+ }
+
+ #pencil, #trash {
+  height: 20px;
+ }
+}
+
+@media (max-width: 359px){
+.caja_principal{
+  width: 98%;
+  margin-left: 1%;
+  margin-top: 10%;
+}
+
+.titulo_header {
+  height: 30px;
+  font-size: 15px;
+  border-radius: 6px;
+}
+
+#titulo_informe {
+  margin-top: 2%;
+  font-size: 14px;
+  width: 50%;
+} 
+
+#cabecera_motivo {
+  font-size: 13px;
+ }
+
+#cabecera_receta {;  
+  font-size: 13px;
+}
+
+#cabecera_examen {
+  font-size: 13px;
+}
+
+#cabecera_medicacion {  
+  font-size: 13px;
+}
+
+#column_medico{
+  font-size: 11px;
+}
+
+#column_temp {
+  font-size: 11px; 
+  width: 15%;
+}
+
+#column_fc {
+  font-size: 11px;
+}
+
+#column_fr, #column_pa, #column_tllc, #column_peso, #column_receta, #column_ef, #column_med {
+  font-size: 11px;
+}
+
+#column_motivo{
+  width: 50%;
+  font-size: 11px;
+}
+
+#img_medico {
+  height: 18px;
+}
+
+.botonAddInformeM {
+    padding: 5px;
+    font-size: 12px;
+    margin-left: 75%;
+    margin-right: 2%;
+    margin-top: 1%;  
+}
+
+#motivo_receta, #examen_med {
+  background-color: #D6D5E1;
+}
+
+#signos {
+  border-bottom: 0.5px solid;
+  border-color: #D6D5E1;
+}
+
+ #simbolo_addI{
+  height: 13px;
+ }
+
+ #pencil, #trash {
+  height: 18px;
+ }
 }

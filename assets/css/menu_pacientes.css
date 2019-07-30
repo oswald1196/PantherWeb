@@ -92,6 +92,17 @@
 		margin-top: 18%;
 }
 
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+	margin-top: 10px;
+	font-family: 'Nunito', sans-serif;  
+  	font-size: 30px;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+	margin-top: 10px;
+}
+
+
 h1{
 	text-align: center;
 	color: black;
@@ -100,4 +111,219 @@ h1{
 a {
 	color: black;
 	text-decoration: none;
+}
+
+@media (min-width: 1367px) and (max-width: 1567px){
+	.container{
+	height: 700px;
+	width: 90%;
+	margin-top: 10%;
+	margin-left: 7%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 40%;
+	}
+
+#opc_desp, #opc_ecto, #opc_consulta {
+		height: 40%;
+		margin-top: 1%;
+}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+}
+}
+
+@media (min-width: 1024px) and (max-width: 1366px){
+	.container{
+	height: 700px;
+	margin-top: 10%;
+	margin-left: 1%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 80px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 40%;
+		margin-left: 1%;
+}
+
+#opc_desp, #opc_ecto, #opc_consulta {
+		height: 40%;
+		margin-top: -5%;
+		margin-left: 1%;
+}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+}
+}
+
+/*Horizontales*/
+
+@media (min-width: 768px) and (max-width: 1023px){
+	.container{
+	height: 500px;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+	}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 50px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 30%;
+		margin-top: 5%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 30%;
+	margin-left: 0%;
+	margin-top: 5%;
+}
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 11px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+	margin-top: 14%;
+}
+
+}
+
+
+@media (min-width: 568px) and (max-width: 767px){
+	.container{
+	height: 700px;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 60px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 25%;
+		margin-top: 1%;
+	}
+
+#opc_desp, #opc_ecto, #opc_consulta{
+		height: 25%;
+		margin-top: -30%;
+}	
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 20px;
+	}
+}
+
+@media (min-width: 416px) and (max-width: 567px){
+	.container{
+	height: 700px;
+	margin-top: 15%;
+	margin-left: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 60px;
+}
+
+#opc_agenda, #opc_estetica, #opc_vacuna{
+		height: 25%;
+		margin-top: 1%;
+	}
+
+#opc_desp, #opc_ecto, #opc_consulta{
+		height: 25%;
+		margin-top: -50%;
+}	
+
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 13px;
+	}
+}
+
+
+/*----Iphones y Sg7, 8,9*/
+@media (min-width: 360px) and (max-width: 413px){
+	.container{
+	height: 300px;
+	margin-top: 15%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 50px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 45%;
+		width: 32%;
+		margin-top: -5%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 45%;
+	width: 32%;
+	margin-left: 0%;
+	margin-top: -5%;
+
+
+}
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 11px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+	margin-top: 14%;
+}
+
+}
+
+/*----------Iphone 5, Galaxy 5 ------*/
+@media (max-width: 359px){
+	.container{
+	height: 300px;
+	margin-top: 15%;
+	margin-left: 5%;
+	margin-bottom: 5%;
+}
+
+#img_cal, #img_est, #img_vac, #img_desp, #img_ecto, #img_inf{
+height: 30px;
+}
+
+ #opc_estetica, #opc_vacuna, #opc_ecto, #opc_consulta{
+		height: 30%;
+		width: 32%;
+	margin-top: -5%;
+	}
+
+#opc_agenda, #opc_desp {
+	height: 30%;
+	width: 31%;
+	margin-left: 0%;
+	margin-top: -5%;
+}
+#titulo_citas, #titulo_est, #titulo_vac, #titulo_desp, #titulo_ecto, #titulo_consultas {
+  	font-size: 10px;
+	margin-top: 5px;
+}
+
+#a_consulta, #a_ecto, #a_desp, #a_vacuna, #a_estetica, #a_agenda {
+		margin-top: 14%;
+}
+
 }

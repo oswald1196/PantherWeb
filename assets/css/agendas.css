@@ -312,7 +312,8 @@
 /*END-iPad Rotado*/
 
 
-@media(max-width: 552px){
+/*Responsive*/
+@media(min-width: 562px) and (max-width: 422px){
 .contenedor_principal {
 	margin-top: 2%;
 	height: 70%;
@@ -354,6 +355,7 @@
 	margin-top: 8%;
 }
 }
+/*Responsive*/
 
 
 /*iPhone 5/SE*/

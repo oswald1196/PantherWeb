@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -9,7 +14,7 @@ require 'conexion.php';
 	<head>
 		<meta charset="utf-8" />
 
-		<title>Panther :: Desparasitaciones</title>
+		<title>Panther :: Ectoparásitos</title>
 
 		<meta name="description" content="User login page" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -18,7 +23,7 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-		<link rel="stylesheet" href="assets/css/preventivos_carnet.css" />
+		<link rel="stylesheet" href="assets/css/preventivos_ecto.css" />
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
 
@@ -33,31 +38,31 @@ require 'conexion.php';
 ?>
 
 
-<div class="forma_principal">
+<div class="forma_principalE">
 
     <?php 
     $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoPaciente'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
-    <div class="cabecera">
+    <div class="cabeceraE">
     	
       <p id="lblCita"> Ectoparásitos de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddEcto"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addE" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
-                    <table id="carnet_vacuna">
+                    <table id="carnet_ecto">
                     <tbody>
 
                     <thead>
-                        <tr id="cabecera_tabla">
-                            <th id="c_fecha">Fecha</th>
-                            <th id="c_descripcion">Descripción</th>
-                            <th id="c_proxima">Próxima</th>
-                            <th id="c_cita">Cita</th>
-                            <th id="c_lote">Lote</th>
-                            <th id="c_cad">Caducidad</th>
+                        <tr id="cabecera_tablaE">
+                            <th id="c_fechaD">Fecha</th>
+                            <th id="c_descripcionD">Descripción</th>
+                            <th id="c_proximaD">Próxima</th>
+                            <th id="c_citaD">Cita</th>
+                            <th id="c_loteD">Lote</th>
+                            <th id="c_cadD">Caducidad</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -70,13 +75,13 @@ require 'conexion.php';
                 	
                         ?>
                 <tr>
-                    <td class="columna1"> <?php echo $fila['sFecha'] ?></td>
-                    <td class="columna2"> <?php echo $fila['sProductoAplicado'] ?> </td>
-                    <td class="columna3"> <?php echo $fila['sObservaciones'] ?></td>
-                    <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
-                    <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
-                    <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <a href="eliminar_ecto.php?id=<?php echo $fila['iCodTranHecto'] ?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columna1E"> <?php echo $fila['sFecha'] ?></td>
+                    <td class="columna2E"> <?php echo $fila['sProductoAplicado'] ?> </td>
+                    <td class="columna3E"> <?php echo $fila['sObservaciones'] ?></td>
+                    <td class="columna5E"> <?php echo $fila['sFechaProxima'] ?></td>
+                    <td class="columna6E"> <?php echo $fila['sNumeroLote'] ?> </td>
+                    <td class="columna7E"> <?php echo $fila['sFechaCaducidad'] ?> </td>
+                    <td class="columna8E"> <a href="eliminar_ecto.php?id=<?php echo $fila['iCodTranHecto'] ?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
                 </tr>
             <?php
       			}

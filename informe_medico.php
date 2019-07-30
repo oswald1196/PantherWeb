@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -45,7 +50,7 @@ require 'conexion.php';
       <p id="lblCita"> Informes médicos de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
 
-	<button class="botonAddInforme"> <a href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+	<button class="botonAddInformeM"> <a href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addI" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 	
 	<?php
 
@@ -66,12 +71,12 @@ require 'conexion.php';
    			<td id="column_pa"> P.A. <?php echo $fila ['sPresionArterial']?> </td>
    			<td id="column_tllc"> TLLC. <?php echo $fila ['iTiempoLlenadoCapilar']?> </td>
    			<td id="column_peso"> Peso. <?php echo $fila ['dPeso']. ' kg'?> </td>
-   			<td id="column_edit">  <a href="modificar_consulta.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
-   			<td id="column_delete"> <a href="eliminar_informe.php?idE=<?php echo $fila['iCodTranInformeMedico'] ?>" onclick="return alert_eliminarInforme();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+   			<td id="column_edit">  <a href="modificar_consulta.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img id="pencil" src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
+   			<td id="column_delete"> <a href="eliminar_informe.php?idE=<?php echo $fila['iCodTranInformeMedico'] ?>" onclick="return alert_eliminarInforme();"> <img id="trash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
    		</tr>
    		<tr>
    			<td id="column_date"> </td>
-   			<td id="column_medico" colspan="8"> <img src="https://img.icons8.com/ultraviolet/30/000000/doctor-male.png"> <?php echo $fila ['vchMedico']?> </td>
+   			<td id="column_medico" colspan="8"> <img id="img_medico" src="https://img.icons8.com/ultraviolet/30/000000/doctor-male.png"> <?php echo $fila ['vchMedico']?> </td>
    		</tr>
    		<tr id="motivo_receta">
     		<th id="cabecera_motivo" colspan="2">Motivo consulta</th>

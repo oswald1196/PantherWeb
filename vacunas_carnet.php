@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -46,7 +51,7 @@ require 'conexion.php';
       <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_add" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -60,7 +65,7 @@ require 'conexion.php';
                             <th id="c_cita">Cita</th>
                             <th id="c_lote">Lote</th>
                             <th id="c_cad">Caducidad</th>
-                            <th></th>
+                            <th id="c_del"></th>
                         </tr>
                     </thead>
                 <?php
@@ -81,7 +86,7 @@ require 'conexion.php';
                     <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <a href="eliminar_vacuna.php?id=<?php echo $fila['iCodTranRegistroVacunas'] ?>" onclick="return alert_eliminarVacuna();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columna8"> <a href="eliminar_vacuna.php?id=<?php echo $fila['iCodTranRegistroVacunas'] ?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}

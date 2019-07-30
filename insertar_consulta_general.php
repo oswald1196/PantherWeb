@@ -1,13 +1,9 @@
 <?php
 	require ('conexion.php');
 
-	$correo = $_POST['correo'];
-	$pais = $_POST['pais'];
-	$estado = $_POST['estado'];
-	$ciudad = $_POST['ciudad'];
+	
 	$cEmpresa = $_POST['empresa'];
 	$codPaciente = $_POST['paciente'];
-	$iCodProp = $_POST['propietario'];
 	$problema = $_POST['medicacion'];
 	$motivo = $_POST['motivo'];
 	$fechaSintomas = $_POST['fechaS'];
@@ -87,6 +83,17 @@
 		$peso = "0";
 	}
 
+	$pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
+
+    $pac = mysqli_query($conn,$pacientes);
+    $newPac = mysqli_fetch_assoc($pac);
+
+    $correo = $newPac['vchCorreo'];
+    $pais = $newPac['vchPais'];
+    $estado = $newPac['vchEstado'];
+    $ciudad = $newPac['vchCiudad'];
+    $iCodProp = $newPac['iCodPropietario'];
+
 	$consulta = "SELECT vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodMedico = '$iCodMedico' AND iCodEmpresa = '$cEmpresa'";
 	
 	$resultado = mysqli_query($conn,$consulta);
@@ -105,9 +112,11 @@
 	$nuevaConsulta = "INSERT INTO TranInformeMedico (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodPaciente, iCodInformeMedico, vchNumInformeMedico, vchProblema, vchMotivo, dtFechaSintomatologia, siPadecimiento, siAtencion, vchNota, sDiagnosticoPresuntivo, sDiagnosticoDiferencial, sPruebasRequeridas, sResultado, siDiagnostico, dtFechaInformeMedico, iCodMedico, siFrecuenciaCardiaca, dTemperatura, siFrecuenciaRespiratoria, siCodMucosa, sMucosa, iTiempoLlenadoCapilar, dPeso, vchServicio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iInformeMedico, vchReceta, dPerimetroCefalico, dMeses, dAltura, sPresionArterial, dIVA, dSubtotal, dPorcentajeIVA, vchMedico, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '$codPaciente', '0', '.', '$problema', '$motivo', '$fechaSintomas', '$padecimiento', '$atencion', '$nota', '$dPresuntivo', '$dDiferencial', '$pruebas', '$definitivo', '0', '$fechaInforme', '$iCodMedico', '$fCardiaca', '$temp', '$fRespiratoria', '1', '$sMucosa', '$tllc', '$peso', '$nombreServicio', '$precio', '$comision', '$servicio', '0', '0', '$receta', '0', '0', '0', '$pa', '0', '0', '0', '$nombreMedico', '0', '0')";
 
 	echo $nuevaConsulta;
- 	//$new = mysqli_query($conn,$nuevaConsulta);	
+ 	//$new = mysqli_query($conn,$nuevaConsulta);
 
- 	$insertCuentaC = "INSERT INTO TranCuentasClientes(vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$servicio', '$codPaciente', '$fecha', '$nombreServicio', '$precio', '0', '0', '0', '0', '$iCodProp', '0', '0', '0','0','0','0', '0', '1', '0', '0', '0', '0', '$fecha', '0', '0', '0', '0', '.', '0', '2')";
 
-	echo $insertCuentaC;
+ 	$insertCuentaCG = "INSERT INTO TranCuentasClientes(vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$servicio', '$codPaciente', '$fecha', '$nombreServicio', '$precio', '0', '0', '0', '0', '$iCodProp', '0', '0', '0','0','0','0', '0', '1', '0', '0', '0', '0', '$fecha', '0', '0', '0', '0', '.', '0', '2')";
+
+ 	echo $insertCuentaCG;	
+
 ?>	

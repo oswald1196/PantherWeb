@@ -6,7 +6,6 @@ session_start();
 if ($_SESSION["autenticado"] != "SI") {
   header("Location: index.html");
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +19,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/preventivos.css" />
+		<link rel="stylesheet" href="assets/css/preventivos_grales.css" />
 
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -43,7 +42,6 @@ if ($_SESSION["autenticado"] != "SI") {
 //Codigo Empresa
   $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
-  $codigoP = base64_decode($_GET['codigo']);
 
 	include('header.php');
   include ('conexion.php');
@@ -73,24 +71,27 @@ $fecha_actual = date("Y-m-d");
 
 
 <div class="container">
-<form class="form_add_cita" id="frmVacuna" action="insertar_vacuna.php" method="POST" onsubmit="return validarVacuna();">
+<form class="form_add_cita" id="frmVacuna" action="insertar_vacunas_generales.php" method="POST" onsubmit="return validarVacuna();">
+
+    <div id="div_paciente">
+    <label id="lblPacientesV">Paciente</label>
+    <select id="selectPacienteV" name="paciente">
+        <option value="">Elige paciente</option>
     <?php 
-    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
     $query = mysqli_query($conn,$sql);
-    $row = mysqli_fetch_assoc($query);
-    ?>
-    <div class="contenedor-titulo">
-      <p id="lblCita"> Paciente: <?php echo $row['vchNombrePaciente']; ?> </p>
+        while ($pacientes = mysqli_fetch_array($query)) {
+          ?>
+          <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
+          <?php
+            }
+        ?>
+      </select>    
     </div>
   <div id="contenedor">
-  <div class="form-left">
-        <input type="hidden" name="correo" value="<?php echo $row['vchCorreo'] ?>">
-        <input type="hidden" name="empresa" value="<?php echo $row['iCodEmpresa'] ?>">
-        <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
-        <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
-        <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
-        <input type="hidden" name="iCodProp" value="<?php echo $row['iCodPropietario'] ?>">
-        <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+  <div class="form-leftV">
+      <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+        
 
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
       <input type="date" class="input-append date" id="inputfecha" name="fechaVacuna" tabindex="1">
@@ -176,14 +177,14 @@ $fecha_actual = date("Y-m-d");
       <p id="msg"></p>
       <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
       <input type="text" id="inputPeso" name="peso">
-      <label id="lblVacAnt">Vacunas anteriores</label>
-      <input type="checkbox" id="inputAnt" name="chkAnteriores">
+      <label id="lblVacAnter">Vacunas anteriores</label>
+      <input type="checkbox" id="inputAnter" name="chkAnteriores">
   </div>
   <!--Panel derecho -->
       <div class="form-right">
         <div class="form-group">
           <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
-          <input type="checkbox" id="inputCitaP" name="chkCita" onchange="habilitar(this.checked);" checked>
+          <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" checked>
         </div>
         <script text/javascript>
         function habilitar(value)
@@ -211,7 +212,6 @@ $fecha_actual = date("Y-m-d");
        
         <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>
         <select id="inputProxima" name="motivoProxima">
-        <option value="">VACUNA</option>
         <?php
         $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5 AND iCodMarca = 1000 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
         $result = mysqli_query($conn,$consulta);
@@ -236,7 +236,17 @@ $fecha_actual = date("Y-m-d");
       var txtLote = document.getElementById("inputLoteVac").value;
       var fechaCad = document.getElementById("inputFechaCad").value;
       var fechaHoy = document.getElementById("fechaActual").value;
+      var valorPaciente = document.getElementById("selectPacienteV").value;
       var datos = $('#frmVacuna').serialize();
+
+      if(valorPaciente == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige paciente'
+        });
+        return false;
+      }
 
       if(fechaCad < fechaHoy){
         Swal.fire({
@@ -274,9 +284,9 @@ $fecha_actual = date("Y-m-d");
           return false;
         }
 
-        $.ajax({
+        /*$.ajax({
         type: "POST",
-        url: "insertar_vacuna.php",
+        url: "insertar_vacunas_generales.php",
         data: datos,
         success:function(r){
           if (r==1){
@@ -288,7 +298,6 @@ $fecha_actual = date("Y-m-d");
           title: 'Correcto',
           text:'Vacuna agregada correctamente'
           }) 
-            window.location.href = 'vacunas_carnet.php'
           }
         }
       });

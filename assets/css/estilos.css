@@ -19,8 +19,61 @@
 	width: 40%;
 }
 
-h1 {
+.saludo {
   	font-family: 'Nunito', sans-serif;	
+  	font-size: 30px;
+  	margin-top: 2%;
 	color: white;
 	text-align: center;
+}
+
+@media (min-width: 901px) and (max-width: 1366px) {
+	.saludo {
+  	font-family: 'Nunito', sans-serif;	
+  	font-size: 26px;
+  	margin-top: 2%;
+	color: white;
+	text-align: center;
+}
+}
+
+@media (min-width: 731px) and (max-width: 900px) {
+	.saludo {
+  	font-family: 'Nunito', sans-serif;	
+  	font-size: 23px;
+  	margin-top: 10%;
+	color: white;
+	text-align: center;
+}
+}
+
+@media (min-width: 568px) and (max-width: 731px) {
+	.saludo {
+  	font-family: 'Nunito', sans-serif;	
+  	font-size: 22px;
+  	margin-top: 10%;
+	color: white;
+	text-align: center;
+}
+}
+
+
+@media (min-width: 360px) and (max-width: 567px) {
+	.saludo {
+  	font-family: 'Nunito', sans-serif;	
+  	font-size: 20px;
+  	margin-top: 8%;
+	color: white;
+	text-align: center;
+}
+}
+
+@media (min-width: 320px) and (max-width: 359px) {
+	.saludo {
+  	font-family: 'Nunito', sans-serif;	
+  	font-size: 15px;
+  	margin-top: 10%;
+	color: white;
+	text-align: center;
+}
 }

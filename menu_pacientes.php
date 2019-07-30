@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -21,6 +26,8 @@ require 'conexion.php';
 		<link rel="stylesheet" href="assets/css/menu_pacientes.css" />
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
+    	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
 
 	</head>
 
@@ -35,27 +42,27 @@ require 'conexion.php';
 ?>
 <div class="container">
 <div id="opc_agenda">
-	<a id="a_ecto" href="panel_agenda.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1>Citas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>
+	<a id="a_ecto" href="panel_agenda.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <span id="titulo_citas">Citas </span> <img id="img_cal" src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>
 </div>
 
 <div id="opc_estetica">
-	<a id="a_ecto" href="panel_estetica.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Estéticas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/hair-dryer.png"> </a>
+	<a id="a_ecto" href="panel_estetica.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <span id="titulo_est"> Estéticas </span> <img id="img_est" src="https://img.icons8.com/ultraviolet/100/000000/hair-dryer.png"> </a>
 </div>
 
 <div id="opc_vacuna">
-	<a id="a_ecto" href="vacunas_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <h1> Vacunas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/syringe.png"> </a>
+	<a id="a_ecto" href="vacunas_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> <span id="titulo_vac"> Vacunas </span> <img id="img_vac" src="https://img.icons8.com/ultraviolet/100/000000/syringe.png"> </a>
 </div>
 
 <div id="opc_desp">
-	<a id="a_ecto" href="desp_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Desparasitaciones </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/caterpillar.png"> </a>
+	<a id="a_ecto" href="desp_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <span id="titulo_desp">Desparasitaciones </span> <img id="img_desp" src="https://img.icons8.com/ultraviolet/100/000000/caterpillar.png"> </a>
 </div>
 
 
 <div id="opc_ecto">
-	<a id="a_ecto" href="ecto_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Ectoparásitos </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/insect.png"> </a>
+	<a id="a_ecto" href="ecto_carnet.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <span id="titulo_ecto"> Ectoparásitos </span> <img id="img_ecto" src="https://img.icons8.com/ultraviolet/100/000000/insect.png"> </a>
 </div>
 <div id="opc_consulta">
-	<a id="a_consulta" href="informe_medico.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <h1>Consultas </h1> <img src="https://img.icons8.com/ultraviolet/100/000000/stethoscope.png">  </a>
+	<a id="a_consulta" href="informe_medico.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente)?>"> <span id="titulo_consultas">Consultas </span> <img id="img_inf" src="https://img.icons8.com/ultraviolet/100/000000/stethoscope.png">  </a>
 </div>
 </div>
 </body>

@@ -1,13 +1,8 @@
 <?php
 	require ('conexion.php');
 
-	$correo = $_POST['correo'];
-	$pais = $_POST['pais'];
-	$estado = $_POST['estado'];
-	$ciudad = $_POST['ciudad'];
 	$cEmpresa = $_POST['empresa'];
 	$codPaciente = $_POST['paciente'];
-	$iCodProp = $_POST['propietario'];
 	$fecha = $_POST['fecha'];
 	$ecto = $_POST['ecto'];
 	$lote = $_POST['lote'];
@@ -27,6 +22,17 @@
 	else {
 		$fechaCitaProx = $_POST['fechaProx'];
 	}
+
+	$pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
+
+    $pac = mysqli_query($conn,$pacientes);
+    $newPac = mysqli_fetch_assoc($pac);
+
+    $correo = $newPac['vchCorreo'];
+    $pais = $newPac['vchPais'];
+    $estado = $newPac['vchEstado'];
+    $ciudad = $newPac['vchCiudad'];
+    $iCodProp = $newPac['iCodPropietario'];
 
 	$query = "SELECT iCodProducto, vchDescripcion, iCodTipoProducto, dPrecioVenta, dPrecioCosto FROM CatProductos WHERE iCodProducto = '$ecto' AND iCodEmpresa = '$cEmpresa'";
 
@@ -52,9 +58,9 @@
 	echo $sql;
 	//$new = mysqli_query($conn,$sql);
 
-	$insertCuentaE = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codServicio', '$codPaciente', '$fecha', '$nombreP', '$precio', '$precioCosto', '0', '0', '0', '$iCodProp', '0', '0', '0','0','0','0', '$ecto', '1', '0', '0', '0', '0', '$fecha', '0', '0', '0', '0', '.', '$lote', '2')";
+	$insertCuentaEG = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codServicio', '$codPaciente', '$fecha', '$nombreP', '$precio', '$precioCosto', '0', '0', '0', '$iCodProp', '0', '0', '0','0','0','0', '$ecto', '1', '0', '0', '0', '0', '$fecha', '0', '0', '0', '0', '.', '$lote', '2')";
 
-	echo $insertCuentaE;
+	echo $insertCuentaEG;
 
 	$consulta = "SELECT CONCAT(vchNombrePaciente, '-', vchRaza, '-', vchNombre, '-', vchTelefono) AS vchServicio FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
 
@@ -63,8 +69,8 @@
 
     $servicio = $fila['vchServicio'];
 
-	$nuevaCitaE = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '0', '0')";
+	$nuevaCitaEG = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '0', '0')";
 
-	echo $nuevaCitaE;
+	echo $nuevaCitaEG;
 
 ?>

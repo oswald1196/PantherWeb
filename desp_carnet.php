@@ -1,7 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
 
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -33,33 +37,33 @@ require 'conexion.php';
 	include('header.php');
 ?>
 
-<div class="forma_principal">
+<div class="forma_principalD">
 
     <?php 
     $sql = "SELECT vchNombrePaciente FROM TranAfiliado WHERE iCodPaciente = '$codigoPaciente'";
     $query = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($query);
     ?>
-    <div class="cabecera">
+    <div class="cabeceraD">
     	
       <p id="lblCita"> Desparasitaciones de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
-  <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+  <div id="contenedorD">
+      	 <button class="botonAddVacunaD"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
-                    <table id="carnet_vacuna">
+                    <table id="carnet_vacunaD">
                     <tbody>
 
-                    <thead id="contenedor_cabecera">
-                        <tr valign="bottom" id="cabecera_tabla">
-                            <th id="c_fecha">Fecha</th>
-                            <th id="c_descripcion">Descripción</th>
-                            <th id="c_proxima">Próxima</th>
-                            <th id="c_peso">Peso</th>
-                            <th id="c_cita">Cita</th>
-                            <th id="c_lote">Lote</th>
-                            <th id="c_cad">Caducidad</th>
-                            <th></th>
+                    <thead id="cabecera_tablaD">
+                        <tr>
+                            <th id="c_fechaD">Fecha</th>
+                            <th id="c_descripcionD">Descripción</th>
+                            <th id="c_proximaD">Próxima</th>
+                            <th id="c_pesoD">Peso</th>
+                            <th id="c_citaD">Cita</th>
+                            <th id="c_loteD">Lote</th>
+                            <th id="c_cadD">Caducidad</th>
+                            <th id="c_delD"></th>
                         </tr>
                     </thead>
                 <?php
@@ -70,14 +74,14 @@ require 'conexion.php';
                 	
                         ?>
                 <tr>
-                    <td class="columna1"> <?php echo $fila['sFecha'] ?></td>
-                    <td class="columna2"> <?php echo $fila['sProductoAplicado'] ?> </td>
-                    <td class="columna3"> <?php echo $fila['sObservaciones'] ?></td>
-                    <td class="columna4"> <?php echo $fila['dPeso'] ?></td>
-                    <td class="columna5"> <?php echo $fila['sFechaProxima'] ?></td>
-                    <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
-                    <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <a href="eliminar_desp.php?id=<?php echo $fila['iCodTranDesparacitacion'] ?>" onclick="return alert_eliminarDesp();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columna1D"> <?php echo $fila['sFecha'] ?></td>
+                    <td class="columna2D"> <?php echo $fila['sProductoAplicado'] ?> </td>
+                    <td class="columna3D"> <?php echo $fila['sObservaciones'] ?></td>
+                    <td class="columna4D"> <?php echo $fila['dPeso'] ?></td>
+                    <td class="columna5D"> <?php echo $fila['sFechaProxima'] ?></td>
+                    <td class="columna6D"> <?php echo $fila['sNumeroLote'] ?> </td>
+                    <td class="columna7D"> <?php echo $fila['sFechaCaducidad'] ?> </td>
+                    <td class="columna8D"> <a href="eliminar_desp.php?id=<?php echo $fila['iCodTranDesparacitacion'] ?>" onclick="return alert_eliminarDesp();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
@@ -94,8 +98,6 @@ require 'conexion.php';
         }
           
         </script>
-
-
               		</tbody>
                     </table>
                 </div>
