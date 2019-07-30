@@ -39,7 +39,7 @@
 
       <a href="home.php?id=<?php echo base64_encode($codigo)?>">Home</a>
 
-      <a href="altapacientesac.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a>
+      <a href="alta_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a>
 
       <a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>">Buscar</a>
 

@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+session_start();
+//echo $_SESSION["autenticado"];
+
+if ($_SESSION["autenticado"] != "SI") {
+ 	header("Location: index.html");
+}
+?>
 <html lang="es">
 	<head>
 		<meta charset="utf-8" />

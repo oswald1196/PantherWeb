@@ -33,7 +33,7 @@
  
 #div_nuevo_motivo {
 	width: 45%;
-	margin-top: 5%;
+	margin-top: 4%;
 	float: right;
 }
 
@@ -177,7 +177,7 @@
 #lblPacientes{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
-	margin-left: 35%;
+	margin-left: 30%;
 }
 
 #lblNuevaCita{
@@ -205,9 +205,9 @@
 #btnAddMotivo {
 	text-decoration: none;
     padding: 2px;
-    font-size: 15px;
-    width: 45px;
-    height: 45px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
     color: #ffffff;
     background-color: #527486;
     border-radius: 5px;

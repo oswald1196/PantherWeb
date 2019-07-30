@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -210,7 +215,7 @@ window.onload = function(){
   </div>
      <div id="datos_otrosG">
       <select id="inputServicioG" name="servicio" onchange="getPrecioServicio();"> </select>
-      <label for="inputPrecio" id="lblPrecioS">$</label>
+      <label for="inputPrecioS" id="lblPrecioS">$</label>
       <input type="text" id="inputPrecioS" name="precioServicio">
       <label for="inputhoraini" id="lblFechaE">Fecha </label>
       <input type="date" class="input-append date" id="inputFechaE" name="fechaEst">

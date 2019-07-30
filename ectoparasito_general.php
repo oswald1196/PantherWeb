@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -61,7 +66,7 @@ window.onload = function(){
 }
 </script>
 <div class="container">
-<form class="form_add_cita" id="frmEcto" action="" method="POST" onsubmit="return validarEcto();">
+<form class="form_add_cita" id="frmEcto" action="insertar_ecto_general.php" method="POST" onsubmit="return validarEcto();">
     <div>
     <label id="lblPacientesV">Paciente</label>
     <select id="selectPacienteV" name="paciente">
@@ -75,7 +80,8 @@ window.onload = function(){
           <?php
             }
         ?>
-      </select>    </div>
+      </select>    
+    </div>
   <div id="contenedor">
   <div class="form-leftV">
       <label id="lblFecha">Fecha</label>
@@ -95,7 +101,7 @@ window.onload = function(){
         ?>
       </select>
 
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
       function validarEcto() {
       var txtEcto = document.getElementById("inputProductoE").value;
       var txtLote = document.getElementById("inputLoteEcto").value;
@@ -162,7 +168,7 @@ window.onload = function(){
 
             return true;
         }
-      </script>
+      </script>-->
       <script type="text/javascript">
           function ShowSelected(){
           var iCodProducto = document.getElementById("inputProductoE").value;
@@ -213,6 +219,8 @@ window.onload = function(){
       <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+      <label id="lblEctoAnt">Ectoparásitos anteriores</label>
+      <input type="checkbox" id="ectoAnt" name="anterior" >
   </div>
   <script>
         function habilitar(value)
@@ -241,14 +249,10 @@ window.onload = function(){
         <input type="checkbox" id="inputCitaP" name="dia" onchange="habilitar(this.checked);" checked>
       </div>
         <input type="text" id="motivoCita" name="motivoCitaEcto" value="ECTOPARÁSITOS">
-      <div class="form-group">
         <label id="lblFechaCita"> Fecha </label>
         <input type="date" id="fechaCita" name="fechaProx">
-        </div>
-        <div class="form-group">
         <label id="lblHoraCita"> Hora </label>
         <input type="time" name="horaProx" id="inputHoraCita">
-      </div>
         <button class="boton" type="submit">Agregar ectoparásito</button>
       </div>
     </div>

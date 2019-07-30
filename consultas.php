@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -84,6 +89,12 @@ window.onload = function(){
      });
     </script>
     
+<?php 
+$fecha_actual = date("Y-m-d");
+?>
+
+  <input type="hidden" name="fecha" id="fechaActual" value="<?php echo $fecha_actual?>">
+
     <div id="boton_estado">
       <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
     </div>
@@ -96,6 +107,7 @@ window.onload = function(){
         <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
         <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
         <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
 
       <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
       <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
@@ -220,7 +232,7 @@ window.onload = function(){
       }
     </script>-->
     
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       function valida() {
       var inputExamen = document.getElementById("txtExamen").value;
       var inputMotivo = document.getElementById("txtMotivo").value;
@@ -312,7 +324,7 @@ window.onload = function(){
         return false;
             return true;
         }
-      </script>
+      </script>-->
 
       </div>
 </form>  

@@ -4,6 +4,12 @@
 
     include('conexion.php');
     include('header.php');
+    session_start();
+
+  if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+  }
+
 ?>
 
 
@@ -63,6 +69,7 @@ $fecha_actual = date("Y-m-d");
                 $query = mysqli_query($conn,$sql);
                 $datos = mysqli_fetch_assoc($query);
                 ?>
+
                 <input type="hidden" name="correo" value="<?php echo $datos['vchCorreo'] ?>">
                 <input type="hidden" name="empresa" value="<?php echo $datos['iCodEmpresa'] ?>">
                 <input type="hidden" name="pais" value="<?php echo $datos['vchPais'] ?>">

@@ -230,7 +230,7 @@
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width: 60px;
-	height: 40px;
+	height: 35px;
 	border-radius: 10px;
 	padding: 6px;
 	border: 3px solid #40444745;
@@ -270,6 +270,16 @@
 	color: gray;
 }
 
+#inputHoraCitaD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+	color: gray;
+}
+
 #motivoCita{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -291,6 +301,16 @@
 	color: gray;
 }
 
+#fechaCitaD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 200px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+	color: gray;
+}
+
 #inputCitaP{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
@@ -299,6 +319,56 @@
 	height:15px;
 }
 
+#inputAnter{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#despAnt {
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#ectoAnt{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+/*Input desparasitacion*/
+#inputFechaD, #inputProductoDesp, #inputProductoDespa, #inputPrecioD, #inputFechaCadD,
+#inputLoteD, #inputPesoD
+{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 35px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+	text-transform: uppercase;
+	color: gray;
+}
+
+#selectPacienteD {	
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	margin-top: 2%;
+	margin-left: 1%;
+	border-radius: 10px;
+	padding: 6px;
+	border: 3px solid #40444745;
+	color: gray;
+}
 
 /***************************************** Checkbox style **********************************************************/
 
@@ -543,12 +613,27 @@ body {
 	font-size: 23px;
 }
 
+#lblCitaPD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
 #lblFechaCita{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
 }
 
+#lblFechaCitaD{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
 #lblHoraCita{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblHoraCitaD{
 	font-family: 'Nunito', sans-serif;
 	font-size: 23px;
 }
@@ -563,6 +648,17 @@ body {
 	font-size: 23px;
 }
 
+#lblVacAnter{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+#lblEctoAnt{
+	font-family: 'Nunito', sans-serif;
+	font-size: 23px;
+}
+
+
 /*Botones*/
 
 .boton {
@@ -576,4 +672,383 @@ body {
     border: 1px solid #0016b0;
 }
 
+#lblFechaD, #lblProductoDes, #lblProductoDespa, #lblLoteD, #lblPesoD,
+ #lblPrecioD, #lblFechaCadD, #lblCitaPD, #lblHoraCitaD, #lblCantidadD,
+ #lblFechaCitaD, #lblDespAnt {
+	font-size: 20px;
+}
 
+#lblPacientesD{
+	margin-left: 30%;
+	font-size: 23px;
+}
+
+
+
+@media(min-width: 768px) and (max-width: 1023px){
+#lblPacientesV{
+	margin-left: 20%;
+	margin-top: 1%;
+	font-size: 23px;
+}
+
+#titulo-pagina {
+	margin-top: 8%;
+}
+}
+
+@media(min-width: 568px) and (max-width: 767px){
+.container {
+	height: 510px;
+	}
+
+.form-leftV {
+	height: 465px;
+	width: 50%;
+}
+
+.form-right {
+	height: 465px;
+	width: 50%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 30px;
+	font-size: 20px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha, #inputLab, #inputProducto, #inputLoteVac, #inputPrecioVac, #inputFechaCad, #inputPeso, 
+#inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita,
+#motivoCita, #fechaCita, #inputLoteEcto{
+	font-size: 14px;
+	width: 240px;
+	height: 30px;
+	padding: 1px;
+}
+
+#inputLote, #inputPrecio{
+font-size: 14px;
+	width: 240px;
+	height: 30px;
+	padding: 1px;
+}
+#inputProductoE{
+	font-size: 14px;
+	width: 240px;
+	height: 30px;
+	padding: 1px;
+}
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:300px;
+	height:40px;
+}
+
+#lblPacientesV{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 10%;
+	margin-top: 1%;
+	font-size: 18px;
+}
+
+#selectPacienteV {	
+	font-family: 'Nunito', sans-serif;
+	font-size: 13px;
+	width: 300px;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 1%;
+	border-radius: 10px;
+	padding: 1px;
+}
+
+#lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
+ #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+	font-size: 16px;
+}
+
+.boton {
+    padding: 6px;
+    font-size: 14px;
+}
+
+}
+
+@media(min-width: 414px) and (max-width: 567px){
+.container {
+	height: 510px;
+	}
+
+.form-leftV {
+	height: 473px;
+	width: 50%;
+}
+
+.form-right {
+	height: 460px;
+	width: 50%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 30px;
+	font-size: 20px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha, #inputLab, #inputProducto, #inputLoteVac, #inputPrecioVac, #inputFechaCad, #inputPeso, 
+#inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita,
+#motivoCita, #fechaCita, #inputLote, #inputPrecio, #inputHoraCitaD, #fechaCitaD, #inputLoteEcto{
+	font-size: 12px;
+	width: 160px;
+	height: 30px;
+	padding: 1px;
+}
+
+#inputProductoE{
+	font-size: 12px;
+	width: 160px;
+	height: 30px;
+	padding: 1px;
+}
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:300px;
+	height:40px;
+}
+
+#lblPacientesV{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 5%;
+	margin-top: 1%;
+	font-size: 14px;
+}
+
+#selectPacienteV {	
+	font-size: 13px;
+	width: 260px;
+	height: 30px;
+	padding: 1px;
+	margin-top: 1%;
+}
+
+#lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
+ #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+	font-size: 14px;
+}
+
+.boton {
+    padding: 6px;
+    font-size: 14px;
+}
+}
+
+@media(min-width: 360px) and (max-width: 413px){
+.container {
+	background-color: mistyrose;
+	height: 510px;
+	}
+
+.form-leftV {
+	height: 480px;
+	width: 50%;
+}
+
+.form-right {
+	height: 480px;
+	width: 50%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 30px;
+	font-size: 20px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+
+#inputfecha, #inputLab, #inputProducto, #inputLoteVac, #inputPrecioVac, #inputFechaCad, #inputPeso, 
+#inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita,
+#motivoCita, #fechaCita, #inputLote, #inputPrecio, #inputHoraCitaD, #fechaCitaD, #inputLoteEcto {
+	font-size: 11px;
+	width: 140px;
+	height: 25px;
+	padding: 1px;
+}
+
+#inputProductoE{
+	font-family: 'Nunito', sans-serif;
+	font-size: 11px;
+	width: 140px;
+	height: 25px;
+	padding: 1px;
+
+}
+
+#inputLote, #inputPrecio{
+	font-size: 11px;
+	width: 140px;
+	height: 25px;
+	padding: 1px;
+}
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 11px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 11px;
+	width:140px;
+	height:40px;
+}
+
+#lblPacientesV{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 5%;
+	margin-top: 2%;
+	font-size: 13px;
+}
+
+#selectPacienteV {	
+	font-size: 11px;
+	width: 240px;
+	height: 25px;
+	padding: 1px;
+	margin-top: 1%;
+}
+
+#lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
+ #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+	font-size: 13px;
+}
+
+#lblPesoD,#lblCantidad {
+	font-size: 13px;
+}
+
+.boton {
+    padding: 6px;
+    font-size: 11px;
+}
+}
+
+
+@media(max-width: 359px){
+.container {
+	height: 480px;
+	}
+
+.form-leftV {
+	height: 453px;
+	width: 50%;
+}
+
+.form-right {
+	height: 453px;
+	width: 50%;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 25px;
+	font-size: 15px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+
+#inputfecha, #inputLab, #inputProducto, #inputLoteVac, #inputPrecioVac, #inputFechaCad, #inputPeso, 
+#inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita,
+#motivoCita, #fechaCita, #inputLote, #inputPrecio, #inputHoraCitaD, #fechaCitaD, #inputLoteEcto{
+	font-size: 9px;
+	width: 130px;
+	height: 20px;
+	padding: 1px;
+}
+
+#inputProductoE{
+	font-size: 9px;
+	width: 130px;
+	height: 20px;
+	padding: 1px;
+}
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 11px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 9px;
+	width:300px;
+	height:40px;
+}
+
+#lblPacientesV{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 5%;
+	margin-top: 2%;
+	font-size: 11px;
+}
+
+#selectPacienteV {	
+	font-size: 9px;
+	width: 200px;
+	height: 20px;
+	padding: 0px;
+	margin-top: 1%;
+}
+
+
+#lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
+ #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+	font-size: 11px;
+}
+
+.boton {
+    padding: 6px;
+    font-size: 11px;
+}
+}

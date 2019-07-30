@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -88,7 +93,7 @@ window.onload = function(){
         ?>
       </select>
 
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
       function validarCitaEst() {
       var valorEstilista = document.getElementById("inputEstilista").value;
       var valorServicio = document.getElementById("inputTipoServicio").value;
@@ -163,7 +168,7 @@ window.onload = function(){
 
             return true;
         }
-      </script>
+      </script>-->
 
       <select id="inputTipoServicio" name="codigoServicio" onchange="ShowSelected();">
         <option value=""> TIPO SERVICIO </option>

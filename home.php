@@ -3,7 +3,7 @@ session_start();
 //echo $_SESSION["autenticado"];
 
 if ($_SESSION["autenticado"] != "SI") {
- 	header("Location: index.php");
+ 	header("Location: index.html");
 }
 
 $codigo = base64_decode($_GET['id']);

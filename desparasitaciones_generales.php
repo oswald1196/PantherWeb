@@ -1,7 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
 
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -50,9 +54,9 @@ window.onload = function(){
     dia='0'+dia; //agrega cero si el menor de 10
   if(mes<10)
     mes='0'+mes //agrega cero si el menor de 10
-  document.getElementById('inputfecha').value=ano+"-"+mes+"-"+dia;
-  document.getElementById('fechaCita').value=ano+"-"+mes+"-"+dia;
-  document.getElementById('inputFechaCad').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('inputFechaD').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('fechaCitaD').value=ano+"-"+mes+"-"+dia;
+  document.getElementById('inputFechaCadD').value=ano+"-"+mes+"-"+dia;
 }
 </script>
  <p id="titulo-pagina">Agregar desparasitación</p> 
@@ -60,8 +64,8 @@ window.onload = function(){
 <div class="container">
 <form class="form_add_cita" action="insertar_desparasitacion_gral.php" id="frmDesp" method="POST" onsubmit=" return validadDesp();">
     <div>
-    <label id="lblPacientesV">Paciente</label>
-    <select id="selectPacienteV" name="paciente">
+    <label id="lblPacientesD">Paciente</label>
+    <select id="selectPacienteD" name="paciente">
         <option value="">Elige paciente</option>
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
@@ -72,15 +76,16 @@ window.onload = function(){
           <?php
             }
         ?>
-      </select>    </div>
+      </select>    
+    </div>
   <div id="contenedor">
   <div class="form-leftV">
-      <label id="lblFecha">Fecha</label>
-      <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
+      <label id="lblFechaD">Fecha</label>
+      <input type="date" class="input-append date" id="inputFechaD" name="fecha" tabindex="1">
       <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
 
-      <label id="lblProducto"> Servicio </label>
-      <select id="inputProducto" name="codigoServicio">
+      <label id="lblProductoDes"> Servicio </label>
+      <select id="inputProductoDesp" name="codigoServicio">
         <option value="">Elegir servicio</option>
         <?php
         $consulta = "SELECT * FROM CatServicios WHERE iCodTipoServicio = 3 ORDER BY iCodServicio";
@@ -92,8 +97,8 @@ window.onload = function(){
                   }
         ?>
       </select>
-      <label id="lblProducto"> Desparasitante </label>
-      <select id="inputProductoD" name="codigoDesp" onchange="ShowSelected(); precioDesp();">
+      <label id="lblProductoDespa"> Desparasitante </label>
+      <select id="inputProductoDespa" name="codigoDesp" onchange="ShowSelected(); precioDesp();">
         <option value="">Elegir desparasitante</option>
         <?php
         $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 3 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
@@ -108,61 +113,63 @@ window.onload = function(){
 
       <script type="text/javascript">
           function ShowSelected(){
-          var codigoProducto = document.getElementById("inputProductoD").value;
+          var codigoProducto = document.getElementById("inputProductoDespa").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtenerLote_Desp.php', { iCodProducto: codigoProducto, id: id }, function(data){
-              $('#inputLote').html(data);
+              $('#inputLoteD').html(data);
                   }); 
           }
         </script>
 
         <script type="text/javascript">
           function precioDesp(){
-          var codigoProducto = document.getElementById("inputProductoD").value;
+          var codigoProducto = document.getElementById("inputProductoDespa").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtenerPrecioDesp.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputPrecioVac').html(data);
-              document.getElementById("inputPrecio").value = data;
+              document.getElementById("inputPrecioD").value = data;
 
                   });
           }
 
           function precioDespLote(){
-          var codigoProducto = document.getElementById("inputLote").value;
+          var codigoProducto = document.getElementById("inputLoteD").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtenerPrecioLoteDesp.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#PrecioLote').html(data);
-              document.getElementById("inputPrecio").value = data;
+              document.getElementById("inputPrecioD").value = data;
 
                   });
           }
 
           function caducidadDesp(){
-          var codigoProducto = document.getElementById("inputLote").value;
+          var codigoProducto = document.getElementById("inputLoteD").value;
           var id = <?= json_encode($codigoE) ?>;
               $.post('obtenerCaducidadDesp.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
-              document.getElementById("inputFechaCad").value = data;
+              document.getElementById("inputFechaCadD").value = data;
 
                   });
           }
        </script>
 
-      <label id="lblLote"> Lote </label>
-      <select id="inputLote" name="codLote" onchange="precioDespLote(); caducidadDesp();"> </select>
+      <label id="lblLoteD"> Lote </label>
+      <select id="inputLoteD" name="codLote" onchange="precioDespLote(); caducidadDesp();"> </select>
 
       <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
 
-      <label id="lblPrecio">Precio</label>
-      <input type="text" id="inputPrecio" name="precio">
-      <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
-      <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+      <label id="lblPrecioD">Precio</label>
+      <input type="text" id="inputPrecioD" name="precio">
+      <label for="inputfechacad" id="lblFechaCadD">Caducidad</label>
+      <input type="date" class="input-append date" id="inputFechaCadD" name="fechaC">
       <label id="lblPesoD">Peso</label>
       <input type="text" id="inputPesoD" name="peso">
-      <label id="lblCantidad">Cantidad</label>
+      <label id="lblCantidadD">Cantidad</label>
       <input type="text" id="inputCantidadD" name="cantidad">
+      <label id="lblDespAnt">Desparasitaciones anteriores</label>
+      <input type="checkbox" id="despAnt" name="anterior" >
+
       </div>
-  </div>
   <script>
         function habilitar(value)
         {
@@ -186,7 +193,7 @@ window.onload = function(){
     }
   </script>
 
-  <script type="text/javascript">
+  <!--<script type="text/javascript">
       function validadDesp() {
       var txtServicio = document.getElementById("inputProducto").value;
       var txtDesp = document.getElementById("inputProductoD").value;
@@ -263,22 +270,18 @@ window.onload = function(){
 
           return true;
         }
-      </script>
+      </script>-->
       <div class="form-right">
         <div class="form-group">
-        <label id="lblCitaP">Programar cita</label>
+        <label id="lblCitaPD"> <i class="fas fa-calendar-day"></i>&nbsp;&nbsp; Programar cita</label>
         <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" name="dia" checked>
       </div>
         <input type="text" name="motivoCita" id="motivoCita" value="DESPARASITACIÓN">
       </select>
-        <div class="form-group">
-        <label id="lblFechaCita"> Fecha </label>
-        <input type="date" name="fechaCita" id="fechaCita">
-        </div>
-        <div class="form-group">
-        <label id="lblHoraCita"> Hora </label>
-        <input type="time" name="hora" id="inputHoraCita">
-      </div>
+        <label id="lblFechaCitaD"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp; Fecha </label>
+        <input type="date" name="fechaCita" id="fechaCitaD">
+        <label id="lblHoraCitaD"> <i class="far fa-clock"></i>&nbsp;&nbsp; Hora </label>
+        <input type="time" name="hora" id="inputHoraCitaD">
         <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
       </div>
     </div>

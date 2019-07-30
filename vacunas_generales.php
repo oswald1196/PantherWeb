@@ -1,7 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
 
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 ?>
 
 <!DOCTYPE html>
@@ -69,7 +73,7 @@ $fecha_actual = date("Y-m-d");
 <div class="container">
 <form class="form_add_cita" id="frmVacuna" action="insertar_vacunas_generales.php" method="POST" onsubmit="return validarVacuna();">
 
-    <div>
+    <div id="div_paciente">
     <label id="lblPacientesV">Paciente</label>
     <select id="selectPacienteV" name="paciente">
         <option value="">Elige paciente</option>
@@ -82,7 +86,8 @@ $fecha_actual = date("Y-m-d");
           <?php
             }
         ?>
-      </select>    </div>
+      </select>    
+    </div>
   <div id="contenedor">
   <div class="form-leftV">
       <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
@@ -172,6 +177,8 @@ $fecha_actual = date("Y-m-d");
       <p id="msg"></p>
       <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
       <input type="text" id="inputPeso" name="peso">
+      <label id="lblVacAnter">Vacunas anteriores</label>
+      <input type="checkbox" id="inputAnter" name="chkAnteriores">
   </div>
   <!--Panel derecho -->
       <div class="form-right">
@@ -222,7 +229,7 @@ $fecha_actual = date("Y-m-d");
         <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar vacuna</button>
       </div>
 
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
       function validarVacuna() {
       var txtLab = document.getElementById("inputLab").value;
       var txtVacuna = document.getElementById("inputProducto").value;
@@ -294,12 +301,12 @@ $fecha_actual = date("Y-m-d");
           }
         }
       });
-      return false;*/
+      return false;
 
 
             return true;
         }
-      </script>
+      </script>-->
 
     </div>
 </form>  

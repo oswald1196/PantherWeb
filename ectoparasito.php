@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -76,6 +81,7 @@ window.onload = function(){
         <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
         <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
         <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
+        <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
     </div>
   <div id="contenedor">
   <div class="form-left">
@@ -95,7 +101,7 @@ window.onload = function(){
         ?>
       </select>
 
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
       function validarEcto() {
       var txtEcto = document.getElementById("inputProductoE").value;
       var txtLote = document.getElementById("inputLoteEcto").value;
@@ -152,7 +158,7 @@ window.onload = function(){
 
             return true;
         }
-      </script>
+      </script>-->
       <script type="text/javascript">
           function ShowSelected(){
           var iCodProducto = document.getElementById("inputProductoE").value;
@@ -203,6 +209,8 @@ window.onload = function(){
       <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
       <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+      <label id="lblEctoAnt">Ectoparásitos anteriores</label>
+      <input type="checkbox" id="ectoAnt" name="anterior" >
   </div>
   <script>
         function habilitar(value)

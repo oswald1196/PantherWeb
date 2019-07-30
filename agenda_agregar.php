@@ -1,6 +1,12 @@
 <?php
 
 require 'conexion.php';
+session_start();
+//echo $_SESSION["autenticado"];
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 

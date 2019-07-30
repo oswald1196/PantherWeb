@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -57,7 +62,7 @@ window.onload = function(){
  <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-<form class="form-consulta" id="frmConsulta" name="formulario" action="" method="POST" onsubmit="return valida();">
+<form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta_general.php" method="POST" onsubmit="return valida();">
     <div class="div_opt_paciente">
     <label id="lblPacientesC">Paciente</label>
     <select id="selectPacienteC" name="paciente">
@@ -89,7 +94,12 @@ window.onload = function(){
     <div id="div-estado">
       <p id="lblEstado">Signos y estado</p>
       <div class="form-group">
+<?php 
+$fecha_actual = date("Y-m-d");
+?>
+
         <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+        <input type="text" name="fecha" value="<?php echo $fecha_actual ?>">
        
 
       <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
@@ -208,7 +218,7 @@ window.onload = function(){
 
     </div>  
     
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
       function valida() {
       var inputExamen = document.getElementById("txtExamen").value.trim();
       var inputMotivo = document.getElementById("txtMotivo").value.trim();
@@ -306,7 +316,7 @@ window.onload = function(){
         return false;
             return true;
         }
-      </script>
+      </script>-->
 
       </div>
 </form>  

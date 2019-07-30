@@ -1,6 +1,11 @@
 <?php
 
 require 'conexion.php';
+session_start();
+
+if ($_SESSION["autenticado"] != "SI") {
+  header("Location: index.html");
+}
 
 ?>
 
@@ -84,6 +89,7 @@ $fecha_actual = date("Y-m-d");
         <input type="hidden" name="pais" value="<?php echo $row['vchPais'] ?>">
         <input type="hidden" name="estado" value="<?php echo $row['vchEstado'] ?>">
         <input type="hidden" name="ciudad" value="<?php echo $row['vchCiudad'] ?>">
+        <input type="hidden" name="iCodProp" value="<?php echo $row['iCodPropietario'] ?>">
         <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
 
       <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
@@ -170,12 +176,14 @@ $fecha_actual = date("Y-m-d");
       <p id="msg"></p>
       <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
       <input type="text" id="inputPeso" name="peso">
+      <label id="lblVacAnt">Vacunas anteriores</label>
+      <input type="checkbox" id="inputAnt" name="chkAnteriores">
   </div>
   <!--Panel derecho -->
       <div class="form-right">
         <div class="form-group">
           <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
-          <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" checked>
+          <input type="checkbox" id="inputCitaP" name="chkCita" onchange="habilitar(this.checked);" checked>
         </div>
         <script text/javascript>
         function habilitar(value)
@@ -221,7 +229,7 @@ $fecha_actual = date("Y-m-d");
         <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar vacuna</button>
       </div>
 
-      <script type="text/javascript">
+      <!--<script type="text/javascript">
       function validarVacuna() {
       var txtLab = document.getElementById("inputLab").value;
       var txtVacuna = document.getElementById("inputProducto").value;
@@ -289,7 +297,7 @@ $fecha_actual = date("Y-m-d");
 
             return true;
         }
-      </script>
+      </script>-->
 
     </div>
 </form>  
