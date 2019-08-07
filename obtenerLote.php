@@ -4,7 +4,7 @@
 	$iCodProducto = $_POST['iCodProducto'];
     $codigo = json_decode($_POST['id']);
 
-	$consulta = "SELECT iCodProductoLote, vchLote FROM RelProductos WHERE iCodProducto = '$iCodProducto' AND iCodEmpresa = '$codigo' ORDER BY vchLote ASC";
+	$consulta = "SELECT iCodProductoLote, vchLote FROM RelProductos WHERE iCodProducto = '$iCodProducto' AND iCodEmpresa = '$codigo' AND dStockActual > 0 ORDER BY vchLote ASC";
 	$result = mysqli_query($conn,$consulta);
 	$html = "<option value=''>SELECCIONAR LOTE</option>";
 	while($row = $result->fetch_assoc()){

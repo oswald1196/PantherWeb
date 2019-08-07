@@ -672,9 +672,8 @@ body {
     border: 1px solid #0016b0;
 }
 
-#lblFechaD, #lblProductoDes, #lblProductoDespa, #lblLoteD, #lblPesoD,
- #lblPrecioD, #lblFechaCadD, #lblCitaPD, #lblHoraCitaD, #lblCantidadD,
- #lblFechaCitaD, #lblDespAnt {
+#lblFechaD, #lblProductoDes, #lblProductoDespa, #lblLoteD, #lblPesoD, #lblPrecioD, #lblFechaCadD, #lblCitaPD, #lblHoraCitaD, #lblCantidadD,
+ #lblFechaCitaD, #lblDespAnt, #ectoAnt {
 	font-size: 20px;
 }
 
@@ -760,7 +759,7 @@ font-size: 14px;
 
 #lblPacientesV{
 	font-family: 'Nunito', sans-serif;
-	margin-left: 10%;
+	margin-left: 12%;
 	margin-top: 1%;
 	font-size: 18px;
 }
@@ -778,7 +777,7 @@ font-size: 14px;
 
 #lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
  #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
- #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD, #lblVacAnter, #ectoAnt {
 	font-size: 16px;
 }
 
@@ -861,7 +860,7 @@ font-size: 14px;
 
 #lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
  #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
- #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD, #lblVacAnter, #ectoAnt {
 	font-size: 14px;
 }
 
@@ -954,7 +953,7 @@ font-size: 14px;
 
 #lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
  #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
- #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD, #lblVacAnter,#ectoAnt {
 	font-size: 13px;
 }
 
@@ -1043,7 +1042,7 @@ font-size: 14px;
 
 #lblFecha, #lblLab, #lblProducto, #lblLote, #lblPeso, #lblProducto, #lblLote, #lblPeso,
  #lblPrecio, #lblFechaCad, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad,
- #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD {
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD, #lblVacAnter, #ectoAnt {
 	font-size: 11px;
 }
 

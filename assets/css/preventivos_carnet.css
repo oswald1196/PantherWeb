@@ -1,771 +1,821 @@
 
-.forma_principal{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  height: auto;
-  min-height: 900px;
-  width: 98%; 
-  margin-left: 1%;
-  margin-top: 1%;
-  padding-right: 0px;
-  padding-left: 0px;
-}
+  .forma_principal{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    min-height: 900px;
+    width: 98%; 
+    margin-left: 1%;
+    margin-top: 1%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 
-.forma_principalD{
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border-radius: 10px;
-  height: auto;
-  min-height: 900px;
-  width: 98%; 
-  margin-left: 1%;
-  margin-top: 1%;
-  padding-right: 0px;
-  padding-left: 0px;
-}
+  .forma_principalD{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    min-height: 900px;
+    width: 98%; 
+    margin-left: 1%;
+    margin-top: 1%;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
 
-.cabecera {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  border-radius: 10px;
-  background-color: #D6D5E1;
-  height: 80px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Nunito', sans-serif;  
-  font-size: 30px;
-  color:black;
-}
-
-
-.cabeceraD {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
-  border-radius: 10px;
-  background-color: #D6D5E1;
-  height: 80px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Nunito', sans-serif;  
-  font-size: 30px;
-  color:black;
-}
-
-
-#carnet_vacuna {
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#carnet_vacunaD {
-  margin-top: 2%;
-  width: 100%;
-  text-align: center;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#cabecera_tabla {
-  border-top:1px solid;
-  border-color: #D6D5E1;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;  
-  font-size: 23px;
-  width: 100%;
-}
-
-#cabecera_tablaD {
-  border-top:1px solid;
-  border-color: #D6D5E1;
-  text-align: center;
-  font-family: 'Nunito', sans-serif;  
-  font-size: 23px;
-  width: 100%;
-}
-
-.columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-family: 'Nunito', sans-serif;  
-  font-size: 20px;
-  border-bottom: 1px solid;
-  border-color: #D6D5E1;
-  text-align: left;
-}
-
-.columna1D, .columna2D, .columna3D, .columna4D, .columna5D, .columna6D, .columna7D, .columna8D {
-  font-family: 'Nunito', sans-serif;  
-  font-size: 20px;
-  border-bottom: 1px solid;
-  border-color: #D6D5E1;
-  text-align: left;
-}
-
-#c_fechaD{
-  width: 12%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcionD {
-  width: 25%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_proximaD {
-  width: 20%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_pesoD {
-  width: 5%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_citaD {
-  width: 15%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_loteD {
-  width: 6%; 
-  border: 1px solid;
-  border-color: #D6D5E1; 
-}
-
-#c_cadD { 
-  width: 15%;
-  border: 1px solid;
-  border-color: #D6D5E1; 
- }
-
-#c_delD{
-  width: 5%;
-  border: 1px solid;
-  border-color: #D6D5E1; 
- }
-
-#c_fecha{
-  width: 12%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcion {
-  width: 25%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_proxima {
-  width: 20%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_peso {
-  width: 5%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_cita {
-  width: 15%;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_lote {
-  width: 6%; 
-  border: 1px solid;
-  border-color: #D6D5E1; 
-}
-
-#c_cad{ 
-  width: 15%;
-  border: 1px solid;
-  border-color: #D6D5E1; 
- }
-
-#c_del{
-  width: 5%;
-  border: 1px solid;
-  border-color: #D6D5E1; 
- }
-
-
-.botonAddVacuna {
-  font-family: 'Nunito', sans-serif;
-  text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-    margin-left: 90%;
-    margin-top: 1%;  
-    color: black;
+  .cabecera {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    border-radius: 10px;
     background-color: #D6D5E1;
-    border-radius: 5px;
-    border: 1px solid #D6D5E1;
-}
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;  
+    font-size: 30px;
+    color:black;
+  }
 
-.botonAddVacunaD {
-  font-family: 'Nunito', sans-serif;
-  text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-    margin-left: 90%;
-    margin-top: 1%;  
-    color: black;
+
+  .cabeceraD {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    border-radius: 10px;
     background-color: #D6D5E1;
-    border-radius: 5px;
-    border: 1px solid black;
-}
-
-/*---------VACUNAS-----------*/
-@media (min-width: 1024px) and (max-width: 1366px){
-  .forma_principal{
-  width: 95%;
-  margin-left: 2.5%; 
-  margin-top: 2%;
-}
-
-.botonAddVacuna {
-    font-size: 19px;
-    padding: 8px;
-    margin-left: 85%;
-}
-
-.cabecera {
-  height: 60px;
-  width: 100%;
-  font-size: 25px;
-}
-
-
-#c_fecha, #c_descripcion, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
-  font-size: 17px;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 12px;
-}
-
-}
-
-
-@media (min-width: 768px) and (max-width: 1023px){
-  .forma_principal{
-  min-height: 1000px;
-  width: 95%;
-  margin-left: 2.5%; 
-  margin-top: 2%; 
-}
-
-.botonAddVacuna {
-    font-size: 18px;
-    margin-left: 85%;
-}
-
-.cabecera {
-  height: 60px;
-  width: 100%;  
-  font-size: 24px;
-}
-
-#c_descripcion, #c_proxima, #c_peso, #c_lote{
-  font-size: 16px;
-}
-
-#c_cita{
-  width:11%;
-}
-
-#c_cad{
-  width: 11%;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 12px;
-}
-
-}
-
-@media (min-width: 666px) and (max-width: 767px){
-
-  .forma_principal{
-  min-height: 1000px;
-  width: 98%;
-  margin-left: 1%;
-}
-
-.botonAddVacuna {
-    font-size: 17px;
-    margin-left: 82%;
-}
-
-.cabecera {
-  height: 50px;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-
-}
-
- #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
-  font-size: 14px;
-}
-
-#c_fecha{
-  font-size: 14px;
-  width: 10%;
-}
-
-#c_descripcion{
-  font-size: 14px;
-  width: 15%;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 12px;
-}
-
-}
-
-@media (min-width: 565px) and (max-width: 665px){
-
-  .forma_principal{
-  width: 98%;
-  margin-left: 1%;
-}
-
-.botonAddVacuna {
-    font-size: 15px;
-    margin-left: 82%;
-}
-
-.cabecera {
-  height: 50px;
-  font-size: 18px;
-}
-
- #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
-  font-size: 13px;
-}
-
-#c_fecha{
-  font-size: 13px;
-  width: 11%;
-}
-
-#c_descripcion{
-  font-size: 13px;
-  width: 15%;
-}
-
-
-}
-
-@media (min-width: 416px) and (max-width: 566px){
-
-  .forma_principal{
-  min-height: 1000px;
-  width: 98%;
-  margin-left: 1%;
-}
-
-.botonAddVacuna {
-    font-size: 17px;
-    margin-left: 77%;
-    padding: 5px;
-}
-
-#simbolo_add {
-  height: 14px;
-}
-.cabecera {
-  height: 60px;
-  width: 100%;
-  font-size: 25px;
-  color:black;
-}
-
-#c_descripcion, #c_proxima, #c_peso, #c_lote, #c_cad{
-  font-size: 14px;
-}
-
-#c_fecha {
-  font-size: 14px;
-}
-
-#c_cita{
-  font-size: 14px;
-  width: 10%;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 12px;
-}
-
-}
-
-@media (min-width: 360px) and (max-width: 415px){
-
-  .forma_principal{
-  min-height: 1000px;
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-#simbolo_add{
-  height: 13px;
-}
-.botonAddVacuna {
-    font-size: 13px;
-    padding: 5px;
-    margin-left: 75%;
-}
-
-.cabecera {
-  height: 30px;
-  font-size: 15px;
-  border-radius: 5px;
-}
-
-
-#c_fecha, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
-  font-size: 12px;
-}
-
-#c_descripcion{
-  width: 15%;
-  font-size: 12px;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 9px;
-}
-
-}
-
-@media (max-width: 359px){
-
-  .forma_principal{
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-#simbolo_add{
-  height: 13px;
-}
-.botonAddVacuna {
-    font-size: 13px;
-    padding: 5px;
-    margin-left: 75%;
-}
-
-.cabecera {
-  height: 30px;
-  font-size: 15px;
-  border-radius: 5px;
-}
-
-
-#c_fecha, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
-  font-size: 11px;
-}
-
-#c_descripcion{
-  width: 15%;
-  font-size: 11px;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 8px;
-}
-
-}
-
-/*--------- FIN VACUNAS-----------*/
-
-/*---------DESPARASITACION-----------*/
-
-@media (min-width: 1024px) and (max-width: 1366px){
-.forma_principalD{
-  width: 98%;
-  margin-top: 7%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 19px;
-    padding: 8px;
-    margin-left: 85%;
-}
-
-.cabeceraD {
-  height: 60px;
-  width: 100%;
-  font-size: 25px;
-}
-
-#c_fechaD, #c_pesoD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 16px;
-}
-
-#c_descripcionD{
-  width: 25%;
-  font-size: 16px;
-}
-
-#c_proximaD{
-  width: 18%;
-  font-size: 16px;
-}
-
- .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
-  font-size: 12px;
-}
-}
-
-@media (min-width: 768px) and (max-width: 1023px){
-.forma_principalD{
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 19px;
-    padding: 7px;
-    margin-left: 82%;
-}
-
-.cabeceraD {
-  height: 60px;
-  width: 100%;
-  font-size: 25px;
-}
-
-#c_fechaD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 16px;
-}
-
-#c_pesoD {
-  width: 8%;
-  font-size: 16px;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcionD{
-  width: 23%;
-  font-size: 16px;
-}
-
-#c_proximaD{
-  width: 17%;
-  font-size: 16px;
-}
-
-#c_delD{
-  width: 4%;
- }
-}
-
-@media (min-width: 666px) and (max-width: 767px){
-.forma_principalD{
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 19px;
-    padding: 7px;
-    margin-left: 82%;
-}
-
-.cabeceraD {
-  height: 60px;
-  width: 100%;
-  font-size: 25px;
-}
-
-#c_fechaD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 16px;
-}
-
-#c_pesoD {
-  width: 8%;
-  font-size: 16px;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcionD{
-  width: 23%;
-  font-size: 16px;
-}
-
-#c_proximaD{
-  width: 17%;
-  font-size: 16px;
-}
-
-#c_delD{
-  width: 4%;
- }
-}
-
-@media (min-width: 565px) and (max-width: 665px){
-.forma_principalD{
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 17px;
-    padding: 7px;
-    margin-left: 80%;
-}
-
-.cabeceraD {
-  height: 50px;
-  width: 100%;
-  font-size: 24px;
-}
-
-#c_fechaD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 15px;
-}
-
-#c_pesoD {
-  width: 8%;
-  font-size: 14px;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcionD{
-  width: 23%;
-  font-size: 14px;
-}
-
-#c_proximaD{
-  width: 17%;
-  font-size: 14px;
-}
-
- #simbolo_addD{
-  height: 18px;
- }
-}
-
-@media (min-width: 416px) and (max-width: 564px){
-.forma_principalD{
-  width: 98%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 16px;
-    padding: 7px;
-    margin-left: 75%;
-}
-
-.cabeceraD {
-  height: 50px;
-  width: 100%;
-  font-size: 24px;
-}
-
-#c_fechaD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 15px;
-}
-
-#c_pesoD {
-  width: 8%;
-  font-size: 14px;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
-
-#c_descripcionD{
-  width: 23%;
-  font-size: 14px;
-}
-
-#c_proximaD{
-  width: 17%;
-  font-size: 14px;
-}
-
- #simbolo_addD{
-  height: 18px;
- }
-}
-
-@media (min-width: 360px) and (max-width: 415px){
-.forma_principalD{
-  width: 100%;
-  margin-top: 10%;
-  margin-left: 1%;
-}
-
-.botonAddVacunaD {
-    font-size: 13px;
-    padding: 5px;
-    margin-left: 75%;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Nunito', sans-serif;  
+    font-size: 30px;
+    color:black;
+  }
+
+
+  #carnet_vacuna {
     margin-top: 2%;
-}
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
 
-.cabeceraD {
-  height: 35px;
-  width: 100%;
-  font-size: 15px;
-  border-radius: 5px;
-}
+  #carnet_vacunaD {
+    margin-top: 2%;
+    width: 100%;
+    text-align: center;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
 
-#c_fechaD, #c_citaD, #c_loteD, #c_cadD{
-  font-size: 13px;
-}
+  #cabecera_tabla {
+    border-top:1px solid;
+    border-color: #D6D5E1;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;  
+    font-size: 23px;
+    width: 100%;
+  }
 
-#c_pesoD {
-  width: 8%;
-  font-size: 13px;
-  border: 1px solid;
-  border-color: #D6D5E1;
-}
+  #cabecera_tablaD {
+    border-top:1px solid;
+    border-color: #D6D5E1;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;  
+    font-size: 23px;
+    width: 100%;
+  }
 
-#c_descripcionD{
-  width: 23%;
-  font-size: 13px;
-}
+  .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-family: 'Nunito', sans-serif;  
+    font-size: 20px;
+    border-bottom: 1px solid;
+    border-color: #D6D5E1;
+    text-align: left;
+  }
 
-#c_proximaD{
-  width: 17%;
-  font-size: 13px;
-}
+  .columna1D, .columna2D, .columna3D, .columna4D, .columna5D, .columna6D, .columna7D, .columna8D {
+    font-family: 'Nunito', sans-serif;  
+    font-size: 20px;
+    border-bottom: 1px solid;
+    border-color: #D6D5E1;
+    text-align: left;
+  }
 
- #simbolo_addD{
-  height: 13px;
- }
-}
+  #c_fechaD{
+    width: 12%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD {
+    width: 25%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_proximaD {
+    width: 20%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_pesoD {
+    width: 5%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_citaD {
+    width: 15%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_loteD {
+    width: 6%; 
+    border: 1px solid;
+    border-color: #D6D5E1; 
+  }
+
+  #c_cadD { 
+    width: 15%;
+    border: 1px solid;
+    border-color: #D6D5E1; 
+   }
+
+  #c_delD{
+    width: 5%;
+    border: 1px solid;
+    border-color: #D6D5E1; 
+   }
+
+  #c_fecha{
+    width: 12%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcion {
+    width: 25%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_proxima {
+    width: 20%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_peso {
+    width: 5%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_cita {
+    width: 15%;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_lote {
+    width: 6%; 
+    border: 1px solid;
+    border-color: #D6D5E1; 
+  }
+
+  #c_cad{ 
+    width: 15%;
+    border: 1px solid;
+    border-color: #D6D5E1; 
+   }
+
+  #c_del{
+    width: 5%;
+    border: 1px solid;
+    border-color: #D6D5E1; 
+   }
+
+
+  .botonAddVacuna {
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+      padding: 10px;
+      font-size: 20px;
+      margin-left: 90%;
+      margin-top: 1%;  
+      color: black;
+      background-color: #D6D5E1;
+      border-radius: 5px;
+      border: 1px solid #D6D5E1;
+  }
+
+  .botonAddVacunaD {
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+      padding: 10px;
+      font-size: 20px;
+      margin-left: 90%;
+      margin-top: 1%;  
+      color: black;
+      background-color: #D6D5E1;
+      border-radius: 5px;
+      border: 1px solid black;
+  }
+
+  /*---------VACUNAS-----------*/
+  @media (min-width: 1024px) and (max-width: 1366px){
+    .forma_principal{
+    width: 95%;
+    margin-left: 2.5%; 
+    margin-top: 2%;
+  }
+
+  .botonAddVacuna {
+      font-size: 19px;
+      padding: 8px;
+      margin-left: 85%;
+  }
+
+  .cabecera {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+  }
+
+
+  #c_fecha, #c_descripcion, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
+    font-size: 17px;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 12px;
+  }
+
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1023px){
+    .forma_principal{
+    min-height: 1000px;
+    width: 95%;
+    margin-left: 2.5%; 
+    margin-top: 2%; 
+    background-color: red;
+  }
+
+  .botonAddVacuna {
+      font-size: 18px;
+      margin-left: 85%;
+  }
+
+  .cabecera {
+    height: 60px;
+    width: 100%;  
+    font-size: 24px;
+  }
+
+  #c_fecha, #c_descripcion, #c_proxima, #c_peso, #c_lote{
+    font-size: 16px;
+  }
+
+  #c_cita{
+    font-size: 16px;
+    width:11%;
+  }
+
+  #c_cad{
+    font-size: 16px;
+    width: 11%;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 12px;
+  }
+
+  }
+
+  @media (min-width: 666px) and (max-width: 767px){
+
+    .forma_principal{
+    min-height: 1000px;
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacuna {
+      font-size: 17px;
+      margin-left: 82%;
+  }
+
+  .cabecera {
+    height: 50px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+
+  }
+
+   #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
+    font-size: 14px;
+  }
+
+  #c_fecha{
+    font-size: 14px;
+    width: 10%;
+  }
+
+  #c_descripcion{
+    font-size: 14px;
+    width: 15%;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 12px;
+  }
+
+  }
+
+  @media (min-width: 565px) and (max-width: 665px){
+
+    .forma_principal{
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacuna {
+      font-size: 15px;
+      margin-left: 82%;
+  }
+
+  .cabecera {
+    height: 50px;
+    font-size: 18px;
+  }
+
+   #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
+    font-size: 13px;
+  }
+
+  #c_fecha{
+    font-size: 13px;
+    width: 11%;
+  }
+
+  #c_descripcion{
+    font-size: 13px;
+    width: 15%;
+  }
+
+
+  }
+
+  @media (min-width: 416px) and (max-width: 566px){
+
+    .forma_principal{
+    min-height: 1000px;
+    width: 98%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacuna {
+      font-size: 17px;
+      margin-left: 77%;
+      padding: 5px;
+  }
+
+  #simbolo_add {
+    height: 14px;
+  }
+  .cabecera {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+    color:black;
+  }
+
+  #c_descripcion, #c_proxima, #c_peso, #c_lote, #c_cad{
+    font-size: 14px;
+  }
+
+  #c_fecha {
+    font-size: 14px;
+  }
+
+  #c_cita{
+    font-size: 14px;
+    width: 10%;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 12px;
+  }
+
+  }
+
+  @media (min-width: 360px) and (max-width: 415px){
+
+    .forma_principal{
+    min-height: 1000px;
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  #simbolo_add{
+    height: 13px;
+  }
+  .botonAddVacuna {
+      font-size: 13px;
+      padding: 5px;
+      margin-left: 75%;
+  }
+
+  .cabecera {
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+
+  #c_fecha, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
+    font-size: 12px;
+  }
+
+  #c_descripcion{
+    width: 15%;
+    font-size: 12px;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 9px;
+  }
+
+  }
+
+  @media (max-width: 359px){
+
+    .forma_principal{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  #simbolo_add{
+    height: 13px;
+  }
+  .botonAddVacuna {
+      font-size: 13px;
+      padding: 5px;
+      margin-left: 75%;
+  }
+
+  .cabecera {
+    height: 30px;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+
+  #c_fecha, #c_proxima, #c_peso, #c_cita, #c_lote, #c_cad{
+    font-size: 11px;
+  }
+
+  #c_descripcion{
+    width: 15%;
+    font-size: 11px;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 8px;
+  }
+
+  }
+
+  /*--------- FIN VACUNAS-----------*/
+
+  /*---------DESPARASITACION-----------*/
+
+  @media (min-width: 1024px) and (max-width: 1366px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 7%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 19px;
+      padding: 8px;
+      margin-left: 85%;
+  }
+
+  .cabeceraD {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+  }
+
+  #c_fechaD, #c_pesoD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 16px;
+  }
+
+  #c_descripcionD{
+    width: 25%;
+    font-size: 16px;
+  }
+
+  #c_proximaD{
+    width: 18%;
+    font-size: 16px;
+  }
+
+   .columna1, .columna2, .columna3, .columna4, .columna5, .columna6, .columna7, .columna8 {
+    font-size: 12px;
+  }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 19px;
+      padding: 7px;
+      margin-left: 82%;
+  }
+
+  .cabeceraD {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 16px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 16px;
+  }
+
+  #c_proximaD{
+    width: 17%;
+    font-size: 16px;
+  }
+
+  #c_delD{
+    width: 4%;
+   }
+  }
+
+  @media (min-width: 666px) and (max-width: 767px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 19px;
+      padding: 7px;
+      margin-left: 82%;
+  }
+
+  .cabeceraD {
+    height: 60px;
+    width: 100%;
+    font-size: 25px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 16px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 16px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 16px;
+  }
+
+  #c_proximaD{
+    width: 17%;
+    font-size: 16px;
+  }
+
+  #c_delD{
+    width: 4%;
+   }
+  }
+
+  @media (min-width: 565px) and (max-width: 665px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 17px;
+      padding: 7px;
+      margin-left: 80%;
+  }
+
+  .cabeceraD {
+    height: 50px;
+    width: 100%;
+    font-size: 24px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 15px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 14px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 14px;
+  }
+
+  #c_proximaD{
+    width: 17%;
+    font-size: 14px;
+  }
+
+   #simbolo_addD{
+    height: 18px;
+   }
+  }
+
+  @media (min-width: 416px) and (max-width: 564px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 16px;
+      padding: 7px;
+      margin-left: 75%;
+  }
+
+  .cabeceraD {
+    height: 50px;
+    width: 100%;
+    font-size: 24px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 15px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 14px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 14px;
+  }
+
+  #c_proximaD{
+    width: 17%;
+    font-size: 14px;
+  }
+
+   #simbolo_addD{
+    height: 18px;
+   }
+  }
+
+  @media (min-width: 360px) and (max-width: 415px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 13px;
+      padding: 5px;
+      margin-left: 75%;
+      margin-top: 2%;
+  }
+
+  .cabeceraD {
+    height: 35px;
+    width: 100%;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 13px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 13px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 13px;
+  }
+
+  #c_proximaD{
+    width: 17%;
+    font-size: 13px;
+  }
+
+   #simbolo_addD{
+    height: 13px;
+   }
+  }
+
+  @media (max-width: 359px){
+  .forma_principalD{
+    width: 98%;
+    margin-top: 10%;
+    margin-left: 1%;
+  }
+
+  .botonAddVacunaD {
+      font-size: 11px;
+      padding: 3px;
+      margin-left: 75%;
+      margin-top: 2%;
+  }
+
+  .cabeceraD {
+    height: 35px;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 5px;
+  }
+
+  #c_fechaD, #c_citaD, #c_loteD, #c_cadD{
+    font-size: 11px;
+  }
+
+  #c_pesoD {
+    width: 8%;
+    font-size: 11px;
+    border: 1px solid;
+    border-color: #D6D5E1;
+  }
+
+  #c_descripcionD{
+    width: 23%;
+    font-size: 11px;
+  }
+
+  #c_proximaD{
+    width: 13%;
+    font-size: 11px;
+  }
+
+   #simbolo_addD{
+    height: 11px;
+   }
+  }

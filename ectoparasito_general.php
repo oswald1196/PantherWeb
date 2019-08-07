@@ -88,7 +88,7 @@ window.onload = function(){
       <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
       <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
       <label id="lblProducto"> Producto </label>
-      <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto();">
+      <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto();">
         <option value="">ELEGIR PRODUCTO</option>
         <?php
         $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
@@ -101,7 +101,130 @@ window.onload = function(){
         ?>
       </select>
 
-      <!--<script type="text/javascript">
+      <script type="text/javascript">
+          function ShowSelected(){
+          var iCodProducto = document.getElementById("inputProductoE").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerLote.php', { iCodProducto: iCodProducto, id: id }, function(data){
+              $('#inputLoteEcto').html(data);
+                  }); 
+          }
+
+          function obtenerPrecioEcto(){
+          var iCodProducto = document.getElementById("inputProductoE").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerPrecio.php', { iCodProducto: iCodProducto, id: id }, function(data){
+              $('#inputPrecio').html(data);
+              document.getElementById("inputPrecio").value = data;
+                  }); 
+          }
+      
+          function precioEcto(){
+          var iCodProductoLote = document.getElementById("inputLoteEcto").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerPrecioLote.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
+              $('#precio').html(data);
+              document.getElementById("inputPrecio").value = data;
+                  }); 
+          }
+
+          function stockEcto(){
+          var iCodProducto = document.getElementById("inputProductoE").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerStock.php', { iCodProducto: iCodProducto, id: id }, function(data){
+              $('#stock').html(data);
+              document.getElementById("inputStockEcto").value = data;
+
+                if(data == 0){
+                  Swal.fire({
+                  type:'warning',
+                  title:'ERROR',
+                  text:'¡El ectoparásito seleccionado no tiene lotes, favor de seleccionar otro!'
+                });
+                document.getElementById("inputLoteEcto").disabled=true;
+                }
+                else {
+                document.getElementById("inputLoteEcto").disabled=false;
+
+                }
+                  });   
+          }
+
+          function stockMinimoEcto(){
+            var codigoProducto = document.getElementById("inputProductoE").value;
+            var id = <?= json_encode($codigoE) ?>;
+            $.post('obtenerStockMinimo.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#stockMin').html(data);
+              document.getElementById("inputStockMinEcto").value = data;
+              var stock = document.getElementById("inputStockEcto").value;
+              if(data != 0 && data == stock){
+                Swal.fire({
+                  type:'warning',
+                  title:'PRECAUCION',
+                  text:'¡El número de artículos que está vendiendo lo dejará por debajo del stock mínimo!'
+                });
+              }
+            });
+          }
+
+          function getCaducidad(){
+          var iCodProductoLote = document.getElementById("inputLoteEcto").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerCaducidad.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
+              $('#cad').html(data);
+              document.getElementById("inputFechaCad").value = data;
+                  }); 
+          }
+      </script>
+
+      <label id="lblLote"> Lote </label>
+      <select id="inputLoteEcto" name="lote" onchange="precioEcto(); getCaducidad();"> </select>
+      <label id="lblPrecio">Precio</label>
+      <input type="text" id="inputPrecio" name="dia">
+      <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+      <input type="hidden" id="inputStockEcto">
+      <input type="hidden" id="inputStockMinEcto">
+
+      <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
+      <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+      <label id="lblEctoAnt">Ectoparásitos anteriores</label>
+      <input type="checkbox" id="ectoAnt" name="anterior" >
+  </div>
+  <script>
+        function habilitar(value)
+        {
+        if(value==true)
+        {
+        document.getElementById("motivoCita").disabled=false;   
+        document.getElementById("fechaCita").disabled=false;
+        document.getElementById("inputHoraCita").disabled=false;
+
+        }else if(value==false){
+        // deshabilitamos
+
+        document.getElementById("motivoCita").disabled=true;
+        document.getElementById("fechaCita").disabled=true;
+        document.getElementById("fechaCita").value="-";
+        document.getElementById("inputHoraCita").disabled=true;
+        document.getElementById("inputHoraCita").value="00:00";
+
+      }
+    }
+  </script>
+      <div class="form-right">
+        <div class="form-group">
+        <label id="lblCitaP">Programar ectoparásito</label>
+        <input type="checkbox" id="inputCitaP" name="citaP" onchange="habilitar(this.checked);" checked>
+      </div>
+        <input type="text" id="motivoCita" name="motivoCitaEcto" value="ECTOPARÁSITOS">
+        <label id="lblFechaCita"> Fecha </label>
+        <input type="date" id="fechaCita" name="fechaProx">
+        <label id="lblHoraCita"> Hora </label>
+        <input type="time" id="inputHoraCita" name="horaProx">
+        <button class="boton" type="submit">Agregar ectoparásito</button>
+      </div>
+    </div>
+    <!--<script type="text/javascript">
       function validarEcto() {
       var txtEcto = document.getElementById("inputProductoE").value;
       var txtLote = document.getElementById("inputLoteEcto").value;
@@ -109,7 +232,38 @@ window.onload = function(){
       var fechaHoy = document.getElementById("fechaActual").value;
       var fechaDeCita = document.getElementById("fechaCita").value;
       var valorPaciente = document.getElementById("selectPacienteV").value;
+      var valorCitaP = document.getElementById("inputCitaP").checked;
+      var valorMotivo = document.getElementById("motivoCita").value;
+      var valorFechaP = document.getElementById("fechaCita").value;
+      var valorHoraP = document.getElementById("inputHoraCita").value;
       var datos = $('#frmEcto').serialize();
+
+      if(valorCitaP == "1" && valorMotivo == ""){
+      Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige motivo de cita'
+        });
+        return false;
+      }
+
+      if(valorCitaP == "1" && valorFechaP < fechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'La fecha no puede ser anterior al día de hoy'
+        });
+        return false;
+      }
+
+      if(valorCitaP == "1" && valorHoraP == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige un horario'
+        });
+        return false;
+      }
 
       if(valorPaciente == ""){
         Swal.fire({
@@ -169,93 +323,6 @@ window.onload = function(){
             return true;
         }
       </script>-->
-      <script type="text/javascript">
-          function ShowSelected(){
-          var iCodProducto = document.getElementById("inputProductoE").value;
-          var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerLote_Ecto.php', { iCodProducto: iCodProducto, id: id }, function(data){
-              $('#inputLoteEcto').html(data);
-                  }); 
-          }
-        </script>
-
-      <script type="text/javascript">
-          function obtenerPrecioEcto(){
-          var iCodProducto = document.getElementById("inputProductoE").value;
-          var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerPrecioEcto.php', { iCodProducto: iCodProducto, id: id }, function(data){
-              $('#inputPrecio').html(data);
-              document.getElementById("inputPrecio").value = data;
-                  }); 
-          }
-        </script>
-
-      <script type="text/javascript">
-          function precioEcto(){
-          var iCodProductoLote = document.getElementById("inputLoteEcto").value;
-          var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerPrecioEctoLote.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
-              $('#precio').html(data);
-              document.getElementById("inputPrecio").value = data;
-                  }); 
-          }
-      </script>
-
-      <script type="text/javascript">
-          function getCaducidad(){
-          var iCodProductoLote = document.getElementById("inputLoteEcto").value;
-          var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerCaducidadEcto.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
-              $('#cad').html(data);
-              document.getElementById("inputFechaCad").value = data;
-                  }); 
-          }
-      </script>
-
-      <label id="lblLote"> Lote </label>
-      <select id="inputLoteEcto" name="lote" onchange="precioEcto(); getCaducidad();"> </select>
-      <label id="lblPrecio">Precio</label>
-      <input type="text" id="inputPrecio" name="dia">
-      <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
-      <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
-      <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
-      <label id="lblEctoAnt">Ectoparásitos anteriores</label>
-      <input type="checkbox" id="ectoAnt" name="anterior" >
-  </div>
-  <script>
-        function habilitar(value)
-        {
-        if(value==true)
-        {
-        document.getElementById("motivoCita").disabled=false;   
-        document.getElementById("fechaCita").disabled=false;
-        document.getElementById("inputHoraCita").disabled=false;
-
-        }else if(value==false){
-        // deshabilitamos
-
-        document.getElementById("motivoCita").disabled=true;
-        document.getElementById("fechaCita").disabled=true;
-        document.getElementById("fechaCita").value="-";
-        document.getElementById("inputHoraCita").disabled=true;
-        document.getElementById("inputHoraCita").value="00:00";
-
-      }
-    }
-  </script>
-      <div class="form-right">
-        <div class="form-group">
-        <label id="lblCitaP">Programar ectoparásito</label>
-        <input type="checkbox" id="inputCitaP" name="dia" onchange="habilitar(this.checked);" checked>
-      </div>
-        <input type="text" id="motivoCita" name="motivoCitaEcto" value="ECTOPARÁSITOS">
-        <label id="lblFechaCita"> Fecha </label>
-        <input type="date" id="fechaCita" name="fechaProx">
-        <label id="lblHoraCita"> Hora </label>
-        <input type="time" name="horaProx" id="inputHoraCita">
-        <button class="boton" type="submit">Agregar ectoparásito</button>
-      </div>
-    </div>
 </form>  
 </div>  
 </body>

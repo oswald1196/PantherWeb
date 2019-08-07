@@ -62,7 +62,7 @@ window.onload = function(){
  <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
-<form class="form_add_cita" action="insertar_desparasitacion_gral.php" id="frmDesp" method="POST" onsubmit=" return validadDesp();">
+<form class="form_add_cita" id="frmDesp" action="insertar_desparasitacion_gral.php" method="POST" onsubmit=" return validadDesp();">
     <div>
     <label id="lblPacientesD">Paciente</label>
     <select id="selectPacienteD" name="paciente">
@@ -98,7 +98,7 @@ window.onload = function(){
         ?>
       </select>
       <label id="lblProductoDespa"> Desparasitante </label>
-      <select id="inputProductoDespa" name="codigoDesp" onchange="ShowSelected(); precioDesp();">
+      <select id="inputProductoDespa" name="codigoDesp" onchange="ShowSelected(); precioDesp(); stockDesparasitante(); stockMinimoD();">
         <option value="">Elegir desparasitante</option>
         <?php
         $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 3 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
@@ -115,7 +115,7 @@ window.onload = function(){
           function ShowSelected(){
           var codigoProducto = document.getElementById("inputProductoDespa").value;
           var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerLote_Desp.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $.post('obtenerLote.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputLoteD').html(data);
                   }); 
           }
@@ -125,7 +125,7 @@ window.onload = function(){
           function precioDesp(){
           var codigoProducto = document.getElementById("inputProductoDespa").value;
           var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerPrecioDesp.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $.post('obtenerPrecio.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputPrecioVac').html(data);
               document.getElementById("inputPrecioD").value = data;
 
@@ -135,7 +135,7 @@ window.onload = function(){
           function precioDespLote(){
           var codigoProducto = document.getElementById("inputLoteD").value;
           var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerPrecioLoteDesp.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
+              $.post('obtenerPrecioLote.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#PrecioLote').html(data);
               document.getElementById("inputPrecioD").value = data;
 
@@ -145,11 +145,49 @@ window.onload = function(){
           function caducidadDesp(){
           var codigoProducto = document.getElementById("inputLoteD").value;
           var id = <?= json_encode($codigoE) ?>;
-              $.post('obtenerCaducidadDesp.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
+              $.post('obtenerCaducidad.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("inputFechaCadD").value = data;
 
                   });
+          }
+
+          function stockDesparasitante(){
+          var codigoProducto = document.getElementById("inputProductoDespa").value;
+          var id = <?= json_encode($codigoE) ?>;
+              $.post('obtenerStock.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#stockD').html(data);
+              document.getElementById("inputStockDesp").value = data;
+                if(data == 0){
+                  Swal.fire({
+                  type:'warning',
+                  title:'ERROR',
+                  text:'¡El desparasitante seleccionado no tiene lotes, favor de seleccionar otro!'
+                });
+                document.getElementById("inputLoteD").disabled=true;
+                }
+                else {
+                document.getElementById("inputLoteD").disabled=false;
+
+                }
+                  });
+          }
+
+          function stockMinimoD(){
+            var codigoProducto = document.getElementById("inputProductoDespa").value;
+            var id = <?= json_encode($codigoE) ?>;
+            $.post('obtenerStockMinimo.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#stockMin').html(data);
+              document.getElementById("inputStockMinD").value = data;
+              var stock = document.getElementById("inputStockDesp").value;
+              if(data != 0 && data == stock){
+                Swal.fire({
+                  type:'warning',
+                  title:'PRECAUCION',
+                  text:'¡El número de artículos que está vendiendo lo dejará por debajo del stock mínimo!'
+                });
+              }
+            });
           }
        </script>
 
@@ -157,15 +195,17 @@ window.onload = function(){
       <select id="inputLoteD" name="codLote" onchange="precioDespLote(); caducidadDesp();"> </select>
 
       <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+      <input type="hidden" id="inputStockDesp">
+      <input type="hidden" id="inputStockMinD">
 
       <label id="lblPrecioD">Precio</label>
-      <input type="text" id="inputPrecioD" name="precio">
+      <input type="text" id="inputPrecioD" name="precio" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
       <label for="inputfechacad" id="lblFechaCadD">Caducidad</label>
       <input type="date" class="input-append date" id="inputFechaCadD" name="fechaC">
       <label id="lblPesoD">Peso</label>
-      <input type="text" id="inputPesoD" name="peso">
+      <input type="text" id="inputPesoD" name="peso" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
       <label id="lblCantidadD">Cantidad</label>
-      <input type="text" id="inputCantidadD" name="cantidad">
+      <input type="text" id="inputCantidadD" name="cantidad" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
       <label id="lblDespAnt">Desparasitaciones anteriores</label>
       <input type="checkbox" id="despAnt" name="anterior" >
 
@@ -176,34 +216,65 @@ window.onload = function(){
         if(value==true)
         {
         document.getElementById("motivoCita").disabled=false;
-        document.getElementById("fechaCita").disabled=false;
-        document.getElementById("inputHoraCita").disabled=false;
+        document.getElementById("fechaCitaD").disabled=false;
+        document.getElementById("inputHoraCitaD").disabled=false;
 
         }else if(value==false){
         // deshabilitamos
         document.getElementById("motivoCita").disabled=true;
         document.getElementById("motivoCita").value="-";
 
-        document.getElementById("fechaCita").disabled=true;
-        document.getElementById("fechaCita").value="-";
+        document.getElementById("fechaCitaD").disabled=true;
+        document.getElementById("fechaCitaD").value="-";
         
-        document.getElementById("inputHoraCita").disabled=true;
-        document.getElementById("inputHoraCita").value="00:00";
+        document.getElementById("inputHoraCitaD").disabled=true;
+        document.getElementById("inputHoraCitaD").value="00:00";
       }
     }
   </script>
 
   <!--<script type="text/javascript">
       function validadDesp() {
-      var txtServicio = document.getElementById("inputProducto").value;
-      var txtDesp = document.getElementById("inputProductoD").value;
-      var txtLote = document.getElementById("inputLote").value;
-      var fechaCad = document.getElementById("inputFechaCad").value;
+      var txtServicio = document.getElementById("inputProductoDesp").value;
+      var txtDesp = document.getElementById("inputProductoDespa").value;
+      var txtLote = document.getElementById("inputLoteD").value;
+      var fechaCad = document.getElementById("inputFechaCadD").value;
       var fechaHoy = document.getElementById("fechaActual").value;
-      var valorPaciente = document.getElementById("selectPacienteV").value;
-
+      var valorPaciente = document.getElementById("selectPacienteD").value;
+      var valorCitaP = document.getElementById("inputCitaP").checked;
+      alert(valorCitaP);
+      var valorMotivoP = document.getElementById("motivoCita").value;
+      var valorFechaP = document.getElementById("fechaCitaD").value;
+      var valorHoraP = document.getElementById("inputHoraCitaD").value;
       var datos = $('#frmDesp').serialize();
       
+      if(valorCitaP == "1" && valorMotivoP == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige motivo de cita'
+        });
+        return false;
+      }
+
+      if(valorCitaP == "1" && valorFechaP < fechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'La fecha no puede ser anterior al día de hoy'
+        });
+        return false;
+      }
+
+      if(valorCitaP == "1" && valorHoraP == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'Elige un horario'
+        });
+        return false;
+      }
+
       if(valorPaciente == ""){
         Swal.fire({
           type:'error',
@@ -274,7 +345,7 @@ window.onload = function(){
       <div class="form-right">
         <div class="form-group">
         <label id="lblCitaPD"> <i class="fas fa-calendar-day"></i>&nbsp;&nbsp; Programar cita</label>
-        <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" name="dia" checked>
+        <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" name="pCita" checked>
       </div>
         <input type="text" name="motivoCita" id="motivoCita" value="DESPARASITACIÓN">
       </select>
