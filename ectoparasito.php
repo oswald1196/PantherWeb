@@ -67,7 +67,7 @@ if ($_SESSION["autenticado"] != "SI") {
 }
 </script>
 <div class="container">
-  <form class="form_add_cita" id="frmEcto" action="insertar_ecto.php" method="POST" onsubmit="return validarEcto();">
+  <form class="form_add_cita" id="frmEcto" action="" method="POST" onsubmit="return validarEcto();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -88,7 +88,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <label id="lblFecha">Fecha</label>
         <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
         <label id="lblProducto"> Producto </label>
-        <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto();">
+        <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto(); getTipo();">
           <option value="">ELEGIR PRODUCTO</option>
           <?php
           $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
@@ -147,9 +147,10 @@ if ($_SESSION["autenticado"] != "SI") {
                 Swal.fire({
                   type:'warning',
                   title:'ERROR',
-                  text:'¡El ectoparásito seleccionado no tiene lotes, favor de seleccionar otro!'
+                  text:'¡EL ECTOPARÁSITO SELECCIONADO NO TIENE LOTES, FAVOR DE SELECCIONAR OTRO!'
                 });
                 document.getElementById("inputLoteEcto").disabled=true;
+                break;
               }
               else {
                 document.getElementById("inputLoteEcto").disabled=false;
@@ -169,9 +170,18 @@ if ($_SESSION["autenticado"] != "SI") {
                 Swal.fire({
                   type:'warning',
                   title:'PRECAUCION',
-                  text:'¡El número de artículos que está vendiendo lo dejará por debajo del stock mínimo!'
+                  text:'¡EL NÚMERO DE ARTÍCULOS QUE ESTÁ VENDIENDO LO DEJARÁ POR DEBAJO DEL STOCK MÍNIMO!'
                 });
               }
+            });
+          }
+
+          function getTipo(){
+            var codigoProducto = document.getElementById("inputProductoE").value;
+            var id = <?= json_encode($codigoE) ?>;
+            $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#tipo').html(data);
+              document.getElementById("tipoProducto").value = data;
             });
           }
         </script>
@@ -182,7 +192,9 @@ if ($_SESSION["autenticado"] != "SI") {
         <input type="text" id="inputPrecio" name="precio" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
         <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
         <input type="hidden" id="inputStockEcto">
+        <input type="hidden" name="cantidad" value="1">
         <input type="hidden" id="inputStockMinEcto">
+        <input type="hidden" id="tipoProducto">
         <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
         <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
         <label id="lblEctoAnt">Ectoparásitos anteriores</label>
@@ -226,96 +238,112 @@ if ($_SESSION["autenticado"] != "SI") {
     <button class="boton" type="submit">Agregar ectoparásito</button>
   </div>
 </div>
-    <!--<script type="text/javascript">
-      function validarEcto() {
-      var txtEcto = document.getElementById("inputProductoE").value;
-      var txtLote = document.getElementById("inputLoteEcto").value;
-      var fechaCad = document.getElementById("inputFechaCad").value;
-      var fechaHoy = document.getElementById("fechaActual").value;
-      var fechaDeCita = document.getElementById("fechaCita").value;
-      var valorProx = document.getElementById("inputCitaP").checked;
-      var valorMotivo = document.getElementById("motivoCita").value;
-      var valorFecha = document.getElementById("fechaCita").value;
-      var valorHora = document.getElementById("inputHoraCita").value;
-      var datos = $('#frmEcto').serialize();
+<script type="text/javascript">
+  function validarEcto() {
+    var txtEcto = document.getElementById("inputProductoE").value;
+    var txtLote = document.getElementById("inputLoteEcto").value;
+    var fechaCad = document.getElementById("inputFechaCad").value;
+    var fechaHoy = document.getElementById("fechaActual").value;
+    var fechaDeCita = document.getElementById("fechaCita").value;
+    var valorProx = document.getElementById("inputCitaP").checked;
+    var valorMotivo = document.getElementById("motivoCita").value;
+    var valorFecha = document.getElementById("fechaCita").value;
+    var valorHora = document.getElementById("inputHoraCita").value;
+    var txtTipo = document.getElementById("tipoProducto").value;
+    var datos = $('#frmEcto').serialize();
 
-      if(valorProx == "1" && valorMotivo == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige motivo de cita'
-        });
-        return false;
-      }
-
-      if(valorProx == "1" && valorFecha < fechaHoy){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'La fecha no puede ser anterior al día de hoy'
-        });
-        return false;
-      }
-
-      if(valorProx == "1" && valorHora == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige un horario'
-        });
-        return false;
-      }
-
-      if(txtEcto == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige producto'
-        });
-        return false;
-      }
-
-      if(txtLote == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige lote'
-        });
-        return false;
-      }
-
-      if(fechaCad < fechaHoy){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Producto caducado'
-        });
-        return false;
-      }
-
-      $.ajax({
-        type: "POST",
-        url: "insertar_ecto.php",
-        data: datos,
-        success:function(r){
-          if (r==1){
-            alert("Error");
-          }
-          else{
-            Swal.fire({
-          type:'success',
-          title: 'Correcto',
-          text:'Ectoparásito agregado correctamente'
-          }) 
-          }
-        }
+    if(txtEcto == ""){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'ELIGE PRODUCTO'
       });
       return false;
+    }
 
-            return true;
+    if(txtTipo == "Caja(s)"){
+      Swal.fire({
+        type:'warning',
+        title:'ERROR',
+        text:'¡ESTE PRODUCTO NO SE PUEDE APLICAR, YA QUE ES PARA VENTA POR CAJA Y NO POR PIEZA!'
+      });
+    }
+
+    if(txtLote == ""){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'ELIGE LOTE'
+      });
+      return false;
+    }
+
+    if(fechaCad < fechaHoy){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'PRODUCTO CADUCADO'
+      });
+      return false;
+    }
+
+    if(valorProx == "1" && valorMotivo == ""){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'ELIGE MOTIVO DE CITA'
+      });
+      return false;
+    }
+
+    if(valorProx == "1" && valorFecha < fechaHoy){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'LA FECHA NO PUEDE SER ANTERIOR AL DÍA DE HOY'
+      });
+      return false;
+    }
+
+    if(valorProx == "1" && valorHora == ""){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'ELIGE UN HORARIO'
+      });
+      return false;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "insertar_ecto.php",
+      data: datos,
+      success:function(r){
+        if (r==1){
+          alert("Error");
         }
-      </script>-->
-    </form>  
-  </div>  
+        else{
+          Swal.fire({
+            type:'success',
+            title: 'CORRECTO',
+            text:'ECTOPARÁSITO AGREGADO CORRECTAMENTE'
+          }) 
+        }
+      }
+    });
+    return false;
+
+    return true;
+  }
+</script>
+</form>  
+</div> 
+<button class="botonAtrasV" onclick="goBack();"> Atrás </button>
+
+<script>
+  function goBack() {
+    window.history.go(-1);
+  }
+</script> 
 </body>
 </html>

@@ -3,33 +3,34 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	height: 850px;
+	height: 750px;
 	width: 90%;	
 	padding-right: 0px;
 	padding-left: 0px;
 	margin-left: 5%;
 	margin-right: 100px;
 	margin-bottom: 50px;
-	}
- 
+
+}
+
 .titulo_page {
 	display: -webkit-box;
-  	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	border-radius: 10px;
 	background-color: #D6D5E1;
-	height: 80px;
+	height: 50px;
 	width: 100%;
 	align-items: center;
 	justify-content: space-around;
-	background-image: url(img/header-midnightBlue.jpg);
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
 }
 
 #titulo_consulta {
-  	font-family: 'Nunito', sans-serif;	
-	margin-top: 20px;
-	font-size: 35px;
+	font-family: 'Nunito', sans-serif;	
+	margin-top: 1%;
+	font-size: 30px;
 	color:white;
 	text-align: center;
 }
@@ -45,7 +46,7 @@
 }
 
 #lblDetalle, #lblIniSintomas, #lblAtencion, #lblPad, #lblServicio, #lblCostoS,
- #lblMotivo, #lblExamen, #lblReceta {
+#lblMotivo, #lblExamen, #lblReceta {
 	font-family: 'Nunito', sans-serif;	
 	font-size: 20px;
 }
@@ -62,7 +63,7 @@
 }
 .detalle{
 	width: 20%;
-	height: 670px;
+	height: 590px;
 	margin-top: 20px;
 	/*background-color: green;*/
 	float: left;
@@ -75,9 +76,24 @@
 	border-color: #D6D5E1;
 }
 
+.botonAtrasConsul {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: -35px;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 40%;
+    width: 20%;
+   	float: left;
+}
+
 .informeMedico{
 	width: 80%;
-	height: 640px;
+	height: 560px;
 	margin-top: 20px;
 	float: left;
 	display: flex;
@@ -121,7 +137,7 @@
 	margin-left: 78%;
 	margin-right: 1%;
 	border-radius: 10px;
-	border: 3px solid #40444745;
+	border: 2px solid #40444745;
 	color:gray;	
 }
 
@@ -138,7 +154,7 @@ a {
 	height: 40%;
 	width: 20%;
 	background-color: white;
-    position:absolute;
+	position:absolute;
 	display: none;
 	border: 1px solid;
 	border-color: black;
@@ -243,7 +259,7 @@ a {
 	height: 45%;
 	width: 40%;
 	background-color: white;
-    position:absolute;
+	position:absolute;
 	display: none;
 	border: 1px solid;
 	border-color: #D6D5E1;
@@ -264,6 +280,10 @@ a {
 	border: 2px solid #40444745;
 	color:gray;
 } 
+
+#lblPad:before {
+			content: "Padecimiento de primera vez";
+		}
 
 #diagnosticoD {
 	margin-top: 2%;
@@ -318,87 +338,1173 @@ a {
 	height: 40px;
 	font-family: 'Nunito', sans-serif;	
 	font-size: 13px;
-}*/
+	}*/
 
-#inputAtencion {
-	margin-left: 15px;
-}
+	#inputAtencion {
+		margin-left: 15px;
+	}
 
-#inputPad {
-	margin-left: 15px;
-}
+	#inputPad {
+		margin-left: 15px;
+	}
 
-#selectServicio{
-	width: 70%;
-	height: 5%;
-	font-family: 'Nunito', sans-serif;	
-	font-size: 13px;
-	border-radius: 10px;
-	border: 3px solid #40444745
-}
+	#selectServicio{
+		width: 70%;
+		height: 5%;
+		font-family: 'Nunito', sans-serif;	
+		font-size: 13px;
+		border-radius: 10px;
+		border: 3px solid #40444745
+	}
 
-#inputFechaSintomas{
-	width: 50%;
-	height: 5%;
-	font-family: 'Nunito', sans-serif;	
-	font-size: 13px;
-	border-radius: 10px;
-	border: 3px solid #40444745;
-	color: gray;
-}
+	#inputFechaSintomas{
+		width: 50%;
+		height: 5%;
+		font-family: 'Nunito', sans-serif;	
+		font-size: 13px;
+		border-radius: 10px;
+		border: 3px solid #40444745;
+		color: gray;
+	}
 
-#sltMedico{
-	width: 70%;
-	height: 5%;
-	font-family: 'Nunito', sans-serif;	
-	font-size: 13px;
-	border-radius: 10px;
-	border: 3px solid #40444745;
-}
+	#sltMedico{
+		width: 70%;
+		height: 5%;
+		font-family: 'Nunito', sans-serif;	
+		font-size: 13px;
+		border-radius: 10px;
+		border: 3px solid #40444745;
+	}
 
-#inputCostoS{
-	height: 5%;
-	width: 30%;
-	border-radius: 10px;
-	border: 3px solid #40444745;
-	color:gray;
-}
+	#inputCostoS{
+		height: 5%;
+		width: 30%;
+		border-radius: 10px;
+		border: 3px solid #40444745;
+		color:gray;
+	}
 
-i{
-	font-size: 20px;
-}
+	i{
+		font-size: 20px;
+	}
 
-#imagen{
-	height: 50px;
-	width: 50px;
-}
+	#imagen{
+		height: 50px;
+		width: 50px;
+	}
 
-#imagen_libro{
-	height: 50px;
-	width: 50px;
-}
+	#imagen_libro{
+		height: 50px;
+		width: 50px;
+	}
 
-.botonAConsulta{
-	text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-    color: #ffffff;
-    background-color: #527486;
-    border-radius: 5px;
-    border: 1px solid #527486;
-    margin-top: 5px;
-}
+	.botonAConsulta{
+		text-decoration: none;
+		padding: 10px;
+		font-size: 20px;
+		color: #ffffff;
+		background-color: #527486;
+		border-radius: 5px;
+		border: 1px solid #527486;
+		margin-top: 25px;
+	}
 
-#boton_estado{
-	margin-left: 10%;
-	margin-top: 30px;
-	display: inline-block;
-}
+	#boton_estado{
+		margin-left: 10%;
+		margin-top: 30px;
+		display: inline-block;
+	}
 
-#boton_diagnostico{
-	margin-left: 10%;
-	position: absolute;
-	margin-top: 30px;
-	display: inline-block;
+	#boton_diagnostico{
+		margin-left: 10%;
+		position: absolute;
+		margin-top: 30px;
+		display: inline-block;
 
-}
+	}
+
+	/************ PRIMER MEDIA QUERIE **********/
+	@media(min-width: 1200px) and (max-width: 1366px){ 
+	 
+		.contenedor_imedico {
+			height: 850px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 75px;
+			width: 100%;
+		}
+
+		#titulo_consulta {
+			font-size: 30px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 18px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 18px;
+		}
+
+		#lblPad:before {
+			content: "Padecimiento de primera vez";
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 20px;
+			margin-left: 78%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 20px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 5px;
+		}
+
+		.botonAConsulta{
+			margin-top: 10px;
+		}
+	}
+
+	/********** FIN PRIMER MEDIA ***********/
+
+	/********* SEGUNDO MEDIA QUERIE ***********/
+	@media(min-width: 1024px) and (max-width: 1199px){
+		.contenedor_imedico {
+			height: 850px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 70px;
+			width: 100%;
+		}
+
+		#titulo_consulta {
+			font-size: 28px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 17px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 17px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 17px;
+			margin-left: 78%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 20px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+		}
+
+		#inputFechaSintomas{
+			width: 70%;
+		}
+		.botonAConsulta{
+			margin-top: 10px;
+		}
+
+		#inputFechaConsulta {
+			height: 30%;
+			width: 16%;
+			margin-left: 75%;
+			margin-right: 1%;
+			border-radius: 10px;
+			color:gray;	
+		}
+
+		#selectServicio{
+			width: 80%;
+		}
+
+		.botonAConsulta{
+			margin-top: 15px;
+		}
+
+	}
+	/********* FIN SEGUNDO MEDIA QUERY ***********/
+
+	/********* TERCER MEDIA QUERY ***********/
+
+	@media(min-width: 768px) and (max-width: 1023px){
+		.contenedor_imedico {
+			height: 850px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 65px;
+			width: 100%;
+		}
+
+		#titulo_consulta {
+			font-size: 25px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 16px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 16px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 16px;
+			margin-left: 65%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 20px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+		}
+
+		#inputFechaSintomas{
+			width: 70%;
+		}
+		.botonAConsulta{
+			margin-top: 10px;
+		}
+
+		#inputFechaConsulta {
+			height: 30%;
+			width: 16%;
+			margin-left: 75%;
+			margin-right: 1%;
+			border-radius: 10px;
+			color:gray;	
+		}
+
+		#selectServicio{
+			width: 80%;
+		}
+
+		.botonAConsulta{
+			margin-top: 55px;
+			font-size: 15px;
+		}
+
+		#imagen{
+			height: 40px;
+			width: 40px;
+		}
+
+		#imagen_libro{
+			height: 40px;
+			width: 40px;
+		}
+
+		.detalle{
+			width: 30%;
+			height: 695px;
+		}
+
+		#inputFechaConsulta {
+			height: 30%;
+			width: 25%;
+			margin-left: 65%;
+			margin-right: 1%;
+			font-size: 14px;
+			color:gray;	
+		}
+
+		#txtExamen {
+			width: 90%;
+		}
+
+		#txtReceta {
+			width: 90%;
+		}
+
+		#txtMotivo{
+			height: 90%;
+			width: 90%;
+		}
+
+		.informeMedico{
+			width: 70%;
+		}
+	}
+
+	/********* FIN TERCER MEDIA ***********/
+
+	/********* INICIO CUARTO MEDIA ***********/
+
+	@media(min-width: 568px) and (max-width: 767px){
+		.contenedor_imedico {
+			height: 750px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 60px;
+			width: 100%;
+		}
+
+		#titulo_consulta {
+			font-size: 23px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 15px;
+		}
+
+		#lblEstado {
+			font-size: 15px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 15px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 15px;
+			margin-left: 65%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 20px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+		}
+
+		#inputFechaSintomas{
+			width: 70%;
+		}
+		.botonAConsulta{
+			margin-top: 10px;
+		}
+
+		#inputFechaConsulta {
+			height: 30%;
+			width: 16%;
+			margin-left: 75%;
+			margin-right: 1%;
+			border-radius: 10px;
+			color:gray;	
+		}
+
+		#selectServicio{
+			width: 80%;
+		}
+
+		.botonAConsulta{
+			margin-top: 55px;
+			font-size: 15px;
+		}
+
+		#imagen{
+			height: 30px;
+			width: 30px;
+		}
+
+		#imagen_libro{
+			height: 30px;
+			width: 30px;
+		}
+
+		.detalle{
+			width: 40%;
+			height: 605px;
+		}
+
+		#inputFechaConsulta {
+			height: 30%;
+			width: 40%;
+			margin-left: 50%;
+			margin-right: 1%;
+			font-size: 13px;
+		}
+
+		#txtExamen {
+			width: 90%;
+		}
+
+		#txtReceta {
+			width: 90%;
+		}
+
+		#txtMotivo{
+			height: 90%;
+			width: 90%;
+		}
+
+		.informeMedico{
+			width: 60%;
+			height: 590px;
+		}
+		#div-diagnostico{
+			margin-left: 38%;
+			height: 45%;
+			width: 40%;
+			border-radius: 8px;
+		}
+
+		#div-estado{
+			background-color: white;
+			margin-left: 1%;
+			height: 35%;
+			width: 35%;
+			background-color: #D6D5E1;
+			border-radius: 8px;
+		}
+
+		#inputFC {
+			margin-left: 15%;
+			margin-top: 5%;
+			height: 100%;
+			width: 70%;
+			font-size: 11px;
+			border-radius: 8px;
+		}
+
+		#inputFR {
+			margin-left: 15%;
+			width: 70%;
+			font-size: 11px;
+			border-radius: 8px;
+		}
+
+		#inputPresion{
+			margin-left: 2%;
+			width: 45%;
+			font-size: 11px;
+			border-radius: 8px;
+		} 
+
+		#inputLlenado{
+			margin-left: 2%;
+			height: 100%;
+			width: 45%;
+			font-size: 11px;
+			border-radius: 8px;
+		}
+
+		#inputTemp {
+			font-size: 11px;
+		}
+
+		#selectMucosas{
+			margin-left: 5%;
+			width: 90%;
+			font-size: 11px;
+		}
+
+		#inputPesoC{
+			margin-left: 33%;
+			margin-top: 15%;
+			width: 30%;
+			font-size: 11px;
+			border-radius: 8px;
+		}
+	}
+
+	@media(min-width: 414px) and (max-width: 567px){
+		.contenedor_imedico {
+			height: 630px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 50px;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		#titulo_consulta {
+			font-size: 20px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 12px;
+		}
+
+		#lblEstado {
+			font-size: 13px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 13px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 13px;
+			margin-left: 40%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 18px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+			font-size: 10px;
+			height: 6%;
+		}
+
+		#inputFechaSintomas{
+			width: 70%;
+			font-size: 10px;
+		}
+		.botonAConsulta{
+			margin-top: 5px;
+			font-size: 9px;
+			padding: 5px;
+		}
+
+		#inputFechaConsulta {
+			height: 10%;
+			font-size: 11px;
+			width: 45%;
+			margin-left: 40%;
+			margin-right: 1%;
+			border-radius: 6px;
+		}
+
+		#selectServicio{
+			width: 80%;
+			font-size: 10px;
+		}
+
+		.botonAConsulta{
+			margin-top: 55px;
+			font-size: 15px;
+		}
+
+		#imagen{
+			height: 27px;
+			width: 27px;
+		}
+
+		#imagen_libro{
+			height: 27px;
+			width: 27px;
+		}
+
+		a {
+			font-size: 14px;
+		}
+
+		.detalle{
+			width: 40%;
+			height: 500px;
+		}
+
+		#txtExamen {
+			width: 90%;
+		}
+
+		#txtReceta {
+			width: 90%;
+			height: 150%;
+		}
+
+		#txtMotivo{
+			height: 90%;
+			width: 90%;
+		}
+
+		.informeMedico{
+			width: 60%;
+			height: 500px;
+		}
+		#div-diagnostico{
+			margin-left: 38%;
+			height: 45%;
+			width: 45%;
+			border-radius: 8px;
+		}
+
+		#div-estado{
+			background-color: white;
+			margin-left: 1%;
+			height: 35%;
+			width: 35%;
+			background-color: #D6D5E1;
+			border-radius: 8px;
+		}
+
+		#inputFC {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputFR {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputPresion{
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		} 
+
+		#inputLlenado{
+			margin-left: 10%;
+			height: 100%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputTemp {
+			font-size: 10px;
+			width: 60%;
+			border-radius: 8px;
+			margin-left: 20%; 
+			margin-top: -2%; 
+			height: 10%;
+		}
+
+		#selectMucosas{
+			margin-top: 1%; 
+			margin-left: 5%;
+			height: 10%;
+			width: 90%;
+			font-size: 10px;
+		}
+
+		#inputPesoC{
+			margin-left: 33%;
+			margin-top: 5%;
+			height: 10%;
+			width: 30%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed {	
+			font-size: 11px;
+			border-radius: 8px;
+		} 
+
+
+		i{
+			font-size: 15px;
+		}
+
+	}
+
+	@media(min-width: 360px) and (max-width: 413px){
+		.contenedor_imedico {
+			height: 630px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 50px;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		#titulo_consulta {
+			font-size: 18px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 12px;
+		}
+
+		#lblEstado {
+			font-size: 13px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 13px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 13px;
+			margin-left: 45%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 18px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+			font-size: 10px;
+			height: 6%;
+		}
+
+		#inputFechaSintomas{
+			width: 70%;
+			font-size: 10px;
+		}
+		.botonAConsulta{
+			margin-top: 5px;
+			font-size: 9px;
+			padding: 5px;
+		}
+
+		#inputFechaConsulta {
+			height: 10%;
+			font-size: 10px;
+			width: 50%;
+			margin-left: 35%;
+			margin-right: 1%;
+			border-radius: 6px;
+		}
+
+		#selectServicio{
+			width: 80%;
+			font-size: 10px;
+		}
+
+		.botonAConsulta{
+			margin-top: 55px;
+			font-size: 11px;
+			padding: 5px;
+		}
+
+		#imagen{
+			height: 27px;
+			width: 27px;
+		}
+
+		#imagen_libro{
+			height: 27px;
+			width: 27px;
+		}
+
+		a {
+			font-size: 14px;
+		}
+
+		.detalle{
+			width: 40%;
+			height: 500px;
+		}
+
+		#txtExamen {
+			width: 90%;
+		}
+
+		#txtReceta {
+			width: 90%;
+			height: 150%;
+		}
+
+		#txtMotivo{
+			height: 90%;
+			width: 90%;
+		}
+
+		.informeMedico{
+			width: 60%;
+			height: 500px;
+		}
+		#div-diagnostico{
+			margin-left: 38%;
+			height: 45%;
+			width: 45%;
+			border-radius: 8px;
+		}
+
+		#div-estado{
+			background-color: white;
+			margin-left: 1%;
+			height: 35%;
+			width: 35%;
+			background-color: #D6D5E1;
+			border-radius: 8px;
+		}
+
+		#inputFC {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputFR {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputPresion{
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		} 
+
+		#inputLlenado{
+			margin-left: 10%;
+			height: 100%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputTemp {
+			font-size: 10px;
+			width: 60%;
+			border-radius: 8px;
+			margin-left: 20%; 
+			margin-top: -2%; 
+			height: 10%;
+		}
+
+		#selectMucosas{
+			margin-top: 1%; 
+			margin-left: 5%;
+			height: 10%;
+			width: 90%;
+			font-size: 10px;
+		}
+
+		#inputPesoC{
+			margin-left: 33%;
+			margin-top: 5%;
+			height: 10%;
+			width: 30%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed {	
+			font-size: 11px;
+			border-radius: 8px;
+		} 
+
+
+		i{
+			font-size: 12px;
+		}
+
+	}
+
+	@media(max-width: 359px){
+		.contenedor_imedico {
+			height: 630px;
+			width: 98%;	
+			margin-left: 1%;
+		}
+
+		.titulo_page {
+			height: 40px;
+			width: 100%;
+			flex-wrap: wrap;
+		}
+
+		#titulo_consulta {
+			font-size: 15px;
+		}
+
+		#lblNombrePaciente, #lblRazaP, #lblColorP, #lblNombreProp, #lblPaternoProp, #lblFechaNMascota, #lblObs {
+			font-size: 11px;
+		}
+
+		#lblEstado {
+			font-size: 11px;
+		}
+
+		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblServicio, #lblPad, #lblCostoS,
+		#lblMotivo, #lblExamen, #lblReceta {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 11px;
+		}
+
+		#lblFechaC {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 11px;
+			margin-left: 45%;
+		}
+		#titulo_pagina {
+			font-family: 'Nunito', sans-serif;	
+			font-size: 18px;
+			color: white;
+		}
+
+		#inputAtencion {
+			margin-left: 5px;
+		}
+
+		#inputPad {
+			margin-left: 3px;
+		}
+
+		#lblPad:before {
+			content: "Primera vez";
+		}
+
+		#sltMedico{
+			width: 95%;
+			font-size: 10px;
+			height: 6%;
+		}
+
+		#inputFechaSintomas{
+			width: 80%;
+			border-radius: 8px;
+			font-size: 10px;
+		}
+		.botonAConsulta{
+			margin-top: 5px;
+			font-size: 9px;
+			padding: 5px;
+		}
+
+		#inputFechaConsulta {
+			height: 10%;
+			font-size: 10px;
+			width: 50%;
+			margin-left: 35%;
+			margin-right: 1%;
+			border-radius: 6px;
+		}
+
+		#selectServicio{
+			width: 80%;
+			font-size: 10px;
+		}
+
+		.botonAConsulta{
+			margin-top: 55px;
+			font-size: 11px;
+			padding: 5px;
+		}
+
+		#imagen{
+			height: 27px;
+			width: 27px;
+		}
+
+		#imagen_libro{
+			height: 27px;
+			width: 27px;
+		}
+
+		a {
+			font-size: 14px;
+		}
+
+		.detalle{
+			width: 40%;
+			height: 500px;
+		}
+
+		#txtExamen {
+			width: 90%;
+		}
+
+		#txtReceta {
+			width: 90%;
+			height: 150%;
+		}
+
+		#txtMotivo{
+			height: 90%;
+			width: 90%;
+		}
+
+		.informeMedico{
+			width: 60%;
+			height: 500px;
+		}
+		#div-diagnostico{
+			margin-left: 38%;
+			height: 45%;
+			width: 45%;
+			border-radius: 8px;
+		}
+
+		#div-estado{
+			background-color: white;
+			margin-left: 1%;
+			height: 35%;
+			width: 35%;
+			background-color: #D6D5E1;
+			border-radius: 8px;
+		}
+
+		#inputFC {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputFR {
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputPresion{
+			margin-left: 10%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		} 
+
+		#inputLlenado{
+			margin-left: 10%;
+			height: 100%;
+			width: 80%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#inputTemp {
+			font-size: 10px;
+			width: 60%;
+			border-radius: 8px;
+			margin-left: 20%; 
+			margin-top: -2%; 
+			height: 10%;
+		}
+
+		#selectMucosas{
+			margin-top: 1%; 
+			margin-left: 5%;
+			height: 10%;
+			width: 90%;
+			font-size: 10px;
+		}
+
+		#inputPesoC{
+			margin-left: 33%;
+			margin-top: 5%;
+			height: 10%;
+			width: 30%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+
+		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed {	
+			font-size: 11px;
+			border-radius: 8px;
+		} 
+
+		i{
+			font-size: 12px;
+		}
+		#inputCostoS{
+			width: 40%;
+			font-size: 10px;
+			border-radius: 8px;
+		}
+	}

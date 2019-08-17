@@ -160,7 +160,7 @@ $fecha_actual = date("Y-m-d");
                 Swal.fire({
                   type:'warning',
                   title:'ERROR',
-                  text:'¡La vacuna seleccionada no tiene lotes, favor de seleccionar otra vacuna!'
+                  text:'¡LA VACUNA SELECCIONADA NO TIENE LOTES, FAVOR DE SELECCIONAR OTRA VACUNA!'
                 });
                 document.getElementById("inputLoteVac").disabled=true;
               }
@@ -179,13 +179,13 @@ $fecha_actual = date("Y-m-d");
               $('#stockM').html(data);
               document.getElementById("inputStockMinVac").value = data;
               var stock = document.getElementById("inputStockVac").value;
-            if(data != 0 && stock == data){
-              Swal.fire({
-                type:'warning',
-                title:'PRECAUCIÓN',
-                text:'¡El número de artículos que está vendiendo lo dejará por debajo del stock mínimo!'
-              });
-            }
+              if(data != 0 && stock == data){
+                Swal.fire({
+                  type:'warning',
+                  title:'PRECAUCIÓN',
+                  text:'¡EL NÚMERO DE ARTÍCULOS QUE ESTÁ VENDIENDO LO DEJARÁ POR DEBAJO DEL STOCK MÍNIMO!'
+                });
+              }
             });
           }
 
@@ -198,10 +198,19 @@ $fecha_actual = date("Y-m-d");
             });
 
           }
+
+          function getTipo(){
+            var codigoProducto = document.getElementById("inputProducto").value;
+            var id = <?= json_encode($codigoE) ?>;
+            $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#cad').html(data);
+              document.getElementById("tipoProducto").value = data;
+            });
+          }
         </script>
 
         <label id="lblProducto"> <i class="fas fa-syringe"></i>&nbsp;&nbsp; Vacuna </label>
-        <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); precioVacuna(); stockVacuna(); stockMinimoVacuna();"> </select>
+        <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); precioVacuna(); stockVacuna(); stockMinimoVacuna(); getTipo();"> </select>
 
         <label id="lblLote"> <i class="fas fa-boxes"></i>&nbsp;&nbsp; Lote </label>
         <select id="inputLoteVac" name="lote" onchange="precioVacunaLote(); caducidadVacuna();"> </select>      
@@ -209,6 +218,9 @@ $fecha_actual = date("Y-m-d");
         <input type="number" id="inputPrecioVac" name="precio" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
         <input type="hidden" id="inputStockVac">
         <input type="hidden" id="inputStockMinVac">
+        <input type="hidden" name="cantidad" value="1">
+        <input type="hidden" id="tipoProducto" name="" value="">
+
 
         <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
 
@@ -285,6 +297,7 @@ $fecha_actual = date("Y-m-d");
     var horaPC = document.getElementById("inputHoraCitaV").value;
     var stock = document.getElementById("inputStockVac").value;
     var stockMin = document.getElementById("inputStockMinVac").value;
+    var tipoProd = document.getElementById("tipoProducto").value;
 
     var datos = $('#frmVacuna').serialize();
 
@@ -292,7 +305,7 @@ $fecha_actual = date("Y-m-d");
       Swal.fire({
         type:'error',
         title:'ERROR',
-        text:'Elige laboratorio'
+        text:'ELIGE LABORATORIO'
       });
       return false;
     }
@@ -301,83 +314,99 @@ $fecha_actual = date("Y-m-d");
      Swal.fire({
       type:'warning',
       title:'ERROR',
-      text:' Elige vacuna'
+      text:' ELIGE VACUNA'
     });
      return false;
    }
 
-   if(txtLote == ""){
-     Swal.fire({
-      type:'error',
-      title:'ERROR',
-      text:' Elige lote'
-    });
-     return false;
-   }
-
-  if(fechaCad < fechaHoy){
+   if(tipoProd == "Caja(s)"){
     Swal.fire({
       type:'error',
       title:'ERROR',
-      text:'Producto caducado'
+      text:'¡ESTE PRODUCTO NO SE PUEDE APLICAR, YA QUE ES PARA VENTA POR CAJA Y NO POR PIEZA!'
     });
     return false;
   }
+  
+  if(txtLote == ""){
+   Swal.fire({
+    type:'error',
+    title:'ERROR',
+    text:' ELIGE LOTE'
+  });
+   return false;
+ }
 
-  if(chkProx == "1" && motivoP == ""){
-    Swal.fire({
-      type:'error',
-      title:'ERROR',
-      text:'Elige motivo de cita'
-    });
-    return false;
-  }
+ if(fechaCad < fechaHoy){
+  Swal.fire({
+    type:'error',
+    title:'ERROR',
+    text:'PRODUCTO CADUCADO'
+  });
+  return false;
+}
 
-  if(chkProx == "1" && fechaProxima < fechaHoy){
-    Swal.fire({
-      type:'error',
-      title:'ERROR',
-      text:'La fecha no puede ser anterior al día de hoy'
-    });
-    return false;
-  }
+if(chkProx == "1" && motivoP == ""){
+  Swal.fire({
+    type:'error',
+    title:'ERROR',
+    text:'ELIGE MOTIVO DE CITA'
+  });
+  return false;
+}
 
-  if(chkProx == "1" && horaPC == ""){
-    Swal.fire({
-      type:'error',
-      title:'ERROR',
-      text:'Elige un horario'
-    });
-    return false;
-  }
+if(chkProx == "1" && fechaProxima < fechaHoy){
+  Swal.fire({
+    type:'error',
+    title:'ERROR',
+    text:'LA FECHA NO PUEDE SER ANTERIOR AL DÍA DE HOY'
+  });
+  return false;
+}
 
-        /*$.ajax({
-        type: "POST",
-        url: "insertar_vacuna.php",
-        data: datos,
-        success:function(r){
-          if (r==1){
-            alert("Error");
-          }
-          else{
-            Swal.fire({
-          type:'success',
-          title: 'Correcto',
-          text:'Vacuna agregada correctamente'
-          }) 
-            window.location.href = 'vacunas_carnet.php'
-          }
-        }
-      });
-      return false;*/
+if(chkProx == "1" && horaPC == ""){
+  Swal.fire({
+    type:'error',
+    title:'ERROR',
+    text:'ELIGE UN HORARIO'
+  });
+  return false;
+}
 
-
-      return true;
+$.ajax({
+  type: "POST",
+  url: "insertar_vacuna.php",
+  data: datos,
+  success:function(r){
+    if (r==1){
+      alert("Error");
     }
-  </script>
+    else{
+      Swal.fire({
+        type:'success',
+        title: 'CORRECTO',
+        text:'VACUNA AGREGADA CORRECTAMENTE'
+      }) 
+    }
+  }
+});
+return false;
+
+
+return true;
+}
+</script>
 
 </div>
 </form>  
 </div>  
+
+<button class="botonAtrasV" onclick="goBack();"> Atrás </button>
+
+<script>
+  function goBack() {
+    window.history.go(-1);
+  }
+</script>
 </body>
 </html>

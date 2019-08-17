@@ -7,7 +7,7 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	margin-top: 2%;
+	margin-top: 1%;
 	height: 70%;
 	width: 60%;	
 	margin-left: 20%;
@@ -37,6 +37,21 @@
 	float: right;
 }
 
+.botonAtrasCitasG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 40%;
+    width: 20%;
+   	float: left;
+}
+
 .container-titulo {
 	display: -webkit-box;
   	display: -webkit-flex;
@@ -62,7 +77,7 @@
 /*Titulo pagina*/
 #titulo-pagina {
   	font-family: 'Nunito', sans-serif;	
-	margin-top: 3%;
+	margin-top: 1%;
 	font-size: 35px;
 	color:white;
 	text-align: center;

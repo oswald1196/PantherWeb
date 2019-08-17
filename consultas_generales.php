@@ -11,42 +11,42 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Panther :: Consulta</title>
+<head>
+  <meta charset="utf-8" />
+  <title>Panther :: Consulta</title>
 
-		<meta name="description" content="User login page" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="User login page" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="stylesheet" href="assets/css/consultas_generales.css" />
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="assets/css/consultas_generales.css" />
 
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/estilos.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="dist/sweetalert2.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-	</head>
+  <link rel="stylesheet" href="assets/css/ace.min.css" />
+  <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+  <link rel="stylesheet" href="assets/css/estilos.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <link rel="stylesheet" href="dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+</head>
 
-	<body>
+<body>
 
-<?php
+  <?php
   $codigoE = base64_decode($_GET['id']);
   //Codigo Paciente
   $fecha_actual = date("Y-m-d");
 
   include('header.php');
   include ('conexion.php');
-?>
-<script type="text/javascript">
-window.onload = function(){
+  ?>
+  <script type="text/javascript">
+    window.onload = function(){
   var fecha = new Date(); //Fecha actual
   var mes = fecha.getMonth()+1; //obteniendo mes
   var dia = fecha.getDate(); //obteniendo dia
@@ -59,79 +59,79 @@ window.onload = function(){
   document.getElementById('inputFechaConsulta').value=ano+"-"+mes+"-"+dia;
 }
 </script>
- <p id="titulo_consulta">Agregar informe médico</p> 
+<p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-<form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta_general.php" method="POST" onsubmit="return valida();">
+  <form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta_general.php" method="POST" onsubmit="return valida();">
     <div class="div_opt_paciente">
-    <label id="lblPacientesC">Paciente</label>
-    <select id="selectPacienteC" name="paciente">
+      <label id="lblPacientesC">Paciente</label>
+      <select id="selectPacienteC" name="paciente">
         <option value="">Elige paciente</option>
-    <?php 
-    $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
-    $query = mysqli_query($conn,$sql);
+        <?php 
+        $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
+        $query = mysqli_query($conn,$sql);
         while ($pacientes = mysqli_fetch_array($query)) {
           ?>
           <option value ="<?php echo $pacientes['iCodPaciente'];?>"> <?php echo $pacientes['vchNombrePaciente']." -- ".$pacientes['vchNombre']." ".$pacientes['vchPaterno']." ".$pacientes['vchMaterno'] ?></option>
           <?php
-            }
+        }
         ?>
       </select>    </div>
-  <div id="contenedor_divsC">
-    <!--Funcion para ocultar boton-->
+      <div id="contenedor_divsC">
+        <!--Funcion para ocultar boton-->
 
-    <script type="text/javascript">
-      $(document).ready(function(){
-       $("#boton_estado").click(function(){
-        $("#div-estado").toggle(1000);
+        <script type="text/javascript">
+          $(document).ready(function(){
+           $("#boton_estado").click(function(){
+            $("#div-estado").toggle(1000);
           });
-     });
-    </script>
-    
-    <div id="boton_estado">
-      <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
-    </div>
-    <div id="div-estado">
-      <p id="lblEstado">Signos y estado</p>
-      <div class="form-group">
-<?php 
-$fecha_actual = date("Y-m-d");
-?>
-
-        <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
-        <input type="text" name="fecha" value="<?php echo $fecha_actual ?>">
+         });
+       </script>
        
-
-      <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
-      <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
+       <div id="boton_estado">
+        <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
       </div>
-      <div class="form-group">
-      <input type="text" id="inputPresion" name="presion" placeholder="Presión arterial">
-      <input type="text" id="inputLlenado" name="llenado" placeholder="Tiempo llenado capilar">
-      </div>
-      <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
-      <select id="selectMucosas" name="mucosas">
-        <option value="APN (Aparentemente Normal)">APN (Aparentemente Normal)</option>
-        <option value="Ictérica">Ictérica</option>
-        <option value="Hemorrágicas profusas">Hemorrágicas profusas</option>
-        <option value="Hemorrágicas petequiales">Hemorrágicas petequiales</option>
-        <option value="Congestionadas">Congestionadas</option>
-        <option value="Otras">Otras</option>
-        <option value="Cianóticas">Cianóticas</option>
-      </select>
-      <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
-    </div>
-    <!--Funcion para ocultar boton-->
-    <script type="text/javascript">
-      $(document).ready(function(){
-       $("#boton_diagnostico").click(function(){
-        $("#div-diagnostico").toggle(1000);
-          });
-     });
-    </script>
+      <div id="div-estado">
+        <p id="lblEstado">Signos y estado</p>
+        <div class="form-group">
+          <?php 
+          $fecha_actual = date("Y-m-d");
+          ?>
 
-    <div id="boton_diagnostico">
-        <a> <img id="imagen" src="https://img.icons8.com/ultraviolet/64/000000/treatment-plan.png"> Diagnóstico </a>
+          <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+          <input type="hidden" name="fecha" value="<?php echo $fecha_actual ?>">
+          
+
+          <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
+          <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
+        </div>
+        <div class="form-group">
+          <input type="text" id="inputPresion" name="presion" placeholder="Presión arterial">
+          <input type="text" id="inputLlenado" name="llenado" placeholder="Tiempo llenado capilar">
+        </div>
+        <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
+        <select id="selectMucosas" name="mucosas">
+          <option value="APN (Aparentemente Normal)">APN (Aparentemente Normal)</option>
+          <option value="Ictérica">Ictérica</option>
+          <option value="Hemorrágicas profusas">Hemorrágicas profusas</option>
+          <option value="Hemorrágicas petequiales">Hemorrágicas petequiales</option>
+          <option value="Congestionadas">Congestionadas</option>
+          <option value="Otras">Otras</option>
+          <option value="Cianóticas">Cianóticas</option>
+        </select>
+        <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
+      </div>
+      <!--Funcion para ocultar boton-->
+      <script type="text/javascript">
+        $(document).ready(function(){
+         $("#boton_diagnostico").click(function(){
+          $("#div-diagnostico").toggle(1000);
+        });
+       });
+     </script>
+
+     <div id="boton_diagnostico">
+      <a> <img id="imagen" src="https://img.icons8.com/ultraviolet/64/000000/treatment-plan.png"> Diagnóstico </a>
     </div>
     <div id="div-diagnostico">
       <textarea type="text" id="diagnosticoP" name="dp" placeholder="Diagnóstico presuntivo"></textarea>
@@ -141,83 +141,83 @@ $fecha_actual = date("Y-m-d");
       <textarea type="text" id="inputMed" name="medicacion" placeholder="Medicación"></textarea>
       
     </div>
-    </div>
-    <div class="detalle">
-      <p id="lblDetalle">Detalle</p>
-      <select id="sltMedico" name="medico">
-        <option value="" required>MÉDICO</option>
-        <?php
+  </div>
+  <div class="detalle">
+    <p id="lblDetalle">Detalle</p>
+    <select id="sltMedico" name="medico">
+      <option value="" required>MÉDICO</option>
+      <?php
         //Consulta para obtener medicos
-        $consulta = "SELECT iCodMedico, vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
+      $consulta = "SELECT iCodMedico, vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
 
-        $result = mysqli_query($conn,$consulta);
-        while ($medico = mysqli_fetch_array($result)) {
-          ?>
-          <option value="<?php echo $medico['iCodMedico']?>"><?php echo $medico['vchNombre'].' '.$medico['vchPaterno'].' '.$medico['vchMaterno']; ?></option>
-          <?php
-                  }
+      $result = mysqli_query($conn,$consulta);
+      while ($medico = mysqli_fetch_array($result)) {
         ?>
-      </select>
+        <option value="<?php echo $medico['iCodMedico']?>"><?php echo $medico['vchNombre'].' '.$medico['vchPaterno'].' '.$medico['vchMaterno']; ?></option>
+        <?php
+      }
+      ?>
+    </select>
 
-        <label for="inputFechaSintomas" id="lblIniSintomas"> Inicio síntomas </label>
-        <input type="date" class="input-append date" id="inputFechaSintomas" name="fechaS">
-        <input type="hidden" name="" id="inputFechaHoy" value="<?php echo $fecha_actual?>">
+    <label for="inputFechaSintomas" id="lblIniSintomas"> Inicio síntomas </label>
+    <input type="date" class="input-append date" id="inputFechaSintomas" name="fechaS">
+    <input type="hidden" name="" id="inputFechaHoy" value="<?php echo $fecha_actual?>">
 
-      <div class="form-group">        
+    <div class="form-group">        
       <label for="inputfecha" id="lblAtencion"> Atención en clínica </label>
       <input type="checkbox" id="inputAtencion" name="atencionClinica" value="0" checked>
     </div>
-      <div class="form-group">        
-      <label for="inputPad" id="lblPad"> Padecimiento de primera vez </label>
+    <div class="form-group">        
+      <label for="inputPad" id="lblPad"> </label>
       <input type="checkbox" id="inputPad" name="padecimiento" value="0" checked>
     </div>
     
-      <select id="selectServicio" name="servicio" onchange="obtenerPrecio();">
-        <option value="">SERVICIO</option> 
+    <select id="selectServicio" name="servicio" onchange="obtenerPrecio();">
+      <option value="">SERVICIO</option> 
 
+      <?php
+      $consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
+      $result = mysqli_query($conn,$consulta);
+      while ($servicio = mysqli_fetch_array($result)) {
+        ?>
+
+        <option value="<?php echo $servicio['iCodServicio']?>"> <?php echo $servicio['vchDescripcion']; ?></option>
+        
         <?php
-        $consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
-        $result = mysqli_query($conn,$consulta);
-        while ($servicio = mysqli_fetch_array($result)) {
-          ?>
+      }
+      ?>
+    </select>
 
-          <option value="<?php echo $servicio['iCodServicio']?>"> <?php echo $servicio['vchDescripcion']; ?></option>
-          
-          <?php
-              }
-          ?>
-      </select>
+    <script type="text/javascript">
+      function obtenerPrecio() {
+        var iCodServicio = document.getElementById("selectServicio").value;
+        var id = <?= json_encode($codigoE) ?>;
 
-      <script type="text/javascript">
-        function obtenerPrecio() {
-          var iCodServicio = document.getElementById("selectServicio").value;
-          var id = <?= json_encode($codigoE) ?>;
-
-          $.post('obtenerPrecioConsulta.php', { iCodServicio: iCodServicio, id: id }, function(data){
-              $("#inputCostoS").html(data);
-              document.getElementById("inputCostoS").value = data;
-            });
-        }
+        $.post('obtenerPrecioConsulta.php', { iCodServicio: iCodServicio, id: id }, function(data){
+          $("#inputCostoS").html(data);
+          document.getElementById("inputCostoS").value = data;
+        });
+      }
     </script>
 
-      <label id="lblCostoS"> Costo </label>
-      <input type="text" id="inputCostoS" name="costo" value="">
+    <label id="lblCostoS"> Costo </label>
+    <input type="text" id="inputCostoS" name="costo" value="" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
 
-    </div>  
-    
-    <div class="informeMedico">
-      <label for="inputFechaConsulta" id="lblFechaC"> Fecha </label>
-      <input type="date" class="input-append date" id="inputFechaConsulta" name="fechaConsulta">
-      <p id="lblMotivo"> Motivo Consulta </p>
-      <textarea id="txtMotivo" name="motivo"> </textarea>
-      <p id="lblExamen"> Examen físico </p>
-      <textarea id="txtExamen" name="examen"> </textarea>
-      <p id="lblReceta"> Receta </p>
-      <textarea id="txtReceta" name="receta"> </textarea>
-      <button class="botonAConsulta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar informe</button>
+  </div>  
+  
+  <div class="informeMedico">
+    <label for="inputFechaConsulta" id="lblFechaC"> Fecha </label>
+    <input type="date" class="input-append date" id="inputFechaConsulta" name="fechaConsulta">
+    <p id="lblMotivo"> Motivo Consulta </p>
+    <textarea id="txtMotivo" name="motivo"> </textarea>
+    <p id="lblExamen"> Examen físico </p>
+    <textarea id="txtExamen" name="examen"> </textarea>
+    <p id="lblReceta"> Receta </p>
+    <textarea id="txtReceta" name="receta"> </textarea>
+    <button class="botonAConsulta" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar informe</button>
 
-    </div>  
-    
+  </div>  
+  
     <!--<script type="text/javascript">
       function valida() {
       var inputExamen = document.getElementById("txtExamen").value.trim();
@@ -318,8 +318,8 @@ $fecha_actual = date("Y-m-d");
         }
       </script>-->
 
-      </div>
-</form>  
+    </div>
+  </form>  
 </div>  
 </body>
 </html>

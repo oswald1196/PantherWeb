@@ -185,7 +185,13 @@ window.onload = function(){
       </script>
 </form> 
 
-</div>  
+</div> 
+<button class="botonAtrasCitasG" onclick="goBack();" type="submit">Atrás</button> 
+<script>
+    function goBack() {
+      window.history.go(-2);
+    }
+  </script> 
 </body>
 </html>
 

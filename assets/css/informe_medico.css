@@ -559,13 +559,13 @@
 }
 
 .titulo_header {
-  height: 60px;
-  font-size: 23px;
+  height: 40px;
+  font-size: 16px;
 }
 
 #titulo_informe {
   margin-top: 2%;
-  font-size: 20px;
+  font-size: 13px;
   width: 35%;
 } 
 
@@ -607,9 +607,9 @@
 }
 
 .botonAddInformeM {
-    padding: 10px;
-    font-size: 17px;
-    margin-left: 80%;
+    padding: 5px;
+    font-size: 14px;
+    margin-left: 75%;
     margin-right: 2%;
     margin-top: 1%;  
 }
@@ -624,7 +624,7 @@
 }
 
  #simbolo_addI{
-  height: 18px;
+  height: 15px;
  }
 
  #pencil, #trash {
@@ -647,7 +647,7 @@
 
 #titulo_informe {
   margin-top: 2%;
-  font-size: 15px;
+  font-size: 14px;
   width: 50%;
 } 
 
@@ -728,52 +728,52 @@
 
 .titulo_header {
   height: 30px;
-  font-size: 15px;
+  font-size: 13px;
   border-radius: 6px;
 }
 
 #titulo_informe {
   margin-top: 2%;
-  font-size: 14px;
+  font-size: 13px;
   width: 50%;
 } 
 
 #cabecera_motivo {
-  font-size: 13px;
+  font-size: 12px;
  }
 
 #cabecera_receta {;  
-  font-size: 13px;
+  font-size: 12px;
 }
 
 #cabecera_examen {
-  font-size: 13px;
+  font-size: 12px;
 }
 
 #cabecera_medicacion {  
-  font-size: 13px;
+  font-size: 12px;
 }
 
 #column_medico{
-  font-size: 11px;
+  font-size: 10px;
 }
 
 #column_temp {
-  font-size: 11px; 
+  font-size: 10px; 
   width: 15%;
 }
 
 #column_fc {
-  font-size: 11px;
+  font-size: 10px;
 }
 
 #column_fr, #column_pa, #column_tllc, #column_peso, #column_receta, #column_ef, #column_med {
-  font-size: 11px;
+  font-size: 10px;
 }
 
 #column_motivo{
   width: 50%;
-  font-size: 11px;
+  font-size: 10px;
 }
 
 #img_medico {
@@ -782,7 +782,7 @@
 
 .botonAddInformeM {
     padding: 5px;
-    font-size: 12px;
+    font-size: 11px;
     margin-left: 75%;
     margin-right: 2%;
     margin-top: 1%;  

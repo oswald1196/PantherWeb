@@ -171,7 +171,7 @@ $fecha_actual = date("Y-m-d");
                 Swal.fire({
                   type:'warning',
                   title:'ERROR',
-                  text:'¡La vacuna seleccionada no tiene lotes, favor de seleccionar otra vacuna!'
+                  text:'¡LA VACUNA SELECCIONADA NO TIENE LOTES, FAVOR DE SELECCIONAR OTRA VACUNA!'
                 });
                 document.getElementById("inputLoteVac").disabled=true;
               }
@@ -194,9 +194,18 @@ $fecha_actual = date("Y-m-d");
                 Swal.fire({
                   type:'warning',
                   title:'PRECAUCION',
-                  text:'¡El número de artículos que está vendiendo lo dejará por debajo del stock mínimo!'
+                  text:'¡EL NÚMERO DE ARTÍCULOS QUE ESTÁ VENDIENDO LO DEJARÁ POR DEBAJO DEL STOCK MÍNIMO!'
                 });
               }
+            });
+          }
+
+          function getTipo(){
+            var codigoProducto = document.getElementById("inputProducto").value;
+            var id = <?= json_encode($codigoE) ?>;
+            $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
+              $('#cad').html(data);
+              document.getElementById("tipoProducto").value = data;
             });
           }
         </script>
@@ -212,7 +221,8 @@ $fecha_actual = date("Y-m-d");
         <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
         <input type="hidden" id="inputStockVac">
         <input type="hidden" id="inputStockMinVac">
-
+        <input type="hidden" id="tipoProducto">
+        <input type="hidden" name="cantidad" value="1">
 
         <label for="inputfechacad" id="lblFechaCad"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Caducidad</label>
         <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
@@ -285,49 +295,15 @@ $fecha_actual = date("Y-m-d");
       var valorMotivo = document.getElementById("inputProxima").value;
       var valorFecha = document.getElementById("fechaCita").value;
       var valorHora = document.getElementById("inputHoraCita").value;
+      var txtTipo = document.getElementById("tipoProducto").value;
+      
       var datos = $('#frmVacuna').serialize();
-
-      if(valorChkCita == "1" && valorMotivo == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige motivo de cita'
-        });
-        return false;
-      }
-
-      if(valorChkCita == "1" && valorFecha < fechaHoy){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'La fecha no puede ser anterior al día de hoy'
-        });
-        return false;
-      }
-
-      if(valorChkCita == "1" && valorHora == ""){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Elige un horario'
-        });
-        return false;
-      }
 
       if(valorPaciente == ""){
         Swal.fire({
           type:'error',
           title:'ERROR',
-          text:'Elige paciente'
-        });
-        return false;
-      }
-
-      if(fechaCad < fechaHoy){
-        Swal.fire({
-          type:'error',
-          title:'ERROR',
-          text:'Producto caducado'
+          text:'ELIGE PACIENTE'
         });
         return false;
       }
@@ -336,7 +312,7 @@ $fecha_actual = date("Y-m-d");
         Swal.fire({
           type:'error',
           title:'ERROR',
-          text:'Elige laboratorio'
+          text:'ELIGE LABORATORIO'
         });
           return false;
       }
@@ -345,21 +321,66 @@ $fecha_actual = date("Y-m-d");
          Swal.fire({
           type:'warning',
           title:'ERROR',
-          text:' Elige vacuna'
+          text:' ELIGE VACUNA'
         });
           return false;
         }
+
+        if(tipoProd == "Caja(s)"){
+      Swal.fire({
+        type:'error',
+        title:'ERROR',
+        text:'¡ESTE PRODUCTO NO SE PUEDE APLICAR, YA QUE ES PARA VENTA POR CAJA Y NO POR PIEZA!'
+      });
+      return false;
+    }
 
         if(txtLote == ""){
          Swal.fire({
           type:'error',
           title:'ERROR',
-          text:' Elige lote'
+          text:' ELIGE LOTE'
         });
           return false;
         }
 
-        /*$.ajax({
+        if(fechaCad < fechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'PRODUCTO CADUCADO'
+        });
+        return false;
+      }
+
+        if(valorChkCita == "1" && valorMotivo == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'ELIGE MOTIVO DE CITA'
+        });
+        return false;
+      }
+
+      if(valorChkCita == "1" && valorFecha < fechaHoy){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'LA FECHA NO PUEDE SER ANTERIOR AL DÍA DE HOY'
+        });
+        return false;
+      }
+
+      if(valorChkCita == "1" && valorHora == ""){
+        Swal.fire({
+          type:'error',
+          title:'ERROR',
+          text:'ELIGE UN HORARIO'
+        });
+        return false;
+      }
+
+        $.ajax({
         type: "POST",
         url: "insertar_vacunas_generales.php",
         data: datos,
@@ -370,13 +391,13 @@ $fecha_actual = date("Y-m-d");
           else{
             Swal.fire({
           type:'success',
-          title: 'Correcto',
-          text:'Vacuna agregada correctamente'
+          title: 'CORRECTO',
+          text:'VACUNA AGREGADA CORRECTAMENTE'
           }) 
           }
         }
       });
-      return false;*/
+      return false;
 
 
             return true;

@@ -15,7 +15,7 @@
   	display: -moz-box;
   	display: -ms-flexbox;
 	border-radius: 10px;
-	background: -webkit-linear-gradient(top, #000 55%, #b224ef);;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
 	height: 80px;
 	width: 100%;
 	align-items: center;
@@ -121,6 +121,19 @@
 	border-radius: 10px;
 	border: 3px solid #40444745;
 	color: gray;
+}
+
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 42%;
+    width: 15%;
 }
 
 #inputProductoDes {
@@ -594,9 +607,9 @@ body {
     padding: 10px;
     font-size: 20px;
     color: #ffffff;
-    background-color: #527486;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 1px solid;
 }
 
 @media (min-width: 768px) and (max-width: 825px){
@@ -609,6 +622,19 @@ body {
 #div-border {
     height:550px;
     border:.5px solid black;
+}
+
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 42%;
+    width: 15%;
 }
 
 .contenedor-titulo {
@@ -728,7 +754,20 @@ body {
 }
 
 .form-left {
-	height: 83%;
+	height: 92.5%;
+}
+
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 12px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 42%;
+    width: 15%;
 }
 
 #div-border {
@@ -736,7 +775,7 @@ body {
     border:.5px solid black;
 }
 .form-right {
-	height: 83%;
+	height: 92.5%;
 }
 
 #inputfecha{
@@ -817,7 +856,7 @@ body {
  	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
     padding: 10px;
-    font-size: 10px;
+    font-size: 12px;
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
@@ -846,7 +885,7 @@ body {
 }
 
 .form-left {
-	height: 83%;
+	height: 92.5%;
 }
 
 #div-border {
@@ -854,7 +893,20 @@ body {
     border:.5px solid black;
 }
 .form-right {
-	height: 83%;
+	height: 92.5%;
+}
+
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 11px;
+    margin-top: 2%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 42%;
+    width: 15%;
 }
 
 #inputfecha{
@@ -872,7 +924,7 @@ body {
 
 #inputLab, #inputProducto, #inputLote, #inputLoteVac, #inputLoteEcto, #inputPrecio, #inputPrecioVac, #inputFechaCad, #inputProxima,
  #inputPeso, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoE, #motivoCita, #fechaCitaV, #inputHoraCitaV{
-	font-size: 10px;
+	font-size: 11px;
 	width: 70%;
 	height:6%;
 }
@@ -932,7 +984,7 @@ body {
  	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
     padding: 10px;
-    font-size: 10px;
+    font-size: 11px;
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
@@ -961,7 +1013,7 @@ body {
 }
 
 .form-left {
-	height: 83%;
+	height: 92.5%;
 }
 
 #div-border {
@@ -969,7 +1021,20 @@ body {
     border:.5px solid black;
 }
 .form-right {
-	height: 83%;
+	height: 92.5%;
+}
+
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 11px;
+    margin-top: 2%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 42%;
+    width: 15%;
 }
 
 #inputfecha{
@@ -978,7 +1043,6 @@ body {
 	height: 5%;
 	border-radius: 8px;
 }
-
 
 #inputCitaP{
 	font-size: 15px;
@@ -1081,7 +1145,7 @@ body {
 }
 
 .form-left {
-	height: 79.5%;
+	height: 94%;
 }
 
 #div-border {
@@ -1089,9 +1153,21 @@ body {
     border:.5px solid black;
 }
 .form-right {
-	height: 79.5%;
+	height: 94%;
 }
 
+.botonAtrasV {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 9px;
+    margin-top: 2%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 43%;
+    width: 15%;
+}
 
 #inputCitaP{
 	font-size: 15px;
@@ -1166,7 +1242,7 @@ body {
 
 .boton {
     padding: 1px;
-    font-size: 8px;
+    font-size: 9px;
     border-radius: 5px;
     width: 60%;
     height: 6%;

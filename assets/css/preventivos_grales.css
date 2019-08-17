@@ -172,6 +172,19 @@
 	color: gray;
 }
 
+.botonAtrasEcto {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 40%;
+    width: 20%;
+}
 
 #inputFechaCad{
 	font-family: 'Nunito', sans-serif;

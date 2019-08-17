@@ -96,6 +96,7 @@ if ($_SESSION["autenticado"] != "SI") {
    		</tr>
  
    </table>
+   <hr>
    <?php 
 	}
 ?>

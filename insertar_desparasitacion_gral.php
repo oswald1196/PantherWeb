@@ -1,111 +1,133 @@
 <?php
-	require ('conexion.php');
+require ('conexion.php');
 
-	$cEmpresa = $_POST['empresa'];
-	$codPaciente = $_POST['paciente'];
-	$fecha = $_POST['fecha'];
-	$codigoDesp = $_POST['codigoDesp'];
-	$lote = $_POST['codLote'];
-	$precioVenta = $_POST['precio'];
-	$caducidad = $_POST['fechaC'];
-	$horaIni = $_POST['hora'];
-	$peso = $_POST['peso'];
-	$cantidad = $_POST['cantidad'];
+$cEmpresa = $_POST['empresa'];
+$codPaciente = $_POST['paciente'];
+$fecha = $_POST['fecha'];
+$codigoDesp = $_POST['codigoDesp'];
+$lote = $_POST['codLote'];
+$precioVenta = $_POST['precio'];
+$caducidad = $_POST['fechaC'];
+$horaIni = $_POST['hora'];
+$peso = $_POST['peso'];
+$cantidad = $_POST['cantidad'];
 
-	if (isset($_POST['pCita']) == "on"){
-		$chkCita = "true";
-	} else {
-		$chkCita = "false";
-	} 
+/************ STOCK ****************/
+$stock = "SELECT * FROM RelProductos WHERE iCodProductoLote = '$lote' AND iCodEmpresa = '$cEmpresa'";
+$res = mysqli_query($conn,$stock);
+$success = mysqli_fetch_assoc($res);
 
-	if (isset($_POST['anterior']) == "on"){
-		$anterior = "true";
-	} else {
-		$anterior = "false";
-	} 
+$cantidadActual = $success['dStockActual'];
+$codlote = $success['iCodProductoLote'];
 
-	echo $anterior . " " . $chkCita;
-	if (isset($_POST['motivoCita']) == ""){
-		$motivoP = "-";
-	} 
-	else {
-		$motivoP = $_POST['motivoCita'];
-	}
+$cantidadTotal = $cantidadActual - $cantidad;
 
-	if (isset($_POST['fechaCita']) == ""){
-		$fechaCita = "01-01-1900";
-	} 
-	else {
-		$fechaCita = $_POST['fechaCita'];
-	}
+$newStock = "UPDATE RelProductos SET dStockActual = '$cantidadTotal' WHERE iCodProductoLote = '$lote'";
 
+/************ FIN STOCK ***********/
+if (isset($_POST['pCita']) == "on"){
+	$chkCita = "true";
+} else {
+	$chkCita = "false";
+} 
 
-	if($cantidad == ""){
-		$cantidad = "0";
-	}
+if (isset($_POST['anterior']) == "on"){
+	$anterior = "true";
+	$dAnterior = '1';
+} else {
+	$anterior = "false";
+	$dAnterior = '0';
+} 
 
-	if($peso == ""){
-		$peso = "0";
-	}
+echo $anterior . " " . $chkCita;
+if (isset($_POST['motivoCita']) == ""){
+	$motivoP = "-";
+} 
+else {
+	$motivoP = $_POST['motivoCita'];
+}
 
-	$pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
-
-    $pac = mysqli_query($conn,$pacientes);
-    $newPac = mysqli_fetch_assoc($pac);
-
-    $correo = $newPac['vchCorreo'];
-    $pais = $newPac['vchPais'];
-    $estado = $newPac['vchEstado'];
-    $ciudad = $newPac['vchCiudad'];
-    $iCodProp = $newPac['iCodPropietario'];
-
-	$query = "SELECT vchDescripcion, dPrecioCosto, iCodTipoProducto FROM CatProductos WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
-
-	$resultado = mysqli_query($conn,$query);
-	$row = mysqli_fetch_assoc($resultado);
-
-	$nombreDesp = $row['vchDescripcion'];
-	$precioCosto = $row['dPrecioCosto'];
-	$iCodServicio = $row['iCodTipoProducto'];
-
-	$consulta = "SELECT vchLote FROM RelProductos WHERE iCodProductoLote = '$lote' AND iCodEmpresa = '$cEmpresa'";
-
-	$result = mysqli_query($conn,$consulta);
-	$fila = mysqli_fetch_assoc($result);
-
-	$nombreLote = $fila['vchLote'];
-
-	$sql = "INSERT INTO TranDesparacitacion (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodDesparacitacion, iCodPaciente, sFecha, sProductoAplicado, sFechaProxima, sObservaciones, iCodLaboratorio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iCodProducto, iCodProductoLote, sNumeroLote, sFechaCaducidad, dCantidad, vchUnidadMedida, vchServicio, dIVA, dSubtotal, dPorcentajeIVA, dPeso, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$nombreDesp', '$fechaCita', '$motivoP', '0', '$precioVenta', '$precioCosto', '$iCodServicio', '0', '$codigoDesp', '$lote', '$nombreLote', '$caducidad', '$cantidad', 'PZA.', '$motivoP', '0', '0', '0', '$peso', '2', '0')";
-
- 	$insertCuentaDG = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$iCodServicio', '$codPaciente', '$fecha', '$nombreDesp', '$precioVenta', '$precioCosto', '0', '0', '$iCodProp', '0', '0', '0', '0', '0', '0', '$codigoDesp', '1', '0', '', '0', '0', '0', '$fecha', '', '0', '0', '.', '$lote', '2')";
+if (isset($_POST['fechaCita']) == ""){
+	$fechaCita = "01-01-1900";
+} 
+else {
+	$fechaCita = $_POST['fechaCita'];
+}
 
 
-	$consulta = "SELECT CONCAT(vchNombrePaciente, '-', vchRaza, '-', vchNombre, '-', vchTelefono) AS vchServicio FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
+if($cantidad == ""){
+	$cantidad = "0";
+}
 
-	$resultado = mysqli_query($conn,$consulta);
-    $fila = mysqli_fetch_assoc($resultado);
+if($peso == ""){
+	$peso = "0";
+}
 
-    $servicio = $fila['vchServicio'];
+$pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
 
-	$nuevaCitaDespG = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '0', '0')";
+$pac = mysqli_query($conn,$pacientes);
+$newPac = mysqli_fetch_assoc($pac);
 
-	if ($anterior == "false" and $chkCita == "true"){
-		
-		echo "Estas en la opcion 1";
+$correo = $newPac['vchCorreo'];
+$pais = $newPac['vchPais'];
+$estado = $newPac['vchEstado'];
+$ciudad = $newPac['vchCiudad'];
+$iCodProp = $newPac['iCodPropietario'];
 
-	echo $sql; 
+$query = "SELECT vchDescripcion, dPrecioCosto, iCodTipoProducto FROM CatProductos WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
 
-	echo $insertCuentaDG;
+$resultado = mysqli_query($conn,$query);
+$row = mysqli_fetch_assoc($resultado);
 
-	echo $nuevaCitaDespG;
+$nombreDesp = $row['vchDescripcion'];
+$precioCosto = $row['dPrecioCosto'];
+$iCodServicio = $row['iCodTipoProducto'];
+
+$consulta = "SELECT vchLote FROM RelProductos WHERE iCodProductoLote = '$lote' AND iCodEmpresa = '$cEmpresa'";
+
+$result = mysqli_query($conn,$consulta);
+$fila = mysqli_fetch_assoc($result);
+
+$nombreLote = $fila['vchLote'];
+
+$sql = "INSERT INTO TranDesparacitacion (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodDesparacitacion, iCodPaciente, sFecha, sProductoAplicado, sFechaProxima, sObservaciones, iCodLaboratorio, dPrecioMenudeo, dPrecioCosto, iCodServicio, iCodCuentaCliente, iCodProducto, iCodProductoLote, sNumeroLote, sFechaCaducidad, dCantidad, vchUnidadMedida, vchServicio, dIVA, dSubtotal, dPorcentajeIVA, bDesparasitacionesAnteriores, dPeso, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$nombreDesp', '$fechaCita', '$motivoP', '0', '$precioVenta', '$precioCosto', '$iCodServicio', '0', '$codigoDesp', '$lote', '$nombreLote', '$caducidad', '$cantidad', 'PZA.', '$motivoP', '0', '0', '0', '$dAnterior', '$peso', '2', '0')";
+
+$insertCuentaDG = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$iCodServicio', '$codPaciente', '$fecha', '$nombreDesp', '$precioCosto', '$precioVenta', '0', '0', '$iCodProp', '0', '0', '0', '0', '0', '0', '$codigoDesp', '1', '0', '', '0', '0', '0', '$fecha', '', '0', '0', '.', '$lote', '2')";
+
+$consulta = "SELECT CONCAT(vchNombrePaciente, '-', vchRaza, '-', vchNombre, '-', vchTelefono) AS vchServicio FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
+
+$resultado = mysqli_query($conn,$consulta);
+$fila = mysqli_fetch_assoc($resultado);
+
+$servicio = $fila['vchServicio'];
+
+$nuevaCitaDespG = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '0', '0')";
+
+if ($anterior == "false" and $chkCita == "true"){
 	
-	}
+	$nuevaDesp = mysqli_query($conn,$sql);
+	$nuevaCuentaD = mysqli_query($conn,$insertCuentaDG);
+	$nuevaCitaD = mysqli_query($conn,$nuevaCitaDespG);
+	$stockRel = mysqli_query($conn,$newStock);
 
-	/*Vacuna al carnet sin cita*/
+	$stockXProd = "SELECT SUM(dStockActual) AS StockActual FROM RelProductos WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
+
+	$resultado = mysqli_query($conn,$stockXProd);
+	$exito = mysqli_fetch_assoc($resultado);
+
+	$stockRes = $exito['StockActual'];
+
+	$newStockRes = "UPDATE CatProductos SET dStockActual = '$stockRes' WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
+
+	$stockCat = mysqli_query($conn,$newStockRes);
+	
+}
+
+/*Vacuna al carnet sin cita*/
 
 	elseif ($anterior == "true" and $chkCita == "false") {
-		echo "Estas en la opcion 2";
-		echo $sql; 	
+
+	$nuevaDesp = mysqli_query($conn,$sql);
 	}
 	/*Fin vacuna al carnet sin cita*/
 
@@ -113,14 +135,25 @@
 
 	elseif($anterior == "true" and $chkCita == "true"){
 
-	echo "Estas en la opcion 3";
-	echo $sql;
-	echo $nuevaCitaDespG;
+	$nuevaDesp = mysqli_query($conn,$sql);	
+	$nuevaCitaD = mysqli_query($conn,$nuevaCitaDespG);
 	}
 	/*FIN Vacuna a la cuenta sin cita*/
 	else {
-			echo "Estas en la opcion 4";
-			echo $sql;
-			echo $insertCuentaDG;
+
+	$nuevaDesp = mysqli_query($conn,$sql);	
+	$nuevaCuentaD = mysqli_query($conn,$insertCuentaDG);
+	$stockRel = mysqli_query($conn,$newStock);
+
+	$stockXProd = "SELECT SUM(dStockActual) AS StockActual FROM RelProductos WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
+
+	$resultado = mysqli_query($conn,$stockXProd);
+	$exito = mysqli_fetch_assoc($resultado);
+
+	$stockRes = $exito['StockActual'];
+
+	$newStockRes = "UPDATE CatProductos SET dStockActual = '$stockRes' WHERE iCodProducto = '$codigoDesp' AND iCodEmpresa = '$cEmpresa'";
+
+	$stockCat = mysqli_query($conn,$newStockRes);
 		}
 ?>

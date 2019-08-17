@@ -7,8 +7,8 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	margin-top: 2%;
-	height: 70%;
+	margin-top: 1%;
+	height: 50%;
 	width: 60%;	
 	margin-left: 20%;
 	margin-right: 20%;
@@ -61,12 +61,26 @@
 /*Titulo pagina*/
 #titulo-pagina {
   	font-family: 'Nunito', sans-serif;	
-	margin-top: 3%;
+	margin-top: 1%;
 	font-size: 35px;
 	color:white;
 	text-align: center;
 }
 
+.botonAtrasCita {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 40%;
+    width: 20%;
+   	float: left;
+}
 /*Inputs*/
 
 #inputfecha1{
@@ -168,7 +182,7 @@
     padding: 10px;
     font-size: 20px;
     color: #ffffff;
-    background-color: #1883ba;
+    background-color: #527486;
     border-radius: 6px;
     border: 1px solid #0016b0;
 
@@ -182,7 +196,7 @@
     width: 45px;
     height: 45px;
     color: #ffffff;
-    background-color: #1883ba;
+    background-color: #527486;
     border-radius: 28px;
     border: 1px solid #0016b047;
 
