@@ -1,8 +1,8 @@
 .contenedor-principal {
 	display: -webkit-box;
-  	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: column;
 	background-color: white;
@@ -19,9 +19,9 @@
  
 .contenedor-title {
 	display: -webkit-box;
-  	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	border-radius: 10px;
 	background-color: #D6D5E1;
@@ -41,7 +41,7 @@
 
 /*Titulo pagina*/
 #titulo-pagina {
-  	font-family: 'Nunito', sans-serif;	
+	font-family: 'Nunito', sans-serif;	
 	margin-top: 30px;
 	font-size: 35px;
 	color:white;
@@ -50,8 +50,8 @@
 
 #datos_citaE{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 25%;
@@ -59,8 +59,8 @@
 
 #datos_horario{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 25%;
@@ -69,8 +69,8 @@
 
 #notasyobs{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 25%;
@@ -79,8 +79,8 @@
 
 #botonAgregar {
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 25%;
@@ -96,7 +96,7 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputTipoServicio{
@@ -108,7 +108,7 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputFechaE{
@@ -120,7 +120,7 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputServicioE {
@@ -132,7 +132,7 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #chkTodoDia {
@@ -148,7 +148,7 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputHoraInicio{
@@ -160,7 +160,7 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputHoraFinE {
@@ -172,7 +172,7 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 #inputNotas {
@@ -184,7 +184,7 @@
 	text-transform: uppercase;
 	color: gray;
 	border-radius: 10px;
-    border: 2px solid #40444745;
+	border: 2px solid #40444745;
 }
 
 
@@ -242,16 +242,352 @@
 /*Botones*/
 
 .botonAgregar {
- 	font-family: 'Nunito', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-    color: #ffffff;
-    height: 30%;
-    background-color: #1883ba;
-    border-radius: 4px;
-    border: 1px solid #0016b0;
-    margin-left: 45%;
-    margin-top: 3%;
+	padding: 10px;
+	font-size: 20px;
+	color: #ffffff;
+	height: 30%;
+	background-color: #1883ba;
+	border-radius: 4px;
+	border: 1px solid #0016b0;
+	margin-left: 45%;
+	margin-top: 3%;
+}
+
+@media(min-width: 1200px) and (max-width: 1366px){
+.contenedor-principal {
+	width: 90%;	
+	margin-left: 5%;
+}	
+}
+
+@media(min-width: 1024px) and (max-width: 1199px){
+.contenedor-principal {
+	width: 88%;	
+	margin-left: 6%;
+}
+#lblPrecioS {
+	margin-left: 3%;
+}
+.botonAgregar {
+	margin-left: 42%;
+}
+}
+
+@media(min-width: 768px) and (max-width: 1023px){
+.contenedor-principal {
+	width: 86%;	
+	margin-left: 7%;
+}
+#inputEstilista {
+	width: 22%;
+	margin-left: 7%;
+}
+#lblFechaE {
+	margin-left: 2%;	
+}
+#inputTipoServicio {
+	width: 22%;
+}
+#inputServicioE {
+	width: 22%;
+}
+#inputPrecioS {
+	width: 8%;
+	margin-left: 10px;
+}
+#inputFechaE {
+	width: 25%;
+}
+#lblHoraInicio {
+	margin-left: 3%;
+	margin-top: 3%;	
+}
+#inputHoraInicio {
+	width: 15%;
+	margin-left: -3%;
+}
+#lblHoraFinE {
+	margin-top: 3%;	
+	margin-right: -11px;
+}
+#inputHoraFinE {
+	margin-right: 18px; 
+}	
+#lblNotas {
+	margin-left: 7%;	
+}
+.botonAgregar {
+	margin-left: 38%;
+}
+}
+
+@media(min-width: 568px) and (max-width: 767px){
+.contenedor-principal {
+	width: 84%;	
+	margin-left: 8%;
+}
+#inputEstilista {
+	width: 29%;
+	margin-left: 3%;
+	margin-top: 5%;
+}
+#inputTipoServicio {
+	width: 29%;
+	margin-left: 4%;
+}
+#inputServicioE {
+	width: 29%;
+	margin-left: 4%;
+}
+#lblPrecioS {
+	margin-top: -8%;
+	margin-left: 5%;
+}
+#inputPrecioS {
+	width: 29%;
+	margin-top: -10%;
+}
+#lblFechaE {
+	margin-top: -8%;
+	margin-left: 15%;	
+}
+#inputFechaE {
+	width: 29%;
+	margin-top: -10%;
+}
+#lblHoraInicio {
+	margin-left: -93%;
+	margin-top: 13%;	
+}
+#inputHoraInicio{
+	width: 29%;
+	margin-left: 1%;
+	margin-top: 11%;
+}
+#lblHoraFinE{
+	margin-left: 1%;
+	margin-top: 13%;	
+}
+#inputHoraFinE {
+	width: 29%;
+	margin-left: 1%;
+	margin-top: 11%;
+}
+#lblNotas {
+	margin-left: 3%;	
+}
+.botonAgregar {
+	margin-left: 31%;
+}	
+}
+
+@media(min-width: 414px) and (max-width: 567px){
+.contenedor-principal {
+	width: 80%;	
+	margin-left: 10%;
+}
+#inputEstilista {
+	width: 42%;
+	margin-left: 3%;
+}
+#inputTipoServicio {
+	width: 42%;
+}
+#inputServicioE {
+	width: 42%;
+	margin-left: -94%;
+	margin-top: 32%;
+}
+#lblPrecioS {
+	margin-top: -18%;
+	margin-left: 51%;
+	margin-right: -58%;
+}
+#inputPrecioS {
+	width: 41%;
+	margin-left: 59%;
+	margin-top: -21%;
+}
+#lblFechaE {
+	margin-left: -96%;	
+}
+#inputFechaE {
+	width: 80%;
+}
+#lblHoraInicio {
+	margin-left: -97%;
+	margin-top: 29%;	
+}
+#inputHoraInicio {
+	width: 21%;	
+	margin-top: 27%;
+}
+#lblHoraFinE {
+	margin-left: 2%;
+	margin-top: 29%;	
+	margin-right: 2%;
+}
+#inputHoraFinE {
+	width: 21%;;
+	margin-left: -1%;
+	margin-top: 27%;
+}
+#lblNotas{
+	margin-left: 1%;	
+}
+#inputNotas {
+	width: 69%;
+	margin-left: -10%;
+	margin-right: 2%;
+}
+.botonAgregar {
+	margin-left: 21%;
+	margin-top: 6%;
+}
+}
+
+@media(min-width: 360px) and (max-width: 413px){
+.contenedor-principal {
+	width: 78%;	
+	margin-left: 11%;
+}
+#inputEstilista {
+	width: 45%;
+	margin-left: 0%;
+}
+#inputTipoServicio {
+	width: 49%;
+	margin-left: 6%;
+}
+#inputServicioE {
+	width: 43%;
+	margin-left: -99%;
+	margin-top: 33%;
+}
+#lblPrecioS {
+	margin-top: -26%;
+	margin-left: 51%;
+}
+#inputPrecioS {
+	width: 42%;
+	margin-top: -29%;
+}
+#lblFechaE {
+	margin-top: 2%;
+	margin-left: -96%;	
+}
+#inputFechaE {
+	width: 77%;
+	margin-top: -1%;
+}
+#lblHoraInicio {
+	margin-left: -97%;
+	margin-top: 27%;
+	margin-right: -8%;	
+}
+#inputHoraInicio {
+	width: 31%;
+	margin-left: -5%;
+	margin-top: 29%;
+}
+#lblHoraFinE {
+	margin-left: 6%;
+	margin-top: 27%;	
+}
+#inputHoraFinE {
+	width: 31%;
+	margin-left: -9%;
+	margin-top: 29%;
+}
+#lblNotas {
+	margin-left: 2%;	
+}
+#inputNotas {
+	width: 52%;
+	height: 100%;
+	margin-left: -21%;
+	margin-right: 2%;
+}
+.botonAgregar {
+	padding: 4px;
+	height: 28%;
+	margin-left: 15%;
+	margin-top: 7%;
+}	
+}
+
+
+@media(max-width: 359px) {
+.contenedor-principal {
+	margin-top: 10px;
+	width: 78%;	
+	margin-left: 12%;
+}
+#inputEstilista {
+	width: 46%;
+	margin-left: 0%;
+}
+#inputTipoServicio {
+	width: 50%;
+	margin-left: 3%;
+}
+#inputServicioE {
+	width: 45%;
+	margin-left: -99%;
+	margin-top: 35%;
+}
+#lblPrecioS {
+	margin-top: -24%;
+	margin-left: 51%;
+}
+#inputPrecioS {
+	width: 41%;
+	margin-left: 1%;
+	margin-top: -27%;
+}
+#lblFechaE {
+	margin-top: 3%;
+	margin-left: -97%;	
+}
+#inputFechaE {
+	width: 80%;
+	margin-top: 1%;
+}
+#lblHoraInicio {
+	margin-left: -100%;
+	margin-top: 30%;
+	margin-right: 2%;	
+}
+#inputHoraInicio {
+	width: 30%;
+	margin-left: -15%;
+	margin-top: 32%;
+}
+#lblHoraFinE {
+	margin-left: 4%;
+	margin-top: 30%;	
+}
+#inputHoraFinE {
+	width: 30%;
+	margin-left: -9%;
+	margin-top: 32%;
+}
+#lblNotas {
+	margin-left: 0%;	
+}
+#inputNotas {
+	width: 55%;
+	height: 100%;
+	margin-left: -21%;
+	margin-right: 1%;
+}
+.botonAgregar {
+	margin-left: 17%;
+	margin-top: 7%;
+	padding: 1%;
+	height: 27%;
+}	
 }
 
