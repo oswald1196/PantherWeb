@@ -236,14 +236,6 @@ if ($_SESSION["autenticado"] != "SI") {
   </div>
 </div>
 
-<button class="botonAtrasEcto" onclick="goBack();"> Atrás </button>
-
-<script>
-function goBack() {
-  window.history.go(-1);
-}
-</script>
-
 <script type="text/javascript">
   function validarEcto() {
     var txtEcto = document.getElementById("inputProductoE").value;
@@ -353,6 +345,13 @@ function goBack() {
   }
 </script>
 </form>  
-</div>  
+</div> 
+<button class="botonAtrasEctoG" onclick="goBack();"> Atrás </button>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+</script> 
 </body>
 </html>

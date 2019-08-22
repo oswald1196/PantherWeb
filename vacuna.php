@@ -401,7 +401,7 @@ return true;
 </form>  
 </div>  
 
-<button class="botonAtrasV" onclick="goBack();"> Atrás </button>
+<button class="botonAtrasVG" onclick="goBack();"> Atrás </button>
 
 <script>
   function goBack() {

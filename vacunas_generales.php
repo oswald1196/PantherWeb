@@ -407,5 +407,12 @@ $fecha_actual = date("Y-m-d");
     </div>
   </form>  
 </div>  
+<button class="botonAtrasVG" onclick="goBack();"> Atrás </button>
+
+<script>
+  function goBack() {
+    window.history.back();
+  }
+</script>
 </body>
 </html>

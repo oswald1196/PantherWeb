@@ -3,7 +3,7 @@
 	flex-direction: column;
 	background-color: white;
 	border-radius: 10px;
-	height: 850px;
+	height: 750px;
 	width: 90%;	
 	padding-right: 0px;
 	padding-left: 0px;
@@ -24,7 +24,7 @@
 	display: -ms-flexbox;
 	border-radius: 10px;
 	background-color: #D6D5E1;
-	height: 80px;
+	height: 50px;
 	width: 100%;
 	align-items: center;
 	justify-content: space-around;
@@ -33,8 +33,8 @@
 
 #titulo_consulta {
 	font-family: 'Nunito', sans-serif;	
-	margin-top: 20px;
-	font-size: 35px;
+	margin-top: 0.5%;
+	font-size: 30px;
 	color:white;
 	text-align: center;
 }
@@ -75,7 +75,7 @@
 }
 .detalle{
 	width: 20%;
-	height: 670px;
+	height: 590px;
 	margin-top: 20px;
 	/*background-color: green;*/
 	float: left;
@@ -90,7 +90,7 @@
 
 .informeMedico{
 	width: 80%;
-	height: 640px;
+	height: 560px;
 	margin-top: 20px;
 	float: left;
 	display: flex;
@@ -108,6 +108,7 @@
 	width: 90%;
 	border-radius: 10px;
 	border: 2px solid #40444745;
+	text-transform: uppercase;
 	color:gray;
 }
 
@@ -126,6 +127,7 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color:gray;
+	text-transform: uppercase;
 }
 
 #inputFechaConsulta {
@@ -302,6 +304,21 @@ a {
 	color:gray;
 }
 
+.botonAtrasConsulG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: -35px;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 47%;
+    width: 10%;
+   	float: left;
+}
+
 #diagnosticoDef{
 	margin-left: 2%;
 	margin-top: 2%;
@@ -373,7 +390,7 @@ a {
 
 	.div_opt_paciente{
 		width: 100%;
-		height: 12%;
+		height: 9%;
 	}
 
 	#lblPacientesC {
@@ -381,21 +398,20 @@ a {
 		font-size: 20px;
 		color:black;
 		margin-left: 40%;
+		margin-top: 1.5%;
 		float: left;
 	}
 
 	#selectPacienteC{
 		width: 22%;
-		height: 45%;
+		height: 55%;
 		margin-left: 1%;
-		margin-top: 1.5%;
+		margin-top: 1%;
 		font-family: 'Nunito', sans-serif;	
 		font-size: 13px;
 		border-radius: 10px;
 		border: 2px solid #40444745;
 	}
-
-
 	/*-------------------------*/
 
 	#inputCostoS{
@@ -411,23 +427,24 @@ a {
 	}
 
 	#imagen{
-		height: 50px;
-		width: 50px;
+		height: 45px;
+		width: 45px;
 	}
 
 	#imagen_libro{
-		height: 50px;
-		width: 50px;
+		height: 45px;
+		width: 45px;
 	}
 
 	.botonAConsulta{
 		text-decoration: none;
-		padding: 10px;
+		padding: 5px;
 		font-size: 20px;
 		color: #ffffff;
 		background-color: #527486;
 		border-radius: 5px;
 		border: 1px solid #527486;
+    	width: 15%;
 		margin-top: 5px;
 	}
 

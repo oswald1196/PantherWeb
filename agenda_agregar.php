@@ -134,6 +134,7 @@ if ($_SESSION["autenticado"] != "SI") {
           <button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
         </form>
       </div>
+    </div>
       <div id="div_boton">
         <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit"> <i class="fas fa-plus-square"></i>&nbsp;&nbsp; Agregar cita</button>
       </div>

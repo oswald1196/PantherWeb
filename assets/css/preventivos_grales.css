@@ -58,6 +58,45 @@
 
 }
 
+.botonAtrasVG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 45%;
+    width: 10%;
+}
+
+.botonAtrasDG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 45%;
+    width: 10%;
+}
+
+.botonAtrasEctoG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+    border-radius: 6px;
+    margin-left: 45%;
+    width: 10%;
+}
+
 #contenedor .form-left label{
 	float: left;
 }
@@ -170,20 +209,6 @@
 	border-radius: 10px;
 	border: 3px solid #40444745;
 	color: gray;
-}
-
-.botonAtrasEcto {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
-    padding: 5px;
-    font-size: 20px;
-    margin-top: 1%;
-    color: #ffffff;
-    background-color: #527486;
-    border-radius: 6px;
-    border: 1px solid #0016b0;
-    margin-left: 40%;
-    width: 20%;
 }
 
 #inputFechaCad{

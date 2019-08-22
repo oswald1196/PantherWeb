@@ -86,8 +86,8 @@
     background-color: #527486;
     border-radius: 6px;
     border: 1px solid #0016b0;
-    margin-left: 40%;
-    width: 20%;
+    margin-left: 47%;
+    width: 10%;
    	float: left;
 }
 
@@ -400,11 +400,11 @@ a {
 
 	.botonAConsulta{
 		text-decoration: none;
-		padding: 10px;
+		padding: 5px;
 		font-size: 20px;
 		color: #ffffff;
 		background-color: #527486;
-		border-radius: 5px;
+		border-radius: 6px;
 		border: 1px solid #527486;
 		margin-top: 25px;
 	}

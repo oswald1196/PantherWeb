@@ -26,7 +26,7 @@
 }
 
 #div_boton {
-	margin-top: 5%;
+	margin-top: -12%;
 	height: 22%;
 }
  
@@ -67,20 +67,6 @@
 	text-align: center;
 }
 
-.botonAtrasCita {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
-    padding: 5px;
-    font-size: 20px;
-    margin-top: 1%;
-    color: #ffffff;
-    background-color: #527486;
-    border-radius: 6px;
-    border: 1px solid #0016b0;
-    margin-left: 40%;
-    width: 20%;
-   	float: left;
-}
 /*Inputs*/
 
 #inputfecha1{
@@ -174,12 +160,28 @@
 
 /*Botones*/
 
+.botonAtrasCita {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 20px;
+    margin-top: 1%;
+    color: #ffffff;
+    background-color: #527486;
+    border-radius: 6px;
+    border: 1px solid #0016b0;
+    margin-left: 48.5%;
+    width: 5%;
+   	float: left;
+}
+
 .botonAgregar {
  	font-family: 'Nunito', sans-serif;
 	margin-left: 45%;
 	margin-top: 5%;
+	margin-bottom: 1%;
 	text-decoration: none;
-    padding: 10px;
+    padding: 5px;
     font-size: 20px;
     color: #ffffff;
     background-color: #527486;
