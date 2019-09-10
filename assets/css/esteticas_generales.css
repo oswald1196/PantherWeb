@@ -1,8 +1,8 @@
 .contenedor-principal {
 	display: -webkit-box;
-  	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	flex-direction: column;
 	background-color: white;
@@ -15,7 +15,7 @@
 	margin-bottom: 10px;
 	padding-right: 0px;
 	padding-left: 0px;
-	}
+}
 
 .form_estetica {
 	height: 700px;
@@ -24,7 +24,7 @@
 
 /*Titulo pagina*/
 #titulo-pagina {
-  	font-family: 'Nunito', sans-serif;	
+	font-family: 'Nunito', sans-serif;	
 	margin-top: 30px;
 	font-size: 35px;
 	color:white;
@@ -33,8 +33,8 @@
 
 #datos_citaG{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 20%;
@@ -42,8 +42,8 @@
 
 #datos_horarioG{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 20%;
@@ -52,8 +52,8 @@
 
 #datos_otrosG{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 20%;
@@ -63,8 +63,8 @@
 
 #notasyobs{
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 20%;
@@ -73,8 +73,8 @@
 
 #botonAgregarEG {
 	display: -webkit-flex;
-  	display: -moz-box;
-  	display: -ms-flexbox;
+	display: -moz-box;
+	display: -ms-flexbox;
 	display: flex;
 	width: 100%;
 	height: 20%;
@@ -90,7 +90,6 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -103,7 +102,6 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -116,7 +114,6 @@
 	margin-top: 5%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -130,7 +127,6 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -143,7 +139,6 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -160,7 +155,6 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -173,7 +167,6 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -186,7 +179,6 @@
 	margin-top: 4%;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -199,7 +191,6 @@
 	text-transform: uppercase;
 	color: gray;
 	border-radius: 10px;
-	padding: 6px;
 	border: 3px solid #40444745;
 }
 
@@ -258,898 +249,1011 @@
 /*Botones*/
 
 .botonAgregarG {
- 	font-family: 'Nunito', sans-serif;
+	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
-    padding: 10px;
-    font-size: 20px;
-    color: #ffffff;
-    height: 35%;
-    border: 1px solid #0016b0;
-    margin-left: 45%;
-    margin-top: 4%;
-    background-color: #527486;
-    border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;
+	color: #ffffff;
+	height: 35%;
+	border: 1px solid #0016b0;
+	margin-left: 45%;
+	margin-top: 4%;
+	background-color: #527486;
+	border-radius: 5px;
+}
+
+.botonAtrasEstG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+	padding: 5px;
+	font-size: 20px;
+	margin-top: 1%;
+	color: #ffffff;
+	background-color: #527486;
+	border-radius: 6px;
+	border: 1px solid #0016b0;
+	margin-left: 49%;
+	width: 5%;
+	float: left;
 }
 
 /*Primer media*/
 @media (min-width: 1100px) and (max-width: 1366px){
-.contenedor-principal {
-	margin-top: 10px;
-	width: 90%;	
-	height: 800px;
-	margin-left: 5%;
+	.contenedor-principal {
+		margin-top: 10px;
+		width: 90%;	
+		height: 800px;
+		margin-left: 5%;
 	}
-/*Titulo pagina*/
-#titulo-pagina {
-	margin-top: 2%;
-	font-size: 32px;
-}
-
-#datos_citaG{
-	height: 25%;
-}
-
-#datos_horarioG{
-	height: 25%;
-}
-
-#datos_otrosG{
-	width: 100%;
-	height: 20%;
-}
-
-
-#notasyobs{
-	width: 100%;
-	height: 20%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 20%;
-}
-
-#inputPacienteEstetica{
-	width: 30%;
-	height: 25%;
-	margin-left: 10%;
-}
-
-#inputEstilistaG{
-	height: 25%;
-}
-
-#inputTipoServicioG{
-	height: 25%;
-}
-
-#inputPrecioS {
-	font-family: 'Nunito', sans-serif;
-	font-size: 17px;
-	width: 8%;
-	height: 30%;
-	margin-left: 2%;
-	margin-top: 4%;
-	color: gray;
-	border-radius: 10px;
-	padding: 6px;
-	border: 3px solid #40444745;
-}
-
-#inputHoraInicio{
-	height: 25%;
+	/*Titulo pagina*/
+	#titulo-pagina {
+		margin-top: 2%;
+		font-size: 32px;
 	}
 
-#inputHoraFinE {
-	height: 25%;
-}
+	#datos_citaG{
+		height: 25%;
+	}
 
-/*Botones*/
+	#datos_horarioG{
+		height: 25%;
+	}
 
-.botonAgregarG {
-    height: 35%;
-    border: 1px solid #0016b0;
-    margin-left: 45%;
-    margin-top: 6%;
-    background-color: #527486;
-    border-radius: 5px;
-}
+	#datos_otrosG{
+		width: 100%;
+		height: 20%;
+	}
+
+
+	#notasyobs{
+		width: 100%;
+		height: 20%;
+	}
+
+	#botonAgregarEG {
+		width: 100%;
+		height: 20%;
+	}
+
+	#inputPacienteEstetica{
+		width: 30%;
+		height: 25%;
+		margin-left: 10%;
+	}
+
+	#inputEstilistaG{
+		height: 25%;
+	}
+
+	#inputTipoServicioG{
+		height: 25%;
+	}
+
+	#inputPrecioS {
+		font-family: 'Nunito', sans-serif;
+		font-size: 17px;
+		width: 8%;
+		height: 30%;
+		margin-left: 2%;
+		margin-top: 4%;
+		color: gray;
+		border-radius: 10px;
+		padding: 6px;
+		border: 3px solid #40444745;
+	}
+
+	#inputHoraInicio{
+		height: 25%;
+	}
+
+	#inputHoraFinE {
+		height: 25%;
+	}
+
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 35%;
+		border: 1px solid #0016b0;
+		margin-left: 45%;
+		margin-top: 6%;
+		background-color: #527486;
+		border-radius: 5px;
+	}
+
+	.botonAtrasEstG {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		padding: 5px;
+		font-size: 20px;
+		margin-top: 1%;
+		color: #ffffff;
+		background-color: #527486;
+		border-radius: 6px;
+		border: 1px solid #0016b0;
+		margin-left: 48%;
+		width: 10%;
+		float: left;
+	}
 }
 
 @media (min-width: 1024px) and (max-width: 1099px){
-.contenedor-principal {
-	margin-top: 2%;
-	background-color: mediumvioletred;
-	width: 90%;	
-	height: 800px;
-	margin-left: 5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 90%;	
+		height: 800px;
+		margin-left: 5%;
 	}
-/*Titulo pagina*/
-#titulo-pagina {
-	margin-top: 5%;
-	font-size: 32px;
-}
-
-#datos_citaG{
-	height: 25%;
-}
-
-#datos_horarioG{
-	height: 25%;
-}
-
-#datos_otrosG{
-	width: 100%;
-	height: 20%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 20%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 20%;
-}
-
-#inputPacienteEstetica{
-	width: 30%;
-	height: 25%;
-	margin-left: 10%;
-}
-
-#inputEstilistaG{
-	height: 25%;
-}
-
-#inputTipoServicioG{
-	height: 25%;
-}
-
-#inputPrecioS {
-	width: 8%;
-}
-
-#inputHoraInicio{
-	height: 25%;
+	/*Titulo pagina*/
+	#titulo-pagina {
+		margin-top: 5%;
+		font-size: 32px;
 	}
 
-#inputHoraFinE {
-	height: 25%;
-}
+	#datos_citaG{
+		height: 25%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-}
+	#datos_horarioG{
+		height: 25%;
+	}
 
-#lblNotas{
-	margin-left: 15%;	
-	font-size: 20px;
-}
+	#datos_otrosG{
+		width: 100%;
+		height: 20%;
+	}
 
-#lblHoraInicio{
-	margin-left: 18%;
-	margin-top: 5%;	
-}
+	#notasyobs{
+		width: 100%;
+		height: 20%;
+	}
 
-#lblHoraFinE{
-	margin-left: 10%;
-	margin-top: 5%;	
-}
-/*Botones*/
+	#botonAgregarEG {
+		width: 100%;
+		height: 20%;
+	}
 
-.botonAgregarG {
-    height: 35%;
-    margin-left: 45%;
-    margin-top: 7%;
-}
+	#inputPacienteEstetica{
+		width: 30%;
+		height: 25%;
+		margin-left: 10%;
+	}
+
+	#inputEstilistaG{
+		height: 25%;
+	}
+
+	#inputTipoServicioG{
+		height: 25%;
+	}
+
+	#inputPrecioS {
+		width: 8%;
+	}
+
+	#inputHoraInicio{
+		height: 25%;
+	}
+
+	#inputHoraFinE {
+		height: 25%;
+	}
+
+	#inputNotas {
+		width: 45%;
+		height: 100%;
+		margin-left: 2%;
+	}
+
+	#lblNotas{
+		margin-left: 15%;	
+		font-size: 20px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 18%;
+		margin-top: 5%;	
+	}
+
+	#lblHoraFinE{
+		margin-left: 10%;
+		margin-top: 5%;	
+	}
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 35%;
+		margin-left: 45%;
+		margin-top: 7%;
+	}
+
+	.botonAtrasEstG {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		padding: 5px;
+		font-size: 20px;
+		margin-top: 1%;
+		color: #ffffff;
+		background-color: #527486;
+		border-radius: 6px;
+		border: 1px solid #0016b0;
+		margin-left: 49%;
+		width: 10%;
+		float: left;
+	}
+
 }
 
 @media (min-width: 768px) and (max-width: 1023px){
-.contenedor-principal {
-	margin-top: 2%;
-	width: 90%;	
-	height: 400px;
-	margin-left: 5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 90%;	
+		height: 500px;
+		margin-left: 5%;
 	}
 
-#titulo-pagina {
-	margin-top: 5%;
-	font-size: 25px;
-}
-
-#datos_citaG{
-	height: 15%;
-}
-
-#datos_horarioG{
-	height: 15%;
-}
-
-#datos_otrosG{
-	height: 15%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 15%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 15%;
-}
-
-#inputPacienteEstetica{
-	width: 40%;
-	height: 45%;
-	font-size: 14px;
-	margin-left: 5%;
-	margin-top: 3%;
-}
-
-#inputEstilistaG{
-	height: 45%;
-	width: 25%;
-	margin-top: 3%;
-	margin-left: 2%;
-	font-size: 14px;
-}
-
-#inputTipoServicioG{
-	height: 45%;
-	margin-top: 3%;
-	margin-left: 2%;
-	font-size: 14px;
-}
-
-#inputFechaE{
-	font-size: 14px;
-	width: 20%;
-	height: 45%;
-	margin-left: 2%;
-	margin-top: 3%;
-}
-
-#inputServicioG {
-	font-size: 14px;
-	width: 25%;
-	height: 45%;
-	margin-left: 12%;
-	margin-top: 3%;
-}
-
-#inputPrecioS {
-	width: 8%;
-	height: 45%;
-	margin-top: 3%;
-}
-
-#inputHoraInicio{
-	height: 45%;
-	width: 25%;
+	#titulo-pagina {
+		margin-top: 8%;
+		font-size: 25px;
 	}
 
-#inputHoraFinE {
-	height: 45%;
-	width: 25%;
-}
+	#datos_citaG{
+		height: 15%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-}
+	#datos_horarioG{
+		height: 15%;
+	}
 
-#lblNotas{
-	margin-left: 15%;
-	margin-top: 4%;	
-	font-size: 17px;
-}
+	#datos_otrosG{
+		height: 15%;
+	}
 
-#lblHoraInicio{
-	margin-left: 10%;
-	margin-top: 4.5%;	
-	font-size: 17px;
-}
+	#notasyobs{
+		width: 100%;
+		height: 25%;
+		margin-top: 5%;
+	}
 
-#lblHoraFinE{
-	margin-left: 5%;
-	margin-top: 4.5%;
-	font-size: 17px;	
-}
+	#botonAgregarEG {
+		width: 100%;
+		margin-top: 5%;
+		height: 15%;
+	}
+
+	#inputPacienteEstetica{
+		width: 40%;
+		height: 45%;
+		font-size: 14px;
+		margin-left: 5%;
+		margin-top: 3%;
+	}
+
+	#inputEstilistaG{
+		height: 45%;
+		width: 25%;
+		margin-top: 3%;
+		margin-left: 1%;
+		font-size: 14px;
+	}
+
+	#inputTipoServicioG{
+		height: 45%;
+		height: 45%;
+		margin-top: 3%;
+		margin-left: 2%;
+		font-size: 14px;
+	}
+
+	#inputFechaE{
+		font-size: 14px;
+		width: 20%;
+		height: 45%;
+		margin-left: 2%;
+		margin-top: 3%;
+	}
+
+	#inputServicioG {
+		font-size: 14px;
+		width: 30%;
+		height: 45%;
+		margin-left: 12%;
+		margin-top: 3%;
+	}
+
+	#inputPrecioS {
+		width: 8%;
+		height: 45%;
+		margin-top: 3%;
+	}
+
+	#inputHoraInicio{
+		height: 45%;
+		width: 25%;
+	}
+
+	#inputHoraFinE {
+		height: 45%;
+		width: 25%;
+	}
+
+	#inputNotas {
+		width: 45%;
+		height: 100%;
+		margin-left: 2%;
+	}
+
+	#lblNotas{
+		margin-left: 15%;
+		margin-top: 4%;	
+		font-size: 17px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 10%;
+		margin-top: 4.5%;	
+		font-size: 17px;
+	}
+
+	#lblHoraFinE{
+		margin-left: 5%;
+		margin-top: 4.5%;
+		font-size: 17px;	
+	}
 
 
-#lblPrecioS {
-	font-size: 17px;
-}
+	#lblPrecioS {
+		font-size: 17px;
+	}
 
-#lblFechaE{
-	font-size: 17px;	
-}
-/*Botones*/
+	#lblFechaE{
+		font-size: 17px;	
+	}
+	/*Botones*/
 
-.botonAgregarG {
-    height: 55%;
-    margin-left: 45%;
-	font-size: 17px;
-    margin-top: 3%;
-}
+	.botonAgregarG {
+		height: 60%;
+		margin-left: 45%;
+		font-size: 17px;
+		margin-top: 3%;
+	}
+
+	.botonAtrasEstG {
+		padding: 5px;
+		font-size: 17px;
+		margin-top: 1%; 
+		margin-left: 49%;
+		width: 10%;
+	}
 }
 
 @media(min-width: 568px) and (max-width: 767px){
-.contenedor-principal {
-	margin-top: 2%;
-	width: 90%;	
-	height: 400px;
-	margin-left: 5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 96%;	
+		height: 400px;
+		margin-left: 2%;
 	}
 
-#titulo-pagina {
-	margin-top: 5%;
-	font-size: 22px;
-}
-
-#datos_citaG{
-	height: 15%;
-}
-
-#datos_horarioG{
-	height: 15%;
-}
-
-#datos_otrosG{
-	height: 15%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 15%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 15%;
-}
-
-#inputPacienteEstetica{
-	width: 40%;
-	height: 40%;
-	font-size: 13px;
-	margin-left: 1%;
-	margin-top: 3%;
-}
-
-#inputEstilistaG{
-	height: 40%;
-	width: 25%;
-	margin-top: 3%;
-	margin-left: 1%;
-	font-size: 13px;
-}
-
-#inputTipoServicioG{
-	height: 40%;
-	width: 30%;
-	margin-top: 3%;
-	margin-left: 1%;
-	font-size: 13px;
-}
-
-#inputFechaE{
-	font-size: 13px;
-	width: 25%;
-	height: 40%;
-	margin-left: 2%;
-	margin-top: 3%;
-}
-
-#inputServicioG {
-	font-size: 14px;
-	width: 25%;
-	height: 40%;
-	margin-left: 7%;
-	margin-top: 3%;
-}
-
-#inputPrecioS {
-	width: 13%;
-	height: 40%;
-	font-size: 14px;
-	margin-top: 3%;
-}
-
-#inputHoraInicio{
-	height: 40%;
-	width: 25%;
-	font-size: 14px;
+	#titulo-pagina {
+		margin-top: 5%;
+		font-size: 22px;
 	}
 
-#inputHoraFinE {
-	height: 40%;
-	width: 25%;
-	font-size: 14px;
-}
+	#datos_citaG{
+		height: 20%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-}
+	#datos_horarioG{
+		height: 20%;
+	}
 
-#lblNotas{
-	margin-left: 10%;
-	margin-top: 4%;	
-	font-size: 16px;
-}
+	#datos_otrosG{
+		height: 20%;
+	}
 
-#lblHoraInicio{
-	margin-left: 8%;
-	margin-top: 5%;	
-	font-size: 16px;
-}
+	#notasyobs{
+		height: 20%;
+	}
 
-#lblHoraFinE{
-	margin-left: 5%;
-	margin-top: 5%;
-	font-size: 16px;	
-}
+	#botonAgregarEG {
+		width: 100%;
+		height: 20%;
+	}
 
-#lblPrecioS {
-	font-size: 16px;
-}
+	#inputPacienteEstetica{
+		width: 40%;
+		height: 40%;
+		font-size: 13px;
+		margin-left: 1%;
+		margin-top: 3%;
+	}
 
-#lblFechaE{
-	font-size: 16px;	
-}
-/*Botones*/
+	#inputEstilistaG{
+		height: 40%;
+		width: 25%;
+		margin-top: 3%;
+		margin-left: 1%;
+		font-size: 13px;
+	}
 
-.botonAgregarG {
-    height: 50%;
-    margin-left: 40%;
-	font-size: 16px;
-    margin-top: 5%;
-    padding: 4px;
-}
+	#inputTipoServicioG{
+		height: 40%;
+		width: 30%;
+		margin-top: 3%;
+		border-radius: 8px;
+		margin-left: 1%;
+		font-size: 13px;
+	}
+
+	#inputFechaE{
+		font-size: 13px;
+		width: 22%;
+		height: 40%;
+		margin-left: 2%;
+		border-radius: 8px;
+		margin-top: 3%;
+	}
+
+	#inputServicioG {
+		font-size: 13px;
+		width: 43%;
+		border-radius: 8px;
+		height: 40%;
+		margin-left: 2%;
+		margin-top: 3%;
+		padding: 5px;
+	}
+
+	#inputPrecioS {
+		width: 13%;
+		height: 40%;
+		border-radius: 8px;
+		font-size: 13px;
+		margin-top: 3%;
+	}
+
+	#inputHoraInicio{
+		height: 40%;
+		width: 25%;
+		border-radius: 8px;
+		font-size: 13px;
+	}
+
+	#inputHoraFinE {
+		height: 40%;
+		width: 25%;
+		border-radius: 8px;
+		font-size: 13px;
+	}
+
+	#inputNotas {
+		width: 45%;
+		font-size: 13px;
+		height: 100%;
+		margin-left: 2%;
+	}
+
+	#lblNotas{
+		margin-left: 10%;
+		margin-top: 3.5%;	
+		font-size: 15px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 8%;
+		margin-top: 5%;	
+		font-size: 15px;
+	}
+
+	#lblHoraFinE{
+		margin-left: 5%;
+		margin-top: 5%;
+		font-size: 15px;	
+	}
+
+	#lblPrecioS {
+		margin-top: 4%;
+		margin-left: 2%;
+		font-size: 15px;
+	}
+
+	#lblFechaE{
+		margin-top: 4%;
+		margin-left: 2%;
+		font-size: 15px;	
+	}
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 50%;
+		margin-left: 42%;
+		font-size: 15px;
+		margin-top: 5%;
+		padding: 1px;
+	}
+
+	.botonAtrasEstG {
+		padding: 5px;
+		font-size: 15px;
+		margin-top: 1%; 
+		margin-left: 48%;
+		width: 10%;
+	}
 }
 
 @media(min-width: 414px) and (max-width: 567px){
-.contenedor-principal {
-	margin-top: 2%;
-	width: 95%;	
-	height: 600px;
-	margin-left: 2.5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 96%;	
+		height: 550px;
+		margin-left: 2%;
 	}
 
-#titulo-pagina {
-	margin-top: 5%;
-	font-size: 18px;
-}
-
-#datos_citaG{
-	height: 15%;
-}
-
-#datos_horarioG{
-	height: 15%;
-}
-
-#datos_otrosG{
-	height: 15%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 15%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 15%;
-}
-
-#inputPacienteEstetica{
-	width: 80%;
-	height: 35%;
-	font-size: 12px;
-	margin-left: 10%;
-	margin-top: 3%;
-}
-
-#inputEstilistaG{
-	height: 35%;
-	width: 62%;
-	margin-top: 15%;
-	margin-left: -70%;
-	font-size: 12px;
-}
-
-#inputTipoServicioG{
-	height: 35%;
-	width: 62%;
-	margin-top: 27%;
-	margin-left: -62%;
-	font-size: 12px;
-}
-
-#inputFechaE{
-	font-size: 12px;
-	width: 30%;
-	height: 35%;
-	margin-left: 1%;
-	margin-top: 30%;
-}
-
-#inputServicioG {
-	font-size: 12px;
-	width: 62%;
-	height: 35%;
-	margin-left: 20%;
-	margin-top: 17%;
-}
-
-#inputPrecioS {
-	width: 16%;
-	height: 35%;
-	font-size: 12px;
-	margin-top: 30%;
-	margin-left:1%;
-}
-
-#inputHoraInicio{
-	height: 35%;
-	width: 25%;
-	font-size: 12px;
-	margin-top: 25%;
+	#titulo-pagina {
+		margin-top: 6%;
+		font-size: 18px;
 	}
 
-#inputHoraFinE {
-	height: 35%;
-	width: 27%;
-	font-size: 12px;
-	margin-top: 25%;
-	margin-left: 1%;
-}
+	#datos_citaG{
+		height: 15%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-	margin-top: 25%;
-	font-size: 12px;
-}
+	#datos_horarioG{
+		height: 15%;
+	}
 
-#lblNotas{
-	margin-left: 7%;
-	margin-top: 32%;	
-	font-size: 14px;
-}
+	#datos_otrosG{
+		height: 15%;
+	}
 
-#lblHoraInicio{
-	margin-left: 5%;
-	margin-top: 27%;	
-	font-size: 14px;
-}
+	#notasyobs{
+		height: 15%;
+	}
 
-#lblHoraFinE{
-	margin-left: 1%;
-	margin-top: 27%;
-	font-size: 14px;	
-}
+	#botonAgregarEG {
+		height:20%;
+	}
 
-#lblPrecioS {
-	font-size: 14px;
-	margin-top: 32%;
-	margin-left:-62%;
-}
+	#inputPacienteEstetica{
+		width: 80%;
+		height: 35%;
+		font-size: 12px;
+		margin-left: 10%;
+		margin-top: 3%;
+	}
 
-#lblFechaE{
-	font-size: 14px;
-	margin-top: 32%;
-	margin-left:2%;	
-}
-/*Botones*/
+	#inputEstilistaG{
+		height: 35%;
+		width: 80%;
+		margin-top: 15%;
+		margin-left: -80%;
+		font-size: 12px;
+	}
 
-.botonAgregarG {
-    height: 45%;
-    margin-left: 40%;
-	font-size: 13px;
-    margin-top: 32%;
-    padding: 2px;
-}
+	#inputTipoServicioG{
+		height: 35%;
+		width: 80%;
+		margin-top: 27%;
+		margin-left: -80%;
+		font-size: 12px;
+	}
+
+	#inputFechaE{
+		font-size: 12px;
+		width: 30%;
+		height: 35%;
+		margin-left: 1%;
+		margin-top: 30%;
+	}
+
+	#inputServicioG {
+		font-size: 12px;
+		width: 80%;
+		height: 35%;
+		margin-left: 10%;
+		margin-top: 17%;
+	}
+
+	#inputPrecioS {
+		width: 16%;
+		height: 35%;
+		font-size: 12px;
+		margin-top: 30%;
+		margin-left:1%;
+	}
+
+	#inputHoraInicio{
+		height: 35%;
+		width: 25%;
+		font-size: 12px;
+		margin-top: 25%;
+	}
+
+	#inputHoraFinE {
+		height: 35%;
+		width: 27%;
+		font-size: 12px;
+		margin-top: 25%;
+		margin-left: 1%;
+	}
+
+	#inputNotas {
+		width: 45%;
+		height: 100%;
+		margin-left: 2%;
+		margin-top: 25%;
+		font-size: 12px;
+	}
+
+	#lblNotas{
+		margin-left: 7%;
+		margin-top: 32%;	
+		font-size: 14px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 5%;
+		margin-top: 27%;	
+		font-size: 14px;
+	}
+
+	#lblHoraFinE{
+		margin-left: 3%;
+		margin-top: 27%;
+		font-size: 14px;	
+	}
+
+	#lblPrecioS {
+		font-size: 14px;
+		margin-top: 32%;
+		margin-left:-80%;
+	}
+
+	#lblFechaE{
+		font-size: 14px;
+		margin-top: 32%;
+		margin-left:20%;	
+	}
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 35%;
+		margin-left: 40%;
+		font-size: 13px;
+		margin-top: 32%;
+		padding: 2px;
+	}
+
+	.botonAtrasEstG {
+		padding: 5px;
+		font-size: 13px;
+		margin-top: 1%; 
+		margin-left: 45%;
+		width: 15%;
+	}
 }
 
 @media(min-width: 360px) and (max-width: 413px){
-.contenedor-principal {
-	margin-top: 2%;
-	width: 95%;	
-	height: 600px;
-	margin-left: 2.5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 96%;	
+		height: 450px;
+		margin-left: 2%;
 	}
 
-#titulo-pagina {
-	margin-top: 10%;
-	font-size: 16px;
-}
-
-#datos_citaG{
-	height: 15%;
-}
-
-#datos_horarioG{
-	height: 15%;
-}
-
-#datos_otrosG{
-	height: 15%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 15%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 15%;
-}
-
-#inputPacienteEstetica{
-	width: 80%;
-	height: 35%;
-	font-size: 10px;
-	margin-left: 10%;
-	margin-top: 3%;
-}
-
-#inputEstilistaG{
-	height: 35%;
-	width: 62%;
-	margin-top: 20%;
-	margin-left: -70%;
-	font-size: 10px;
-}
-
-#inputTipoServicioG{
-	height: 35%;
-	width: 62%;
-	margin-top: 35%;
-	margin-left: -62%;
-	font-size: 10px;
-}
-
-#inputFechaE{
-	font-size: 10px;
-	width: 30%;
-	height: 35%;
-	margin-left: 2%;
-	margin-top: 45%;
-}
-
-#inputServicioG {
-	font-size: 10px;
-	width: 62%;
-	height: 35%;
-	margin-left: 20%;
-	margin-top: 25%;
-}
-
-#inputPrecioS {
-	width: 16%;
-	height: 35%;
-	font-size: 10px;
-	margin-top: 45%;
-	margin-left:1%;
-}
-
-#inputHoraInicio{
-	height: 35%;
-	width: 25%;
-	font-size: 10px;
-	margin-top: 40%;
+	#titulo-pagina {
+		margin-top: 10%;
+		font-size: 16px;
 	}
 
-#inputHoraFinE {
-	height: 35%;
-	width: 27%;
-	font-size: 10px;
-	margin-top: 40%;
-}
+	#datos_citaG{
+		height: 15%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-	margin-top: 40%;
-	font-size: 12px;
-}
+	#datos_horarioG{
+		height: 15%;
+	}
 
-#lblNotas{
-	margin-left: 7%;
-	margin-top: 50%;	
-	font-size: 12px;
-}
+	#datos_otrosG{
+		height: 15%;
+	}
 
-#lblHoraInicio{
-	margin-left: 3%;
-	margin-top: 42%;	
-	font-size: 12px;
-}
+	#notasyobs{
+		width: 100%;
+		height: 15%;
+	}
 
-#lblHoraFinE{
-	margin-left: 5%;
-	margin-top: 42%;
-	font-size: 12px;	
-}
+	#botonAgregarEG {
+		width: 100%;
+		height: 20%;
+	}
 
-#lblPrecioS {
-	font-size: 12px;
-	margin-top: 47%;
-	margin-left:-62%;
-}
+	#inputPacienteEstetica{
+		width: 80%;
+		height: 40%;
+		font-size: 10px;
+		margin-left: 10%;
+		border-radius: 8px;
+		margin-top: 3%;
+	}
 
-#lblFechaE{
-	font-size: 12px;
-	margin-top: 47%;
-	margin-left: 1%;		
-}
-/*Botones*/
+	#inputEstilistaG{
+		height: 40%;
+		width: 80%;
+		border-radius: 8px;
+		margin-top: 15%;
+		margin-left: -80%;
+		font-size: 10px;
+	}
 
-.botonAgregarG {
-    height: 40%;
-    margin-left: 40%;
-	font-size: 12px;
-    margin-top: 50%;
-    padding: 4px;
-}
+	#inputTipoServicioG{
+		height: 40%;
+		width: 80%;
+		border-radius: 8px;
+		margin-top: 27%;
+		margin-left: -80%;
+		font-size: 10px;
+	}
+
+	#inputFechaE{
+		font-size: 10px;
+		width: 30%;
+		border-radius: 8px;
+		height: 40%;
+		margin-left: 2%;
+		margin-top: 35%;
+	}
+
+	#inputServicioG {
+		font-size: 10px;
+		width: 80%;
+		border-radius: 8px;
+		height: 40%;
+		margin-left: 10%;
+		margin-top: 20%;
+	}
+
+	#inputPrecioS {
+		width: 16%;
+		border-radius: 8px;
+		height: 40%;
+		font-size: 10px;
+		margin-top: 35%;
+		margin-left:1%;
+	}
+
+	#inputHoraInicio{
+		height: 40%;
+		width: 25%;
+		border-radius: 8px;
+		font-size: 10px;
+		margin-top: 30%;
+	}
+
+	#inputHoraFinE {
+		height: 40%;
+		width: 27%;
+		border-radius: 8px;
+		font-size: 10px;
+		margin-top: 30%;
+	}
+
+	#inputNotas {
+		width: 45%;
+		height: 100%;
+		margin-left: 2%;
+		margin-top: 30%;
+		font-size: 12px;
+	}
+
+	#lblNotas{
+		margin-left: 7%;
+		margin-top: 35%;	
+		font-size: 12px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 3%;
+		margin-top: 32%;	
+		font-size: 12px;
+	}
+
+	#lblHoraFinE{
+		margin-left: 5%;
+		margin-top: 32%;
+		font-size: 12px;	
+	}
+
+	#lblPrecioS {
+		font-size: 12px;
+		margin-top: 37%;
+		margin-left:-80%;
+	}
+
+	#lblFechaE{
+		font-size: 12px;
+		margin-top: 37%;
+		margin-left: 20%;		
+	}
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 35%;
+		margin-left: 40%;
+		font-size: 12px;
+		margin-top: 37%;
+		padding: 4px;
+	}
+
+	.botonAtrasEstG {
+		padding: 5px;
+		font-size: 13px;
+		margin-top: 1%; 
+		margin-left: 46%;
+		width: 15%;
+	}
 }
 
 
 @media(max-width: 359px){
-.contenedor-principal {
-	margin-top: 2%;
-	width: 95%;	
-	height: 600px;
-	margin-left: 2.5%;
+	.contenedor-principal {
+		margin-top: 2%;
+		width: 95%;	
+		height: 500px;
+		margin-left: 2.5%;
 	}
 
-#titulo-pagina {
-	margin-top: 10%;
-	font-size: 14px;
-}
-
-#datos_citaG{
-	height: 15%;
-}
-
-#datos_horarioG{
-	height: 15%;
-}
-
-#datos_otrosG{
-	height: 15%;
-}
-
-#notasyobs{
-	width: 100%;
-	height: 15%;
-}
-
-#botonAgregarEG {
-	width: 100%;
-	height: 15%;
-}
-
-#inputPacienteEstetica{
-	width: 80%;
-	height: 35%;
-	font-size: 10px;
-	margin-left: 10%;
-	margin-top: 3%;
-}
-
-#inputEstilistaG{
-	height: 32%;
-	width: 62%;
-	margin-top: 20%;
-	margin-left: -70%;
-	font-size: 9px;
-}
-
-#inputTipoServicioG{
-	height: 32%;
-	width: 62%;
-	margin-top: 40%;
-	margin-left: -62%;
-	font-size: 9px;
-}
-
-#inputFechaE{
-	font-size: 9px;
-	width: 31%;
-	height: 30%;
-	margin-left: 2%;
-	margin-top: 50%;
-}
-
-#inputServicioG {
-	font-size: 10px;
-	width: 62%;
-	height: 32%;
-	margin-left: 20%;
-	margin-top: 30%;
-}
-
-#inputPrecioS {
-	width: 16%;
-	height: 30%;
-	font-size: 10px;
-	margin-top: 50%;
-	margin-left:1%;
-}
-
-#inputHoraInicio{
-	height: 30%;
-	width: 30%;
-	font-size: 11px;
-	margin-top: 45%;
+	#titulo-pagina {
+		margin-top: 10%;
+		font-size: 14px;
 	}
 
-#inputHoraFinE {
-	height: 30%;
-	width: 30%;
-	font-size: 11px;
-	margin-top: 45%;
-	margin-left: 1%;
-}
+	#datos_citaG{
+		height: 15%;
+	}
 
-#inputNotas {
-	width: 45%;
-	height: 100%;
-	margin-left: 2%;
-	margin-top: 45%;
-	font-size: 12px;
-}
+	#datos_horarioG{
+		height: 15%;
+	}
 
-#lblNotas{
-	margin-left: 7%;
-	margin-top: 57%;	
-	font-size: 10px;
-}
+	#datos_otrosG{
+		height: 15%;
+	}
 
-#lblHoraInicio{
-	margin-left: 3%;
-	margin-top: 47%;	
-	font-size: 10px;
-}
+	#notasyobs{
+		width: 100%;
+		height: 15%;
+	}
 
-#lblHoraFinE{
-	margin-left: 1%;
-	margin-top: 47%;
-	font-size: 10px;	
-}
+	#botonAgregarEG {
+		width: 100%;
+		height: 15%;
+	}
 
-#lblPrecioS {
-	font-size: 10px;
-	margin-top: 52%;
-	margin-left:-62%;
-}
+	#inputPacienteEstetica{
+		width: 80%;
+		height: 32%;
+		border-radius: 8px;
+		font-size: 10px;
+		margin-left: 10%;
+		margin-top: 3%;
+	}
 
-#lblFechaE{
-	font-size: 10px;
-	margin-top: 52%;
-	margin-left:1%;	
-}
-/*Botones*/
+	#inputEstilistaG{
+		height: 32%;
+		width: 80%;
+		border-radius: 8px;
+		margin-top: 20%;
+		margin-left: -80%;
+		font-size: 9px;
+	}
 
-.botonAgregarG {
-    height: 40%;
-    margin-left: 40%;
-	font-size: 10px;
-    margin-top: 55%;
-    padding: 1px;
-}
+	#inputTipoServicioG{
+		height: 32%;
+		width: 80%;
+		margin-top: 35%;
+		border-radius: 8px;
+		margin-left: -80%;
+		font-size: 9px;
+	}
+
+	#inputFechaE{
+		font-size: 9px;
+		border-radius: 8px;
+		width: 31%;
+		height: 30%;
+		margin-left: 2%;
+		margin-top: 45%;
+	}
+
+	#inputServicioG {
+		border-radius: 8px;
+		font-size: 10px;
+		width: 80%;
+		height: 32%;
+		margin-left: 10%;
+		margin-top: 27%;
+	}
+
+	#inputPrecioS {
+		width: 16%;
+		height: 30%;
+		border-radius: 8px;
+		font-size: 10px;
+		margin-top: 45%;
+		margin-left:1%;
+	}
+
+	#inputHoraInicio{
+		height: 30%;
+		border-radius: 8px;
+		width: 30%;
+		font-size: 10px;
+		margin-top: 40%;
+	}
+
+	#inputHoraFinE {
+		height: 30%;
+		border-radius: 8px;
+		width: 30%;
+		font-size: 10px;
+		margin-top: 40%;
+		margin-left: 1%;
+	}
+
+	#inputNotas {
+		width: 45%;
+		height: 100%;
+		margin-left: 2%;
+		margin-top: 35%;
+		font-size: 10px;
+	}
+
+	#lblNotas{
+		margin-left: 7%;
+		margin-top: 47%;	
+		font-size: 10px;
+	}
+
+	#lblHoraInicio{
+		margin-left: 3%;
+		margin-top: 42%;	
+		font-size: 10px;
+	}
+
+	#lblHoraFinE{
+		margin-left: 1%;
+		margin-top: 42%;
+		font-size: 10px;	
+	}
+
+	#lblPrecioS {
+		font-size: 10px;
+		margin-top: 47%;
+		margin-left:-80%;
+	}
+
+	#lblFechaE{
+		font-size: 10px;
+		margin-top: 47%;
+		margin-left:12%;	
+	}
+	/*Botones*/
+
+	.botonAgregarG {
+		height: 40%;
+		margin-left: 40%;
+		font-size: 10px;
+		margin-top: 45%;
+		padding: 1px;
+	}
+
+	.botonAtrasEstG {
+		padding: 5px;
+		font-size: 10px;
+		margin-top: 1%; 
+		margin-left: 46%;
+		width: 15%;
+	}
 }

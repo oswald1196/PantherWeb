@@ -38,7 +38,9 @@ if ($_SESSION["autenticado"] != "SI") {
 <body>
 
   <?php
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
+  $cMedico = base64_decode($_GET['cm']);
+  
   //Codigo Paciente
   $fecha_actual = date("Y-m-d");
 
@@ -68,7 +70,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <select id="selectPacienteC" name="paciente">
         <option value="">Elige paciente</option>
         <?php 
-        $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
+        $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigo' ORDER BY vchNombrePaciente";
         $query = mysqli_query($conn,$sql);
         while ($pacientes = mysqli_fetch_array($query)) {
           ?>
@@ -99,7 +101,7 @@ if ($_SESSION["autenticado"] != "SI") {
         $fecha_actual = date("Y-m-d");
         ?>
 
-        <input type="hidden" name="empresa" value="<?php echo $codigoE ?>">
+        <input type="hidden" name="empresa" value="<?php echo $codigo ?>">
         <input type="hidden" name="fecha" value="<?php echo $fecha_actual ?>">
 
 
@@ -149,7 +151,7 @@ if ($_SESSION["autenticado"] != "SI") {
     <option value="" required>MÉDICO</option>
     <?php
         //Consulta para obtener medicos
-    $consulta = "SELECT iCodMedico, vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombre ASC";
+    $consulta = "SELECT iCodMedico, vchNombre, vchPaterno, vchMaterno FROM CatMedico WHERE iCodEmpresa = '$codigo' ORDER BY vchNombre ASC";
 
     $result = mysqli_query($conn,$consulta);
     while ($medico = mysqli_fetch_array($result)) {
@@ -177,7 +179,7 @@ if ($_SESSION["autenticado"] != "SI") {
     <option value="">SERVICIO</option> 
 
     <?php
-    $consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
+    $consulta = "SELECT iCodServicio, dPrecioMenudeo, vchDescripcion, dPrecioCosto FROM CatServicios WHERE iCodTipoServicio = 2 AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion";
     $result = mysqli_query($conn,$consulta);
     while ($servicio = mysqli_fetch_array($result)) {
       ?>
@@ -192,7 +194,7 @@ if ($_SESSION["autenticado"] != "SI") {
   <script type="text/javascript">
     function obtenerPrecio() {
       var iCodServicio = document.getElementById("selectServicio").value;
-      var id = <?= json_encode($codigoE) ?>;
+      var id = <?= json_encode($codigo) ?>;
 
       $.post('obtenerPrecioConsulta.php', { iCodServicio: iCodServicio, id: id }, function(data){
         $("#inputCostoS").html(data);

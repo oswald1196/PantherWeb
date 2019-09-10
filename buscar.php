@@ -4,6 +4,7 @@
     $salida = "";
     //$codigoE = base64_decode($_GET['id']);
     $codigo = json_decode($_POST['id']);
+    $cMedico = json_decode($_POST['cm']);
 
     $query = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigo'";
 
@@ -45,11 +46,10 @@
 
                 while($fila = mysqli_fetch_array($resultado)){
                         $iCodPac = $fila['iCodPaciente'];
-                        $iCodE = $fila['iCodEmpresa'];
-                    
+                        $iCodE = $fila['iCodEmpresa'];                    
                         
                 $salida.="<tr class='table100-head' >
-                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&cod=$iCodPac'</a> </td>
+                    <td class='column1'>".$fila['vchRaza']."<a href='menu_pacientes.php?id=$iCodE&cod=$iCodPac&cm=$cMedico'</a> </td>
                     <td class='column2'>".$fila['vchNombrePaciente']."</td>
                     <td class='column3'>".$fila['dtFecNacimiento']."</td>
                     <td class='column4'>".$fila['vchNombre']." ".$fila['vchPaterno']." ".$fila['vchMaterno']."</td>

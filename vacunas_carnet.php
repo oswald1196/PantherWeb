@@ -32,8 +32,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	<body>
 
 <?php
-	$codigoE = base64_decode($_GET['id']);
+	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
+    $cMedico = base64_decode($_GET['cm']);
 
 	include('header.php');
 ?>
@@ -51,7 +52,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_add" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_add" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacuna">
                     <tbody>
@@ -70,10 +71,7 @@ if ($_SESSION["autenticado"] != "SI") {
                     </thead>
                 <?php
 
-                $query = "SELECT DISTINCT TRV.iCodTranRegistroVacunas, TRV.sVacunaAplicada, CL.vchDescripcion, TRV.sNumeroLote, TRV.sFecha, TRV.sFechaCaducidad, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.dPeso FROM TranRegistroVacunas TRV INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TRV.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodVacuna DESC";
-
-              
-
+                $query = "SELECT DISTINCT TRV.iCodTranRegistroVacunas, TRV.sVacunaAplicada, CM.vchMarca, TRV.sNumeroLote, TRV.sFecha, TRV.sFechaCaducidad, TRV.sProximaVacuna, TRV.sFechaProgramada, TRV.dPeso FROM TranRegistroVacunas TRV INNER JOIN CatMarcas CM On CM.iCodMarca = TRV.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' AND CM.iCodEmpresa = '$codigo' ORDER BY iCodVacuna DESC";
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
                 	
@@ -86,7 +84,7 @@ if ($_SESSION["autenticado"] != "SI") {
                     <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <a href="eliminar_vacuna.php?id=<?php echo $fila['iCodTranRegistroVacunas'] ?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columna8"> <a href="eliminar_vacuna.php?idD=<?php echo $fila['iCodTranRegistroVacunas'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}

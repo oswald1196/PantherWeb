@@ -7,7 +7,6 @@ include('conexion.php');
     $consulta = "SELECT dStockActual FROM CatProductos WHERE iCodProducto = '$codigoProd' AND iCodEmpresa = '$codigo'";
 	$result = mysqli_query($conn,$consulta);
 	$html = "";
-
 	while($row = $result->fetch_assoc()){
 
 	$html .= "".$row['dStockActual']."";

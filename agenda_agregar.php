@@ -42,23 +42,26 @@ if ($_SESSION["autenticado"] != "SI") {
 <body>
 
   <?php
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
   $codigoP = base64_decode($_GET['codigo']);
+  $cMedico = base64_decode($_GET['cm']);
+  $fecha_actual = date("Y-m-d");
+
   include('header.php');
   include ('conexion.php');
   ?>
 
   <script type="text/javascript">
     window.onload = function(){
-  var fecha = new Date(); //Fecha actual
-  var mes = fecha.getMonth()+1; //obteniendo mes
-  var dia = fecha.getDate(); //obteniendo dia
-  var ano = fecha.getFullYear(); //obteniendo año
-  if(dia<10)
-    dia='0'+dia; //agrega cero si el menor de 10
-  if(mes<10)
-    mes='0'+mes //agrega cero si el menor de 10
-  document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
+var fecha = new Date(); //Fecha actual
+var mes = fecha.getMonth()+1; //obteniendo mes
+var dia = fecha.getDate(); //obteniendo dia
+var ano = fecha.getFullYear(); //obteniendo año
+if(dia<10)
+  dia='0'+dia; //agrega cero si el menor de 10
+if(mes<10)
+  mes='0'+mes //agrega cero si el menor de 10
+document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
 }
 </script>
 
@@ -92,6 +95,8 @@ if ($_SESSION["autenticado"] != "SI") {
       <label for="inputhoraini" id="lblHoraInicio">Hora inicio </label>
       <input type="time" id="inputhoraini" name="horaInicio" value="" >
       <label for="inputMotivo" id="lblTodoDia">Todo el día</label>
+      <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+
 
       <!--Original-->
       <input type="checkbox" id="chkTodoDia" name="diaCita" onchange="validar(this.checked);">
@@ -118,7 +123,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <select id="inputMotivos" name="codigoMotivo">
         <option value="">SELECCIONE UN MOTIVO</option>
         <?php
-        $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$codigoE'";
+        $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$codigo'";
         $result = mysqli_query($conn,$consulta);
         while ($motivos = mysqli_fetch_array($result)) {
           ?>
@@ -135,66 +140,78 @@ if ($_SESSION["autenticado"] != "SI") {
         </form>
       </div>
     </div>
-      <div id="div_boton">
-        <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit"> <i class="fas fa-plus-square"></i>&nbsp;&nbsp; Agregar cita</button>
-      </div>
-    </form> 
+    <div id="div_boton">
+      <button class="botonAgregar" id="btnAgregarCita" onclick="return validarFormCita();" type="submit"> <i class="fas fa-plus-square"></i>&nbsp;&nbsp; Agregar cita</button>
+    </div>
+  </form> 
 
-  </div>
+</div>
 
-  <button class="botonAtrasCita" onclick="goBack();"> Atrás </button>
+<button class="botonAtrasCita" onclick="goBack();"> Atrás </button>
 
-  <script>
-    function goBack() {
-      window.history.go(-1);
-    }
-  </script>  
+<script>
+  function goBack() {
+    window.history.go(-1);
+  }
+</script>  
 
-  <script type="text/javascript">
-    function validarFormCita() {
-      var motivos = document.getElementById("inputMotivos").value;
-      var txtHoraCita = document.getElementById("inputhoraini").value;
-      var datos = $('#frmAgenda').serialize();
+<script type="text/javascript">
+  function validarFormCita() {
+    var motivos = document.getElementById("inputMotivos").value;
+    var txtHoraCita = document.getElementById("inputhoraini").value;
+    var fechaHoy = document.getElementById("fechaActual").value;
+    var fechaCita = document.getElementById("inputfecha1").value;
 
-      if(txtHoraCita == ""){
-        Swal.fire({
-          type:'error',
-          title: 'ERROR',
-          text:'ELIGE LA HORA'
-        });       
-        return false;
-      }
+    var datos = $('#frmAgenda').serialize();
 
-      if(motivos == ""){
-        Swal.fire({
-          type:'error',
-          title: 'ERROR',
-          text:'ELIGE EL MOTIVO'
-        });      
-        return false;
-      }
-
-      $.ajax({
-        type: "POST",
-        url: "insertar_cita.php",
-        data: datos,
-        success:function(r){
-          if (r==1){
-            alert("Error");
-          }
-          else{
-            Swal.fire({
-              type:'success',
-              title: 'CORRECTO',
-              text:'CITA AGREGADA CORRECTAMENTE'
-            }) 
-          }
-        }
-      });
+    if(fechaCita < fechaHoy){
+      Swal.fire({
+        type:'error',
+        title: 'ERROR',
+        text:'LA FECHA DEBE SER MAYOR AL DÍA DE HOY'
+      });       
       return false;
-      return true;
     }
-  </script>
+
+    if(txtHoraCita == ""){
+      Swal.fire({
+        type:'error',
+        title: 'ERROR',
+        text:'ELIGE LA HORA'
+      });       
+      return false;
+    }
+
+    if(motivos == ""){
+      Swal.fire({
+        type:'error',
+        title: 'ERROR',
+        text:'ELIGE EL MOTIVO'
+      });      
+      return false;
+    }
+
+    $.ajax({
+      type: "POST",
+      url: "insertar_cita.php",
+      data: datos,
+      success:function(r){
+        if (r==1){
+          alert("Error");
+        }
+        else{
+          Swal.fire({
+            type:'success',
+            title: 'CORRECTO',
+            text:'CITA AGREGADA CORRECTAMENTE'
+          }) 
+        }
+      }
+    });
+    return false;
+    return true;
+  }
+</script>
 </body>
 </html>
 

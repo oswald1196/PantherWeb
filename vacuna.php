@@ -41,9 +41,10 @@ if ($_SESSION["autenticado"] != "SI") {
 
   <?php
 //Codigo Empresa
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
   //Codigo Paciente
   $codigoP = base64_decode($_GET['codigo']);
+  $cMedico = base64_decode($_GET['cm']);
 
   include('header.php');
   include ('conexion.php');
@@ -100,7 +101,7 @@ $fecha_actual = date("Y-m-d");
           <option value="">Elegir Laboratorio</option>
           <!--:v-->
           <?php
-          $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigoE' ORDER BY vchMarca ASC";
+          $consulta = "SELECT iCodMarca,vchMarca FROM CatMarcas WHERE iCodTipoProducto = 5 AND iCodEmpresa = '$codigo' ORDER BY vchMarca ASC";
           $result = mysqli_query($conn,$consulta);
           while ($marcas = mysqli_fetch_array($result)) {
             ?>
@@ -113,7 +114,7 @@ $fecha_actual = date("Y-m-d");
         <script type="text/javascript">
           function ShowSelected(){
             var codigoMarca = document.getElementById("inputLab").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtener_vacuna.php', { iCodMarca: codigoMarca, id: id }, function(data){
               $('#inputProducto').html(data);
             });
@@ -122,7 +123,7 @@ $fecha_actual = date("Y-m-d");
           function ShowSelectedTwo(){
 
             var codigoProducto = document.getElementById("inputProducto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerLote.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputLoteVac').html(data);
             });  
@@ -132,7 +133,7 @@ $fecha_actual = date("Y-m-d");
         <script type="text/javascript">
           function precioVacuna(){
             var codigoProducto = document.getElementById("inputProducto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecio.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputPrecioVac').html(data);
               document.getElementById("inputPrecioVac").value = data;
@@ -142,7 +143,7 @@ $fecha_actual = date("Y-m-d");
 
           function precioVacunaLote(){
             var codigoProducto = document.getElementById("inputLoteVac").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecioLote.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#PrecioLote').html(data);
               document.getElementById("inputPrecioVac").value = data;
@@ -152,7 +153,7 @@ $fecha_actual = date("Y-m-d");
 
           function stockVacuna(){
             var codigoProducto = document.getElementById("inputProducto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStock.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#PrecioLote').html(data);
               document.getElementById("inputStockVac").value = data;
@@ -174,7 +175,7 @@ $fecha_actual = date("Y-m-d");
 
           function stockMinimoVacuna(){
             var codigoProducto = document.getElementById("inputProducto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStockMinimo.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#stockM').html(data);
               document.getElementById("inputStockMinVac").value = data;
@@ -191,7 +192,7 @@ $fecha_actual = date("Y-m-d");
 
           function caducidadVacuna(){
             var codigoProducto = document.getElementById("inputLoteVac").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerCaducidad.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("inputFechaCad").value = data;
@@ -201,7 +202,7 @@ $fecha_actual = date("Y-m-d");
 
           function getTipo(){
             var codigoProducto = document.getElementById("inputProducto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("tipoProducto").value = data;
@@ -267,7 +268,7 @@ $fecha_actual = date("Y-m-d");
   <select id="inputProxima" name="motivoProxima">
     <option value="">VACUNA</option>
     <?php
-    $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5 AND iCodMarca = 1000 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion";
+    $consulta = "SELECT * FROM CatProductos WHERE iCodTipoProducto = 5 AND iCodMarca = 1000 AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion";
     $result = mysqli_query($conn,$consulta);
     while ($motivos = mysqli_fetch_array($result)) {
       ?>
@@ -391,8 +392,6 @@ $.ajax({
   }
 });
 return false;
-
-
 return true;
 }
 </script>
@@ -401,7 +400,7 @@ return true;
 </form>  
 </div>  
 
-<button class="botonAtrasVG" onclick="goBack();"> Atrás </button>
+<button class="botonAtrasV" onclick="goBack();"> Atrás </button>
 
 <script>
   function goBack() {

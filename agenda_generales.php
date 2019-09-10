@@ -36,7 +36,9 @@ require 'conexion.php';
 <body>
 
   <?php
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
+  $cMedico = base64_decode($_GET['cm']);
+  
   include('header.php');
   include ('conexion.php');
   ?>
@@ -59,12 +61,12 @@ require 'conexion.php';
 
 <div class="contenedor_principal">
   <form class="form_add_cita" id="frmAgenda" action="insertar_citas_generales.php" method="POST" onsubmit="return validarForm();">
-    <input type="hidden" name="empresa" value="<?php echo $codigoE?>">
+    <input type="hidden" name="empresa" value="<?php echo $codigo?>">
     <label id="lblPacientes">Paciente</label>
     <select id="selectPacientes" name="paciente">
       <option value="">SELECCIONE UN PACIENTE</option>
       <?php
-      $paciente = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigoE' ORDER BY vchNombrePaciente";
+      $paciente = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigo' ORDER BY vchNombrePaciente";
       $resultado = mysqli_query($conn,$paciente);
       while ($pacientes = mysqli_fetch_array($resultado)) {
         ?>
@@ -104,7 +106,7 @@ require 'conexion.php';
       <select id="inputMotivos" name="codigoMotivo">
         <option value="">SELECCIONE UN MOTIVO</option>
         <?php
-        $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$codigoE'";
+        $consulta = "SELECT * FROM CatMotivos WHERE iCodEmpresa = '$codigo'";
         $result = mysqli_query($conn,$consulta);
         while ($motivos = mysqli_fetch_array($result)) {
           ?>

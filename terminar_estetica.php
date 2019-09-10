@@ -3,7 +3,7 @@
 
 	$id = $_REQUEST['idEst'];
 
-	$sql = "DELETE FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
+    $sql = "UPDATE TranAgendaEstetica SET iCodEstatus = 3 WHERE iCodTranAgendaEstetica = '$id'";
 
 	$resultado = mysqli_query($conn,$sql);
 ?>

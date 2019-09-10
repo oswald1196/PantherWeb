@@ -49,6 +49,7 @@ ul, li {
   height: 35px;
   width: 300px;
   border-radius: 5px;
+  margin-top: 5%;
 }
 
 #lblBusqueda {

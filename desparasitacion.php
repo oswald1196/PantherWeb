@@ -37,7 +37,8 @@ if ($_SESSION["autenticado"] != "SI") {
 <body>
 
   <?php
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
+  $cMedico = base64_decode($_GET['cm']);
 
   $fecha_actual = date("Y-m-d");
 
@@ -102,7 +103,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <select id="inputProductoD" name="codigoDesp" onchange="ShowSelected(); precioDesp(); stockDesparasitante(); stockMinimoDesp(); getTipo();">
           <option value="">Elegir desparasitante</option>
           <?php
-          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 3 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
+          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 3 AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion ASC";
           $result = mysqli_query($conn,$consulta);
           while ($producto = mysqli_fetch_array($result)) {
             ?>
@@ -115,7 +116,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <script type="text/javascript">
           function ShowSelected(){
             var codigoProducto = document.getElementById("inputProductoD").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerLote.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputLoteDes').html(data);
             }); 
@@ -125,7 +126,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <script type="text/javascript">
           function precioDesp(){
             var codigoProducto = document.getElementById("inputProductoD").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecio.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#inputPrecioVac').html(data);
               document.getElementById("inputPrecioDes").value = data;
@@ -135,7 +136,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function stockDesparasitante(){
             var codigoProducto = document.getElementById("inputProductoD").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStock.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#stockD').html(data);
               document.getElementById("inputStockDesp").value = data;
@@ -156,7 +157,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function stockMinimoDesp(){
             var codigoProducto = document.getElementById("inputProductoD").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStockMinimo.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#stockMin').html(data);
               document.getElementById("inputStockMinDesp").value = data;
@@ -173,7 +174,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function precioDespLote(){
             var codigoProducto = document.getElementById("inputLoteDes").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecioLote.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#PrecioLote').html(data);
               document.getElementById("inputPrecioDes").value = data;
@@ -183,7 +184,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function caducidadDesp(){
             var codigoProducto = document.getElementById("inputLoteDes").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerCaducidad.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("inputFechaCadDes").value = data;
@@ -193,7 +194,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function stockXLote(){
             var codigoProducto = document.getElementById("inputLoteDes").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStockXLote.php', { iCodProductoLote: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("inputStockLote").value = data;
@@ -203,7 +204,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function getTipo(){
             var codigoProducto = document.getElementById("inputProductoD").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("tipoProducto").value = data;
@@ -404,7 +405,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <script>
   function goBack() {
-    window.history.go(-1);
+    window.history.go(-2)
   }
 </script>
 </body>

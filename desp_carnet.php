@@ -31,8 +31,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	<body>
 
 <?php
-	$codigoE = base64_decode($_GET['id']);
+	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
+    $cMedico = base64_decode($_GET['cm']);
 
 	include('header.php');
 ?>
@@ -49,7 +50,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <p id="lblCita"> Desparasitaciones de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedorD">
-      	 <button class="botonAddVacunaD"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddVacunaD"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_vacunaD">
                     <tbody>
@@ -67,7 +68,9 @@ if ($_SESSION["autenticado"] != "SI") {
                         </tr>
                     </thead>
                 <?php
-                  $query = "SELECT DISTINCT TD.iCodTranDesparacitacion, TD.sProductoAplicado, CL.vchDescripcion, TD.sNumeroLote, TD.sFecha, TD.sFechaCaducidad, TD.sObservaciones, TD.sFechaProxima, TD.dPeso FROM TranDesparacitacion TD INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TD.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";
+                  /*$query = "SELECT DISTINCT TD.iCodTranDesparacitacion, TD.sProductoAplicado, CM.vchMarca, TD.sNumeroLote, TD.sFecha, TD.sFechaCaducidad, TD.sObservaciones, TD.sFechaProxima, TD.dPeso FROM TranDesparacitacion TD INNER JOIN CatMarcas CM On CM.iCodMarca = TD.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";*/
+
+                  $query = "SELECT iCodTranDesparacitacion, sProductoAplicado, sNumeroLote, sFecha, sFechaCaducidad, sObservaciones, sFechaProxima, dPeso FROM TranDesparacitacion WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodDesparacitacion DESC";
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
@@ -81,7 +84,7 @@ if ($_SESSION["autenticado"] != "SI") {
                     <td class="columna5D"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6D"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7D"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8D"> <a href="eliminar_desp.php?id=<?php echo $fila['iCodTranDesparacitacion'] ?>" onclick="return alert_eliminarDesp();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columna8D"> <a href="eliminar_desp.php?idD=<?php echo $fila['iCodTranDesparacitacion']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarDesp();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}

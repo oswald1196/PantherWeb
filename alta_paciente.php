@@ -1,6 +1,6 @@
 <?php
 $codigo = base64_decode($_GET['id']);
-$codigoM = base64_decode($_GET['cm']);
+$cMedico = base64_decode($_GET['cm']);
 
 include('conexion.php');
 include('header.php');
@@ -65,7 +65,7 @@ $fecha_actual = date("Y-m-d");
     </div>
     <div class="form-row">
       <?php 
-      $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo' AND iCodMedico = '$codigoM'";
+      $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo' AND iCodMedico = '$cMedico'";
       $query = mysqli_query($conn,$sql);
       $datos = mysqli_fetch_assoc($query);
       ?>

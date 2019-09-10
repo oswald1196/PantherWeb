@@ -32,8 +32,10 @@ if ($_SESSION["autenticado"] != "SI") {
 	<body>
 
 <?php
-	$codigoE = base64_decode($_GET['id']);
+	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
+    $cMedico = base64_decode($_GET['cm']);
+
 	include('header.php');
 ?>
 
@@ -50,7 +52,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <p id="lblCita"> Ectoparásitos de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
   <div id="contenedor">
-      	 <button class="botonAddEcto"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addE" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      	 <button class="botonAddEcto"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addE" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
                     <table id="carnet_ecto">
                     <tbody>
@@ -68,7 +70,7 @@ if ($_SESSION["autenticado"] != "SI") {
                     </thead>
                 <?php
 
-                $query = "SELECT DISTINCT TE.iCodTranHecto, TE.sProductoAplicado, CL.vchDescripcion, TE.sNumeroLote, TE.sFecha, TE.sFechaCaducidad, TE.sObservaciones, TE.sFechaProxima FROM TranHecto TE INNER JOIN CatLaboratorios CL On CL.iCodLaboratorio = TE.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodHecto DESC";
+                $query = "SELECT iCodTranHecto, sProductoAplicado, sNumeroLote, sFecha, sFechaCaducidad, sObservaciones, sFechaProxima FROM TranHecto WHERE iCodPaciente = '$codigoPaciente' ORDER BY iCodHecto DESC";
 
     			$resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
@@ -81,7 +83,7 @@ if ($_SESSION["autenticado"] != "SI") {
                     <td class="columna5E"> <?php echo $fila['sFechaProxima'] ?></td>
                     <td class="columna6E"> <?php echo $fila['sNumeroLote'] ?> </td>
                     <td class="columna7E"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8E"> <a href="eliminar_ecto.php?id=<?php echo $fila['iCodTranHecto'] ?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+                    <td class="columna8E"> <a href="eliminar_ecto.php?idD=<?php echo $fila['iCodTranHecto'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
                 </tr>
             <?php
       			}

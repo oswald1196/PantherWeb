@@ -40,8 +40,9 @@ if ($_SESSION["autenticado"] != "SI") {
 <body>
 
   <?php
-  $codigoE = base64_decode($_GET['id']);
+  $codigo = base64_decode($_GET['id']);
   //Codigo Paciente
+    $cMedico = base64_decode($_GET['cm']);
   $codigoP = base64_decode($_GET['codigo']);	
   $fecha_actual = date("Y-m-d");
 
@@ -91,7 +92,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto(); getTipo();">
           <option value="">ELEGIR PRODUCTO</option>
           <?php
-          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
+          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion ASC";
           $result = mysqli_query($conn,$consulta);
           while ($producto = mysqli_fetch_array($result)) {
             ?>
@@ -104,7 +105,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <script type="text/javascript">
           function ShowSelected(){
             var iCodProducto = document.getElementById("inputProductoE").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerLote.php', { iCodProducto: iCodProducto, id: id }, function(data){
               $('#inputLoteEcto').html(data);
             }); 
@@ -112,7 +113,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function obtenerPrecioEcto(){
             var iCodProducto = document.getElementById("inputProductoE").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecio.php', { iCodProducto: iCodProducto, id: id }, function(data){
               $('#inputPrecio').html(data);
               document.getElementById("inputPrecio").value = data;
@@ -121,7 +122,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function precioEcto(){
             var iCodProductoLote = document.getElementById("inputLoteEcto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerPrecioLote.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
               $('#precio').html(data);
               document.getElementById("inputPrecio").value = data;
@@ -130,7 +131,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function getCaducidad(){
             var iCodProductoLote = document.getElementById("inputLoteEcto").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerCaducidad.php', { iCodProductoLote: iCodProductoLote, id: id }, function(data){
               $('#cad').html(data);
               document.getElementById("inputFechaCad").value = data;
@@ -139,9 +140,9 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function stockEcto(){
             var iCodProducto = document.getElementById("inputProductoE").value;
-            var id = <?= json_encode($codigoE) ?>;
-            $.post('obtenerStock.php', { iCodProducto: iCodProducto, id: id }, function(data){
-              $('#stock').html(data);
+            var id = <?= json_encode($codigo) ?>;
+            $.post('obtenerStock.php', { iCodProducto: iCodProducto, id: id }, function(data){              
+              $('#inputStockEcto').html(data);
               document.getElementById("inputStockEcto").value = data;
               if(data == 0){
                 Swal.fire({
@@ -150,7 +151,6 @@ if ($_SESSION["autenticado"] != "SI") {
                   text:'¡EL ECTOPARÁSITO SELECCIONADO NO TIENE LOTES, FAVOR DE SELECCIONAR OTRO!'
                 });
                 document.getElementById("inputLoteEcto").disabled=true;
-                break;
               }
               else {
                 document.getElementById("inputLoteEcto").disabled=false;
@@ -161,7 +161,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function stockMinimoEcto(){
             var codigoProducto = document.getElementById("inputProductoE").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerStockMinimo.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#stockMin').html(data);
               document.getElementById("inputStockMinEcto").value = data;
@@ -178,7 +178,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
           function getTipo(){
             var codigoProducto = document.getElementById("inputProductoE").value;
-            var id = <?= json_encode($codigoE) ?>;
+            var id = <?= json_encode($codigo) ?>;
             $.post('obtenerTipoProducto.php', { iCodProducto: codigoProducto, id: id }, function(data){
               $('#tipo').html(data);
               document.getElementById("tipoProducto").value = data;
@@ -342,7 +342,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <script>
   function goBack() {
-    window.history.go(-1);
+    window.history.go(-2);
   }
 </script> 
 </body>

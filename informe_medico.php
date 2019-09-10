@@ -32,8 +32,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	<body>
 
 <?php
-	$codigoE = base64_decode($_GET['id']);
+	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
+  $cMedico = base64_decode($_GET['cm']);
 
 	include('header.php');
 ?>
@@ -50,11 +51,11 @@ if ($_SESSION["autenticado"] != "SI") {
       <p id="lblCita"> Informes médicos de: <?php echo $row['vchNombrePaciente']; ?> </p>
     </div>
 
-	<button class="botonAddInformeM"> <a href="consultas.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>"> Agregar <img id="simbolo_addI" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+	<button class="botonAddInformeM"> <a href="consultas.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addI" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 	
 	<?php
 
-    $query = "SELECT DISTINCT TI.iCodTranInformeMedico, TI.iCodPaciente, TI.iCodInformeMedico, TI.iCodMedico, TI.vchNumInformeMedico, TI.vchProblema,  TI.dtFechaInformeMedico, TI.siAtencion, TI.vchMotivo As sMotivoConsulta, TI.dtFechaSintomatologia, TI.vchNota, TI.iInformeMedico, CONCAT (CM.vchNombre, ' ', CM.vchPaterno, ' ', CM.vchMaterno) As vchMedico, TI.siFrecuenciaCardiaca, TI.dTemperatura, TI.siFrecuenciaRespiratoria, TI.siCodMucosa, TI.sMucosa, TI.iTiempoLlenadoCapilar, TI.dPeso, TI.siPadecimiento, TI.sDiagnosticoPresuntivo, TI.sDiagnosticoDiferencial, TI.sPruebasRequeridas, TI.sResultado, TI.siDiagnostico, TI.vchProblema, TI.iCodServicio, TI.vchServicio, TI.dPrecioMenudeo, TI.dPrecioCosto, TI.iCodCuentaCliente, TI.vchReceta, TI.dMeses, TI.dAltura, TI.sPresionArterial, TI.dPerimetroCefalico, TI.dNoTransaccionCloud, TI.dtFechaInformeMedico FROM TranInformeMedico TI INNER JOIN CatMedico CM ON CM.iCodMedico = TI.iCodMedico WHERE TI.iCodPaciente = '$codigoPaciente' AND CM.iCodEmpresa = '$codigoE' ORDER BY dtFechaInformeMedico DESC";
+    $query = "SELECT DISTINCT TI.iCodTranInformeMedico, TI.iCodPaciente, TI.iCodInformeMedico, TI.iCodMedico, TI.vchNumInformeMedico, TI.vchProblema,  TI.dtFechaInformeMedico, TI.siAtencion, TI.vchMotivo As sMotivoConsulta, TI.dtFechaSintomatologia, TI.vchNota, TI.iInformeMedico, CONCAT (CM.vchNombre, ' ', CM.vchPaterno, ' ', CM.vchMaterno) As vchMedico, TI.siFrecuenciaCardiaca, TI.dTemperatura, TI.siFrecuenciaRespiratoria, TI.siCodMucosa, TI.sMucosa, TI.iTiempoLlenadoCapilar, TI.dPeso, TI.siPadecimiento, TI.sDiagnosticoPresuntivo, TI.sDiagnosticoDiferencial, TI.sPruebasRequeridas, TI.sResultado, TI.siDiagnostico, TI.vchProblema, TI.iCodServicio, TI.vchServicio, TI.dPrecioMenudeo, TI.dPrecioCosto, TI.iCodCuentaCliente, TI.vchReceta, TI.dMeses, TI.dAltura, TI.sPresionArterial, TI.dPerimetroCefalico, TI.dNoTransaccionCloud, TI.dtFechaInformeMedico FROM TranInformeMedico TI INNER JOIN CatMedico CM ON CM.iCodMedico = TI.iCodMedico WHERE TI.iCodPaciente = '$codigoPaciente' AND CM.iCodEmpresa = '$codigo' ORDER BY dtFechaInformeMedico DESC";
 
    	$resultado = mysqli_query($conn,$query);
     while($fila = mysqli_fetch_assoc($resultado)){
@@ -71,8 +72,8 @@ if ($_SESSION["autenticado"] != "SI") {
    			<td id="column_pa"> P.A. <?php echo $fila ['sPresionArterial']?> </td>
    			<td id="column_tllc"> TLLC. <?php echo $fila ['iTiempoLlenadoCapilar']?> </td>
    			<td id="column_peso"> Peso. <?php echo $fila ['dPeso']. ' kg'?> </td>
-   			<td id="column_edit">  <a href="modificar_consulta.php?id=<?php echo base64_encode($codigoE)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img id="pencil" src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
-   			<td id="column_delete"> <a href="eliminar_informe.php?idE=<?php echo $fila['iCodTranInformeMedico'] ?>" onclick="return alert_eliminarInforme();"> <img id="trash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+   			<td id="column_edit">  <a href="modificar_consulta.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img id="pencil" src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
+   			<td id="column_delete"> <a href="eliminar_informe.php?idI=<?php echo $fila['iCodTranInformeMedico'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarInforme();"> <img id="trash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
    		</tr>
    		<tr>
    			<td id="column_date"> </td>

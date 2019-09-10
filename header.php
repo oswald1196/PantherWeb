@@ -30,20 +30,18 @@
 <header id="header">
 <nav class="nav_menu">
     <div class="logo">
-      <a href="home.php"> <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther"> </a> 
+      <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther"> </a> 
       <a href="#" class="btn-menu" id="btn-menu"> <i class="icono fa fa-bars" aria-hidden="true"></i> </a> 
     </div>
     <div class="enlaces" id="enlaces">
 
-      <a href="home.php" href="#"></a>
-
-      <a href="home.php?id=<?php echo base64_encode($codigo)?>">Home</a>
+      <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Home</a>
 
       <a href="alta_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a>
 
-      <a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>">Buscar</a>
+      <a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Buscar</a>
 
-      <a href="generales.php?id=<?php echo base64_encode($codigo)?>">Generales</a>    
+      <a href="generales.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Generales</a>    
 
       <a href="#"><i class="material-icons" style="color: white; font-size: 20px;">person</i> Perfil</a>
       

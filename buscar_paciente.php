@@ -36,7 +36,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	<body class="login-layout">
 
 <?php
-    $codigoE = base64_decode($_GET['id']);
+    $codigo = base64_decode($_GET['id']);
+	$cMedico = base64_decode($_GET['cm']);
+    
 	include('header.php');
 	include('conexion.php');
 ?>
@@ -66,12 +68,13 @@ if ($_SESSION["autenticado"] != "SI") {
 $(buscar_datos());
 
 function buscar_datos(consulta){
-    var id = <?= json_encode($codigoE) ?>;
+    var id = <?= json_encode($codigo) ?>;
+    var cm = <?= json_encode($cMedico) ?>;
 	$.ajax({
 		url: 'buscar.php',
 		type: 'POST',
 		dataType: 'html',
-		data: {consulta: consulta, id: id},
+		data: {consulta: consulta, id: id, cm: cm},
 	})
 	.done(function(respuesta){
 		$('#datos').html(respuesta);
