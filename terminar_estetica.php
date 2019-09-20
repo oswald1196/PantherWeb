@@ -6,6 +6,27 @@
     $sql = "UPDATE TranAgendaEstetica SET iCodEstatus = 3 WHERE iCodTranAgendaEstetica = '$id'";
 
 	$resultado = mysqli_query($conn,$sql);
+
+    $getDatos = "SELECT * FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
+
+    $result = mysqli_query($conn,$getDatos);
+    $row = mysqli_fetch_assoc($result);
+
+    $correo = $row['vchCorreo'];
+    $pais = $row['vchPais'];
+    $estado = $row['vchEstado'];
+    $ciudad = $row['vchCiudad'];
+    $cEmpresa = $row['iCodEmpresa'];
+    $iCodServicio = $row['iCodServicio'];
+    $codPaciente = $row['iCodPaciente'];
+    $fecha = $row['dtFecha'];
+    $nombreServ = $row['vchDescripcion'];
+    $comision = $row['dPrecioCosto'];
+    $precio = $row['dPrecio'];
+    $codProp = $row['iCodPropietario'];
+
+    $insertCuentaEst = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$iCodServicio', '$codPaciente', '$fecha', '$nombreServ', '$comision', '$precio', '0', '0', '$codProp', '0', '0', '0', '0', '0', '0', '0', '1', '0', '', '0', '0', '0', '$fecha', '', '0', '0', '.', '0', '2')";
+    /*$agregarCuentaEst = mysqli_query($conn,$insertCuentaEst);*/
 ?>
 
 <?php
@@ -35,6 +56,8 @@ if ($_SESSION["autenticado"] != "SI") {
   <link rel="stylesheet" href="assets/css/panel_estetica.css" />
 
   <link rel="stylesheet" href="assets/css/ace.min.css" />
+  <link rel="stylesheet" href="dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
 
@@ -80,7 +103,7 @@ if ($_SESSION["autenticado"] != "SI") {
                 </thead>
                 <?php
 
-                $query = "SELECT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
+                $query = "SELECT DISTINCT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
 
 
                 $resultado = mysqli_query($conn,$query);
@@ -88,14 +111,14 @@ if ($_SESSION["autenticado"] != "SI") {
                     
                     ?>
                     <tr>
-                        <td class="columnades"> <?php echo $fila['dtFecha'] ?></td>
+                        <td class="columnades"> <?php echo date("Y-m-d",strtotime($fila['dtFecha']));?></td>
                         <td class="columnades"> <?php echo $fila['vchDescripcion'] ?></td>
                         <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
                         <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
                         <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
                         <td class="columnad"> <a href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEstetica();"> <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
-                        <td class="columnah"> <?php echo $fila['vchEstatus'] ?></td>
-                        <td class="columnai"> <a href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
+                        <td class="columnah" id="status"> <?php echo $fila['vchEstatus'] ?></td>
+                        <td class="columnai"> <a onclick="return obtener_estatus();" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
                     </tr>
                     <?php
                 }
@@ -110,6 +133,36 @@ if ($_SESSION["autenticado"] != "SI") {
                             return false;
                         }
                     }  
+
+                    function alert_fecha(){
+                    var fecha_tabla = document.getElementById("fecha").innerHTML;
+                    alert(fecha_tabla);
+                    var fecha_actual = document.getElementById("fechaActual").value;
+                    alert(fecha_actual);
+                        if (fecha_tabla < fecha_actual){
+                            Swal.fire({
+                                type:'error',
+                                title:'ERROR',
+                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                            });
+                            return false;
+                        }
+                        return true;
+                    }
+                    
+                    function obtener_estatus(){ 
+                        var status = document.getElementById("status").innerHTML;
+                        alert(status);
+                        if (status == "TERMINADA"){
+                            Swal.fire({
+                                type:'error',
+                                title:'ERROR',
+                                text:'EL SERVICIO YA FUE TERMINADO'
+                            });
+                            return false;
+                        }
+                        return true;
+                        }
             
                 </script>
 

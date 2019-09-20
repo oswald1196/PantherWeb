@@ -26,6 +26,8 @@ if ($_SESSION["autenticado"] != "SI") {
 		<link rel="stylesheet" href="assets/css/preventivos_carnet.css" />
 
 		<link rel="stylesheet" href="assets/css/ace.min.css" />
+        <link rel="stylesheet" href="dist/sweetalert2.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 	</head>
 
@@ -35,6 +37,8 @@ if ($_SESSION["autenticado"] != "SI") {
 	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
     $cMedico = base64_decode($_GET['cm']);
+    $fecha_actual = date("Y-m-d");
+    date_default_timezone_set('America/Bogota');
 
 	include('header.php');
 ?>
@@ -50,6 +54,8 @@ if ($_SESSION["autenticado"] != "SI") {
     <div class="cabecera">
     	
       <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
+      <input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+
     </div>
   <div id="contenedor">
       	 <button class="botonAddVacuna"> <a href="vacuna.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_add" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
@@ -77,14 +83,14 @@ if ($_SESSION["autenticado"] != "SI") {
                 	
                         ?>
                 <tr>
-                    <td class="columna1"> <?php echo $fila['sFecha'] ?></td>
+                    <td class="columna1" id="fecha"> <?php echo date("Y-m-d",strtotime($fila['sFecha'])); ?></td>
                     <td class="columna2"> <?php echo $fila['sVacunaAplicada'] ?> </td>
                     <td class="columna3"> <?php echo $fila['sProximaVacuna'] ?></td>
                     <td class="columna4"> <?php echo $fila['dPeso'] ?></td>
-                    <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
+                    <td class="columna5"> <?php echo date("Y-m-d",strtotime($fila['sFechaProgramada'])); ?></td>
                     <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
-                    <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                    <td class="columna8"> <a href="eliminar_vacuna.php?idD=<?php echo $fila['iCodTranRegistroVacunas'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                    <td class="columna7"> <?php echo date("Y-m-d",strtotime($fila['sFechaCaducidad']));?> </td>
+                    <td class="columna8"> <a onclick=" return alert_fecha();" href="eliminar_vacuna.php?idD=<?php echo $fila['iCodTranRegistroVacunas'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                 </tr>
             <?php
       			}
@@ -98,6 +104,22 @@ if ($_SESSION["autenticado"] != "SI") {
                 return false;
             }
         }
+
+        function alert_fecha(){
+                    var fecha_tabla = document.getElementById("fecha").innerHTML;
+                    alert(fecha_tabla);
+                    var fecha_actual = document.getElementById("fechaActual").value;
+                    alert(fecha_actual);
+                        if (fecha_actual > fecha_tabla){
+                            Swal.fire({
+                                type:'error',
+                                title:'ERROR',
+                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                            });
+                            return false;
+                        }
+                        return true;
+                    }
           
         </script>
 

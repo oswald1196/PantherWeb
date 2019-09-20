@@ -49,6 +49,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	$cMedico = base64_decode($_GET['cm']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
 
+	$fecha_actual = date("Y-m-d");
+    date_default_timezone_set('America/Bogota');
+
 	include('header.php');
 	?>
 
@@ -63,6 +66,8 @@ if ($_SESSION["autenticado"] != "SI") {
 		<div class="header_title">
 
 			<p id="lblCita"> Citas de: <?php echo $row['vchNombrePaciente']; ?> </p>
+       		 <input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+
 		</div>
 		<div id="contenedor">
 			<button id="botonACita"> <a href="agenda_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
@@ -89,7 +94,7 @@ if ($_SESSION["autenticado"] != "SI") {
 						?>
 						<tr id="registro">
 							<td class="columnades"> <?php echo $fila['vchTipoMotivo'] ?></td>
-							<td class="columnaf"> <?php echo $fila['dtFecha'] ?> </td>
+							<td class="columnaf" id="fecha"> <?php echo $fila['dtFecha'] ?> </td>
 							<td class="columnah"> <?php echo $fila['vchHora'] ?></td>
 							<td class="columnad"> <a href="eliminar_cita.php?idD=<?php echo $fila['iCodTranCalendario']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarCita();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
 						</tr>
@@ -104,6 +109,22 @@ if ($_SESSION["autenticado"] != "SI") {
                         } else {
                             return false;
                         }
+                    }
+
+                    function alert_fecha(){
+                    var fecha_tabla = document.getElementById("fecha").innerHTML;
+                    alert(fecha_tabla);
+                    var fecha_actual = document.getElementById("fechaActual").value;
+                    alert(fecha_actual);
+                        if (fecha_actual > fecha_tabla){
+                            Swal.fire({
+                                type:'error',
+                                title:'ERROR',
+                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                            });
+                            return false;
+                        }
+                        return true;
                     }
                     
                 </script>

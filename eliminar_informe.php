@@ -3,6 +3,7 @@
 
 	$id = $_REQUEST['idI'];
 
+  
 	$sql = "DELETE FROM TranInformeMedico WHERE iCodTranInformeMedico = '$id'";
 
 	$resultado = mysqli_query($conn,$sql);

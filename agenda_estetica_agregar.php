@@ -188,11 +188,12 @@ if ($_SESSION["autenticado"] != "SI") {
     <div id="botonAgregar">
       <button class="botonAgregar" type="submit"><i class="fas fa-plus-square" ></i>&nbsp;&nbsp;Agregar estética</button>    
     </div>
-  <button class="botonAtrasEst" onclick="atras();"> Atrás </button>
 
   </form>  
+  
 </div> 
-
+  <button class="botonAtrasEst" onclick="atras();"> Atrás </button>
+  
 <script>
   function atras() {
     window.history.go(-1);

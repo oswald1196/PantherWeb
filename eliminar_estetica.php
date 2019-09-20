@@ -35,6 +35,8 @@ if ($_SESSION["autenticado"] != "SI") {
   <link rel="stylesheet" href="assets/css/panel_estetica.css" />
 
   <link rel="stylesheet" href="assets/css/ace.min.css" />
+  <link rel="stylesheet" href="dist/sweetalert2.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
 
@@ -80,7 +82,7 @@ if ($_SESSION["autenticado"] != "SI") {
                 </thead>
                 <?php
 
-                $query = "SELECT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
+                $query = "SELECT DISTINCT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
 
 
                 $resultado = mysqli_query($conn,$query);
@@ -88,14 +90,14 @@ if ($_SESSION["autenticado"] != "SI") {
                     
                     ?>
                     <tr>
-                        <td class="columnades"> <?php echo $fila['dtFecha'] ?></td>
+                        <td class="columnades"> <?php echo date("Y-m-d",strtotime($fila['dtFecha'])); ?></td>
                         <td class="columnades"> <?php echo $fila['vchDescripcion'] ?></td>
                         <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
                         <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
                         <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
                         <td class="columnad"> <a href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEstetica();"> <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
-                        <td class="columnah"> <?php echo $fila['vchEstatus'] ?></td>
-                        <td class="columnai"> <a href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
+                        <td class="columnah" id="fila_estatus"> <?php echo $fila['vchEstatus'] ?></td>
+                        <td class="columnai"> <a onclick="obtener_estatus();" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
                     </tr>
                     <?php
                 }
@@ -109,7 +111,21 @@ if ($_SESSION["autenticado"] != "SI") {
                         } else {
                             return false;
                         }
-                    }  
+                    }
+
+                    function obtener_estatus(){ 
+                        var status = document.getElementById("fila_estatus").innerHTML;
+                        alert(status);
+                        if (status == "TERMINADA"){
+                            Swal.fire({
+                                type:'error',
+                                title:'ERROR',
+                                text:'EL SERVICIO YA FUE TERMINADO'
+                            });
+                            return false;
+                        }
+                        return true;
+                        }  
             
                 </script>
 

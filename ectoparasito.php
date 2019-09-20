@@ -45,6 +45,8 @@ if ($_SESSION["autenticado"] != "SI") {
     $cMedico = base64_decode($_GET['cm']);
   $codigoP = base64_decode($_GET['codigo']);	
   $fecha_actual = date("Y-m-d");
+    date_default_timezone_set('America/Bogota');
+  
 
   include('header.php');
   include ('conexion.php');
@@ -342,7 +344,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 <script>
   function goBack() {
-    window.history.go(-2);
+    window.history.go(-1);
   }
 </script> 
 </body>

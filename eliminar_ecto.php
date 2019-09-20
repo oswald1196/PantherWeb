@@ -3,6 +3,53 @@ require ('conexion.php');
 
 $id = $_REQUEST['idD'];
 
+/********** ELIMINAR REGISTRO DE CALENDARIO **********/
+$getDatos = "SELECT * FROM TranHecto WHERE iCodTranHecto = '$id'";
+
+$result = mysqli_query($conn,$getDatos);
+$row = mysqli_fetch_assoc($result);
+
+$motivo = $row['sObservaciones'];
+$codigo = $row['iCodPaciente'];
+$cEmpresa = $row['iCodEmpresa'];
+$fecha = $row['sFechaProxima'];
+$codigoProd = $row['iCodProducto'];
+$codLote = $row['iCodProductoLote'];
+
+$borrarCita = "DELETE FROM TranCalendario WHERE iCodPaciente = '$codigo' AND vchTipoMotivo = '$motivo' AND dtFecha = '$fecha'";
+
+$borrado = mysqli_query($conn,$borrarCita);
+
+/********** ELIMINAR REGISTRO DE CUENTA *************/ 
+$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodProducto = '$codigoProd' AND iCodPaciente = '$codigo'";
+
+$cuentaBorrada = mysqli_query($conn,$borrarCuenta);
+/********** ACTUALIZAR STOCKS *************/ 
+
+$getDatosLote = "SELECT * FROM RelProductos WHERE iCodProductoLote = '$codLote' AND iCodEmpresa = '$cEmpresa'";
+
+$resultado = mysqli_query($conn,$getDatosLote);
+$filaL = mysqli_fetch_assoc($resultado);
+
+$stockAct = $filaL['dStockActual'];
+
+$newStockActual = $stockAct + 1;
+
+$newStock = "UPDATE RelProductos SET dStockActual = '$newStockActual' WHERE iCodProductoLote = '$codLote' AND iCodEmpresa = '$cEmpresa'";
+
+$actualizarStockLote = mysqli_query($conn,$newStock);
+
+$stockXProd = "SELECT SUM(dStockActual) AS StockActual FROM RelProductos WHERE iCodProducto = '$codigoProd' AND iCodEmpresa = '$cEmpresa'";
+
+$newStockXProd = mysqli_query($conn,$stockXProd);
+$exito = mysqli_fetch_assoc($newStockXProd);
+
+$stockRes = $exito['StockActual'];
+
+$newStockRes = "UPDATE CatProductos SET dStockActual = '$stockRes' WHERE iCodProducto = '$codigoProd' AND iCodEmpresa = '$cEmpresa'";
+$actualizarStockCat = mysqli_query($conn,$newStockRes);
+
+/********* ELIMINAR REGISTRO DE ECTO *************/
 $sql = "DELETE FROM TranHecto WHERE iCodTranHecto = '$id'";
 
 $resultado = mysqli_query($conn,$sql);
@@ -36,6 +83,8 @@ if ($_SESSION["autenticado"] != "SI") {
 	<link rel="stylesheet" href="assets/css/preventivos_ecto.css" />
 
 	<link rel="stylesheet" href="assets/css/ace.min.css" />
+	<link rel="stylesheet" href="dist/sweetalert2.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 </head>
 
@@ -45,6 +94,9 @@ if ($_SESSION["autenticado"] != "SI") {
 	$codigo = base64_decode($_GET['id']);
 	$codigoPaciente = base64_decode($_GET['codigo']);
 	$cMedico = base64_decode($_GET['cm']);
+	$fecha_actual = date("Y-m-d");
+	date_default_timezone_set('America/Bogota');
+
 
 	include('header.php');
 	?>
@@ -60,6 +112,8 @@ if ($_SESSION["autenticado"] != "SI") {
 		<div class="cabeceraE">
 
 			<p id="lblCita"> Ectoparásitos de: <?php echo $row['vchNombrePaciente']; ?> </p>
+			<input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+
 		</div>
 		<div id="contenedor">
 			<button class="botonAddEcto"> <a href="ectoparasito.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addE" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
@@ -87,13 +141,13 @@ if ($_SESSION["autenticado"] != "SI") {
 
 						?>
 						<tr>
-							<td class="columna1E"> <?php echo $fila['sFecha'] ?></td>
+							<td class="columna1E" id="fecha"> <?php echo $fila['sFecha'] ?></td>
 							<td class="columna2E"> <?php echo $fila['sProductoAplicado'] ?> </td>
 							<td class="columna3E"> <?php echo $fila['sObservaciones'] ?></td>
 							<td class="columna5E"> <?php echo $fila['sFechaProxima'] ?></td>
 							<td class="columna6E"> <?php echo $fila['sNumeroLote'] ?> </td>
 							<td class="columna7E"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-							<td class="columna8E"> <a href="eliminar_ecto.php?idD=<?php echo $fila['iCodTranHecto'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+							<td class="columna8E"> <a onclick=" return alert_fecha();" href="eliminar_ecto.php?idD=<?php echo $fila['iCodTranHecto'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
 							</tr>
 							<?php
 						}
@@ -106,7 +160,23 @@ if ($_SESSION["autenticado"] != "SI") {
 								} else {
 									return false;
 								}
-							}     
+							}  
+
+							function alert_fecha(){
+								var fecha_tabla = document.getElementById("fecha").innerHTML;
+								alert(fecha_tabla);
+								var fecha_actual = document.getElementById("fechaActual").value;
+								alert(fecha_actual);
+								if (fecha_actual > fecha_tabla){
+									Swal.fire({
+										type:'error',
+										title:'ERROR',
+										text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+									});
+									return false;
+								}
+								return true;
+							}        
 						</script>
 
 					</tbody>
