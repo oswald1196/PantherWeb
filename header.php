@@ -8,44 +8,48 @@
   <link rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"> </script>
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/
-  JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   <link rel="stylesheet" href="assets/css/menu_principal.css" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <script src="assets/js/headroom.min.js"></script>
-  <script src="assets/js/menu.js"></script>
   
   <!--Iconos-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Iconos--> 
 
 </head>
-  
-<body background="assets/img/astronomy-dark-evening-957061.jpg" style="height: auto; width: auto;">
-<header id="header">
-<nav class="nav_menu">
-    <div class="logo">
-      <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther"> </a> 
-      <a href="#" class="btn-menu" id="btn-menu"> <i class="icono fa fa-bars" aria-hidden="true"></i> </a> 
+
+<body background="assets/img/fondo-negro-elegante_1152-238.jpg" style="height: auto; width: auto;">
+    <header>
+      <div class="logo logo_main">  <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther">
     </div>
-    <div class="enlaces" id="enlaces">
+      <div class="menu_bar">
+      <a class="bt-menu"> <span class="fas fa-bars"> </span> Menu </a> 
+      </div>
+          <nav> 
+            <ul>
+             <li> <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Home</a> </li>
 
-      <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Home</a>
+             <li> <a href="alta_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a> </li>
 
-      <a href="alta_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a>
+             <li> <a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Buscar</a> </li>
 
-      <a href="buscar_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Buscar</a>
+             <!--<li> <a href="calendario.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Agenda</a> </li>-->
 
-      <a href="generales.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Generales</a>    
+             <li> <a href="generales.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Generales</a> </li>
 
-      <a href="#"><i class="material-icons" style="color: white; font-size: 20px;">person</i> Perfil</a>
-      
-      <a href="logout.php"><i class="material-icons" style="color: white; font-size: 20px;">exit_to_app</i>Salir</a>    </nav>
-</header>
-</body>
-</html>
+             <li> <a href="logout.php">Salir</a> </li>
+
+           </ul>
+
+         </nav>
+    </header>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="js/script-menu.js"></script>
+ </body>
+ </html>

@@ -282,6 +282,18 @@ $fecha_actual = date("Y-m-d");
 <input type="date" name="fechaCita" id="fechaCita">
 <label id="lblFechaCita"><i class="far fa-clock"></i>&nbsp;&nbsp;Hora</label>
 <input type="time" name="horaCita" id="inputHoraCita">
+<select id="inputProxima" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
 <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar vacuna</button>
 </div>
 

@@ -12,6 +12,7 @@ $caducidad = $_POST['fechaC'];
 $peso = $_POST['peso'];
 $horaIni = $_POST['horaCita'];
 $cantidad = $_POST['cantidad'];
+$medico = $_POST['medico'];
 
 if (isset($_POST['citaP']) == "on"){
 	$chkCita = "true";
@@ -96,7 +97,18 @@ $fila = mysqli_fetch_assoc($resultado);
 
 $servicio = $fila['vchServicio'];
 
-$nuevaCitaVG = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '0', '0')";
+$sqlMedico = "SELECT CONCAT(vchNombre, ' ', vchPaterno) AS vchNombreMedico FROM CatMedico WHERE iCodEmpresa = '$cEmpresa' AND iCodMedico = '$medico'";
+
+    $eject = mysqli_query($conn,$sqlMedico);
+    $med = mysqli_fetch_assoc($eject);
+
+    $nombreMed = $med['vchNombreMedico'];
+
+    if ($medico == 0){
+        $nombreMed = "-";
+    }
+
+$nuevaCitaVG = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iCodMedico, vchNombreMedico, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$iCodProp', '$medico', '$nombreMed', '0', '0')";
 
 if ($anterior == "false" and $chkCita == "true"){
 

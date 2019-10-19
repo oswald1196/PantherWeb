@@ -18,19 +18,16 @@ if ($_SESSION["autenticado"] != "SI") {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Alta de paciente</title>
 
-  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/alta_pacientes.css" />
+      <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
-  <link rel="stylesheet" href="assets/css/ace-fonts.css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/ace.min.css" />
-  <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
   <link rel="stylesheet" href="assets/css/estilos.css" />
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <link rel="stylesheet" href="dist/sweetalert2.min.css">
@@ -135,6 +132,8 @@ $fecha_actual = date("Y-m-d");
           </select>
         </div>
 
+        <div id="caja_imagen"> </div>
+
         <div class="form-input">
 
           <select id="sltColor" name="iCodColor"> 
@@ -150,6 +149,11 @@ $fecha_actual = date("Y-m-d");
             ?>
           </select>
         </div>
+        <div id="div_avatar">
+          <img id="avatarPL" src="assets/img/pg-100.png" title="Logo 2 Panther">
+          <!--<p id="texto"> AVATAR </p>
+          <input type="file" name="imagen" id="avatar">-->
+        </div>
         <div class="form-input">
           <label for="radioGenero" class="required" id="lblGenero">Macho</label>
 
@@ -159,12 +163,12 @@ $fecha_actual = date("Y-m-d");
 
           &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio-hembra"><label for="radio-one"></label>
         </div>
-        <div class="form-input">
+        <!--<div class="form-input">
 
           <input type="text" name="tipoServicio" id="inputMeses" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="MESES">
 
           <input type="text" name="tipoServicio" id="inputAnios" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="AÑOS">        
-        </div>
+        </div>-->
         <div class="form-input">
 
           <input type="date" name="fechaNac" id="inputFechaNac" />

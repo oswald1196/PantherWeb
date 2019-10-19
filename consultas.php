@@ -25,8 +25,6 @@ if ($_SESSION["autenticado"] != "SI") {
   <link rel="stylesheet" href="assets/css/ace-fonts.css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/ace.min.css" />
-  <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
   <link rel="stylesheet" href="assets/css/estilos.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
@@ -111,14 +109,14 @@ if ($_SESSION["autenticado"] != "SI") {
         <input type="hidden" name="paciente" value="<?php echo $row['iCodPaciente'] ?>">
         <input type="hidden" name="propietario" value="<?php echo $row['iCodPropietario'] ?>">
 
-        <input type="text" id="inputFC" name="frecCardiaca" placeholder="Frecuencia cardiaca">
-        <input type="text" id="inputFR" name="frecResp" placeholder="Frecuencia respiratoria">
+        <input type="text" id="inputFC" name="frecCardiaca" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Frecuencia cardiaca">
+        <input type="text" id="inputFR" name="frecResp" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Frecuencia respiratoria">
       </div>
       <div class="form-group">
-        <input type="text" id="inputPresion" name="presion" placeholder="Presión arterial">
-        <input type="text" id="inputLlenado" name="llenado" placeholder="Tiempo llenado capilar">
+        <input type="text" id="inputPresion" name="presion" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Presión arterial">
+        <input type="text" id="inputLlenado" name="llenado" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Tiempo llenado capilar">
       </div>
-      <input type="text" id="inputTemp" name="temperatura" placeholder="Temperatura">
+      <input type="text" id="inputTemp" name="temperatura" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Temperatura">
       <select id="selectMucosas" name="mucosas">
         <option value="APN (Aparentemente Normal)">APN (Aparentemente Normal)</option>
         <option value="Ictérica">Ictérica</option>
@@ -128,7 +126,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <option value="Otras">Otras</option>
         <option value="Cianóticas">Cianóticas</option>
       </select>
-      <input type="text" id="inputPesoC" name="peso" placeholder="Peso">
+      <input type="text" id="inputPesoC" name="peso" onkeypress="return event.charCode >= 46 && event.charCode <= 57" placeholder="Peso">
     </div>
     <!--Funcion para ocultar boton-->
     <script type="text/javascript">

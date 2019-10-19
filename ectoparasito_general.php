@@ -93,7 +93,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto(); getTipo();">
           <option value="">ELEGIR PRODUCTO</option>
           <?php
-          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigoE' ORDER BY vchDescripcion ASC";
+          $consulta = "SELECT iCodProducto, vchDescripcion FROM CatProductos WHERE iCodTipoProducto = 4 AND iCodEmpresa = '$codigo' ORDER BY vchDescripcion ASC";
           $result = mysqli_query($conn,$consulta);
           while ($producto = mysqli_fetch_array($result)) {
             ?>
@@ -234,6 +234,18 @@ if ($_SESSION["autenticado"] != "SI") {
     <input type="date" id="fechaCita" name="fechaProx">
     <label id="lblHoraCita"> Hora </label>
     <input type="time" id="inputHoraCita" name="horaProx">
+    <select id="inputProxima" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
     <button class="boton" type="submit">Agregar ectoparásito</button>
   </div>
 </div>
@@ -324,7 +336,7 @@ if ($_SESSION["autenticado"] != "SI") {
       return false;
     }
 
-    $.ajax({
+    /*$.ajax({
       type: "POST",
       url: "insertar_ecto_general.php",
       data: datos,
@@ -341,7 +353,7 @@ if ($_SESSION["autenticado"] != "SI") {
         }
       }
     });
-    return false;
+    return false;*/
 
     return true;
   }

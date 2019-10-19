@@ -17,6 +17,7 @@ $caducidad = $_POST['fechaC'];
 $horaIni = $_POST['horaCita'];
 $peso = $_POST['peso'];
 $cantidad = $_POST['cantidad'];
+$medico = $_POST['medico'];
 
 /*VALIDACIONES, CAMPOS VACIOS, CONSULTAS SIMPLES, ETC */
 if (isset($_POST['chkCita']) == "on"){
@@ -93,7 +94,18 @@ $fila = mysqli_fetch_assoc($resultado);
 
 $servicio = $fila['vchServicio'];
 
-$nuevaCita = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fechaCita', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fechaCita', '', '0', '0', '0', '$fechaCita', '0', '0', '0', '0', '$iCodProp', '0', '0')";
+$sqlMedico = "SELECT CONCAT(vchNombre, ' ', vchPaterno) AS vchNombreMedico FROM CatMedico WHERE iCodEmpresa = '$cEmpresa' AND iCodMedico = '$medico'";
+
+    $eject = mysqli_query($conn,$sqlMedico);
+    $med = mysqli_fetch_assoc($eject);
+
+    $nombreMed = $med['vchNombreMedico'];
+
+    if ($medico == 0){
+        $nombreMed = "-";
+    }
+
+$nuevaCita = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iCodMedico, vchNombreMedico, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fechaCita', '$motivoP', '$horaIni', '1', '1', '$servicio', '$fechaCita', '', '0', '0', '0', '$fechaCita', '0', '0', '0', '0', '$iCodProp', '$medico', '$nombreMed', '0', '0')";
 
 /*FIN VALIDACIONES, CAMPOS VACIOS, CONSULTAS SIMPLES, ETC */
 

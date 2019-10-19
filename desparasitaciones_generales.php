@@ -63,7 +63,7 @@ if ($_SESSION["autenticado"] != "SI") {
 <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
-  <form class="form_add_cita" id="frmDesp" action="" method="POST" onsubmit=" return validadDesp();">
+  <form class="form_add_cita" id="frmDesp" action="insertar_desparasitacion_gral.php" method="POST" onsubmit=" return validadDesp();">
     <div>
       <label id="lblPacientesD">Paciente</label>
       <select id="selectPacienteD" name="paciente">
@@ -270,7 +270,6 @@ if ($_SESSION["autenticado"] != "SI") {
       var txtCantidad = document.getElementById("inputCantidadD").value;
       var stockActual = document.getElementById("inputStockLote").value;
       var txtTipo = document.getElementById("tipoProducto").value;
-      alert(txtTipo);
       var datos = $('#frmDesp').serialize();
       
       if(txtCantidad == ""){
@@ -368,7 +367,7 @@ if ($_SESSION["autenticado"] != "SI") {
         return false;
       }
 
-      $.ajax({
+      /*$.ajax({
         type: "POST",
         url: "insertar_desparasitacion_gral.php",
         data: datos,
@@ -385,7 +384,7 @@ if ($_SESSION["autenticado"] != "SI") {
           }
         }
       });
-      return false;
+      return false;*/
 
       return true;
     }
@@ -401,6 +400,18 @@ if ($_SESSION["autenticado"] != "SI") {
   <input type="date" name="fechaCita" id="fechaCitaD">
   <label id="lblHoraCitaD"> <i class="far fa-clock"></i>&nbsp;&nbsp; Hora </label>
   <input type="time" name="hora" id="inputHoraCitaD">
+  <select id="inputProxima" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
   <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
 </div>
 </div>

@@ -65,7 +65,7 @@ if ($_SESSION["autenticado"] != "SI") {
 <p id="titulo-pagina">Agregar desparasitación</p> 
 
 <div class="container">
-  <form class="form_add_cita" id="frmDesp" action="" method="POST" onsubmit=" return validarDesp();">
+  <form class="form_add_cita" id="frmDesp" action="insertar_desparasitacion.php" method="POST" onsubmit=" return validarDesp();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -241,6 +241,7 @@ if ($_SESSION["autenticado"] != "SI") {
           document.getElementById("motivoCitaDes").disabled=false;
           document.getElementById("fechaCita").disabled=false;
           document.getElementById("inputHoraCita").disabled=false;
+          document.getElementById("inputMedico").disabled=false;
 
         }else if(value==false){
         // deshabilitamos
@@ -252,6 +253,9 @@ if ($_SESSION["autenticado"] != "SI") {
         
         document.getElementById("inputHoraCita").disabled=true;
         document.getElementById("inputHoraCita").value="00:00";
+
+        document.getElementById("inputMedico").disabled=true;
+        document.getElementById("inputMedico").value="0";
       }
     }
   </script>
@@ -268,8 +272,20 @@ if ($_SESSION["autenticado"] != "SI") {
   </div>
   <div class="form-group">
     <label id="lblHoraCita"> Hora </label>
-    <input type="time" name="hora" id="inputHoraCita">
+    <input type="time" name="hora" value="00:00" id="inputHoraCita">
   </div>
+  <select id="inputMedico" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
   <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
 </div>
 </div>

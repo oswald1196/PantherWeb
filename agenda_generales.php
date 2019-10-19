@@ -116,16 +116,26 @@ require 'conexion.php';
         ?>
       </select>
       <div id="div_nuevo_motivo">
-        <form id="form_add_motivo" action="insertar_motivo_nuevo.php">
+        <!--<form id="form_add_motivo" action="insertar_motivo_nuevo.php">
           <label for="inputMotivo" id="lblNuevaCita">Escribe nueva cita</label>
           <input type="text" id="inputMotivo" placeholder="Nuevo motivo" name="nuevoMotivo">
-    <!--<input type="hidden" name="correo" value="<?php //echo $motivos['vchCorreo'] ?>">
-    <input type="hidden" name="empresa" value="<?php //echo $motivos['iCodEmpresa'] ?>">
-    <input type="hidden" name="pais" value="<?php //echo $motivos['vchPais'] ?>">
-    <input type="hidden" name="estado" value="<?php //echo $motivos['vchEstado'] ?>">
-    <input type="hidden" name="ciudad" value="<?php //echo $motivos['vchCiudad'] ?>">horaInicio-->
+  
     <button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
-  </form>
+  </form>-->
+        <label for="inputMotivo" id="lblNuevaCita">Médico</label>
+        <select id="inputMotivo" name="medico">
+          <option value="0">** MÉDICO INDISTINTO **</option>
+          <?php
+          $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+          $resultado = mysqli_query($conn,$sql);
+          while ($medico = mysqli_fetch_array($resultado)) {
+            ?>
+            <option value ="<?php echo $medico['iCodMedico'];?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?></option>
+            <?php
+          }
+          ?>
+        </select>
+
 </div>
 </div>
 <div id="div_boton">
@@ -136,13 +146,14 @@ require 'conexion.php';
     var motivos = document.getElementById("inputMotivos").value;
     var txtCodPaciente = document.getElementById("selectPacientes").value;
     var txtHoraCita = document.getElementById("inputhoraini").value;
+    var medico = document.getElementById("inputMotivo").value;
     var datos = $('#frmAgenda').serialize();
 
     if(txtCodPaciente == ""){
       Swal.fire({
         type:'error',
         title: 'ERROR',
-        text:'Elige paciente'
+        text:'ELIGE PACIENTE'
       });      
       return false;
     }
@@ -151,7 +162,7 @@ require 'conexion.php';
       Swal.fire({
         type:'error',
         title: 'ERROR',
-        text:'Elige la hora'
+        text:'ELIGE LA HORA'
       });       
       return false;
     }
@@ -160,12 +171,12 @@ require 'conexion.php';
       Swal.fire({
         type:'error',
         title: 'ERROR',
-        text:'Elige el motivo'
+        text:'ELIGE EL MOTIVO'
       });      
       return false;
     }
 
-    $.ajax({
+    /*$.ajax({
       type: "POST",
       url: "insertar_citas_generales.php",
       data: datos,
@@ -182,7 +193,7 @@ require 'conexion.php';
         }
       }
     });
-    return false;
+    return false;*/
     return true;
   }
 </script>

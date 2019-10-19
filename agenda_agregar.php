@@ -23,14 +23,12 @@ if ($_SESSION["autenticado"] != "SI") {
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/agendas.css" />
 
-  <link rel="stylesheet" href="assets/css/ace-fonts.css" />
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/css/ace.min.css" />
-  <link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+  <link rel="stylesheet" href="assets/css/ace-fonts.css" />
+  
   <link rel="stylesheet" href="assets/css/estilos.css" />
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
@@ -68,7 +66,7 @@ document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
 <p id="titulo-pagina">AGENDA</p> 
 
 <div class="contenedor_principal">
-  <form class="form_add_cita" id="frmAgenda" action="insertar_cita.php" method="POST" onsubmit="return validarForm();">
+  <form class="form_add_cita" id="frmAgenda" action="" method="POST" onsubmit="return validarForm();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -133,11 +131,25 @@ document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
         ?>
       </select>
       <div id="div_nuevo_motivo">
-        <form id="form_add_motivo" action="insertar_motivo_nuevo.php">
+        <!--<form id="form_add_motivo" action="insertar_motivo_nuevo.php">
           <label for="inputMotivo" id="lblNuevaCita">Nueva cita</label>
           <input type="text" id="inputMotivo" placeholder="Nuevo motivo" name="nuevoMotivo">
           <button type="submit" id="btnAddMotivo"><i class="fas fa-plus-square"></i></button>
-        </form>
+        </form>-->
+
+        <label for="inputMotivo" id="lblNuevaCita">Médico</label>
+        <select id="inputMotivo" name="medico">
+          <option value="0">** MÉDICO INDISTINTO **</option>
+          <?php
+          $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+          $resultado = mysqli_query($conn,$sql);
+          while ($medico = mysqli_fetch_array($resultado)) {
+            ?>
+            <option value ="<?php echo $medico['iCodMedico'];?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?></option>
+            <?php
+          }
+          ?>
+        </select>
       </div>
     </div>
     <div id="div_boton">
@@ -158,6 +170,7 @@ document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
 <script type="text/javascript">
   function validarFormCita() {
     var motivos = document.getElementById("inputMotivos").value;
+    var medico = document.getElementById("inputMotivo").value;
     var txtHoraCita = document.getElementById("inputhoraini").value;
     var fechaHoy = document.getElementById("fechaActual").value;
     var fechaCita = document.getElementById("inputfecha1").value;
@@ -190,7 +203,7 @@ document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
       });      
       return false;
     }
-
+    
     $.ajax({
       type: "POST",
       url: "insertar_cita.php",

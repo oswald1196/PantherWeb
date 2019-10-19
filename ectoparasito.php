@@ -210,6 +210,7 @@ if ($_SESSION["autenticado"] != "SI") {
             document.getElementById("motivoCita").disabled=false;   
             document.getElementById("fechaCita").disabled=false;
             document.getElementById("inputHoraCita").disabled=false;
+            document.getElementById("inputMedico").disabled=false;
 
           }else if(value==false){
         // deshabilitamos
@@ -219,6 +220,9 @@ if ($_SESSION["autenticado"] != "SI") {
         document.getElementById("fechaCita").value="-";
         document.getElementById("inputHoraCita").disabled=true;
         document.getElementById("inputHoraCita").value="00:00";
+
+        document.getElementById("inputMedico").disabled=true;
+        document.getElementById("inputMedico").value="0";
 
       }
     }
@@ -237,6 +241,19 @@ if ($_SESSION["autenticado"] != "SI") {
       <label id="lblHoraCita"> Hora </label>
       <input type="time" name="horaProx" id="inputHoraCita">
     </div>
+
+    <select id="inputMedico" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
     <button class="boton" type="submit">Agregar ectoparásito</button>
   </div>
 </div>

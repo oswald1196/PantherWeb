@@ -5,7 +5,8 @@
 	$fecha = $_POST['fechaAgenda'];
 	$horaIni = $_POST['horaInicio'];
 	$codMotivo = $_POST['codigoMotivo'];
-	$cEmpresa = $_POST['empresa'];
+    $cEmpresa = $_POST['empresa'];
+	$medico = $_POST['medico'];
     
     $pacientes = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$cEmpresa' AND iCodPaciente = '$codPaciente'";
     $pac = mysqli_query($conn,$pacientes);
@@ -30,10 +31,21 @@
 
     $servicio = $fila['vchServicio'];
 
-	$sql = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$sMotivo', '$horaIni', '1', '$codMotivo', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$codPropietario', '0', '0')";
+     $sqlMedico = "SELECT CONCAT(vchNombre, ' ', vchPaterno) AS vchNombreMedico FROM CatMedico WHERE iCodEmpresa = '$cEmpresa' AND iCodMedico = '$medico'";
 
-	//echo $sql;
-	$resultado = mysqli_query($conn,$sql);
+    $eject = mysqli_query($conn,$sqlMedico);
+    $med = mysqli_fetch_assoc($eject);
+
+    $nombreMed = $med['vchNombreMedico'];
+
+    if ($medico == 0){
+        $nombreMed = "-";
+    }
+
+	$sql = "INSERT INTO TranCalendario (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCalendario, iCodPaciente, dtFecha, vchTipoMotivo, vchHora, iCodEstado, iCodServicio, vchServicio, dtFechaFin, bCitaRecurrente, iFrecuencia, iNumFrecuencia, iDiaSemana, dtFechaFinRecurrente, iCodCita, iCodComentario, iCalendario, iEstatusServicio, iCodPropietario, iCodMedico, vchNombreMedico, iEnvioCloud, dNoTransaccionCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$codPaciente', '$fecha', '$sMotivo', '$horaIni', '1', '$codMotivo', '$servicio', '$fecha', '', '0', '0', '0', '1899-12-30', '0', '0', '0', '0', '$codPropietario', '$medico', '$nombreMed', '0', '0')";
+
+	echo $sql;
+	//$resultado = mysqli_query($conn,$sql);
 
 
 ?>

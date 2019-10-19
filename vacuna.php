@@ -248,6 +248,8 @@ $fecha_actual = date("Y-m-d");
               document.getElementById("inputProxima").disabled=false;
               document.getElementById("fechaCitaV").disabled=false;
               document.getElementById("inputHoraCitaV").disabled=false;
+              document.getElementById("inputMedico").disabled=false;
+
 
             }else if(value==false){
         // deshabilitamos
@@ -259,6 +261,8 @@ $fecha_actual = date("Y-m-d");
         document.getElementById("inputHoraCitaV").disabled=true;
         document.getElementById("inputHoraCitaV").value="00:00";
 
+        document.getElementById("inputMedico").disabled=true;
+        document.getElementById("inputMedico").value=0;
 
       }
     }
@@ -280,7 +284,19 @@ $fecha_actual = date("Y-m-d");
   <label id="lblFechaCita"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha de la cita </label>
   <input type="date" name="fechaCita" id="fechaCitaV">
   <label id="lblFechaCita"><i class="far fa-clock"></i>&nbsp;&nbsp;Hora</label>
-  <input type="time" name="horaCita" id="inputHoraCitaV">
+  <input type="time" name="horaCita" value="00:00" id="inputHoraCitaV">
+  <select id="inputMedico" name="medico">
+    <option value="0">** MÉDICO INDISTINTO **</option>
+    <?php
+    $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
+    $resultado = mysqli_query($conn,$sql);
+    while ($medico = mysqli_fetch_array($resultado)) {
+      ?>
+      <option value="<?php echo $medico['iCodMedico'] ?>"> <?php echo $medico['vchNombre']." ".$medico['vchPaterno'] ?> </option>
+      <?php
+    }
+    ?>
+  </select>
   <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar vacuna</button>
 </div>
 

@@ -249,6 +249,16 @@
 	color: gray;
 }
 
+#inputMedico{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width: 300px;
+	height: 40px;
+	border-radius: 10px;
+	border: 3px solid #40444745;
+	color: gray;
+}
+
 #inputPeso{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;

@@ -1,32 +1,32 @@
 <?php
-	require ('conexion.php');
+require ('conexion.php');
 
-	$id = $_REQUEST['idEst'];
+$id = $_REQUEST['idEst'];
 
-    $sql = "UPDATE TranAgendaEstetica SET iCodEstatus = 3 WHERE iCodTranAgendaEstetica = '$id'";
+$sql = "UPDATE TranAgendaEstetica SET iCodEstatus = 3 WHERE iCodTranAgendaEstetica = '$id'";
 
-	$resultado = mysqli_query($conn,$sql);
+$resultado = mysqli_query($conn,$sql);
 
-    $getDatos = "SELECT * FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
+$getDatos = "SELECT * FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
 
-    $result = mysqli_query($conn,$getDatos);
-    $row = mysqli_fetch_assoc($result);
+$result = mysqli_query($conn,$getDatos);
+$row = mysqli_fetch_assoc($result);
 
-    $correo = $row['vchCorreo'];
-    $pais = $row['vchPais'];
-    $estado = $row['vchEstado'];
-    $ciudad = $row['vchCiudad'];
-    $cEmpresa = $row['iCodEmpresa'];
-    $iCodServicio = $row['iCodServicio'];
-    $codPaciente = $row['iCodPaciente'];
-    $fecha = $row['dtFecha'];
-    $nombreServ = $row['vchDescripcion'];
-    $comision = $row['dPrecioCosto'];
-    $precio = $row['dPrecio'];
-    $codProp = $row['iCodPropietario'];
+$correo = $row['vchCorreo'];
+$pais = $row['vchPais'];
+$estado = $row['vchEstado'];
+$ciudad = $row['vchCiudad'];
+$cEmpresa = $row['iCodEmpresa'];
+$iCodServicio = $row['iCodServicio'];
+$codPaciente = $row['iCodPaciente'];
+$fecha = $row['dtFecha'];
+$nombreServ = $row['vchDescripcion'];
+$comision = $row['dPrecioCosto'];
+$precio = $row['dPrecio'];
+$codProp = $row['iCodPropietario'];
 
-    $insertCuentaEst = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$iCodServicio', '$codPaciente', '$fecha', '$nombreServ', '$comision', '$precio', '0', '0', '$codProp', '0', '0', '0', '0', '0', '0', '0', '1', '0', '', '0', '0', '0', '$fecha', '', '0', '0', '.', '0', '2')";
-    /*$agregarCuentaEst = mysqli_query($conn,$insertCuentaEst);*/
+$insertCuentaEst = "INSERT INTO TranCuentasClientes (vchCorreo, vchPais, vchEstado, vchCiudad, iRecibido, iEnviado, iCodEmpresa, iCodCuentaCliente, iCodTipoServicio, iCodPaciente, dtFecha, vchServicio, dPrecioCosto, dPrecioMenudeo, dDescuento, bEstatus, iCodPropietario, iCodCorteCuentaCliente, iCuentaLiquidada, dIVA, dSubtotal, dPorcentajeIVA, iCodCorteDia, iCodProducto, dCantidad, dCantidadUnidad, bExistenciaCero, iNumFolioFactura, iFactura, iCodHospitalizacion, dtFechaSalida, bSalida, dPrecioAntesPromocion, dPorcentajePromocion, vchCodigoPromocion, iCodProductoLote, iEnvioCloud) VALUES ('$correo', '$pais', '$estado', '$ciudad', '1', '4', '$cEmpresa', '0', '$iCodServicio', '$codPaciente', '$fecha', '$nombreServ', '$comision', '$precio', '0', '0', '$codProp', '0', '0', '0', '0', '0', '0', '0', '1', '0', '', '0', '0', '0', '$fecha', '', '0', '0', '.', '0', '2')";
+/*$agregarCuentaEst = mysqli_query($conn,$insertCuentaEst);*/
 ?>
 
 <?php
@@ -67,6 +67,8 @@ if ($_SESSION["autenticado"] != "SI") {
     $codigo = base64_decode($_GET['id']);
     $codigoPaciente = base64_decode($_GET['codigo']);
     $cMedico = base64_decode($_GET['cm']);
+    $fecha_actual = date("Y-m-d");
+    date_default_timezone_set('America/Bogota');
 
     include('header.php');
     ?>
@@ -82,6 +84,8 @@ if ($_SESSION["autenticado"] != "SI") {
         <div class="header_titleE">
 
           <p id="lblCita"> Estéticas de: <?php echo $row['vchNombrePaciente']; ?> </p>
+            <input type="hidden" name="" id="fechaActual" value="<?php echo " ".$fecha_actual?>">
+
       </div>
       <div id="contenedor_citas">
         <button class="botonAEst"> <a href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="imgAdd" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
@@ -108,7 +112,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
                 $resultado = mysqli_query($conn,$query);
                 while($fila = mysqli_fetch_assoc($resultado)){
-                    
+
                     ?>
                     <tr>
                         <td class="columnades"> <?php echo date("Y-m-d",strtotime($fila['dtFecha']));?></td>
@@ -116,59 +120,87 @@ if ($_SESSION["autenticado"] != "SI") {
                         <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
                         <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
                         <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
-                        <td class="columnad"> <a href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEstetica();"> <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                        <td class="columnad"> <a onclick="alert_eliminarEstetica(this.href); return false;" class="boton" href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                         <td class="columnah" id="status"> <?php echo $fila['vchEstatus'] ?></td>
-                        <td class="columnai"> <a onclick="return obtener_estatus();" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
+                        <td class="columnai"> <a onclick="alert_terminarEstetica(this.href); return false;" class="btnEstetica" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
                     </tr>
                     <?php
                 }
                 ?>
 
                 <script type="text/javascript">
-                    function alert_eliminarEstetica(){
-                        var respuesta = confirm("Estás seguro de eliminar el servicio de estética?");
-                        if (respuesta == true) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }  
+                    function alert_eliminarEstetica(url) {
 
-                    function alert_fecha(){
-                    var fecha_tabla = document.getElementById("fecha").innerHTML;
-                    alert(fecha_tabla);
-                    var fecha_actual = document.getElementById("fechaActual").value;
-                    alert(fecha_actual);
-                        if (fecha_tabla < fecha_actual){
+                      $(".boton").click(function(){ 
+                        var fecha = "";
+
+                        $(this).parents("tr").find('#fecha').each(function(){
+                          fecha = $(this).html();      
+                          var fecha_actual = document.getElementById("fechaActual").value;
+                          if (fecha_actual > fecha){
                             Swal.fire({
-                                type:'error',
-                                title:'ERROR',
-                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
-                            });
-                            return false;
+                              type:'error',
+                              title:'ERROR',
+                              text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                          });
                         }
-                        return true;
+                        else {
+                            event.preventDefault();
+
+                            Swal.fire({
+                              title: 'Estás seguro de eliminar esta estética?',
+                              text: "No podrás recuperar el registro",
+                              type: 'warning',
+                              showCancelButton: true,
+                              confirmButtonColor: '#3085d6',
+                              cancelButtonColor: '#d33',
+                              confirmButtonText: 'Si, borrar!',
+                              cancelButtonText: 'Cancelar',
+                          }).then((result) => {
+                              if (result.value) {
+                                Swal.fire(
+                                  'Borrado!',
+                                  'Se ha borrado la cita.',
+                                  'success'
+
+                                  ) 
+
+                                window.location.href = url;
+                            }
+                        });
+                      }
+                      return false;
+                  });
+                    });
+                  }
+              </script>
+
+              <script type="text/javascript">
+                function alert_terminarEstetica(url) {
+                  $(".btnEstetica").click(function(){
+                    var estatus = "";
+
+                    $(this).parents("tr").find('#filaEstatus').each(function(){
+                      estatus = $(this).html();      
+                      if (estatus == " TERMINADA"){
+                        Swal.fire({
+                          type:'error',
+                          title:'ERROR',
+                          text:'EL SERVICIO YA FUE TERMINADO'
+                      });
                     }
-                    
-                    function obtener_estatus(){ 
-                        var status = document.getElementById("status").innerHTML;
-                        alert(status);
-                        if (status == "TERMINADA"){
-                            Swal.fire({
-                                type:'error',
-                                title:'ERROR',
-                                text:'EL SERVICIO YA FUE TERMINADO'
-                            });
-                            return false;
-                        }
-                        return true;
-                        }
-            
-                </script>
+                    else   {
+                        window.location.href = url;
 
-            </tbody>
-        </table>
-    </div>
+                    }           
+                });
+                });
+              }
+          </script>
+
+      </tbody>
+  </table>
+</div>
 
 </div>
 </body>

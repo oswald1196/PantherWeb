@@ -111,7 +111,7 @@ if ($_SESSION["autenticado"] != "SI") {
         <div class="cabecera">
            
           <p id="lblCita"> Vacunas de: <?php echo $row['vchNombrePaciente']; ?> </p>
-          <input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+          <input type="hidden" name="" id="fechaActual" value="<?php echo " ".$fecha_actual?>">
 
       </div>
       <div id="contenedor">
@@ -147,37 +147,57 @@ if ($_SESSION["autenticado"] != "SI") {
                         <td class="columna5"> <?php echo $fila['sFechaProgramada'] ?></td>
                         <td class="columna6"> <?php echo $fila['sNumeroLote'] ?> </td>
                         <td class="columna7"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-                        <td class="columna8"> <a onclick="return alert_fecha();" href="eliminar_vacuna.php?idD=<?php echo $fila['iCodTranRegistroVacunas'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarVacuna();"> <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+                        <td class="columna8"> <a onclick="alert_eliminarVacuna(this.href); return false;" class="boton" href="eliminar_vacuna.php?idD=<?php echo $fila['iCodTranRegistroVacunas'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" > <img id="simbolo_add" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
                     </tr>
                     <?php
                 }
                 ?>
-                <script type="text/javascript">
-                    function alert_eliminarVacuna(){
-                        var respuesta = confirm("Estás seguro de eliminar la vacuna?");
-                        if (respuesta == true) {               
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
+                <script type="text/javascript"> 
 
-                    function alert_fecha(){
-                    var fecha_tabla = document.getElementById("fecha").innerHTML;
-                    alert(fecha_tabla);
-                    var fecha_actual = document.getElementById("fechaActual").value;
-                    alert(fecha_actual);
-                        if (fecha_actual > fecha_tabla){
-                            Swal.fire({
-                                type:'error',
-                                title:'ERROR',
-                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
-                            });
-                            return false;
-                        }
-                        return true;
-                    }
-                    
+                   function alert_eliminarVacuna(url) {
+
+              $(".boton").click(function(){ 
+                var fecha = "";
+
+                $(this).parents("tr").find('#fecha').each(function(){
+                  fecha = $(this).html();      
+                  var fecha_actual = document.getElementById("fechaActual").value;
+                  if (fecha_actual > fecha){
+                    Swal.fire({
+                      type:'error',
+                      title:'ERROR',
+                      text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                    });
+                  }
+                  else {
+                    event.preventDefault();
+
+                    Swal.fire({
+                      title: 'Estás seguro de eliminar esta vacuna?',
+                      text: "No podrás recuperar el registro",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Si, borrar!',
+                      cancelButtonText: 'Cancelar',
+                    }).then((result) => {
+                      if (result.value) {
+                        Swal.fire(
+                          'Borrado!',
+                          'Se ha borrado la cita.',
+                          'success'
+
+                          ) 
+
+                        window.location.href = url;
+                      }
+                    });
+                  }
+                  return false;
+                });
+              });
+            }
                 </script>
 
             </tbody>

@@ -24,7 +24,6 @@ if ($_SESSION["autenticado"] != "SI") {
 		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
 		<link rel="stylesheet" href="assets/css/menu_pacientes.css" />
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 	</head>

@@ -22,10 +22,8 @@ if ($_SESSION["autenticado"] != "SI") {
 		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
 		<link rel="stylesheet" href="assets/css/menu_pacientes.css" />
-
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		
     	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
 
@@ -37,10 +35,16 @@ if ($_SESSION["autenticado"] != "SI") {
 	$codigo = $_GET['id'];
 	$codigoPaciente = $_GET['cod'];
 	$cMedico = $_GET['cm'];
-
 	include('header.php');
-
 ?>
+	
+	<?php
+    $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoPaciente'";
+    $query = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_assoc($query);
+    ?>
+      <p id="lblCita"> Paciente: <?php echo $row['vchNombrePaciente']; ?> </p>
+
 <div class="container">
 <div id="opc_agenda">
 	<a id="a_ecto" href="panel_agenda.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&cm=<?php echo base64_encode($cMedico)?>"> <span id="titulo_citas">Citas </span> <img id="img_cal" src="https://img.icons8.com/ultraviolet/100/000000/calendar.png"> </a>

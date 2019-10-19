@@ -16,6 +16,9 @@
 	//$esteril = $_POST['castrado'];
 	$color = $_POST['iCodColor'];
 	$chip = $_POST['chip'];
+	//$nombreImagen = $_FILES['imagen']['name'];
+	//$tipoImagen = $_FILES['imagen']['type'];
+	//$tamanoImagen = $_FILES['imagen']['size'];
 	$exp = $_POST['expediente'];
 	$nombreProp = $_POST['nombreProp'];
 	$paternoProp = $_POST['paternoProp'];
@@ -91,7 +94,4 @@
 
 	//$result = mysqli_query($conn,$sql);
 
-	
-
-	
 ?>

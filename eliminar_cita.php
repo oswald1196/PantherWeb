@@ -34,7 +34,6 @@ if ($_SESSION["autenticado"] != "SI") {
 	<link rel="stylesheet" href="assets/css/ace-fonts.css" />
 	<link rel="stylesheet" href="assets/css/paneles_cita.css" />
 
-	<link rel="stylesheet" href="assets/css/ace.min.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
 	<link rel="stylesheet" href="dist/sweetalert2.min.css">
@@ -50,7 +49,7 @@ if ($_SESSION["autenticado"] != "SI") {
 	$codigoPaciente = base64_decode($_GET['codigo']);
 
 	$fecha_actual = date("Y-m-d");
-    date_default_timezone_set('America/Bogota');
+	date_default_timezone_set('America/Bogota');
 
 	include('header.php');
 	?>
@@ -66,7 +65,7 @@ if ($_SESSION["autenticado"] != "SI") {
 		<div class="header_title">
 
 			<p id="lblCita"> Citas de: <?php echo $row['vchNombrePaciente']; ?> </p>
-       		 <input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+			<input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
 
 		</div>
 		<div id="contenedor">
@@ -96,38 +95,89 @@ if ($_SESSION["autenticado"] != "SI") {
 							<td class="columnades"> <?php echo $fila['vchTipoMotivo'] ?></td>
 							<td class="columnaf" id="fecha"> <?php echo $fila['dtFecha'] ?> </td>
 							<td class="columnah"> <?php echo $fila['vchHora'] ?></td>
-							<td class="columnad"> <a href="eliminar_cita.php?idD=<?php echo $fila['iCodTranCalendario']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarCita();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+							<td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_cita.php?idD=<?php echo $fila['iCodTranCalendario']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
 						</tr>
 						<?php
 					}
 					?>
-					<script type="text/javascript">
-                    function alert_eliminarCita(){
-                        var respuesta = confirm("Estás seguro de eliminar la cita?");
-                        if (respuesta == true) {
-                            return true;
-                        } else {
-                            return false;
-                        }
-                    }
 
-                    function alert_fecha(){
-                    var fecha_tabla = document.getElementById("fecha").innerHTML;
-                    alert(fecha_tabla);
-                    var fecha_actual = document.getElementById("fechaActual").value;
-                    alert(fecha_actual);
-                        if (fecha_actual > fecha_tabla){
-                            Swal.fire({
-                                type:'error',
-                                title:'ERROR',
-                                text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
-                            });
-                            return false;
-                        }
-                        return true;
-                    }
-                    
-                </script>
+					<script type="text/javascript">
+
+            function alert_eliminarCita(url) {
+
+            $(".boton").click(function(){ 
+              var fecha = "";
+
+                $(this).parents("tr").find('#fecha').each(function(){
+                  fecha = $(this).html();      
+                var fecha_actual = document.getElementById("fechaActual").value;
+                //alert("FECHA ACTUAL: " +fecha_actual);
+                  //alert("FECHA: " + fecha); 
+
+                if (fecha_actual > fecha){
+                  Swal.fire({
+                    type:'error',
+                    title:'ERROR',
+                    text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                  });
+                }
+                else {
+              event.preventDefault();
+
+              Swal.fire({
+                title: 'Estás seguro de eliminar esta cita?',
+                text: "No podrás recuperar el registro",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, borrar!',
+                cancelButtonText: 'Cancelar',
+              }).then((result) => {
+                if (result.value) {
+                  Swal.fire(
+                    'Borrado!',
+                    'Se ha borrado la cita.',
+                    'success'
+
+                    ) 
+
+                  window.location.href = url;
+                }
+              });
+            }
+              return false;
+              });
+              });
+          }
+            
+          </script>
+					<!--<script type="text/javascript">
+
+						function alert_eliminarCita(url) {
+							Swal.fire({
+								title: 'Estás seguro de eliminar esta cita?',
+								text: "No podrás recuperar el registro",
+								type: 'warning',
+								showCancelButton: true,
+								confirmButtonColor: '#3085d6',
+								cancelButtonColor: '#d33',
+								confirmButtonText: 'Si, borrar!',
+								cancelButtonText: 'Cancelar',
+							}).then((result) => {
+								if (result.value) {
+									Swal.fire(
+										'Borrado!',
+										'Se ha borrado la cita.',
+										'success'
+										) 
+
+									window.location.href = url;
+								}
+							});
+							return false;
+						}
+					</script>-->
 
 				</tbody>
 			</table>

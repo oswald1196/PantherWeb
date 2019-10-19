@@ -10,7 +10,7 @@ include('conexion.php');
 
 	while($row = $result->fetch_assoc()){
 
-	$html .= "".$row['dtFechaCaducidad']."";
+	$html .= "".date("Y-m-d",strtotime($row['dtFechaCaducidad']))."";
 
 	}
 	echo $html;

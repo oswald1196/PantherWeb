@@ -112,7 +112,7 @@ if ($_SESSION["autenticado"] != "SI") {
 		<div class="cabeceraE">
 
 			<p id="lblCita"> Ectoparásitos de: <?php echo $row['vchNombrePaciente']; ?> </p>
-			<input type="text" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
+			<input type="hidden" name="" id="fechaActual" value="<?php echo " ".$fecha_actual?>">
 
 		</div>
 		<div id="contenedor">
@@ -141,42 +141,62 @@ if ($_SESSION["autenticado"] != "SI") {
 
 						?>
 						<tr>
-							<td class="columna1E" id="fecha"> <?php echo $fila['sFecha'] ?></td>
+							<td class="columna1E" id="fecha"> <?php echo date("Y-m-d",strtotime($fila['sFecha'])); ?></td>
 							<td class="columna2E"> <?php echo $fila['sProductoAplicado'] ?> </td>
 							<td class="columna3E"> <?php echo $fila['sObservaciones'] ?></td>
-							<td class="columna5E"> <?php echo $fila['sFechaProxima'] ?></td>
+							<td class="columna5E"> <?php echo date("Y-m-d",strtotime($fila['sFechaProxima'])); ?></td>
 							<td class="columna6E"> <?php echo $fila['sNumeroLote'] ?> </td>
-							<td class="columna7E"> <?php echo $fila['sFechaCaducidad'] ?> </td>
-							<td class="columna8E"> <a onclick=" return alert_fecha();" href="eliminar_ecto.php?idD=<?php echo $fila['iCodTranHecto'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" onclick="return alert_eliminarEcto();"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
+							<td class="columna7E"> <?php echo date("Y-m-d",strtotime($fila['sFechaCaducidad'])); ?> </td>
+							<td class="columna8E"> <a onclick="alert_eliminarEcto(this.href); return false;" class="boton" href="eliminar_ecto.php?idD=<?php echo $fila['iCodTranHecto'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" > <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </td>
 							</tr>
 							<?php
 						}
 						?>
 						<script type="text/javascript">
-							function alert_eliminarEcto(){
-								var respuesta = confirm("Estás seguro de eliminar el ectoparásito?");
-								if (respuesta == true) {
-									return true;
-								} else {
-									return false;
-								}
-							}  
+							function alert_eliminarEcto(url) {
 
-							function alert_fecha(){
-								var fecha_tabla = document.getElementById("fecha").innerHTML;
-								alert(fecha_tabla);
-								var fecha_actual = document.getElementById("fechaActual").value;
-								alert(fecha_actual);
-								if (fecha_actual > fecha_tabla){
-									Swal.fire({
-										type:'error',
-										title:'ERROR',
-										text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+								$(".boton").click(function(){ 
+									var fecha = "";
+
+									$(this).parents("tr").find('#fecha').each(function(){
+										fecha = $(this).html();      
+										var fecha_actual = document.getElementById("fechaActual").value;
+										if (fecha_actual > fecha){
+											Swal.fire({
+												type:'error',
+												title:'ERROR',
+												text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+											});
+										}
+										else {
+											event.preventDefault();
+
+											Swal.fire({
+												title: 'Estás seguro de eliminar este ectoparásito?',
+												text: "No podrás recuperar el registro",
+												type: 'warning',
+												showCancelButton: true,
+												confirmButtonColor: '#3085d6',
+												cancelButtonColor: '#d33',
+												confirmButtonText: 'Si, borrar!',
+												cancelButtonText: 'Cancelar',
+											}).then((result) => {
+												if (result.value) {
+													Swal.fire(
+														'Borrado!',
+														'Se ha borrado el ectoparásito.',
+														'success'
+
+														) 
+
+													window.location.href = url;
+												}
+											});
+										}
+										return false;
 									});
-									return false;
-								}
-								return true;
-							}        
+								});
+							} 
 						</script>
 
 					</tbody>
