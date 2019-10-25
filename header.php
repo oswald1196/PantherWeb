@@ -26,14 +26,14 @@
 
 <body background="assets/img/fondo-negro-elegante_1152-238.jpg" style="height: auto; width: auto;">
     <header>
-      <div class="logo logo_main">  <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther">
+      <div class="logo logo_main"> <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imagen_menu" src="assets/img/3NL-pantherG.png" alt="Logo Panther"></a> 
     </div>
       <div class="menu_bar">
       <a class="bt-menu"> <span class="fas fa-bars"> </span> Menu </a> 
       </div>
           <nav> 
             <ul>
-             <li> <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Home</a> </li>
+             <li> <a href="home.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Inicio</a> </li>
 
              <li> <a href="alta_paciente.php?id=<?php echo base64_encode($codigo)?>&cm=<?php echo base64_encode($cMedico)?>">Alta de paciente</a> </li>
 

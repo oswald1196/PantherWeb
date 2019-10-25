@@ -11,7 +11,6 @@
 	if($tamano_imagen <= 1000000){
 		if($tipo_imagen == "image/jpeg" || $tipo_imagen == "image/jpg" || $tipo_imagen == "image/png"){
 	//RUTA DE LA CARPETA DESTINO EN SERVIDOR
-	$archivo_temporal = $_FILES['imagen']['tmp_name'];
 
 	$carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/uploads';
 

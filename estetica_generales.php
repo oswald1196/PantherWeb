@@ -178,7 +178,7 @@ if ($_SESSION["autenticado"] != "SI") {
     <div id="notasyobs">
       <label for="inputNotas" id="lblNotas">Notas y observaciones</label>
       <textarea id="inputNotas" name="notas"> </textarea>
-      <input type="text" id="inputExisteCita">
+      <input type="hidden" id="inputExisteCita">
 
     </div>
     <div id="botonAgregarEG">

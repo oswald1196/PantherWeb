@@ -38,7 +38,7 @@ if ($_SESSION["autenticado"] != "SI") {
   $cMedico = base64_decode($_GET['cm']);
   $codigoPaciente = base64_decode($_GET['codigo']);
   $fecha_actual = date("Y-m-d");
-  date_default_timezone_set('America/Bogota');
+  date_default_timezone_set("UTC");
 
   include('header.php');
   ?>
@@ -94,7 +94,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
             function alert_eliminarCita(url) {
 
-            $(".boton").mouseenter(function(){ 
+            $(".boton").click(function(){ 
               var fecha = "";
 
                 $(this).parents("tr").find('#fecha').each(function(){

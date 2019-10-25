@@ -22,11 +22,12 @@ if ($_SESSION["autenticado"] != "SI") {
 
   <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
   <link rel="stylesheet" href="assets/css/alta_pacientes.css" />
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 
   <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/css/estilos.css" />
+  <link rel="stylesheet" href="assets/css/ace-fonts.css" />
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -55,7 +56,7 @@ $fecha_actual = date("Y-m-d");
 ?>
 
 <div class="principal">
-  <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php" onsubmit="return validarPaciente();">
+  <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php" onsubmit="return validarPaciente(); return getPacienteExistente();" enctype="multipart/form-data">
 
     <div class="title">
       <p id="lblCita" style="color: white;"> Alta Paciente </p>
@@ -80,7 +81,7 @@ $fecha_actual = date("Y-m-d");
 
         <div class="form-input">
 
-          <input type="text" name="nombrePaciente" id="nombrePaciente" placeholder="Nombre"/>
+          <input type="text" class="inputPaciente" name="nombrePaciente" id="nombrePaciente" placeholder="Nombre"/>
         </div>
         <div class="form-input">
 
@@ -150,10 +151,32 @@ $fecha_actual = date("Y-m-d");
           </select>
         </div>
         <div id="div_avatar">
-          <img id="avatarPL" src="assets/img/pg-100.png" title="Logo 2 Panther">
-          <!--<p id="texto"> AVATAR </p>
-          <input type="file" name="imagen" id="avatar">-->
+          <p id="texto"> AVATAR </p>
+          <input type="file" name="imagen" id="avatar">
         </div>
+        <div id="div_img">
+        </div>
+
+        <script type="text/javascript">
+
+          document.getElementById("avatar").onchange = function(e) {
+            let reader = new FileReader();
+
+            reader.onload = function(){
+              let preview = document.getElementById('div_img'),
+              image = document.createElement('img');
+
+              image.src = reader.result;
+
+              preview.innerHTML = '';
+              preview.append(image);
+            };
+
+            reader.readAsDataURL(e.target.files[0]);
+          }
+        </script>
+
+
         <div class="form-input">
           <label for="radioGenero" class="required" id="lblGenero">Macho</label>
 
@@ -163,12 +186,7 @@ $fecha_actual = date("Y-m-d");
 
           &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="sexo" value="HEMBRA" id="radio-one" class="form-radio-hembra"><label for="radio-one"></label>
         </div>
-        <!--<div class="form-input">
 
-          <input type="text" name="tipoServicio" id="inputMeses" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="MESES">
-
-          <input type="text" name="tipoServicio" id="inputAnios" onkeypress="return event.charCode >= 48 && event.charCode <= 57" placeholder="AÑOS">        
-        </div>-->
         <div class="form-input">
 
           <input type="date" name="fechaNac" id="inputFechaNac" />
@@ -198,11 +216,11 @@ $fecha_actual = date("Y-m-d");
         <span class="title-propietario"> Propietario </span>
         <div class="form-input">
 
-          <input type="text" onkeypress="return soloLetras(event)" name="nombreProp" id="inputNombreP" placeholder="Nombre" />
+          <input type="text" onkeypress="return soloLetras(event)" class="nombrePropietario" name="nombreProp" id="inputNombreP" placeholder="Nombre" />
         </div>
         <div class="form-input">
 
-          <input type="text" onkeypress="return soloLetras(event)" name="paternoProp" id="inputPaterno" placeholder="A. Paterno"/>
+          <input type="text" onkeypress="return soloLetras(event)" class="apellidoPropietario" name="paternoProp" id="inputPaterno" placeholder="A. Paterno"/>
         </div>
         <div class="form-input">
 
@@ -210,7 +228,7 @@ $fecha_actual = date("Y-m-d");
         </div>
         <div class="form-input">
 
-          <input type="text" name="telefonoProp" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="inputTelefono" placeholder="Teléfono" />
+          <input type="text" name="telefonoProp" class="telPropietario" onkeypress="return event.charCode >= 48 && event.charCode <= 57" id="inputTelefono" placeholder="Teléfono" onblur="getPacienteExistente();"/>
         </div>
         <div class="form-input">
 
@@ -218,7 +236,7 @@ $fecha_actual = date("Y-m-d");
         </div>
         <div class="form-input">
 
-          <input type="text" name="correoProp" id="inputCorreo" placeholder="Correo"/>
+          <input type="text" name="correoProp" id="inputCorreo" class="correoPropietario" placeholder="Correo"/>
         </div>
         <div class="form-input">
 
@@ -231,8 +249,30 @@ $fecha_actual = date("Y-m-d");
         <div class="form-input">                                    
           <input type="text" name="cpProp" id="inputCP" placeholder="Código Postal" onkeypress="return event.charCode >= 48 && event.charCode <= 57"/>
         </div>
+
+        <script type="text/javascript">
+          function getPacienteExistente(){
+
+            var nombrePac = document.getElementById("nombrePaciente").value;
+            var especiePac = document.getElementById("sltEspecie").value;
+            var razaPac = document.getElementById("sltRaza").value;
+            var telProp = document.getElementById("inputTelefono").value;
+            var id = <?= json_encode($codigo) ?>;
+            alert(nombrePac);
+            alert(especiePac);
+            alert(razaPac);
+            alert(telProp);
+            $.post('obtenerPacienteExistente.php', { nombrePaciente: nombrePac, especie: especiePac, raza: razaPac, telefono:telProp, id: id }, function(data){
+              $('#inputExistePaciente').html(data);
+              document.getElementById("inputExistePaciente").value = data;
+            }); 
+          }
+        </script>
+
+        <input type="hidden" id="inputExistePaciente"/>
+
         <input type="submit" value="Agregar" class="btnAlta" id="btnAltaPac" name=""/>
-        
+
         <script type="text/javascript">
           function validarPaciente() {
             var nPaciente = document.getElementById("nombrePaciente").value;
@@ -243,7 +283,17 @@ $fecha_actual = date("Y-m-d");
             var aPropietario = document.getElementById("inputPaterno").value;
             var tPropietario = document.getElementById("inputTelefono").value;
             var cPropietario = document.getElementById("inputCorreo").value;
+            var txtExiste = document.getElementById("inputExistePaciente").value;
+            var avatar = document.getElementById("avatar").value;
 
+            if(txtExiste == 1){
+              Swal.fire({
+                type: 'error',
+                title: 'ERROR',
+                text: 'SE ENCONTRÓ ESTE PACIENTE REGISTRADO PREVIAMENTE'
+              });
+              return false;
+            }
 
             if(nPaciente == ""){
               Swal.fire({
@@ -277,6 +327,15 @@ $fecha_actual = date("Y-m-d");
               type:'error',
               title:'ERROR',
               text:'Falta color'
+            });
+             return false;
+           }
+
+           if(avatar == ""){
+             Swal.fire({
+              type:'error',
+              title:'ERROR',
+              text:'Falta avatar'
             });
              return false;
            }

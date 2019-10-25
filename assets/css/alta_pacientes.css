@@ -95,6 +95,7 @@
 	height: 35px;
 	width: 411px;
 	position: absolute;
+	font-weight: 800;
 	top: 300px;
 	margin-left: 70px;
 	color: gray;
@@ -108,6 +109,7 @@
 	font-family: 'Nunito', sans-serif;
 	width: 411px;
 	height: 35px;
+	font-weight: 800;
 	position: absolute;
 	top: 350px;
 	margin-left: 70px;
@@ -122,6 +124,7 @@
 	font-size: 15px;
 	width: 300px;
 	height: 35px;
+	font-weight: 800;
 	position: absolute;
 	top: 390px;
 	margin-left: 70px;
@@ -135,6 +138,7 @@
 	font-size: 15px;
 	width: 300px;
 	height: 35px;
+	font-weight: 800;
 	position: absolute;
 	top: 430px;
 	margin-left: 70px;
@@ -208,11 +212,11 @@
 	-moz-appearance: none;
 	appearance: none;
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	background-color: #f1f1f1;
 	color: #666;
-	top: 200px;
-	left: 120px;
+	top: 480px;
+	left: 510px;
 	height: 30px;
 	width: 30px;
 	border: 0;
@@ -228,11 +232,11 @@
 	-moz-appearance: none;
 	appearance: none;
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	background-color: #f1f1f1;
 	color: #666;
-	top: 200px;
-	left: 260px;
+	top: 480px;
+	left:670px;
 	height: 30px;
 	width: 30px;
 	border: 0;
@@ -288,11 +292,11 @@
 	-moz-appearance: none;
 	appearance: none;
 	display: inline-block;
-	position: relative;
+	position: absolute;
 	background-color: #f1f1f1;
 	color: #666;
-	top: 505px;
-	left: 180px;
+	top: 815px;
+	left: 580px;
 	height: 27px;
 	width: 27px;
 	border: 0;
@@ -321,6 +325,86 @@
 /*EndCheckbox*/
 /***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
 
+/********** Placeholder color *********/
+.inputPaciente::-webkit-input-placeholder {
+  	color: #FA8072;
+}
+
+.inputPaciente:-moz-placeholder { /* Firefox 18- */
+  	color: #FA8072;
+}
+
+.inputPaciente::-moz-placeholder { /* Firefox 19+ */
+  	color: #FA8072;
+}
+
+.inputPaciente:-ms-input-placeholder { /* IE 10+ */
+  	color: #FA8072;
+}
+
+.nombrePropietario::-webkit-input-placeholder {
+  	color: #FA8072;
+}
+
+.nombrePropietario:-moz-placeholder { /* Firefox 18- */
+  	color: #FA8072;
+}
+
+.nombrePropietario::-moz-placeholder { /* Firefox 19+ */
+  	color: #FA8072;
+}
+
+.nombrePropietario:-ms-input-placeholder { /* IE 10+ */
+  	color: #FA8072;
+}
+
+.apellidoPropietario::-webkit-input-placeholder {
+  	color: #FA8072;
+}
+.apellidoPropietario:-moz-placeholder { /* Firefox 18- */
+  	color: #FA8072;
+}
+
+.apellidoPropietario::-moz-placeholder { /* Firefox 19+ */
+  	color: #FA8072;
+}
+
+.apellidoPropietario:-ms-input-placeholder { /* IE 10+ */
+  	color: #FA8072;
+}
+
+.telPropietario::-webkit-input-placeholder {
+  	color: #FA8072;
+}
+.telPropietario:-moz-placeholder { /* Firefox 18- */
+  	color: #FA8072;
+}
+
+.telPropietario::-moz-placeholder { /* Firefox 19+ */
+  	color: #FA8072;
+}
+
+.telPropietario:-ms-input-placeholder { /* IE 10+ */
+  	color: #FA8072;
+}
+
+.correoPropietario::-webkit-input-placeholder {
+  	color: #FA8072;
+}
+.correoPropietario:-moz-placeholder { /* Firefox 18- */
+  	color: #FA8072;
+}
+
+.correoPropietario::-moz-placeholder { /* Firefox 19+ */
+  	color: #FA8072;
+}
+
+.correoPropietario:-ms-input-placeholder { /* IE 10+ */
+  	color: #FA8072;
+}
+
+/********** Placeholder color *********/
+
 #optColor {
 	color: gray;
 }
@@ -338,6 +422,7 @@
 	font-size: 15px;
 	margin-left: 70px;
 	width: 411px;
+	font-weight: 800;
 	height: 40px;
 	text-transform: uppercase;
 	border-radius: 10px;
@@ -348,6 +433,7 @@
 #inputPaterno{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
+	font-weight: 800;
 	width: 411px;
 	height: 40px;
 	margin-left: 70px;
@@ -373,6 +459,7 @@
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
 	width: 411px;
+	font-weight: 800;
 	height: 40px;
 	margin-left: 70px;
 	text-transform: uppercase;
@@ -400,6 +487,7 @@
 	width: 411px;
 	height: 40px;
 	margin-left: 70px;
+	font-weight: 800;
 	text-transform: uppercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
@@ -427,7 +515,7 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
 }
 
 #inputCP{
@@ -438,7 +526,7 @@
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
-	border: 2px solid #40444745
+	border: 2px solid #40444745;
 }
 
 #inputIdioma {
@@ -483,7 +571,7 @@
 #lblGenero{
 	font-family: 'Nunito', sans-serif;
 	font-size: 18px;
-	margin-top: 210px;
+	margin-top: 220px;
 	position: absolute;
 	margin-left: 70px;
 }
@@ -492,7 +580,7 @@
 	font-family: 'Nunito', sans-serif;
 	font-size: 18px;
 	margin-left: 200px;
-	margin-top: 210px;
+	margin-top: 220px;
 	position: absolute;
 
 }
@@ -511,27 +599,40 @@
 
 /************* Avatar ****************/
 
+div#div_avatar{
+	width: 90px;
+	padding: 5px;
+	position: absolute;
+	left: 770px;
+	top: 485px;
+	border: 2px solid #40444745;
+	border-radius: 5px;
+}
+
 p#texto{
+	font-family: 'Nunito', sans-serif;
+	font-size: 13px;
 	text-align: center;
-	top: 300px;
+	font-weight: 600;
+	cursor: pointer;
+	top: 50px;
 }
 
 #caja_imagen {
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	width: 100px;
-	height: 130px;
+	width: 90px;
+	height: 90px;
 	float: right;
 	position: absolute;
-	background-color: #3a464b;
-	margin-left: 380px;
-	margin-top: 115px;
-}
-
-#avatarPL{
-	position: absolute;
-	margin-left: 385px;
-	margin-top: 140px;
+	background-color: white;
+	margin-left: 390px;
+	margin-top: 120px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 2px solid #40444745;
 }
 
 input#avatar {
@@ -543,6 +644,33 @@ input#avatar {
 	height: 100%;
 	width: 100%;
 	opacity: 0;
+	cursor: pointer;
+}
+
+#div_img {
+	border-radius: 10px;
+	border: 2px solid #40444745;
+	width: 90px;
+	height: 90px;
+	float: right;
+	position: absolute;
+	background-color: white;
+	margin-left: 390px;
+	margin-top: 120px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-o-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border: 2px solid #40444745;
+}
+#div_img img {
+	position: absolute;
+	top: 0px;
+	left: -1px;
+	width:88px;
+	border-radius: 5px;
+	height: 88px;
+	display:block;
 }
 
 /******* AVATAR *************/
