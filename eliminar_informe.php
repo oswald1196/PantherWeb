@@ -3,10 +3,28 @@ require ('conexion.php');
 
 $id = $_REQUEST['idI'];
 
+$getDatos = "SELECT * FROM TranInformeMedico WHERE iCodTranInformeMedico = '$id'";
+
+$result = mysqli_query($conn,$getDatos);
+$row = mysqli_fetch_assoc($result);
+
+$codCuenta = $row['iCodServicios'];
+
+/********** BORRAR CUENTA *************/
+$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodTranCuentasClientes = '$codCuenta'";
+echo $borrarCuenta;
+$cuentaBorrada = mysqli_query($conn,$borrarCuenta);
+
+/********** BORRAR CUENTA *************/
+
+/********** BORRAR INFORME *************/
 
 $sql = "DELETE FROM TranInformeMedico WHERE iCodTranInformeMedico = '$id'";
 
 $resultado = mysqli_query($conn,$sql);
+
+/********** BORRAR INFORME *************/
+
 ?>
 
 <?php

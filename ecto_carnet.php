@@ -103,8 +103,6 @@ if ($_SESSION["autenticado"] != "SI") {
               $(this).parents("tr").find('#fecha').each(function(){
                 fecha = $(this).html();      
                 var fecha_actual = document.getElementById("fechaActual").value;
-                alert(fecha);
-                alert(fecha_actual);
                 if (fecha_actual > fecha){
                   Swal.fire({
                     type:'error',

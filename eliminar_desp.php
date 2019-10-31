@@ -15,13 +15,13 @@ $cEmpresa = $row['iCodEmpresa'];
 $fecha = $row['sFechaProxima'];
 $codigoProd = $row['iCodProducto'];
 $codLote = $row['iCodProductoLote'];
+$codCuenta = $row['iCodCuentaCliente'];
 
 $borrarCita = "DELETE FROM TranCalendario WHERE iCodPaciente = '$codigo' AND vchTipoMotivo = '$motivo' AND dtFecha = '$fecha'";
 $borrado = mysqli_query($conn,$borrarCita);
 
 /********** ELIMINAR REGISTRO DE CUENTA *************/
-$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodProducto = '$codigoProd' AND iCodPaciente = '$codigo'";
-
+$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodTranCuentasClientes = '$codCuenta'";
 $cuentaBorrada = mysqli_query($conn,$borrarCuenta);
 /********** ACTUALIZAR STOCKS *************/ 
 
@@ -161,8 +161,6 @@ if ($_SESSION["autenticado"] != "SI") {
               $(this).parents("tr").find('#fecha').each(function(){
                 fecha = $(this).html();      
                 var fecha_actual = document.getElementById("fechaActual").value;
-                alert(fecha);
-                alert(fecha_actual);
                 if (fecha_actual > fecha){
                   Swal.fire({
                     type:'error',

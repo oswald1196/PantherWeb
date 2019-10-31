@@ -63,7 +63,7 @@ if ($_SESSION["autenticado"] != "SI") {
 <p id="titulo_consulta">Agregar informe médico</p> 
 
 <div class="contenedor_imedico">
-  <form class="form-consulta" id="frmConsulta" name="formulario" action="" method="POST" onsubmit="return valida();">
+  <form class="form-consulta" id="frmConsulta" name="formulario" action="insertar_consulta.php" method="POST" onsubmit="return valida();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);

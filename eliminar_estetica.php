@@ -3,8 +3,18 @@ require ('conexion.php');
 
 $id = $_REQUEST['idEst'];
 
-$sql = "DELETE FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
+$getDatos = "SELECT * FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
 
+$result = mysqli_query($conn,$getDatos);
+$row = mysqli_fetch_assoc($result);
+
+$codCuenta = $row['iCodServicios'];
+
+$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodTranCuentasClientes = '$codCuenta'";
+
+$cuentaBorrada = mysqli_query($conn,$borrarCuenta);
+
+$sql = "DELETE FROM TranAgendaEstetica WHERE iCodTranAgendaEstetica = '$id'";
 $resultado = mysqli_query($conn,$sql);
 ?>
 
@@ -35,6 +45,8 @@ if ($_SESSION["autenticado"] != "SI") {
   <link rel="stylesheet" href="assets/css/panel_estetica.css" />
 
   <link rel="stylesheet" href="assets/css/ace.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"> </script>
   <link rel="stylesheet" href="dist/sweetalert2.min.css">
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
@@ -46,6 +58,8 @@ if ($_SESSION["autenticado"] != "SI") {
   $codigo = base64_decode($_GET['id']);
   $codigoPaciente = base64_decode($_GET['codigo']);
   $cMedico = base64_decode($_GET['cm']);
+  $fecha_actual = date("Y-m-d");
+  date_default_timezone_set('America/Bogota');
 
   include('header.php');
   ?>
@@ -61,6 +75,8 @@ if ($_SESSION["autenticado"] != "SI") {
     <div class="header_titleE">
 
       <p id="lblCita"> Estéticas de: <?php echo $row['vchNombrePaciente']; ?> </p>
+      <input type="hidden" name="" id="fechaActual" value="<?php echo " ".$fecha_actual?>">
+
     </div>
     <div id="contenedor_citas">
       <button class="botonAEst"> <a href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="imgAdd" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
@@ -82,7 +98,7 @@ if ($_SESSION["autenticado"] != "SI") {
           </thead>
           <?php
 
-          $query = "SELECT DISTINCT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodServicio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
+          $query = "SELECT DISTINCT TA.iCodTranAgendaEstetica, TA.iCodAgenda, TA.iCodPaciente, TA.iCodServicio, TA.dtFecha, TA.dtHoraIni, TA.dtHoraFin, TA.dPrecio, IF(TA.iCodEstatus = 1, 'PENDIENTE', 'TERMINADA') As vchEstatus, TA.iCodEstatus, TA.vchDescripcion, TA.vchObservaciones FROM TranAgendaEstetica TA INNER JOIN CatServicios CS ON TA.iCodServicio = CS.iCodLaboratorio WHERE iCodPaciente = '$codigoPaciente' ORDER BY dtFecha DESC";
 
 
           $resultado = mysqli_query($conn,$query);
@@ -90,14 +106,14 @@ if ($_SESSION["autenticado"] != "SI") {
 
             ?>
             <tr>
-              <td class="columnades"> <?php echo date("Y-m-d",strtotime($fila['dtFecha'])); ?></td>
+              <td class="columnades" id="fecha"> <?php echo date("Y-m-d",strtotime($fila['dtFecha'])); ?></td>
               <td class="columnades"> <?php echo $fila['vchDescripcion'] ?></td>
               <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
               <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
               <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
               <td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" > <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
               <td class="columnah" id="fila_estatus"> <?php echo $fila['vchEstatus'] ?></td>
-              <td class="columnai"> <a onclick="alert_terminarCita(this.href); return false;" class="btnEstetica" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </button> </a> </td>
+              <td class="columnai"> <a onclick="alert_terminarCita(this.href); return false;" class="btnEstetica" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </a> </td>
             </tr>
             <?php
           }
@@ -155,7 +171,7 @@ if ($_SESSION["autenticado"] != "SI") {
               $(".btnEstetica").click(function(){
                 var estatus = "";
 
-                $(this).parents("tr").find('#filaEstatus').each(function(){
+                $(this).parents("tr").find('#fila_estatus').each(function(){
                   estatus = $(this).html();      
                   if (estatus == " TERMINADA"){
                     Swal.fire({

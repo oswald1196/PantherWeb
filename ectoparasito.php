@@ -70,7 +70,7 @@ if ($_SESSION["autenticado"] != "SI") {
 }
 </script>
 <div class="container">
-  <form class="form_add_cita" id="frmEcto" action="" method="POST" onsubmit="return validarEcto();">
+  <form class="form_add_cita" id="frmEcto" action="insertar_ecto.php" method="POST" onsubmit="return validarEcto();">
     <?php 
     $sql = "SELECT * FROM TranAfiliado WHERE iCodPaciente = '$codigoP'";
     $query = mysqli_query($conn,$sql);
@@ -333,7 +333,7 @@ if ($_SESSION["autenticado"] != "SI") {
       return false;
     }
 
-    $.ajax({
+    /*$.ajax({
       type: "POST",
       url: "insertar_ecto.php",
       data: datos,
@@ -352,7 +352,7 @@ if ($_SESSION["autenticado"] != "SI") {
     });
     return false;
 
-    return true;
+    return true;*/
   }
 </script>
 </form>  

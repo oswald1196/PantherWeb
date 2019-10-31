@@ -390,6 +390,7 @@
 
 .correoPropietario::-webkit-input-placeholder {
   	color: #FA8072;
+  	text-transform: uppercase;
 }
 .correoPropietario:-moz-placeholder { /* Firefox 18- */
   	color: #FA8072;
@@ -428,6 +429,7 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: gray;
+	color: #FA8072;
 }
 
 #inputPaterno{
@@ -441,6 +443,7 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: gray;
+	color: #FA8072;
 }
 
 #inputMaterno{
@@ -466,7 +469,6 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: #FA8072;
-
 }
 
 #inputTelefonoDos {
@@ -488,10 +490,10 @@
 	height: 40px;
 	margin-left: 70px;
 	font-weight: 800;
-	text-transform: uppercase;
+	text-transform: lowercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	color: gray;
+	color: #FA8072;
 }
 
 #inputDireccion{
@@ -504,7 +506,6 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: gray;
-
 }
 
 #inputColonia{

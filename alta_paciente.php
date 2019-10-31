@@ -176,7 +176,6 @@ $fecha_actual = date("Y-m-d");
           }
         </script>
 
-
         <div class="form-input">
           <label for="radioGenero" class="required" id="lblGenero">Macho</label>
 
@@ -258,10 +257,6 @@ $fecha_actual = date("Y-m-d");
             var razaPac = document.getElementById("sltRaza").value;
             var telProp = document.getElementById("inputTelefono").value;
             var id = <?= json_encode($codigo) ?>;
-            alert(nombrePac);
-            alert(especiePac);
-            alert(razaPac);
-            alert(telProp);
             $.post('obtenerPacienteExistente.php', { nombrePaciente: nombrePac, especie: especiePac, raza: razaPac, telefono:telProp, id: id }, function(data){
               $('#inputExistePaciente').html(data);
               document.getElementById("inputExistePaciente").value = data;

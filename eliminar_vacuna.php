@@ -15,13 +15,14 @@ $cEmpresa = $row['iCodEmpresa'];
 $fecha = $row['sFechaProgramada'];
 $codigoProd = $row['iCodProducto'];
 $codLote = $row['iCodProductoLote'];
+$codCuenta = $row['iCodCuentaCliente'];
 
 $borrarCita = "DELETE FROM TranCalendario WHERE iCodPaciente = '$codigo' AND vchTipoMotivo = '$motivo' AND dtFecha = '$fecha'";
 
 $borrado = mysqli_query($conn,$borrarCita);
 
 /********** ELIMINAR REGISTRO DE CUENTA *************/ 
-$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodProducto = '$codigoProd' AND iCodPaciente = '$codigo'";
+$borrarCuenta = "DELETE FROM TranCuentasClientes WHERE iCodTranCuentasClientes = $codCuenta";
 
 $cuentaBorrada = mysqli_query($conn,$borrarCuenta);
 /********** ACTUALIZAR STOCKS *************/ 
