@@ -1,17 +1,10 @@
 $(document).ready(function(){
-
-	// Slider
-	if(window.location.href.indexOf('index') > -1){
 	  
-	  $('.galeria').bxSlider({
+	  $('.bxslider').bxSlider({
 	    mode: 'fade',
-	    captions: false,
+	    captions: true,
 	    slideWidth: 1200,
-	    responsive: true,
-	    pager: true
 	  });
 
-	}
-
-});
+	});
 	

@@ -56,7 +56,7 @@ if ($_SESSION["autenticado"] != "SI") {
       
     </div>
     <div id="contenedorD">
-      <button class="botonAddVacunaD"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      <button class="botonAddDesp"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
 
       <table id="carnet_vacunaD">
         <tbody>

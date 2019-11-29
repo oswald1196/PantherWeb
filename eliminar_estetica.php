@@ -181,9 +181,33 @@ if ($_SESSION["autenticado"] != "SI") {
                     });
                   }
                   else   {
-                    window.location.href = url;
+                    event.preventDefault();
 
-                  }           
+                    Swal.fire({
+                      title: 'Estás seguro de terminar este servicio de estética?',
+                      text: "Cambiará su estatus",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Si, terminar!',
+                      cancelButtonText: 'Cancelar',
+                    }).then((result) => {
+                      if (result.value) {
+                    event.preventDefault();
+                        
+                        Swal.fire(
+                          'Correcto!',
+                          'Se ha dado por terminada la estética.',
+                          'success'
+
+                          ) 
+                        window.location.href = url;
+
+                      }           
+                    });
+                  }
+                  return false;
                 });
               });
             }

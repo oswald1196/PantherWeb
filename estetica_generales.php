@@ -292,7 +292,9 @@ if ($_SESSION["autenticado"] != "SI") {
     return true;
   }
 </script>
-<button class="botonAtrasEstG" onclick="goBack();"> Atrás </button>
+<div id="div_atras">
+  <button class="botonAtrasEstG" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
   function goBack() {

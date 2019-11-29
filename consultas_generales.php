@@ -321,8 +321,9 @@ if ($_SESSION["autenticado"] != "SI") {
 </div>
 </form>  
 </div> 
+<div class="boton-atras"> 
 <button class="botonAtrasConsulG" onclick="goBack();"> Atrás </button>
-
+</div>
 <script>
   function goBack() {
     window.history.back();

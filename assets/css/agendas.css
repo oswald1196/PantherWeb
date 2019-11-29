@@ -28,6 +28,29 @@
 #div_boton {
 	margin-top: -5%;
 	height: 22%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+#div_atrasCita{
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
  
 #div_nuevo_motivo {
@@ -75,6 +98,7 @@
 	width: 15%;
 	height: 15%;
 	margin-left: 2%;
+	background-color: white;
 	margin-top: 8%;
 	border-radius: 10px;
 	border: 2px solid #40444745;
@@ -85,6 +109,7 @@
 	width: 15%;
 	height: 15%;
 	margin-left: 2%;
+	background-color: white;
 	margin-top: 8%;
 	border-radius: 10px;
 	border: 2px solid #40444745;
@@ -94,6 +119,7 @@
 	font-size: 17px;
 	width: 160px;
 	height: 40px;
+	background-color: white;
 	margin-left: 40px;
 }
 
@@ -110,6 +136,7 @@
 	margin-left: 10px;
 	margin-top: 7%;
 	border-radius: 10px;
+	background-color: white;
 	border: 2px solid #40444745;
 }
 
@@ -119,6 +146,7 @@
 	width: 60%;
 	height: 40px;
 	margin-left: 10px;
+	background-color: white;
 	margin-top: 6%;
 	text-transform: uppercase;
 	border-radius: 10px;
@@ -165,28 +193,24 @@
 	text-decoration: none;
     padding: 5px;
     font-size: 20px;
-    margin-top: 1%;
-    color: #ffffff;
-    background-color: #527486;
+    margin-top: 0%;
+    color: color;
     border-radius: 6px;
-    border: 1px solid #0016b0;
-    margin-left: 48.5%;
+    border: 1px solid #8585ad;
     width: 5%;
-   	float: left;
 }
 
 .botonAgregar {
  	font-family: 'Nunito', sans-serif;
-	margin-left: 45%;
 	margin-top: 5%;
 	margin-bottom: 1%;
 	text-decoration: none;
     padding: 5px;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #527486;
+    color: black;
+    background-color: #D6D5E1;
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 2px solid #8585ad;
 
 }
 
@@ -198,7 +222,7 @@
     width: 45px;
     height: 45px;
     color: #ffffff;
-    background-color: #527486;
+    background-color: #D6D5E1;
     border-radius: 28px;
     border: 1px solid #0016b047;
 
@@ -233,7 +257,7 @@
 	margin-left: 2%;
 	width: 21%;
 	color: gray;
-	height: 20%;
+	height: 18%;
 }
 
 #lblHoraInicio{
@@ -264,8 +288,9 @@
 }
 
 #inputMotivo {
-	width: 45%;
+	width: 50%;
 	height: 40%;
+	margin-top: 6%;
 	margin-left: 10px;
 	border-radius: 10px;
 }
@@ -280,20 +305,19 @@
 }
 #lblNuevaCita{
 	font-size: 22px;
+	margin-left: 9%;
 }
 .botonAgregar {
 	margin-left: 45%;
 	margin-top: 10%;
     font-size: 18px;
     color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 10px;
     border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 45%;
 	height: 50%;
-	margin-top: 3.5%;
+	margin-top: 4%;
 	float: right;
 }
 
@@ -361,7 +385,7 @@
 }
 
 #inputMotivo {
-	width: 45%;
+	width: 65%;
 	height: 38%;
 	margin-left: 10px;
 	border-radius: 10px;
@@ -384,21 +408,20 @@
 	margin-top: 15%;
     font-size: 18px;
     color: #ffffff;
-    background-color: #1883ba;
     border-radius: 10px;
     border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 45%;
 	height: 50%;
-	margin-top: 3.5%;
+	margin-top: 4%;
 	float: right;
 }
 }
 
 @media(min-width: 768px) and (max-width: 1023px){
 #titulo-pagina {
-	margin-top: 10%;
+	margin-top: 5%;
 	font-size: 25px;
 }
 .container-titulo {
@@ -409,6 +432,7 @@
 .contenedor_principal {
 	width: 90%;	
 	margin-left: 5%;
+	height: 500px;
 }
 
 #chkTodoDia {
@@ -456,7 +480,7 @@
 }
 
 #inputMotivo {
-	width: 45%;
+	width: 65%;
 	height: 38%;
 	margin-left: 10px;
 	border-radius: 10px;
@@ -473,21 +497,21 @@
 }
 #lblNuevaCita{
 	font-size: 18px;
-	margin-left: 1%;
+	margin-left: -5%;
 }
 .botonAgregar {
 	margin-left: 45%;
-	margin-top: 15%;
+	margin-top: 12%;
     font-size: 15px;
     color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 10px;
+    background-color: red;
+    border-radius: 6px;
     border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 45%;
 	height: 50%;
-	margin-top: 3.5%;
+	margin-top: 4%;
 	float: right;
 }
 }
@@ -509,8 +533,8 @@
 }
 
 #chkTodoDia {
-	height: 20px;
-	width: 20px;
+	height: 18px;
+	width: 18px;
 	margin-top: 8%;
 }
 #lblFechaA {
@@ -546,7 +570,7 @@
 
 #lblMotivos{
 	font-size: 18px;
-	margin-left: 18%;
+	margin-left: 16%;
 }
 #inputMotivos{
 	font-size: 13px;
@@ -574,15 +598,14 @@
 }
 #lblNuevaCita{
 	font-size: 18px;
-	margin-left: 15%;
+	margin-left: 20%;
 }
 .botonAgregar {
 	margin-left: 40%;
 	margin-top: 5%;
     font-size: 13px;
     color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
@@ -611,9 +634,9 @@
 }
 
 #chkTodoDia {
-	height: 20px;
-	width: 20px;
-	margin-top: 10%;
+	height: 15px;
+	width: 15px;
+	margin-top: 15%;
 }
 #lblFechaA {
 	font-size: 15px;
@@ -660,7 +683,7 @@
 
 #inputMotivo {
 	width: 45%;
-	height: 35%;
+	height: 30%;
 	margin-left: 10px;
 	border-radius: 10px;
 	font-size: 12px;
@@ -676,15 +699,21 @@
 }
 #lblNuevaCita{
 	font-size: 15px;
-	margin-left: 12%;
+	margin-left: 20%;
 }
+
+.botonAtrasCita {
+    font-size: 13px;
+    width: 15%;
+    margin-left: 46%;
+}
+
 .botonAgregar {
 	margin-left: 40%;
 	margin-top: 8%;
     font-size: 13px;
     color: #ffffff;
-    background-color: #1883ba;
-    border-radius: 10px;
+    border-radius: 7px;
     border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
@@ -762,7 +791,8 @@
 #inputMotivos{
 	font-size: 11px;
 	width: 55%;
-	height: 13%;
+	border-radius: 8px;
+	height: 15%;
 	margin-left: 2%;
 	margin-top: 5%;
 }
@@ -786,8 +816,14 @@
 
 #lblNuevaCita{
 	font-size: 13px;
-	margin-left: 12%;
+	margin-left: 18%;
 	margin-top: 2%;
+}
+
+.botonAtrasCita {
+    font-size: 13px;
+    width: 15%;
+    margin-left: 46%;
 }
 
 .botonAgregar {
@@ -796,7 +832,6 @@
     font-size: 12px;
     padding: 5px;
     color: #ffffff;
-    background-color: #1883ba;
     border-radius: 5px;
     border: 1px solid #0016b0;
 }
@@ -877,13 +912,14 @@
 	font-size: 10px;
 	width: 55%;
 	height: 13%;
+	border-radius: 8px;
 	margin-left: 2%;
 	margin-top: 2%;
 }
 
 #inputMotivo {
-	width: 45%;
-	height: 20%;
+	width: 55%;
+	height: 30%;
 	margin-left: 10px;
 	margin-top: 10%;
 	border-radius: 8px;
@@ -910,7 +946,6 @@
     font-size: 12px;
     padding: 5px;
     color: #ffffff;
-    background-color: #1883ba;
     border-radius: 5px;
     border: 1px solid #0016b0;
 }
@@ -921,6 +956,12 @@
 	margin-top: 5%;
 	margin-left: 0%;
 	float: left;
+}
+
+.botonAtrasCita {
+    font-size: 13px;
+    width: 15%;
+    margin-left: 46%;
 }
 
 }

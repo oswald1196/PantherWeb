@@ -24,15 +24,9 @@ $cMedico = base64_decode($_GET['cm']);
 
 	<link rel="stylesheet" href="assets/css/estilos.css" />
 
-      <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-
-	<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
-
-	<script type="text/javascript" src="js/galeria.js"></script>
+	<!--<script type="text/javascript" src="js/galeria.js"></script>-->
 </head>
 
 <body class="login-layout">
@@ -50,13 +44,37 @@ $cMedico = base64_decode($_GET['cm']);
 	<p class="saludo"> HOLA <?php echo $row['vchNombre']?> </p>
 
 	<!--SLIDER-->
-	<div id="slider">
-		<div class="gallery">
-			<div><img src="assets/img/1NL-pantherG.png" title="Logo 1 Panther"></div>
-			<div><img src="assets/img/pg-100.png" title="Logo 2 Panther"></div>
-			<div><img src="assets/img/rsz_3panther15_logo.png" title="Logo 3 Panther"></div>
+	<div id="principal">
+		<div id="slides">
+			<img src="assets/img/1524913221_572475_1524913364_noticia_normal.jpg" title="Logo 1 Panther">
+			<img src="assets/img/1527497974_415003_1527501170_noticia_normal.jpg" title="Logo 2 Panther">
+			<img src="assets/img/mascotas-se-comportan-como-humanos.jpg" title="Logo 3 Panther"> 
 		</div>
 	</div>
+
+	<script type="text/javascript">
+		
+	</script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="assets/js/jquery.slides.js"></script>
+	<script src="assets/js/jquery.slides.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			$("#slides").slidesjs({
+				play: {
+				active:true,
+				effect:"slide",
+				interval: 3000,
+				auto:true,
+				swap:true,
+				pauseOnHover: false,
+				restartDelay: 2500
+				}
+			});
+		});
+	</script>
 
 </body>
 

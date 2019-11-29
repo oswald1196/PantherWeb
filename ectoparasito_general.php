@@ -50,7 +50,7 @@ if ($_SESSION["autenticado"] != "SI") {
   include ('conexion.php');
   ?>
 
-  <p id="titulo-pagina">Agregar ectoparásito </p> 
+  <p id="titulo-paginaE">Agregar ectoparásito </p> 
 
   <script type="text/javascript">
     window.onload = function(){
@@ -67,11 +67,11 @@ if ($_SESSION["autenticado"] != "SI") {
   document.getElementById('inputFechaCad').value=ano+"-"+mes+"-"+dia;
 }
 </script>
-<div class="container">
+<div class="container_ecto">
   <form class="form_add_cita" id="frmEcto" action="insertar_ecto_general.php" method="POST" onsubmit="return validarEcto();">
-    <div>
-      <label id="lblPacientesV">Paciente</label>
-      <select id="selectPacienteV" name="paciente">
+    <div id="div_paciente">
+      <label id="lblPacientesE">Paciente</label>
+      <select id="selectPacienteE" name="paciente">
         <option value="">Elige paciente</option>
         <?php 
         $sql = "SELECT * FROM TranAfiliado WHERE iCodEmpresa = '$codigo' ORDER BY vchNombrePaciente";
@@ -85,9 +85,9 @@ if ($_SESSION["autenticado"] != "SI") {
       </select>    
     </div>
     <div id="contenedor">
-      <div class="form-leftV">
+      <div class="form-leftE">
         <label id="lblFecha">Fecha</label>
-        <input type="date" class="input-append date" id="inputfecha" name="fecha" tabindex="1">
+        <input type="date" class="input-append date" id="inputFechaE" name="fecha" tabindex="1">
         <input type="hidden" name="empresa" value="<?php echo $codigo ?>">
         <label id="lblProducto"> Producto </label>
         <select id="inputProductoE" name="ecto" onchange="ShowSelected(); obtenerPrecioEcto(); stockEcto(); stockMinimoEcto(); getTipo();">
@@ -191,15 +191,15 @@ if ($_SESSION["autenticado"] != "SI") {
         <label id="lblLote"> Lote </label>
         <select id="inputLoteEcto" name="lote" onchange="precioEcto(); getCaducidad();"> </select>
         <label id="lblPrecio">Precio</label>
-        <input type="text" id="inputPrecio" name="dia">
+        <input type="text" id="inputPrecioE" name="dia">
         <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
         <input type="hidden" id="inputStockEcto">
         <input type="hidden" id="inputStockMinEcto">
         <input type="hidden" id="tipoProducto">
         <input type="hidden" name="cantidad" value="1">
 
-        <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
-        <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
+        <label for="inputfechacad" id="lblFechaCadE">Caducidad</label>
+        <input type="date" id="inputFechaCadE" name="fechaC">
         <label id="lblEctoAnt">Ectoparásitos anteriores</label>
         <input type="checkbox" id="ectoAnt" name="anterior" >
       </div>
@@ -224,17 +224,17 @@ if ($_SESSION["autenticado"] != "SI") {
       }
     }
   </script>
-  <div class="form-right">
+  <div class="form-rightE">
     <div class="form-group">
       <label id="lblCitaP">Programar ectoparásito</label>
       <input type="checkbox" id="inputCitaP" name="citaP" onchange="habilitar(this.checked);" checked>
     </div>
-    <input type="text" id="motivoCita" name="motivoCitaEcto" value="ECTOPARÁSITOS">
+    <input type="text" id="motivoCitaE" name="motivoCitaEcto" value="ECTOPARÁSITOS">
     <label id="lblFechaCita"> Fecha </label>
-    <input type="date" id="fechaCita" name="fechaProx">
+    <input type="date" id="fechaCitaE" name="fechaProx">
     <label id="lblHoraCita"> Hora </label>
-    <input type="time" id="inputHoraCita" name="horaProx">
-    <select id="inputProxima" name="medico">
+    <input type="time" id="inputHoraCitaE" name="horaProx">
+    <select id="inputProximaE" name="medico">
     <option value="0">** MÉDICO INDISTINTO **</option>
     <?php
     $sql = "SELECT * FROM CatMedico WHERE iCodEmpresa = '$codigo'";
@@ -360,7 +360,9 @@ if ($_SESSION["autenticado"] != "SI") {
 </script>
 </form>  
 </div> 
-<button class="botonAtrasEctoG" onclick="goBack();"> Atrás </button>
+<div id="div_atrasE">
+  <button class="botonAtrasEctoG" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
 function goBack() {

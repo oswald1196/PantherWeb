@@ -59,7 +59,7 @@ $fecha_actual = date("Y-m-d");
   <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php" onsubmit="return validarPaciente(); return getPacienteExistente();" enctype="multipart/form-data">
 
     <div class="title">
-      <p id="lblCita" style="color: white;"> Alta Paciente </p>
+      <p id="lblNPaciente"> Alta Paciente </p>
     </div>
     <div class="form-row">
       <?php 

@@ -235,7 +235,7 @@ $fecha_actual = date("Y-m-d");
         <input type="checkbox" id="inputAnter" name="chkAnteriores">
       </div>
       <!--Panel derecho -->
-      <div class="form-right">
+      <div class="form-rightV">
         <div class="form-group">
           <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
           <input type="checkbox" id="inputCitaP" name="citaP" onchange="habilitar(this.checked);" checked>
@@ -421,7 +421,9 @@ $fecha_actual = date("Y-m-d");
     </div>
   </form>  
 </div>  
+<div id="div_atrasV">
 <button class="botonAtrasVG" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
   function goBack() {

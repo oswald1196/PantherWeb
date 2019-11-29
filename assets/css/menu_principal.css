@@ -71,6 +71,7 @@ header nav {
 	margin: 0;
 	left: -100%;
 	position: fixed;
+	z-index: 1000;
 }
 
 .logo_main {
@@ -94,6 +95,11 @@ header nav ul li{
 
 header nav ul li a{
 	margin-left: 2px;	
+}
+
+#imagen_menu{
+	height: 50px;
+	width: 180px;
 }
 
 .menu_bar {

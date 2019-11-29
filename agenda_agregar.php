@@ -159,7 +159,9 @@ document.getElementById('inputfecha1').value=ano+"-"+mes+"-"+dia;
 
 </div>
 
+<div id="div_atrasCita">
 <button class="botonAtrasCita" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
   function goBack() {

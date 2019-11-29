@@ -200,7 +200,9 @@ require 'conexion.php';
 </form> 
 
 </div> 
-<button class="botonAtrasCitasG" onclick="goBack();" type="submit">Atrás</button> 
+<div id="div_atrasC">
+  <button class="botonAtrasCitasG" onclick="goBack();" type="submit">Atrás</button> 
+</div>
 <script>
   function goBack() {
     window.history.back();

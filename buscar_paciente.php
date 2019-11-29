@@ -55,7 +55,7 @@ if ($_SESSION["autenticado"] != "SI") {
   			font-family: 'Nunito', sans-serif;	
     	}
     </style>
-<h1 align="center">LISTADO DE PACIENTES</h1>
+<h1 align="center" id="titulo_pacientes">LISTADO DE PACIENTES</h1>
  
 		<div id="datos">
 			

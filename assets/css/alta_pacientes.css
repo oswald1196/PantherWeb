@@ -23,8 +23,8 @@
 	justify-content: center;
 	font-family: 'Nunito', sans-serif;	
 	font-size: 25px;
-	color:black;
-	background: -webkit-linear-gradient(top, #000 55%, #b224ef);
+	background-color: #D6D5E1;
+	color: black;
 }
 
 .form-alta {
@@ -37,10 +37,10 @@
 	padding: 5px;
 	font-size: 20px;
 	margin-top: -1%;
-	color: #ffffff;
-	background-color: #527486;
+	color: black;
+	background-color: #D6D5E1;
 	border-radius: 6px;
-	border: 1px solid #0016b0;
+	border: 2px solid #8585ad;
 	margin-left: 47.5%;
 	width: 5%;
 	float: left;
@@ -112,6 +112,7 @@
 	font-weight: 800;
 	position: absolute;
 	top: 350px;
+	background-color: white;
 	margin-left: 70px;
 	text-transform: uppercase;
 	border-radius: 10px;
@@ -126,6 +127,7 @@
 	height: 35px;
 	font-weight: 800;
 	position: absolute;
+	background-color: white;
 	top: 390px;
 	margin-left: 70px;
 	border-radius: 10px;
@@ -136,6 +138,7 @@
 #sltColor {
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
+	background-color: white;
 	width: 300px;
 	height: 35px;
 	font-weight: 800;
@@ -154,6 +157,7 @@
 	position: absolute;
 	height: 35px;
 	top: 530px;
+	background-color: white;
 	margin-left: 70px;
 	border-radius: 10px;
 	border: 2px solid #40444745;
@@ -327,81 +331,81 @@
 
 /********** Placeholder color *********/
 .inputPaciente::-webkit-input-placeholder {
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .inputPaciente:-moz-placeholder { /* Firefox 18- */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .inputPaciente::-moz-placeholder { /* Firefox 19+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .inputPaciente:-ms-input-placeholder { /* IE 10+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .nombrePropietario::-webkit-input-placeholder {
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .nombrePropietario:-moz-placeholder { /* Firefox 18- */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .nombrePropietario::-moz-placeholder { /* Firefox 19+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .nombrePropietario:-ms-input-placeholder { /* IE 10+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .apellidoPropietario::-webkit-input-placeholder {
-  	color: #FA8072;
+	color: #FA8072;
 }
 .apellidoPropietario:-moz-placeholder { /* Firefox 18- */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .apellidoPropietario::-moz-placeholder { /* Firefox 19+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .apellidoPropietario:-ms-input-placeholder { /* IE 10+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .telPropietario::-webkit-input-placeholder {
-  	color: #FA8072;
+	color: #FA8072;
 }
 .telPropietario:-moz-placeholder { /* Firefox 18- */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .telPropietario::-moz-placeholder { /* Firefox 19+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .telPropietario:-ms-input-placeholder { /* IE 10+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .correoPropietario::-webkit-input-placeholder {
-  	color: #FA8072;
-  	text-transform: uppercase;
+	color: #FA8072;
+	text-transform: uppercase;
 }
 .correoPropietario:-moz-placeholder { /* Firefox 18- */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .correoPropietario::-moz-placeholder { /* Firefox 19+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 .correoPropietario:-ms-input-placeholder { /* IE 10+ */
-  	color: #FA8072;
+	color: #FA8072;
 }
 
 /********** Placeholder color *********/
@@ -554,6 +558,10 @@
 	font-size: 25px;
 }
 
+#lblNPaciente{
+	color: black;
+}
+
 #lblNombre, #lblEspecie, #lblRaza, #lblColor, #lblMeses, #lblFNac, #lblChip, #lblExp,
 #lblObs {
 	font-family: 'Nunito', sans-serif;
@@ -567,6 +575,8 @@
 	margin-left: 70px;
 	position: absolute;
 	top: 820px;
+	font-weight: lighter;
+	color: black;
 }
 
 #lblGenero{
@@ -574,6 +584,8 @@
 	font-size: 18px;
 	margin-top: 220px;
 	position: absolute;
+	color: black;
+	font-weight: lighter;
 	margin-left: 70px;
 }
 
@@ -581,7 +593,9 @@
 	font-family: 'Nunito', sans-serif;
 	font-size: 18px;
 	margin-left: 200px;
+	font-weight: lighter;
 	margin-top: 220px;
+	color: black;
 	position: absolute;
 
 }
@@ -684,40 +698,40 @@ input#avatar {
 	margin-bottom: 10px;	
 	padding: 5px;
 	font-size: 20px;
-	color: #ffffff;
-	background-color: #527486;
+	color: black;
+	background-color: #D6D5E1;
 	border-radius: 5px;
-	border: 1px solid #527486;
+	border: 2px solid #8585ad;
 }
 
 @media (min-width: 1300px) and (max-width: 1366px){
 	.principal {
 		margin-top: 2%;
-		height: 800px;
+		height: 600px;
 		width: 70%;	
 		margin-left: 15%;
 	}
 
 	.title {
-		height: 75px;
-		font-size: 30px;
+		height: 55px;
+		font-size: 25px;
 	}
 
 	.form-paciente {
-		height: 725px;
+		height: 545px;
 	}
 
 	.form-propietario {
-		height: 725px;
+		height: 545px;
 	}
 
 	.title-paciente{	
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 35%;
 	}
 
 	.title-propietario{
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 30%;
 	}
 
@@ -727,20 +741,56 @@ input#avatar {
 	}
 
 	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	#nombrePaciente {
+		margin-top: -10px;
 		font-size: 16px;
 		width: 400px;
 		height: 35px;
 		margin-left: 30px;
+	}
+
+	#sltEspecie {
+		margin-top: -10px;
+		font-size: 16px;
+		width: 400px;
+		height: 35px;
+		margin-left: 30px;
+	}
+
+	#inputFechaNac {
+		width: 400px;
+		margin-left: 30px;
 		border-radius: 9px;
+	}
+
+	#inputChip{
+		margin-left: 30px;
+		width: 400px;
+		margin-top: -15px;
+	}
+
+	#inputExpediente {
+		width: 400px;
+		margin-left: 30px;
+		margin-top: -30px;
+		border-radius: 9px;
+	}
+
+	#sltRaza{
+		margin-left: 30px;
+		margin-top: 5px;
+		width: 300px;
+	}
+
+	#sltColor{
+		margin-top: 15px;
+		margin-left: 30px;
+		width: 300px;
 	}
 
 	#inputMeses{
 		font-size: 16px;
 		margin-left: 110px;
-		width: 100px;
-		height: 35px;
 	}
 
 	#inputAnios{
@@ -753,7 +803,8 @@ input#avatar {
 
 	#txtObservaciones {
 		width: 400px;
-		height: 100px;
+		margin-top: -35px;
+		height: 80px;
 		margin-left: 30px;
 		border-radius: 9px;
 	}
@@ -762,12 +813,12 @@ input#avatar {
 	/*Radio*/
 	.form-radio
 	{
-		top: 5px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 310px;
 	}
 	.form-radio:checked::before
 	{
@@ -779,12 +830,12 @@ input#avatar {
 
 	.form-radio-hembra
 	{
-		top: 5px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 450px;
 	}
 
 	.form-radio-hembra:checked::before
@@ -798,8 +849,8 @@ input#avatar {
 	{
 		height: 25px;
 		width: 25px;
-		margin-right: 9px;
-		top:4px;
+		left: 360px;
+		top:750px;
 	}
 	.form-checkbox:checked::before
 	{
@@ -811,28 +862,85 @@ input#avatar {
 
 	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
 	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 16px;
 		margin-left: 30px;
 		width: 400px;
 		height: 35px;
-		border-radius: 9px;
 	}
 
 	#lblGenero {
-		margin-left: 100px;
-		font-size: 22px;
+		margin-left: 40px;
+		margin-top: -35px;
+		position: absolute;
 	}
 
 	#lblGeneroH {
-		margin-left: 30px;
-		font-size: 22px;
+		margin-left: 150px;
+		margin-top: -35px;
+		position: absolute;
 	}
 
 	#lblEsteril {
 		margin-left: 30px;
 		font-size: 22px;
+		margin-top: -65px;
 	}
 
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 340px;
+		margin-top: 213px;
+		position: static;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 490px;
+	bottom: 0px;
+	left: 10px:
+	right: 0px;
+	height: 5%;
+	width: 5%;
+	background: red;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 10px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 340px;
+		margin-top: 120px;
+	}
+
+	#div_img {
+		border-radius: 10px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 340px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
 	/*Botones*/
 
 	.btnAlta {
@@ -840,8 +948,8 @@ input#avatar {
 		text-decoration: none;
 		margin-left: 40%;
 		margin-bottom: 10px;	
-		padding: 10px;
-		font-size: 22px;    
+		padding: 5px;
+		font-size: 20px;    
 	}
 
 }
@@ -849,63 +957,105 @@ input#avatar {
 @media (min-width: 1200px) and (max-width: 1299px){
 	.principal {
 		margin-top: 2%;
-		height: 800px;
+		height: 600px;
 		width: 70%;	
 		margin-left: 15%;
 	}
 
 	.title {
-		height: 75px;
-		font-size: 30px;
+		height: 55px;
+		font-size: 25px;
 	}
 
 	.form-paciente {
-		height: 725px;
+		height: 545px;
 	}
 
 	.form-propietario {
-		height: 725px;
+		height: 545px;
 	}
 
 	.title-paciente{	
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 35%;
 	}
 
 	.title-propietario{
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 30%;
 	}
 
-	/*Inputs*/
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
 
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -10px;
 		font-size: 16px;
-		width: 370px;
+		width: 350px;
 		height: 35px;
-		margin-left: 25px;
+		margin-left: 30px;
+	}
+
+	#sltEspecie {
+		margin-top: -10px;
+		font-size: 16px;
+		width: 350px;
+		height: 35px;
+		margin-left: 30px;
+	}
+
+	#inputFechaNac {
+		width: 350px;
+		margin-left: 30px;
 		border-radius: 9px;
+	}
+
+	#inputChip{
+		margin-left: 30px;
+		width: 350px;
+		margin-top: -15px;
+	}
+
+	#inputExpediente {
+		width: 350px;
+		margin-left: 30px;
+		margin-top: -30px;
+		border-radius: 9px;
+	}
+
+	#sltRaza{
+		margin-left: 30px;
+		margin-top: 5px;
+		width: 250px;
+	}
+
+	#sltColor{
+		margin-top: 15px;
+		margin-left: 30px;
+		width: 250px;
 	}
 
 	#inputMeses{
 		font-size: 16px;
-		margin-left: 90px;
-		width: 100px;
-		height: 35px;
+		margin-left: 110px;
 	}
 
 	#inputAnios{
 		font-size: 16px;
 		width: 100px;
-		margin-left: 45px;
+		margin-left: 50px;
 		height: 35px;	
 		border-radius: 9px;
 	}
 
 	#txtObservaciones {
-		width: 370px;
-		height: 100px;
-		margin-left: 25px;
+		width: 350px;
+		margin-top: -35px;
+		height: 80px;
+		margin-left: 30px;
 		border-radius: 9px;
 	}
 
@@ -913,12 +1063,12 @@ input#avatar {
 	/*Radio*/
 	.form-radio
 	{
-		top: 5px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 290px;
 	}
 	.form-radio:checked::before
 	{
@@ -930,12 +1080,12 @@ input#avatar {
 
 	.form-radio-hembra
 	{
-		top: 5px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 430px;
 	}
 
 	.form-radio-hembra:checked::before
@@ -949,8 +1099,8 @@ input#avatar {
 	{
 		height: 25px;
 		width: 25px;
-		margin-right: 9px;
-		top:4px;
+		left: 340px;
+		top:750px;
 	}
 	.form-checkbox:checked::before
 	{
@@ -962,31 +1112,85 @@ input#avatar {
 
 	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
 	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 16px;
-		margin-left: 25px;
-		width: 370px;
+		margin-left: 30px;
+		width: 350px;
 		height: 35px;
-		border-radius: 9px;
 	}
 
 	#lblGenero {
-		margin-left: 60px;
-		font-size: 22px;
+		margin-left: 40px;
+		margin-top: -35px;
+		position: absolute;
 	}
-
-
-
-	#lblEsteril {
-		margin-left: 25px;
-		font-size: 22px;
-	}
-
 
 	#lblGeneroH {
-		margin-left: 50px;
-		font-size: 22px;
+		margin-left: 150px;
+		margin-top: -35px;
+		position: absolute;
 	}
 
+	#lblEsteril {
+		margin-left: 30px;
+		font-size: 22px;
+		margin-top: -65px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 290px;
+		margin-top: 213px;
+		position: static;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 490px;
+	bottom: 0px;
+	left: 5px:
+	right: 0px;
+	height: 5%;
+	width: 8%;
+	background: red;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 10px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 290px;
+		margin-top: 120px;
+	}
+
+	#div_img {
+		border-radius: 10px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 290px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
 	/*Botones*/
 
 	.btnAlta {
@@ -994,41 +1198,40 @@ input#avatar {
 		text-decoration: none;
 		margin-left: 40%;
 		margin-bottom: 10px;	
-		padding: 10px;
-		font-size: 22px;    
+		padding: 5px;
+		font-size: 20px;    
 	}
 
 }
 
 @media (min-width: 1100px) and (max-width: 1199px){
 	.principal {
-		margin-top: 8%;
-		height: 800px;
+		margin-top: 2%;
+		height: 600px;
 		width: 70%;	
 		margin-left: 15%;
 	}
 
 	.title {
-		height: 75px;
-		font-size: 27px;
+		height: 55px;
+		font-size: 25px;
 	}
 
 	.form-paciente {
-		height: 725px;
+		height: 545px;
 	}
 
 	.form-propietario {
-		height: 725px;
+		height: 545px;
 	}
 
-
 	.title-paciente{	
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 35%;
 	}
 
 	.title-propietario{
-		font-size: 30px;
+		font-size: 25px;
 		margin-left: 30%;
 	}
 
@@ -1038,34 +1241,71 @@ input#avatar {
 	}
 
 	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	#nombrePaciente {
+		margin-top: -10px;
 		font-size: 16px;
 		width: 330px;
 		height: 35px;
-		margin-left: 25px;
+		margin-left: 30px;
+	}
+
+	#sltEspecie {
+		margin-top: -10px;
+		font-size: 16px;
+		width: 330px;
+		height: 35px;
+		margin-left: 30px;
+	}
+
+	#inputFechaNac {
+		width: 330px;
+		margin-left: 30px;
 		border-radius: 9px;
+	}
+
+	#inputChip{
+		margin-left: 30px;
+		width: 330px;
+		margin-top: -15px;
+	}
+
+	#inputExpediente {
+		width: 330px;
+		margin-left: 30px;
+		margin-top: -30px;
+		border-radius: 9px;
+	}
+
+	#sltRaza{
+		margin-left: 30px;
+		margin-top: 5px;
+		width: 230px;
+	}
+
+	#sltColor{
+		margin-top: 15px;
+		margin-left: 30px;
+		width: 230px;
 	}
 
 	#inputMeses{
 		font-size: 16px;
-		margin-left: 85px;
-		width: 100px;
-		height: 35px;
+		margin-left: 110px;
 	}
 
 	#inputAnios{
 		font-size: 16px;
 		width: 100px;
-		margin-left: 20px;
+		margin-left: 50px;
 		height: 35px;	
 		border-radius: 9px;
 	}
 
 	#txtObservaciones {
 		width: 330px;
-		height: 100px;
-		margin-left: 25px;
+		margin-top: -35px;
+		height: 80px;
+		margin-left: 30px;
 		border-radius: 9px;
 	}
 
@@ -1073,12 +1313,12 @@ input#avatar {
 	/*Radio*/
 	.form-radio
 	{
-		top: 4px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 270px;
 	}
 	.form-radio:checked::before
 	{
@@ -1090,12 +1330,12 @@ input#avatar {
 
 	.form-radio-hembra
 	{
-		top: 4px;
+		top: 485px;
 		height: 30px;
 		width: 30px;
 		border: 0;
 		border-radius: 50px;
-		margin-right: 7px;
+		left: 390px;
 	}
 
 	.form-radio-hembra:checked::before
@@ -1109,8 +1349,8 @@ input#avatar {
 	{
 		height: 25px;
 		width: 25px;
-		margin-right: 9px;
-		top:4px;
+		left: 340px;
+		top:750px;
 	}
 	.form-checkbox:checked::before
 	{
@@ -1122,28 +1362,85 @@ input#avatar {
 
 	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
 	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 16px;
-		margin-left: 25px;
+		margin-left: 30px;
 		width: 330px;
 		height: 35px;
-		border-radius: 9px;
 	}
 
 	#lblGenero {
-		margin-left: 70px;
-		font-size: 20px;
-	}
-
-	#lblEsteril {
-		margin-left: 25px;
-		font-size: 20px;
+		margin-left: 40px;
+		margin-top: -35px;
+		position: absolute;
 	}
 
 	#lblGeneroH {
-		margin-left: 20px;
-		font-size: 20px;
+		margin-left: 130px;
+		margin-top: -35px;
+		position: absolute;
 	}
 
+	#lblEsteril {
+		margin-left: 30px;
+		font-size: 22px;
+		margin-top: -65px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 270px;
+		margin-top: 213px;
+		position: static;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 490px;
+	bottom: 0px;
+	left: 5px:
+	right: 0px;
+	height: 5%;
+	width: 8%;
+	background: red;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 10px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 270px;
+		margin-top: 120px;
+	}
+
+	#div_img {
+		border-radius: 10px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 270px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
 	/*Botones*/
 
 	.btnAlta {
@@ -1151,187 +1448,31 @@ input#avatar {
 		text-decoration: none;
 		margin-left: 40%;
 		margin-bottom: 10px;	
-		padding: 10px;
-		font-size: 15px;    
+		padding: 5px;
+		font-size: 20px;    
 	}
 
 }
 
-@media (min-width: 1024px) and (max-width: 1099px){
-	.principal {
-		margin-top: 8%;
-		height: 730px;
-		width: 70%;	
-		margin-left: 15%;
-	}
-
-	.form-paciente {
-		height: 670px;
-	}
-
-	.form-propietario {
-		height: 670px;
-	}
-
-	.title {
-		height: 60px;
-		font-size: 23px;
-	}
-
-	.title-paciente{	
-		font-size: 25px;
-		margin-left: 35%;
-	}
-
-	.title-propietario{
-		font-size: 25px;
-		margin-left: 30%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 15px;
-		width: 320px;
-		height: 30px;
-		margin-left: 20px;
-		border-radius: 9px;
-	}
-
-	#inputMeses{
-		font-size: 15px;
-		margin-left: 65px;
-		width: 100px;
-		height: 30px;
-	}
-
-	#inputAnios{
-		font-size: 15px;
-		width: 100px;
-		margin-left: 20px;
-		height: 30px;	
-	}
-
-	#txtObservaciones {
-		width: 320px;
-		height: 100px;
-		margin-left: 20px;
-		border-radius: 9px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: 5px;
-		height: 25px;
-		width: 25px;
-		border: 0;
-		margin-left: 1px; 
-		border-radius: 50px;
-	}
-	.form-radio:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 5px;
-		height: 25px;
-		width: 25px;
-		border: 0;
-		margin-left: 1px; 
-		border-radius: 50px;
-	}
-	.form-radio-hembra:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: 2px;
-		height: 25px;
-		width: 25px;
-		margin-right: 1px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 9px;
-		top: 5px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 15px;
-		margin-left: 20px;
-		width: 320px;
-		height: 30px;
-		border-radius: 9px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 50px;
-		font-size: 20px;
-	}
-
-	#lblEsteril {
-		margin-left: 20px;
-		font-size: 20px;
-	}
-
-	#lblGeneroH {
-		margin-left: 40px;
-		font-size: 20px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 10px;
-		font-size: 15px;    
-	}
-}
-
-@media (min-width: 900px) and (max-width: 1023px){
+@media (min-width: 1000px) and (max-width: 1099px){
 	.principal {
 		margin-top: 2%;
-		height: 730px;
+		height: 550px;
 		width: 70%;	
 		margin-left: 15%;
 	}
 
+	.title {
+		height: 55px;
+		font-size: 25px;
+	}
+
 	.form-paciente {
-		height: 670px;
+		height: 495px;
 	}
 
 	.form-propietario {
-		height: 670px;
-	}
-
-	.title {
-		height: 60px;
-		font-size: 23px;
+		height: 505px;
 	}
 
 	.title-paciente{	
@@ -1350,190 +1491,69 @@ input#avatar {
 	}
 
 	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
+	#nombrePaciente {
+		margin-top: -15px;
 		font-size: 15px;
-		width: 275px;
+		width: 310px;
 		height: 30px;
 		margin-left: 20px;
+	}
+
+	#sltEspecie {
+		margin-top: -20px;
+		font-size: 15px;
+		width: 310px;
+		height: 30px;
+		margin-left: 20px;
+	}
+
+	#inputFechaNac {
+		width: 310px;
+		margin-top: -20px;
+		height: 30px;
+		margin-left: 20px;
+		font-size: 15px;
 		border-radius: 9px;
 	}
 
-	#inputMeses{
+	#inputChip{
+		margin-left: 20px;
+		height: 30px;
+		width: 310px;
 		font-size: 15px;
-		margin-left: 70px;
-		width: 70px;
+		margin-top: -35px;
+	}
+
+	#inputExpediente {
+		width: 310px;
+		height: 30px;
+		margin-left: 20px;
+		margin-top: -55px;
+		font-size: 15px;
+		border-radius: 9px;
+	}
+
+	#sltRaza{
+		margin-left: 20px;
+		margin-top: -20px;
+		font-size: 15px;
+		width: 200px;
 		height: 30px;
 	}
 
-	#inputAnios{
+	#sltColor{
+		margin-top: 0px;
+		margin-left: 20px;
+		width: 200px;
 		font-size: 15px;
-		width: 70px;
-		margin-left: 30px;
-		height: 30px;	
+		height: 30px;
 	}
 
 	#txtObservaciones {
-		width: 275px;
-		height: 100px;
-		margin-left: 20px;
-		border-radius: 9px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: 2px;
-		height: 25px;
-		width: 25px;
-		border: 0;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 2px;
-		height: 25px;
-		width: 25px;
-		border: 0;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio-hembra:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: 5px;
-		height: 25px;
-		width: 25px;
-		margin-right: 1px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 9px;
-		top: 5px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 15px;
-		margin-left: 20px;
-		width: 275px;
-		height: 30px;
-		border-radius: 9px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 50px;
-		font-size: 20px;
-	}
-
-	#lblEsteril{
-		margin-left: 20px;
-		font-size: 20px;
-	}
-
-	#lblGeneroH {
-		margin-left: 10px;
-		font-size: 20px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 10px;
-		font-size: 15px;    
-	}
-}
-
-@media (min-width: 768px) and (max-width: 899px){
-	.principal {
-		margin-top: 10%;
-		height: 730px;
-		width: 70%;	
-		margin-left: 15%;
-	}
-
-	.form-paciente {
-		height: 670px;
-	}
-
-	.form-propietario {
-		height: 670px;
-	}
-
-	.title {
+		width: 310px;
+		margin-top: -65px;
 		height: 60px;
-		font-size: 23px;
-	}
-
-	.title-paciente{
-		margin-top: 5%;	
-		font-size: 22px;
-		margin-left: 35%;
-	}
-
-	.title-propietario{
-		margin-top: 5%;	
-		font-size: 22px;
-		margin-left: 30%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
 		font-size: 15px;
-		width: 230px;
-		height: 30px;
-		margin-left: 20px;
-		border-radius: 9px;
-	}
-
-	#inputMeses{
-		font-size: 15px;
-		margin-left: 55px;
-		width: 70px;
-		height: 30px;
-	}
-
-	#inputAnios{
-		font-size: 15px;
-		width: 70px;
-		margin-left: 20px;
-		height: 30px;	
-	}
-
-	#txtObservaciones {
-		width: 230px;
-		height: 100px;
 		margin-left: 20px;
 		border-radius: 9px;
 	}
@@ -1542,44 +1562,44 @@ input#avatar {
 	/*Radio*/
 	.form-radio
 	{
-		top: 3px;
-		height: 25px;
-		width: 25px;
+		top: 470px;
+		height: 27px;
+		width: 27px;
 		border: 0;
-		left: -10px; 
 		border-radius: 50px;
+		left: 230px;
 	}
 	.form-radio:checked::before
 	{
 		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 3px;
-		height: 25px;
-		width: 25px;
-		border: 0;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio-hembra:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 9px;
-		top: 5px;
+		left: 10px;
+		top: 6px;
 	}
 	/*EndRadio*/
 
+	.form-radio-hembra
+	{
+		top: 470px;
+		height: 27px;
+		width: 27px;
+		border: 0;
+		border-radius: 50px;
+		left: 340px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 10px;
+		top: 6px;
+	}
 	/*Checkbox*/
 	.form-checkbox
 	{
-		top: 3px;
 		height: 25px;
 		width: 25px;
-		left: -10px;
+		left: 270px;
+		top:700px;
 	}
 	.form-checkbox:checked::before
 	{
@@ -1591,298 +1611,1299 @@ input#avatar {
 
 	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
 	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 15px;
 		margin-left: 20px;
-		width: 230px;
-		height: 30px;
-		border-radius: 9px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 40px;
-		font-size: 17px;
-	}
-
-	#lblEsteril{
-		margin-left: 20px;
-		font-size: 17px;
-	}
-
-
-	#lblGeneroH {
-		margin-left: 10px;
-		font-size: 17px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 10px;
-		font-size: 15px;    
-	}
-}
-
-@media (min-width: 667px) and (max-width: 767px){
-	.principal {
-		margin-top: 10%;
-		height: 730px;
-		width: 70%;	
-		margin-left: 15%;
-	}
-
-	.form-paciente {
-		height: 670px;
-	}
-
-	.form-propietario {
-		height: 670px;
-	}
-
-	.title {
-		height: 60px;
-		font-size: 23px;
-	}
-
-	.title-paciente{	
-		font-size: 20px;
-		margin-left: 35%;
-	}
-
-	.title-propietario{
-		font-size: 20px;
-		margin-left: 30%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 15px;
-		width: 200px;
-		height: 30px;
-		margin-left: 15px;
-		border-radius: 9px;
-	}
-
-	#inputMeses{
-		font-size: 15px;
-		margin-left: 40px;
-		width: 70px;
-		height: 30px;
-	}
-
-	#inputAnios{
-		font-size: 15px;
-		width: 70px;
-		margin-left: 10px;
-		height: 30px;	
-	}
-
-	#txtObservaciones {
-		width: 200px;
-		height: 100px;
-		margin-left: 15px;
-		border-radius: 9px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: 0px;
-		height: 22px;
-		width: 22px;
-		border: 0;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 7px;
-		top: 4px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 0px;
-		height: 22px;
-		width: 22px;
-		border: 0;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio-hembra:checked::before
-	{
-		font: 13px/1 'Open Sans', sans-serif;
-		left: 7px;
-		top: 4px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: 1px;
-		height: 22px;
-		width: 22px;
-		left: -10px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 7px;
-		top: 4px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 15px;
-		margin-left: 15px;
-		width: 200px;
-		height: 30px;
-		border-radius: 9px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
+		width: 310px;
+		height: 35px;
 	}
 
 	#lblGenero {
 		margin-left: 20px;
-		font-size: 18px;
-	}
-
-	#lblEsteril{
-		margin-left: 20px;
-		font-size: 18px;
+		margin-top: -20px;
+		position: absolute;
 	}
 
 	#lblGeneroH {
-		margin-left: 1px;
+		margin-left: 100px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
 		font-size: 18px;
+		margin-top: -115px;
 	}
 
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 10px;
-		font-size: 15px;    
-	}
-}
+	/************* Avatar ****************/
 
-@media (min-width: 568px) and (max-width: 666px){
-	.principal {
-		margin-top: 10%;
-		height: 600px;
-		width: 90%;	
-		margin-left: 5%;
+	div#div_avatar{
+		width: 90px;
+		margin-left: 235px;
+		margin-top: 190px;
+		position: static;
+		height: 35px;
 	}
 
-	.form-paciente {
-		height: 555px;
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
 	}
 
-	.form-propietario {
-		height: 555px;
-	}
-
-	.title {
-		height: 45px;
-		font-size: 18px;
-		border-radius: 7px;
-		justify-content: center;
-	}
-
-	.title-paciente{	
-		font-size: 16px;
-		margin-left: 35%;
-	}
-
-	.title-propietario{
-		font-size: 16px;
-		margin-left: 30%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 12px;
-		width: 230px;
-		height: 25px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-
-	#inputMeses{
-		font-size: 12px;
-		margin-left: 60px;
-		width: 60px;
-		height: 25px;
-		border-radius: 8px;
-	}
-
-	#inputAnios{
-		font-size: 12px;
-		width: 60px;
-		margin-left: 25px;
-		height: 25px;
-		border-radius: 8px;	
-	}
-
-	#txtObservaciones {
-		width: 225px;
+	#caja_imagen {
+		border-radius: 10px;
+		width: 90px;
 		height: 90px;
-		margin-left: 17px;
-		font-size: 12px;
-		border-radius: 8px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 235px;
+		margin-top: 95px;
+	}
+
+	#div_img {
+		border-radius: 10px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 235px;
+		margin-top: -130px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+
+}
+
+@media (min-width: 875px) and (max-width: 999px){
+	.principal {
+		margin-top: 2%;
+		height: 550px;
+		width: 70%;	
+		margin-left: 15%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 495px;
+	}
+
+	.form-propietario {
+		height: 505px;
+	}
+
+	.title-paciente{	
+		font-size: 25px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 25px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -15px;
+		font-size: 15px;
+		width: 290px;
+		height: 30px;
+		margin-left: 15px;
+	}
+
+	#sltEspecie {
+		margin-top: -20px;
+		font-size: 15px;
+		width: 290px;
+		height: 30px;
+		margin-left: 15px;
+	}
+
+	#inputFechaNac {
+		width: 290px;
+		margin-top: -20px;
+		height: 30px;
+		margin-left: 15px;
+		font-size: 15px;
+		border-radius: 9px;
+	}
+
+	#inputChip{
+		margin-left: 15px;
+		height: 30px;
+		width: 290px;
+		font-size: 15px;
+		margin-top: -35px;
+	}
+
+	#inputExpediente {
+		width: 290px;
+		height: 30px;
+		margin-left: 15px;
+		margin-top: -55px;
+		font-size: 15px;
+		border-radius: 9px;
+	}
+
+	#sltRaza{
+		margin-left: 15px;
+		margin-top: -20px;
+		font-size: 15px;
+		width: 195px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: 0px;
+		margin-left: 15px;
+		width: 195px;
+		font-size: 15px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 290px;
+		margin-top: -65px;
+		height: 60px;
+		font-size: 15px;
+		margin-left: 15px;
+		border-radius: 9px;
 	}
 
 	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
 	/*Radio*/
 	.form-radio
 	{
-		top:-2px;
-		height: 20px;
-		width: 20px;
+		top: 470px;
+		height: 25px;
+		width: 25px;
 		border: 0;
-		left: -10px; 
 		border-radius: 50px;
+		left: 215px;
 	}
+	.form-radio:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 9px;
+		top: 5px;
+	}
+	/*EndRadio*/
 
 	.form-radio-hembra
 	{
-		top: -2px;
+		top: 470px;
+		height: 25px;
+		width: 25px;
+		border: 0;
+		border-radius: 50px;
+		left: 320px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 9px;
+		top: 5px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 25px;
+		width: 25px;
+		left: 270px;
+		top:700px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 9px;
+		top: 5px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 14px;
+		width: 290px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 20px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 100px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: -115px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 215px;
+		margin-top: 190px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 10px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 215px;
+		margin-top: 95px;
+	}
+
+	#div_img {
+		border-radius: 10px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 215px;
+		margin-top: -130px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+
+}
+
+@media (min-width: 801px) and (max-width: 874px){
+.principal {
+		margin-top: 2%;
+		height: 650px;
+		width: 80%;
+		margin-left: 10%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 595px;
+	}
+
+	.form-propietario {
+		height: 595px;
+	}
+
+	.title-paciente{	
+		font-size: 23px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 23px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: 50px;
+		font-size: 14px;
+		width: 280px;
+		height: 30px;
+		margin-left: 20px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: 35px;
+		font-size: 14px;
+		width: 280px;
+		height: 30px;
+		border-radius: 6px;
+		margin-left: 20px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 280px;
+		margin-top: 50px;
+		height: 30px;
+		margin-left: 20px;
+		font-size: 14px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 20px;
+		height: 30px;
+		width: 280px;
+		font-size: 14px;
+		margin-top: 35px;
+	}
+
+	#inputExpediente {
+		width: 280px;
+		height: 30px;
+		margin-left: 20px;
+		margin-top: 55px;
+		font-size: 14px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 20px;
+		border-radius: 6px;
+		margin-top: 40px;
+		font-size: 14px;
+		width: 185px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: 40px;
+		margin-left: 20px;
+		border-radius: 6px;
+		width: 185px;
+		font-size: 14px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 280px;
+		margin-top: 55px;
+		height: 80px;
+		font-size: 15px;
+		margin-left: 20px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 535px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 155px;
+	}
+	.form-radio:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 535px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 255px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 23px;
+		width: 23px;
+		left: 205px;
+		top:853px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 8px;
+		top: 4px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 300px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 20px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 90px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: 40px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 210px;
+		margin-top: 200px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 210px;
+		margin-top: 100px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 210px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+}
+
+@media (min-width: 700px) and (max-width: 800px){
+	.principal {
+		margin-top: 2%;
+		height: 650px;
+		width: 80%;	
+		margin-left: 10%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 595px;
+	}
+
+	.form-propietario {
+		height: 595px;
+	}
+
+	.title-paciente{	
+		font-size: 23px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 23px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -25px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -35px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 260px;
+		margin-top: -20px;
+		height: 30px;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 30px;
+		width: 260px;
+		font-size: 14px;
+		margin-top: -35px;
+	}
+
+	#inputExpediente {
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		margin-top: -55px;
+		font-size: 14px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -30px;
+		font-size: 14px;
+		width: 165px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: -10px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 165px;
+		font-size: 14px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 260px;
+		margin-top: -55px;
+		height: 80px;
+		font-size: 15px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 470px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 135px;
+	}
+	.form-radio:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 470px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 222px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 23px;
+		width: 23px;
+		left: 210px;
+		top:750px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 8px;
+		top: 4px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 260px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 70px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: -65px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 180px;
+		margin-top: 220px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 180px;
+		margin-top: 120px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 180px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+}
+
+@media (min-width: 700px) and (max-width: 799px){
+	.principal {
+		margin-top: 2%;
+		height: 650px;
+		width: 80%;	
+		margin-left: 10%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 595px;
+	}
+
+	.form-propietario {
+		height: 595px;
+	}
+
+	.title-paciente{	
+		font-size: 23px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 23px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -35px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -35px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 260px;
+		margin-top: -20px;
+		height: 30px;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 30px;
+		width: 260px;
+		font-size: 14px;
+		margin-top: -35px;
+	}
+
+	#inputExpediente {
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		margin-top: -55px;
+		font-size: 14px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -30px;
+		font-size: 14px;
+		width: 165px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: -10px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 165px;
+		font-size: 14px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 260px;
+		margin-top: -55px;
+		height: 80px;
+		font-size: 15px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 470px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 140px;
+	}
+	.form-radio:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 470px;
+		height: 23px;
+		width: 23px;
+		border: 0;
+		border-radius: 50px;
+		left: 227px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 13px/1 'Open Sans', sans-serif;
+		left: 8px;
+		top: 4px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 23px;
+		width: 23px;
+		left: 210px;
+		top:750px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 8px;
+		top: 4px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 260px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 70px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: -65px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 180px;
+		margin-top: 220px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 180px;
+		margin-top: 120px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 180px;
+		margin-top: -135px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+}
+
+@media (min-width: 600px) and (max-width: 699px){
+	.principal {
+		margin-top: 2%;
+		height: 650px;
+		width: 95%;	
+		margin-left: 2.5%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 595px;
+	}
+
+	.form-propietario {
+		height: 595px;
+	}
+
+	.title-paciente{	
+		font-size: 23px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 23px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -35px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -35px;
+		font-size: 14px;
+		width: 260px;
+		height: 30px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 260px;
+		margin-top: -20px;
+		height: 30px;
+		margin-left: 10px;
+		font-size: 14px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 30px;
+		width: 260px;
+		font-size: 14px;
+		margin-top: -35px;
+	}
+
+	#inputExpediente {
+		width: 260px;
+		height: 30px;
+		margin-left: 10px;
+		margin-top: -55px;
+		font-size: 14px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -30px;
+		font-size: 14px;
+		width: 165px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: -10px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 165px;
+		font-size: 14px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 260px;
+		margin-top: -55px;
+		height: 80px;
+		font-size: 15px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 466px;
 		height: 20px;
 		width: 20px;
 		border: 0;
-		left: -10px; 
 		border-radius: 50px;
+		left: 80px;
 	}
-
 	.form-radio:checked::before
 	{
 		font: 12px/1 'Open Sans', sans-serif;
 		left: 6px;
 		top: 3px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 466px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 170px;
 	}
 
 	.form-radio-hembra:checked::before
@@ -1891,21 +2912,1086 @@ input#avatar {
 		left: 6px;
 		top: 3px;
 	}
-
-	/*EndRadio*/
-
 	/*Checkbox*/
 	.form-checkbox
 	{
-		top: 1px;
 		height: 20px;
 		width: 20px;
-		margin-right: 1px;
+		left: 140px;
+		top:750px;
 	}
 	.form-checkbox:checked::before
 	{
 		left: 6px;
+		top: 3px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 260px;
+		height: 30px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 70px;
+		font-size: 17px;
+		margin-top: -20px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: -65px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 180px;
+		margin-top: 220px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 465px;
+	bottom: 0px;
+	left: 4px:
+	right: 0px;
+	height: 4%;
+	width: 8%;
+	opacity: 0;
+	cursor: pointer;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 180px;
+		margin-top: 123px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 180px;
+		margin-top: -132px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: -1px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+}
+
+@media (min-width: 500px) and (max-width: 599px){
+	.principal {
+		margin-top: 2%;
+		height: 650px;
+		width: 95%;	
+		margin-left: 2.5%;
+	}
+
+	.title {
+		height: 55px;
+		font-size: 23px;
+	}
+
+	.form-paciente {
+		height: 595px;
+	}
+
+	.form-propietario {
+		height: 595px;
+	}
+
+	.title-paciente{	
+		font-size: 21px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 21px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -45px;
+		font-size: 12px;
+		width: 220px;
+		height: 30px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -55px;
+		font-size: 12px;
+		width: 220px;
+		height: 30px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 220px;
+		margin-top: 25px;
+		height: 30px;
+		margin-left: 10px;
+		font-size: 12px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 30px;
+		width: 220px;
+		font-size: 12px;
+		margin-top: 5px;
+	}
+
+	#inputExpediente {
+		width: 220px;
+		height: 30px;
+		margin-left: 10px;
+		margin-top: -15px;
+		font-size: 12px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -55px;
+		font-size: 12px;
+		width: 220px;
+		height: 30px;
+	}
+
+	#sltColor{
+		margin-top: -55px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 220px;
+		font-size: 12px;
+		height: 30px;
+	}
+
+	#txtObservaciones {
+		width: 220px;
+		margin-top: -25px;
+		height: 80px;
+		font-size: 12px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 515px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 80px;
+	}
+	.form-radio:checked::before
+	{
 		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 515px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 200px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 20px;
+		width: 20px;
+		left: 140px;
+		top:760px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 6px;
+		top: 3px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 220px;
+		height: 30px;
+		font-size: 12px;
+		border-radius: 7px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 17px;
+		margin-top:40px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 100px;
+		font-size: 17px;
+		margin-top:40px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 20px;
+		font-size: 18px;
+		margin-top: -55px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 90px;
+		margin-left: 120px;
+		margin-top: 210px;
+		position: static;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 450px;
+	bottom: 0px;
+	left: 0px:
+	right: 0px;
+	height: 3%;
+	width: 15%;
+	opacity: 0;
+	cursor: pointer;
+	color: red;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 10px;
+		margin-top: 180px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 90px;
+		height: 90px;
+		float: right;
+		position: absolute;
+		margin-left: 10px;
+		margin-top: -65px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width:88px;
+		border-radius: 5px;
+		height: 88px;
+		color: red;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 40%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 20px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 20px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 45%;
+	width: 10%;
+	float: left;
+}
+}
+
+@media (min-width: 414px) and (max-width: 499px){
+	.principal {
+		margin-top: 2%;
+		height: 560px;
+		width: 98%;	
+		margin-left: 1%;
+	}
+
+	.title {
+		height: 40px;
+		font-size: 21px;
+	}
+
+	.form-paciente {
+		height: 520px;
+	}
+
+	.form-propietario {
+		height: 515px;
+	}
+
+	.title-paciente{	
+		font-size: 21px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 21px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -63px;
+		font-size: 11px;
+		width: 180px;
+		height: 25px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -75px;
+		font-size: 11px;
+		width: 180px;
+		height: 25px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 180px;
+		margin-top: -35px;
+		height: 25px;
+		margin-left: 10px;
+		font-size: 11px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 25px;
+		width: 180px;
+		font-size: 11px;
+		margin-top: -60px;
+	}
+
+	#inputExpediente {
+		width: 180px;
+		height: 25px;
+		margin-left: 10px;
+		margin-top: -85px;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -75px;
+		font-size: 11px;
+		width: 180px;
+		height: 25px;
+	}
+
+	#sltColor{
+		margin-top: -75px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 180px;
+		font-size: 11px;
+		height: 25px;
+	}
+
+	#txtObservaciones {
+		width: 180px;
+		margin-top: -105px;
+		height: 70px;
+		font-size: 12px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 460px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 65px;
+	}
+	.form-radio:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 460px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 170px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 20px;
+		width: 20px;
+		left: 100px;
+		top:675px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 6px;
+		top: 3px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 5px;
+		width: 190px;
+		height: 25px;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 15px;
+		margin-top:25px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 90px;
+		font-size: 15px;
+		margin-top:25px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 10px;
+		font-size: 15px;
+		margin-top: -140px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 70px;
+		padding: 6px;
+		margin-left: 90px;
+		margin-top: 190px;
+		position: static;
+		font: 10px/1 'Open Sans', sans-serif;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 410px;
+	bottom: 0px;
+	left: -1px:
+	right: 0px;
+	height: 3%;
+	width: 15%;
+	opacity: 0;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 10px;
+		margin-top: 170px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		margin-left: 10px;
+		margin-top: -55px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width:67px;
+		border-radius: 5px;
+		height: 67px;
+		color: red;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 35%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 15px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 15px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 43%;
+	width: 15%;
+	float: left;
+}
+}
+
+@media (min-width: 365px) and (max-width: 413px){
+	.principal {
+		margin-top: 2%;
+		height: 560px;
+		width: 98%;	
+		margin-left: 1%;
+	}
+
+	.title {
+		height: 40px;
+		font-size: 19px;
+	}
+
+	.form-paciente {
+		height: 520px;
+	}
+
+	.form-propietario {
+		height: 515px;
+	}
+
+	.title-paciente{	
+		font-size: 19px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 19px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -63px;
+		font-size: 11px;
+		width: 160px;
+		height: 25px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -75px;
+		font-size: 11px;
+		width: 160px;
+		height: 25px;
+		border-radius: 6px;
+		margin-left: 10px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 160px;
+		margin-top: -35px;
+		height: 25px;
+		margin-left: 10px;
+		font-size: 11px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 10px;
+		height: 25px;
+		width: 160px;
+		font-size: 11px;
+		margin-top: -60px;
+	}
+
+	#inputExpediente {
+		width: 160px;
+		height: 25px;
+		margin-left: 10px;
+		margin-top: -85px;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 10px;
+		border-radius: 6px;
+		margin-top: -75px;
+		font-size: 11px;
+		width: 160px;
+		height: 25px;
+	}
+
+	#sltColor{
+		margin-top: -75px;
+		margin-left: 10px;
+		border-radius: 6px;
+		width: 160px;
+		font-size: 11px;
+		height: 25px;
+	}
+
+	#txtObservaciones {
+		width: 160px;
+		margin-top: -105px;
+		height: 70px;
+		font-size: 12px;
+		margin-left: 10px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 460px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 65px;
+	}
+	.form-radio:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 460px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 150px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 20px;
+		width: 20px;
+		left: 100px;
+		top:675px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 6px;
+		top: 3px;
+	}
+	/*EndCheckbox*/
+	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
+
+	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
+	#inputDireccion, #inputColonia, #inputCP{
+		margin-left: 10px;
+		width: 160px;
+		height: 25px;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+
+	#lblGenero {
+		margin-left: 10px;
+		font-size: 15px;
+		margin-top:25px;
+		position: absolute;
+	}
+
+	#lblGeneroH {
+		margin-left: 70px;
+		font-size: 15px;
+		margin-top:25px;
+		position: absolute;
+	}
+
+	#lblEsteril {
+		margin-left: 10px;
+		font-size: 15px;
+		margin-top: -140px;
+	}
+
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 70px;
+		padding: 6px;
+		margin-left: 90px;
+		margin-top: 190px;
+		position: static;
+		font: 10px/1 'Open Sans', sans-serif;
+		height: 35px;
+	}
+
+	input#avatar {
+	position: absolute;
+	top: 410px;
+	bottom: 0px;
+	left: -1px:
+	right: 0px;
+	height: 3%;
+	width: 15%;
+	opacity: 0;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 10px;
+		margin-top: 170px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		margin-left: 10px;
+		margin-top: -55px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width:67px;
+		border-radius: 5px;
+		height: 67px;
+		color: red;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
+
+	.btnAlta {
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 35%;
+		margin-bottom: 15px;	
+		padding: 5px;
+		font-size: 15px;    
+	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 15px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 43%;
+	width: 15%;
+	float: left;
+}
+}
+
+@media (min-width: 320px) and (max-width: 364px){
+	.principal {
+		margin-top: 2%;
+		height: 560px;
+		width: 98%;	
+		margin-left: 1%;
+	}
+
+	.title {
+		height: 40px;
+		font-size: 19px;
+	}
+
+	.form-paciente {
+		height: 520px;
+	}
+
+	.form-propietario {
+		height: 515px;
+	}
+
+	.title-paciente{	
+		font-size: 19px;
+		margin-left: 35%;
+	}
+
+	.title-propietario{
+		font-size: 19px;
+		margin-left: 30%;
+	}
+
+	/*Titulo pagina*/
+	#titulo-pagina {
+		text-align: center;
+	}
+
+	/*Inputs*/
+	#nombrePaciente {
+		margin-top: -63px;
+		font-size: 10px;
+		width: 145px;
+		height: 25px;
+		margin-left: 4px;
+		border-radius: 6px;
+	}
+
+	#sltEspecie {
+		margin-top: -75px;
+		font-size: 10px;
+		width: 145px;
+		height: 25px;
+		border-radius: 6px;
+		margin-left: 5px;
+	}
+
+	#inputFechaNac {
+		border-radius: 6px;
+		width: 145px;
+		margin-top: -35px;
+		height: 25px;
+		margin-left: 5px;
+		font-size: 10px;
+	}
+
+	#inputChip{
+		border-radius: 6px;
+		margin-left: 5px;
+		height: 25px;
+		width: 145px;
+		font-size: 10px;
+		margin-top: -60px;
+	}
+
+	#inputExpediente {
+		width: 145px;
+		height: 25px;
+		margin-left: 5px;
+		margin-top: -85px;
+		font-size: 11px;
+		border-radius: 6px;
+	}
+
+	#sltRaza{
+		margin-left: 5px;
+		border-radius: 6px;
+		margin-top: -75px;
+		font-size: 10px;
+		width: 145px;
+		height: 25px;
+	}
+
+	#sltColor{
+		margin-top: -75px;
+		margin-left: 5px;
+		border-radius: 6px;
+		width: 145px;
+		font-size: 10px;
+		height: 25px;
+	}
+
+	#txtObservaciones {
+		width: 145px;
+		margin-top: -105px;
+		height: 70px;
+		font-size: 10px;
+		margin-left: 5px;
+		border-radius: 6px;
+	}
+
+	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
+	/*Radio*/
+	.form-radio
+	{
+		top: 455px;
+		height: 18px;
+		width: 18px;
+		border: 0;
+		border-radius: 50px;
+		left: 55px;
+	}
+	.form-radio:checked::before
+	{
+		font: 10px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*EndRadio*/
+
+	.form-radio-hembra
+	{
+		top: 455px;
+		height: 20px;
+		width: 20px;
+		border: 0;
+		border-radius: 50px;
+		left: 130px;
+	}
+
+	.form-radio-hembra:checked::before
+	{
+		font: 12px/1 'Open Sans', sans-serif;
+		left: 6px;
+		top: 3px;
+	}
+	/*Checkbox*/
+	.form-checkbox
+	{
+		height: 18px;
+		width: 18px;
+		left: 100px;
+		top:675px;
+	}
+	.form-checkbox:checked::before
+	{
+		left: 6px;
 		top: 2px;
 	}
 	/*EndCheckbox*/
@@ -1913,661 +3999,108 @@ input#avatar {
 
 	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
 	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 12px;
-		width: 230px;
+		margin-left: 5px;
+		width: 145px;
 		height: 25px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 13px;
+		font-size: 11px;
+		border-radius: 6px;
 	}
 
-	#lblEsteril {
-		margin-left: 20px;
+	#lblGenero {
+		margin-left: 10px;
 		font-size: 13px;
+		margin-top:25px;
+		position: absolute;
 	}
 
 	#lblGeneroH {
-		margin-left: 10px;
-		font-size: 13px;
-	}
-
-	#lblGenero {
-		margin-left: 50px;
-		font-size: 13px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 7px;
-		font-size: 13px;    
-	}
-}
-
-@media (min-width:500px) and (max-width: 567px){
-	.principal {
-		margin-top: 10%;
-		height: 550px;
-		width: 94%;	
-		margin-left: 3%;
-	}
-
-	.form-paciente {
-		height: 525px;
-	}
-
-	.form-propietario {
-		height: 525px;
-	}
-
-	.title {
-		height: 25px;
-		font-size: 16px;
-	}
-
-	.title-paciente{	
-		font-size: 15px;
-		margin-left: 35%;
-		margin-top: 5%;
-	}
-
-	.title-propietario{
-		font-size: 15px;
-		margin-left: 30%;
-		margin-top: 5%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 11px;
-		width: 200px;
-		height: 25px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-
-	#inputMeses{
-		font-size: 11px;
-		margin-left: 50px;
-		width: 60px;
-		height: 25px;
-	}
-
-	#inputAnios{
-		font-size: 11px;
-		width: 60px;
-		margin-left: 15px;
-		height: 25px;	
-	}
-
-	#txtObservaciones {
-		width: 200px;
-		height: 80px;
-		font-size: 11px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: 1px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 1px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-	.form-radio:checked::before, .form-radio-hembra:checked::before
-	{
-		font: 11px/1 'Open Sans', sans-serif;
-		left: 5px;
-		top: 1px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: -2px;
-		height: 15px;
-		width: 15px;
-		left: -10px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 4px;
-		top: 0px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 11px;
-		margin-left: 15px;
-		width: 200px;
-		height: 25px;
-		border-radius: 8px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
 		margin-left: 55px;
-		font-size: 11px;
-	}
-
-	#lblEsteril{
-		margin-left: 15px;
-		font-size: 11px;
-	}
-
-	#lblGeneroH {
-		margin-left: 2px;
-		font-size: 11px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 5px;
-		font-size: 11px;    
-	}
-}
-
-@media (min-width:414px) and (max-width: 499px){
-	.principal {
-		margin-top: 10%;
-		height: 550px;
-		width: 94%;	
-		margin-left: 3%;
-	}
-
-	.form-paciente {
-		height: 525px;
-	}
-
-	.form-propietario {
-		height: 525px;
-	}
-
-	.title {
-		height: 25px;
-		font-size: 16px;
-	}
-
-	.title-paciente{	
-		font-size: 15px;
-		margin-left: 35%;
-		margin-top: 5%;
-	}
-
-	.title-propietario{
-		font-size: 15px;
-		margin-left: 30%;
-		margin-top: 5%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 11px;
-		width: 170px;
-		height: 25px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-
-	#inputMeses{
-		font-size: 11px;
-		margin-left: 30px;
-		width: 60px;
-		height: 25px;
-	}
-
-	#inputAnios{
-		font-size: 11px;
-		width: 60px;
-		margin-left: 15px;
-		height: 25px;	
-	}
-
-	#txtObservaciones {
-		width: 170px;
-		height: 80px;
-		font-size: 11px;
-		margin-left: 15px;
-		border-radius: 8px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: 1px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-
-	.form-radio-hembra
-	{
-		top: 1px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-	.form-radio:checked::before, .form-radio-hembra:checked::before
-	{
-		font: 11px/1 'Open Sans', sans-serif;
-		left: 5px;
-		top: 1px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: -2px;
-		height: 15px;
-		width: 15px;
-		left: -10px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 4px;
-		top: 0px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 11px;
-		margin-left: 15px;
-		width: 170px;
-		height: 25px;
-		border-radius: 8px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 35px;
-		font-size: 11px;
-	}
-
-	#lblEsteril{
-		margin-left: 15px;
-		font-size: 11px;
-	}
-
-	#lblGeneroH {
-		margin-left: 2px;
-		font-size: 11px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 5px;
-		font-size: 11px;    
-	}
-}
-
-@media (min-width:360px) and (max-width: 413px){
-	.principal {
-		margin-top: 10%;
-		height: 550px;
-		width: 94%;	
-		margin-left: 3%;
-	}
-
-	.form-paciente {
-		height: 525px;
-	}
-
-	.form-propietario {
-		height: 525px;
-	}
-
-	.title {
-		height: 25px;
-		font-size: 16px;
-	}
-
-	.title-paciente{	
-		font-size: 15px;
-		margin-left: 35%;
-		margin-top: 5%;
-	}
-
-	.title-propietario{
-		font-size: 15px;
-		margin-left: 30%;
-		margin-top: 5%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 11px;
-		width: 150px;
-		height: 25px;
-		margin-left: 10px;
-		border-radius: 8px;
-	}
-
-	#inputMeses{
-		font-size: 11px;
-		margin-left: 20px;
-		width: 60px;
-		height: 25px;
-		border-radius: 8px;
-	}
-
-	#inputAnios{
-		font-size: 11px;
-		width: 60px;
-		margin-left: 5px;
-		height: 25px;
-		border-radius: 8px;	
-	}
-
-	#txtObservaciones {
-		width: 150px;
-		height: 80px;
-		font-size: 11px;
-		margin-left: 10px;
-		border-radius: 8px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: -2px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-
-	.form-radio-hembra
-	{
-		top: -2px;
-		height: 15px;
-		width: 15px;
-		margin-right: 100px; 
-		border-radius: 50px;
-		left: -14px;
-	}
-	.form-radio:checked::before, .form-radio-hembra:checked::before
-	{
-		font: 11px/1 'Open Sans', sans-serif;
-		left: 5px;
-		top: 1px;
-	}
-	/*EndRadio*/
-
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: -2px;
-		height: 15px;
-		width: 15px;
-		left: -10px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 4px;
-		top: 0px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 11px;
-		margin-left: 10px;
-		width: 150px;
-		height: 25px;
-		border-radius: 8px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 25px;
-		font-size: 11px;
-	}
-
-	#lblEsteril{
-		margin-left: 15px;
-		font-size: 11px;
-	}
-
-	#lblGeneroH {
-		margin-left: 2px;
-		font-size: 11px;
-	}
-
-	.btnAlta {
-		margin-left: 40%;
-		margin-bottom: 5px;	
-		padding: 5px;
-		font-size: 11px;    
-	}
-}
-
-@media (min-width:320px) and (max-width: 359px){
-	.principal {
-		margin-top: 10%;
-		height: 470px;
-		width: 94%;	
-		margin-left: 3%;
-	}
-
-	.form-paciente {
-		height: 450px;
-	}
-
-	.form-propietario {
-		height: 450px;
-	}
-
-	.title {
-		height: 20px;
-		font-size: 15px;
-		border-radius: 5px;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.title-paciente{	
 		font-size: 13px;
-		margin-left: 35%;
-		margin-top: 5%;
-	}
-
-	.title-propietario{
-		font-size: 13px;
-		margin-left: 30%;
-		margin-top: 5%;
-	}
-
-	/*Titulo pagina*/
-	#titulo-pagina {
-		text-align: center;
-	}
-
-	/*Inputs*/
-
-	#nombrePaciente, #sltEspecie, #sltRaza, #sltColor, #inputFechaNac, #inputChip, #inputExpediente {
-		font-size: 9px;
-		width: 130px;
-		height: 25px;
-		margin-left: 10px;
-		border-radius: 8px;
-	}
-
-	#inputMeses{
-		font-size: 10px;
-		margin-left: 10px;
-		width: 60px;
-		height: 25px;
-		border-radius: 8px;
-	}
-
-	#inputAnios{
-		font-size: 10px;
-		width: 60px;
-		margin-left: 6px;
-		height: 25px;
-		border-radius: 8px;	
-	}
-
-	#txtObservaciones {
-		width: 130px;
-		height: 80px;
-		font-size: 10px;
-		margin-left: 10px;
-		border-radius: 8px;
-	}
-
-	/***********************************************************************Estilo del radio y del checkbox**********************************************************************************/
-	/*Radio*/
-	.form-radio
-	{
-		top: -3px;
-		height: 12px;
-		width: 12px;
-		left: -10px; 
-		border-radius: 50px;
-	}
-	.form-radio:checked::before
-	{
-		font: 8px/1 'Open Sans', sans-serif;
-		left: 4px;
-		top: 1px;
-	}
-	/*EndRadio*/
-
-	.form-radio-hembra{
-		top: -3px;
-		height: 12px;
-		width: 12px;
-		left: -12px; 
-		border-radius: 50px;
-	}
-
-	.form-radio-hembra:checked::before
-	{
-		font: 8px/1 'Open Sans', sans-serif;
-		left: 4px;
-		top: 1px;
-	}
-	/*Checkbox*/
-	.form-checkbox
-	{
-		top: -2px;
-		height: 12px;
-		width: 12px;
-		left: -10px;
-	}
-	.form-checkbox:checked::before
-	{
-		left: 4px;
-		font: 8px/1 'Open Sans', sans-serif;
-		top: 1px;
-	}
-	/*EndCheckbox*/
-	/***********************************************************************Fin Estilo del radio y checkbox**********************************************************************************/
-
-	#inputNombreP, #inputPaterno, #inputMaterno, #inputTelefono, #inputTelefonoDos, #inputCorreo,
-	#inputDireccion, #inputColonia, #inputCP{
-		font-size: 10px;
-		margin-left: 10px;
-		width: 130px;
-		height: 25px;
-		border-radius: 8px;
-	}
-	/*Labels*/
-
-	.radioGenero{
-		font-family: 'Nunito', sans-serif;
-		font-size: 16px;
-	}
-
-	#lblGenero {
-		margin-left: 10px;
-		font-size: 11px;
+		margin-top:25px;
+		position: absolute;
 	}
 
 	#lblEsteril {
 		margin-left: 10px;
-		font-size: 11px;
+		font-size: 15px;
+		margin-top: -140px;
 	}
 
-	#lblGeneroH {
-		margin-left: 5px;
-		font-size: 11px;
+	/************* Avatar ****************/
+
+	div#div_avatar{
+		width: 70px;
+		padding: 6px;
+		margin-left: 80px;
+		margin-top: 190px;
+		position: static;
+		font: 10px/1 'Open Sans', sans-serif;
+		height: 35px;
 	}
+
+	input#avatar {
+	position: absolute;
+	top: 410px;
+	bottom: 0px;
+	left: -1px:
+	right: 0px;
+	height: 3%;
+	width: 15%;
+	opacity: 0;
+	}
+
+	#caja_imagen {
+		border-radius: 6px;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		background-color: white;
+		margin-left: 5px;
+		margin-top: 170px;
+	}
+
+	#div_img {
+		border-radius: 6px;
+		border: 2px solid #40444745;
+		width: 70px;
+		height: 70px;
+		float: right;
+		position: absolute;
+		margin-left: 5px;
+		margin-top: -55px;
+	}
+
+	#div_img img {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width:67px;
+		border-radius: 5px;
+		height: 67px;
+		color: red;
+		display:block;
+	}
+
+	/******* AVATAR *************/
+	/*Botones*/
 
 	.btnAlta {
-		margin-left: 30%;
-		margin-bottom: 4px;	
+		font-family: 'Nunito', sans-serif;
+		text-decoration: none;
+		margin-left: 35%;
+		margin-bottom: 15px;	
 		padding: 5px;
-		font-size: 10px;    
+		font-size: 15px;    
 	}
+
+	.botonAtrasA {
+	padding: 5px;
+	font-size: 15px;
+	margin-top: -1%;
+	border-radius: 6px;
+	margin-left: 43%;
+	width: 15%;
+	float: left;
+}
 }

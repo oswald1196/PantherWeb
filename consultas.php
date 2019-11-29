@@ -96,7 +96,7 @@ if ($_SESSION["autenticado"] != "SI") {
      <input type="hidden" name="fecha" id="fechaActual" value="<?php echo $fecha_actual?>">
 
      <div id="boton_estado">
-      <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
+      <a>  <img id="imagen_libro" src="assets/img/status.png"> Estado </a> 
     </div>
     <div id="div-estado">
       <p id="lblEstado">Signos y estado</p>
@@ -138,7 +138,7 @@ if ($_SESSION["autenticado"] != "SI") {
    </script>
 
    <div id="boton_diagnostico">
-    <a> <img id="imagen" src="https://img.icons8.com/ultraviolet/64/000000/treatment-plan.png"> Diagnóstico </a>
+    <a> <img id="imagen" src="assets/img/librod.png"> Diagnóstico </a>
   </div>
   <div id="div-diagnostico">
     <textarea type="text" id="diagnosticoP" name="dp" placeholder="Diagnóstico presuntivo"></textarea>

@@ -8,7 +8,7 @@
 	background-color: white;
 	border-radius: 10px;
 	margin-top: 1%;
-	height: 70%;
+	height: 605px;
 	width: 60%;	
 	margin-left: 20%;
 	margin-right: 20%;
@@ -28,6 +28,7 @@
 #div_boton {
 	margin-top:0%;
 	height: 22%;
+	width: 100%;
 }
  
 #div_nuevo_motivo {
@@ -73,7 +74,7 @@
 	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
 	width: 15%;
-	height: 15%;
+	height: 20%;
 	margin-left: 2%;
 	margin-top: 8%;
 	border-radius: 10px;
@@ -84,7 +85,7 @@
 #inputhoraini{
 	font-size: 17px;
 	width: 15%;
-	height: 15%;
+	height: 20%;
 	margin-left: 2%;
 	margin-top: 8%;
 	border-radius: 10px;
@@ -189,11 +190,13 @@
 
 .botonAgregar {
  	font-family: 'Nunito', sans-serif;
-	margin-left: 45%;
-	margin-top: -7%;
+	margin-top: -5%;
 	text-decoration: none;
     padding: 5px;
     font-size: 20px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
@@ -211,9 +214,21 @@
     background-color: #527486;
     border-radius: 6px;
     border: 1px solid #0016b0;
-    margin-left: 47.5%;
     width: 5%;
-   	float: left;
+}
+
+#div_atrasC{
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 #btnAddMotivo {
@@ -259,13 +274,13 @@
 	font-size: 17px;
 	width: 20%;
 	height: 15%;
-	margin-left: 1%;
+	margin-left: 0%;
 	margin-top: 8%;
 }
 
 #inputhoraini{
 	font-size: 17px;
-	width: 15%;
+	width: 17%;
 	height: 15%;
 	margin-left: 2%;
 	margin-top: 8%;
@@ -304,7 +319,7 @@
 
 #inputMotivo {
 	font-size: 15px;
-	width: 40%;
+	width: 60%;
 	height: 40px;
 	margin-left: 10px;
 	margin-top: 8%;
@@ -315,7 +330,7 @@
 
 #lblFechaA {
 	font-size: 21px;
-	margin-left: 8%;
+	margin-left: 6%;
 }
 
 #lblHoraInicio{
@@ -340,7 +355,7 @@
 
 #lblNuevaCita{
 	font-size: 21px;
-	margin-left: 0px;
+	margin-left: 2px;
 }
  
 #div_nuevo_motivo {
@@ -352,8 +367,7 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 45%;
-	margin-top: 5%;
+	margin-top: 0%;
     padding: 10px;
     font-size: 20px;
 }
@@ -365,6 +379,12 @@
     width: 40px;
     height: 40px;
 	}
+
+.botonAtrasCitasG {
+    font-size: 20px;
+    margin-top: 2%;
+    width: 10%;
+}
 }
 
 
@@ -419,7 +439,7 @@
 
 #chkTodoDia {
 	margin-left: 2%;
-	margin-top: 8%;
+	margin-top: 9.5%;
 }
 
 #inputMotivos{
@@ -441,7 +461,7 @@
 
 #inputMotivo {
 	font-size: 15px;
-	width: 40%;
+	width: 60%;
 	height: 40px;
 	margin-left: 10px;
 	margin-top: 8%;
@@ -476,7 +496,7 @@
 
 #lblNuevaCita{
 	font-size: 21px;
-	margin-left: 0px;
+	margin-left: 5px;
 }
  
 #div_nuevo_motivo {
@@ -488,8 +508,7 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 45%;
-	margin-top: 5%;
+	margin-top: 0%;
     padding: 10px;
     font-size: 20px;
 }
@@ -501,9 +520,15 @@
     width: 40px;
     height: 40px;
 	}
+
+.botonAtrasCitasG {
+    font-size: 20px;
+    margin-top: 2%;
+    width: 10%;
+}
 }
 
-@media(min-width: 768px) and (max-width: 1024px){
+@media(min-width: 768px) and (max-width: 1023px){
 .contenedor_principal {
 	width: 80%;
 	margin-top: 5%;	
@@ -511,7 +536,7 @@
 }
 /*Titulo pagina*/
 #titulo-pagina {
-	margin-top: 10%;
+	margin-top: 5%;
 	font-size: 25px;
 }
 
@@ -541,7 +566,8 @@
 #inputMotivos{
 	font-size: 15px;
 	width: 55%;
-	height: 15%;
+	height: 17%;
+	padding: 2px;
 	margin-left: 10px;
 	margin-top: 7%;
 }
@@ -549,7 +575,8 @@
 #selectPacientes{
 	font-size: 15px;
 	width: 40%;
-	height: 40px;
+	height: 35px;
+	padding: 4px;
 	margin-left: 5px;
 	margin-top: 7%;
 }
@@ -557,6 +584,7 @@
 
 #inputMotivo {
 	font-size: 15px;
+	padding: 4px;
 	width: 40%;
 	height: 35%;
 	margin-left: 2%;
@@ -582,17 +610,17 @@
 
 #lblMotivos{
 	font-size: 18px;
-	margin-left: 17%;
+	margin-left: 15%;
 }
 
 #lblPacientes{
 	font-size: 18px;
-	margin-left: 27%;
+	margin-left: 23%;
 }
 
 #lblNuevaCita{
 	font-size: 18px;
-	margin-left: 13%;
+	margin-left: 25%;
 }
  
 #fechas_citaG {
@@ -608,8 +636,8 @@
 }
 
 #div_boton {
-	margin-top: 35%;
-	height: 35%;
+	margin-top: 5%;
+	height: 10%;
 }
 
 #div_nuevo_motivo {
@@ -622,7 +650,6 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 45%;
 	margin-top: 10%;
     padding: 10px;
     font-size: 18px;
@@ -635,6 +662,12 @@
     width: 40px;
     height: 40px;
 	}
+
+.botonAtrasCitasG {
+    font-size: 20px;
+    margin-top: 2%;
+    width: 10%;
+}
 }
 
 @media(min-width: 568px) and (max-width: 767px){
@@ -670,12 +703,14 @@
 #chkTodoDia {
 	margin-left: 2%;
 	margin-top: 15%;
+	color: red;
 }
 
 #inputMotivos{
 	font-size: 13px;
 	width: 70%;
-	height: 13%;
+	padding: 4px;
+	height: 15%;
 	margin-left: 10px;
 	margin-top: 20%;
 }
@@ -691,8 +726,9 @@
 
 #inputMotivo {
 	font-size: 15px;
-	width: 40%;
-	height: 25%;
+	width: 60%;
+	height: 35%;
+	padding: 0;
 	margin-left: 2%;
 	margin-top: 8%;
 }
@@ -726,7 +762,7 @@
 
 #lblNuevaCita{
 	font-size: 18px;
-	margin-left: 9%;
+	margin-left: 12%;
 }
  
 #fechas_citaG {
@@ -742,8 +778,8 @@
 }
 
 #div_boton {
-	margin-top: 35%;
-	height: 35%;
+	margin-top: 15%;
+	height: 15%;
 }
 
 #div_nuevo_motivo {
@@ -753,12 +789,17 @@
 	float: center;
 }
 
+.botonAtrasCitasG {
+    font-size: 20px;
+    margin-top: 2%;
+    width: 15%;
+}
+
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 45%;
-	margin-top: 15%;
-    padding: 10px;
+	margin-top: 10%;
+    padding: 6px;
     font-size: 18px;
 }
 
@@ -775,14 +816,13 @@
 @media(min-width: 415px) and (max-width: 567px){
 .contenedor_principal {
 	width: 80%;
-	background-color: honeydew;
 	margin-top: 0%;	
 	margin-left: 10%;
 }
 /*Titulo pagina*/
 #titulo-pagina {
 	margin-top: 5%;
-	font-size: 25px;
+	font-size: 21px;
 }
 
 /*Inputs*/
@@ -805,7 +845,7 @@
 
 #chkTodoDia {
 	margin-left: 2%;
-	margin-top: 20%;
+	margin-top: 15%;
 	height: 15px;
 	width: 15px;
 }
@@ -823,16 +863,17 @@
 	width: 60%;
 	height: 35px;
 	margin-left: 5px;
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 
 #inputMotivo {
 	font-size: 12px;
-	width: 40%;
-	height: 25%;
+	width: 60%;
+	height: 35%;
+	padding: 2px;
 	margin-left: 2%;
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 /*Labels*/
@@ -848,7 +889,8 @@
 }
 
 #lblTodoDia{
-	margin-left: 35%;	
+	margin-left: 35%;
+	margin-top: -1%;	
 	font-size: 15px;
 }
 
@@ -864,7 +906,7 @@
 
 #lblNuevaCita{
 	font-size: 15px;
-	margin-left: 5%;
+	margin-left: 10%;
 }
  
 #fechas_citaG {
@@ -880,8 +922,8 @@
 }
 
 #div_boton {
-	margin-top: 35%;
-	height: 35%;
+	margin-top: 15%;
+	height: 15%;
 }
 
 #div_nuevo_motivo {
@@ -894,10 +936,16 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 35%;
-	margin-top: 5%;
-    padding: 8px;
+	margin-top: 0%;
+    padding: 5px;
     font-size: 15px;
+}
+
+
+.botonAtrasCitasG {
+    font-size: 15px;
+    margin-top: 2%;
+    width: 15%;
 }
 
 #btnAddMotivo {
@@ -913,8 +961,8 @@
 @media(min-width: 360px) and (max-width: 414px){
 .contenedor_principal {
 	width: 80%;
-	background-color: azure;
 	margin-top: 5%;	
+	height: 500px;
 	margin-left: 10%;
 }
 /*Titulo pagina*/
@@ -935,14 +983,14 @@
 #inputhoraini{
 	font-size: 11px;
 	width: 35%;
-	height: 18%;
+	height: 25%;
 	margin-left: 1%;
-	margin-top: 20%;
+	margin-top: 10%;
 }
 
 #chkTodoDia {
 	margin-left: 2%;
-	margin-top: 20%;
+	margin-top: 15%;
 	height: 15px;
 	width: 15px;
 }
@@ -960,16 +1008,17 @@
 	width: 68%;
 	height: 30px;
 	margin-left: 5px;
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 
 #inputMotivo {
 	font-size: 11px;
-	width: 40%;
-	height: 25%;
+	width: 60%;
+	padding: 2px;
+	height: 30px;
 	margin-left: 2%;
-	margin-top: 15%;
+	margin-top: 10%;
 }
 
 /*Labels*/
@@ -981,7 +1030,7 @@
 }
 
 #lblHoraInicio{
-	margin-left: 22%;	
+	margin-left: 18%;	
 	margin-top: 4%;
 	font-size: 13px;
 }
@@ -989,6 +1038,7 @@
 #lblTodoDia{
 	margin-left: 35%;	
 	font-size: 13px;
+	margin-top: -1%;
 }
 
 #lblMotivos{
@@ -1003,11 +1053,11 @@
 
 #lblNuevaCita{
 	font-size: 13px;
-	margin-left: 5%;
+	margin-left: 10%;
 }
  
 #fechas_citaG {
-	margin-top: 5%;
+	margin-top: 2%;
 	width: 100%;
 	height: 25%;
 }
@@ -1033,17 +1083,22 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 35%;
-	margin-top: 20%;
-    padding: 8px;
-    font-size: 15px;
+	margin-top: 0%;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.botonAtrasCitasG {
+    font-size: 14px;
+    margin-top: 2%;
+    width: 18%;
 }
 
 #btnAddMotivo {
 	margin-left: 1%;
     padding: 5px;
     margin-top: 4%;
-    font-size: 15px;
+    font-size: 14px;
     width: 30px;
     height: 30px;
 	}
@@ -1052,13 +1107,13 @@
 @media(max-width: 359px){
 .contenedor_principal {
 	width: 80%;
-	background-color: azure;
+	height: 500px;
 	margin-top: 5%;	
 	margin-left: 10%;
 }
 /*Titulo pagina*/
 #titulo-pagina {
-	margin-top: 10%;
+	margin-top: 5%;
 	font-size: 15px;
 }
 /*Inputs*/
@@ -1074,14 +1129,14 @@
 #inputhoraini{
 	font-size: 10px;
 	width: 35%;
-	height: 18%;
+	height: 25%;
 	margin-left: 1%;
-	margin-top: 20%;
+	margin-top: 15%;
 }
 
 #chkTodoDia {
 	margin-left: 2%;
-	margin-top: 20%;
+	margin-top: 12%;
 	height: 15px;
 	width: 15px;
 }
@@ -1099,16 +1154,16 @@
 	width: 68%;
 	height: 30px;
 	margin-left: 5px;
-	margin-top: 15%;
+	margin-top: 5%;
 }
 
 
 #inputMotivo {
 	font-size: 10px;
-	width: 40%;
-	height: 25%;
+	width: 70%;
+	height: 40%;
 	margin-left: 2%;
-	margin-top: 15%;
+	margin-top: 10%;
 }
 
 /*Labels*/
@@ -1120,7 +1175,7 @@
 }
 
 #lblHoraInicio{
-	margin-left: 22%;	
+	margin-left: 20%;	
 	margin-top: 4%;
 	font-size: 12px;
 }
@@ -1142,7 +1197,7 @@
 
 #lblNuevaCita{
 	font-size: 12px;
-	margin-left: 3%;
+	margin-left: 7%;
 	margin-top: 3%;
 }
  
@@ -1173,10 +1228,15 @@
 /*Botones*/
 
 .botonAgregar {
-	margin-left: 35%;
-	margin-top: 20%;
+	margin-top: -20%;
     padding: 6px;
     font-size: 13px;
+}
+
+.botonAtrasCitasG {
+    font-size: 13px;
+    margin-top: 2%;
+    width: 18%;
 }
 
 #btnAddMotivo {

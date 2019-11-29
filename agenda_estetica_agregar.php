@@ -192,7 +192,9 @@ if ($_SESSION["autenticado"] != "SI") {
   </form>  
   
 </div> 
+<div id="div_atrasEstetica">
   <button class="botonAtrasEst" onclick="atras();"> Atrás </button>
+</div>
   
 <script>
   function atras() {

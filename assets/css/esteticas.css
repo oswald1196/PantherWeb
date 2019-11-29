@@ -39,12 +39,10 @@
 	text-decoration: none;
     padding: 5px;
     font-size: 20px;
-    margin-top: 2%;
     color: #ffffff;
     background-color: #527486;
     border-radius: 6px;
     border: 1px solid #0016b0;
-    margin-left: 48%;
     width: 5%;
    	float: left;
 }
@@ -72,6 +70,20 @@
 	height: 25%;
 }
 
+#div_atrasEstetica{
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
 #datos_horario{
 	display: -webkit-flex;
 	display: -moz-box;
@@ -97,9 +109,14 @@
 	display: -moz-box;
 	display: -ms-flexbox;
 	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
 	width: 100%;
 	height: 20%;
 	border-radius: 10px;
+	margin-top: -2%;
 }
 
 #inputEstilista{
@@ -266,8 +283,6 @@
 	background-color: #527486;
 	border-radius: 4px;
 	border: 1px solid #0016b0;
-	margin-left: 45%;
-	margin-top: 2%;
 }
 
 @media(min-width: 1200px) and (max-width: 1366px){
@@ -275,12 +290,23 @@
 	width: 96%;	
 	margin-left: 2%;
 }	
+
+#inputEstilista{
+	margin-left: 9%;
+	margin-top: 5%;
+	color: gray;
+	border-radius: 10px;
+	border: 2px solid #40444745;
+}
 .botonAtrasEst {
     padding: 5px;
     font-size: 20px;
     margin-top: 1%;
-    margin-left: 48%;
     width: 10%;
+}
+
+#lblPrecioS {
+	margin-left: 5.5%;
 }
 }
 
@@ -290,17 +316,13 @@
 	margin-left: 2%;
 }
 #lblPrecioS {
-	margin-left: 3%;
-}
-.botonAgregar {
-	margin-left: 42%;
+	margin-left: 3.5%;
 }
 
 .botonAtrasEst {
     padding: 5px;
     font-size: 20px;
     margin-top: 1%;
-    margin-left: 47%;
     width: 10%;
 }
 
@@ -318,7 +340,7 @@
 
 #inputEstilista{
 	font-size: 13px;
-	margin-left: 7%;
+	margin-left: 6.5%;
 }
 
 #inputTipoServicio{
@@ -346,6 +368,11 @@
 #inputHoraFinE {
 	font-size: 15px;
 }
+
+#lblNotas{
+	margin-left: 14%;
+}
+
 }
 
 @media(min-width: 768px) and (max-width: 1023px){
@@ -358,7 +385,7 @@
 	width: 22%;
 	height: 20%;
 	font-size: 13px;
-	margin-left: 5%;
+	margin-left: 5.5%;
 }
 
 .contenedor-title {
@@ -382,7 +409,7 @@
 
 #lblPrecioS {
 	font-size: 13px;
-	margin-left: 2%;
+	margin-left: 3.5%;
 	margin-top: 3%;
 }
 
@@ -435,19 +462,18 @@
 }	
 #lblNotas {
 	font-size: 15px;
-	margin-left: 10%;	
+	margin-left: 13%;	
 }
 .botonAgregar {
 	font-size: 15px;
 	padding: 5px;
-	margin-left: 43%;
+	height: 30%;
 }
 
 .botonAtrasEst {
     padding: 5px;
     font-size: 15px;
     margin-top: 1%;
-    margin-left: 48%;
     width: 10%;
 }
 
@@ -465,7 +491,7 @@
 	height: 25%;
 	border-radius: 8px;
 	font-size: 12px;
-	margin-left: 5%;
+	margin-left: 4.5%;
 }
 
 .contenedor-title {
@@ -509,17 +535,17 @@
 #inputPrecioS {
 	border-radius: 8px;
 	width: 8%;
-	margin-left: 2%;
+	margin-left: 1%;
 	height: 25%;
 	margin-top: 2%;
 }
 #inputFechaE {
-	width: 17%;
+	width: 19%;
 	margin-left: 2%;
 	height: 25%;
 	border-radius: 8px;
 	margin-top: 2%;
-	font-size: 12px;
+	font-size: 11px;
 }
 #lblHoraInicio {
 	font-size: 13px;
@@ -549,7 +575,7 @@
 }	
 #lblNotas {
 	font-size: 13px;
-	margin-left: 10%;	
+	margin-left: 11%;	
 	margin-top: 5%;	
 }
 
@@ -568,7 +594,6 @@
 .botonAgregar {
 	font-size: 13px;
 	padding: 5px;
-	margin-left: 43%;
 	margin-top: 1%;
 }
 
@@ -576,7 +601,6 @@
     padding: 5px;
     font-size: 13px;
     margin-top: 1%;
-    margin-left: 49%;
     width: 10%;
 }
 }
@@ -701,16 +725,15 @@
 
 .botonAgregar {
 	font-size: 13px;
-	padding: 5px;
-	margin-left: 40%;
+	padding: 3px;
 	margin-top: 10%;
+	height: 30%;
 }
 
 .botonAtrasEst {
     padding: 5px;
     font-size: 13px;
     margin-top: 1%;
-    margin-left: 48%;
     width: 15%;
 }
 
@@ -757,7 +780,7 @@
 
 #lblPrecioS {
 	font-size: 13px;
-	margin-left: 15%;
+	margin-left: 13%;
 	margin-top: 10%;
 }
 
@@ -792,7 +815,7 @@
 
 #lblHoraInicio {
 	font-size: 13px;
-	margin-left: -85%;
+	margin-left: -80%;
 	margin-top: 27%;
 }
 
@@ -836,16 +859,15 @@
 
 .botonAgregar {
 	font-size: 11px;
-	padding: 5px;
-	margin-left: 40%;
+	padding: 3px;
 	margin-top: 10%;
+	height: 30%;
 }
 
 .botonAtrasEst {
     padding: 5px;
     font-size: 13px;
     margin-top: 1%;
-    margin-left: 48%;
     width: 15%;
 }
 }
@@ -891,7 +913,7 @@
 
 #lblPrecioS {
 	font-size: 11px;
-	margin-left: 15%;
+	margin-left: 13%;
 	margin-top: 10%;
 }
 
@@ -926,7 +948,7 @@
 
 #lblHoraInicio {
 	font-size: 11px;
-	margin-left: -85%;
+	margin-left: -78%;
 	margin-top: 30%;
 }
 
@@ -956,7 +978,7 @@
 
 #lblNotas {
 	font-size: 11px;
-	margin-left: 5%;	
+	margin-left: 6%;	
 	margin-top:20%;	
 }
 
@@ -970,16 +992,15 @@
 
 .botonAgregar {
 	font-size: 11px;
-	padding: 5px;
-	margin-left: 38%;
+	padding: 3px;
 	margin-top: 10%;
+	height: 30%;
 }
 
 .botonAtrasEst {
     padding: 5px;
     font-size: 11px;
     margin-top: 1%;
-    margin-left: 48%;
     width: 15%;
 }
 }

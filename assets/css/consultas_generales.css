@@ -118,7 +118,6 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color:gray;
-
 }
 
 #txtMotivo{
@@ -307,16 +306,30 @@ a {
 .botonAtrasConsulG {
 	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
-    padding: 5px;
-    font-size: 20px;
-    margin-top: -35px;
-    color: #ffffff;
-    background-color: #527486;
-    border-radius: 6px;
-    border: 1px solid #0016b0;
-    margin-left: 47%;
-    width: 10%;
-   	float: left;
+	padding: 5px;
+	font-size: 20px;
+	color: #ffffff;
+	background-color: #527486;
+	border-radius: 6px;
+	border: 1px solid #0016b0;
+	width: 10%;
+	float: left;
+}
+
+.boton-atras{
+	margin-top: -3%;
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+
 }
 
 #diagnosticoDef{
@@ -444,7 +457,7 @@ a {
 		background-color: #527486;
 		border-radius: 5px;
 		border: 1px solid #527486;
-    	width: 15%;
+		width: 15%;
 		margin-top: 5px;
 	}
 
@@ -471,9 +484,8 @@ a {
 		.contenedor_imedico {
 			display: flex;
 			flex-direction: column;
-			background-color: white;
 			border-radius: 10px;
-			height: 850px;
+			height: 750px;
 			width: 98%;	
 			margin-left: 1%;
 		}
@@ -484,6 +496,27 @@ a {
 			margin-left: 75%;
 			margin-right: 1%;
 		}
+
+
+		.form-consulta {
+			height: 700px;
+		}
+
+		.informeMedico{
+			width: 80%;
+			height: 560px;
+			margin-top: 20px;
+			float: left;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content:space-around;
+			border-top: .5px solid;
+			border-color: #D6D5E1;
+			font-family: 'Nunito', sans-serif;	
+			font-size: 17px;
+		}
+
 		#lblPad:before {
 			content: "Primera vez";
 		}
@@ -497,7 +530,7 @@ a {
 			flex-direction: column;
 			background-color: white;
 			border-radius: 10px;
-			height: 850px;
+			height: 750px;
 			width: 98%;	
 			margin-left: 1%;
 		}
@@ -506,7 +539,7 @@ a {
 			font-family: 'Nunito', sans-serif;	
 			font-size: 18px;
 			color:black;
-			margin-left: 45%;
+			margin-left: 35%;
 		}
 
 		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblPad, #lblServicio, #lblCostoS,
@@ -543,6 +576,17 @@ a {
 			color:gray;
 		}
 
+		.botonAConsulta{
+			padding: 5px;
+			font-size: 18px;
+			color: #ffffff;
+			background-color: #527486;
+			border-radius: 5px;
+			border: 1px solid #527486;
+			width: 15%;
+			margin-top: 5px;
+		}
+
 		#selectMucosas{
 			margin-top: 10%;
 			height: 7%;
@@ -576,7 +620,7 @@ a {
 			flex-direction: column;
 			background-color: white;
 			border-radius: 10px;
-			height: 850px;
+			height: 750px;
 			width: 98%;	
 			margin-left: 1%;
 		}
@@ -595,12 +639,12 @@ a {
 
 		.detalle{
 			width: 30%;
-			height: 670px;
+			height: 590px;
 		}
 
 		.informeMedico{
 			width: 70%;
-			height: 640px;
+			height: 540px;
 		}
 
 		#lblPacientesC {
@@ -620,6 +664,22 @@ a {
 		#lblDetalle, #lblIniSintomas, #lblAtencion, #lblPad, #lblServicio, #lblCostoS,
 		#lblMotivo, #lblExamen, #lblReceta {
 			font-size: 18px;
+		}
+
+		#txtReceta {
+			height: 100%;
+			width: 90%;
+			border-radius: 10px;
+			border: 2px solid #40444745;
+			color:gray;
+		}
+
+		#txtMotivo, #txtExamen {
+			height: 70%;
+			width: 90%;
+			border-radius: 10px;
+			border: 2px solid #40444745;
+			color:gray;
 		}
 
 		#lblFechaC {
@@ -670,9 +730,14 @@ a {
 		}
 
 		.botonAConsulta{
-			padding: 5px;
+			padding: 3px;
 			font-size: 17px;
-			margin-top: 7%;
+			color: #ffffff;
+			background-color: #527486;
+			border-radius: 5px;
+			border: 1px solid #527486;
+			width: 20%;
+			margin-top: 50px;
 		}
 
 		i {
@@ -687,7 +752,7 @@ a {
 			flex-direction: column;
 			background-color: white;
 			border-radius: 10px;
-			height: 800px;
+			height: 770px;
 			width: 98%;	
 			margin-left: 1%;
 		}
@@ -706,7 +771,7 @@ a {
 
 		.detalle{
 			width: 40%;
-			height: 625px;
+			height: 615px;
 		}
 
 		.informeMedico{
@@ -767,7 +832,7 @@ a {
 
 		#sltMedico, #selectServicio{
 			width: 90%;
-			height: 7%;
+			height: 5%;
 		}
 
 		#inputCostoS{
@@ -780,12 +845,6 @@ a {
 			margin-left: 50%;
 			font-size: 13px;
 			margin-right: 1%;
-		}
-
-		.botonAConsulta{
-			padding: 5px;
-			font-size: 15px;
-			margin-top: 7%;
 		}
 
 		i {
@@ -814,6 +873,27 @@ a {
 		#titulo_consulta {
 			margin-top: 8%;
 			font-size: 25px;
+		}
+
+		.botonAConsulta{
+			padding: 3px;
+			font-size: 16px;
+			color: #ffffff;
+			background-color: #527486;
+			border-radius: 5px;
+			border: 1px solid #527486;
+			width: 30%;
+			margin-top: 5px;
+		}
+
+		.botonAtrasConsulG {
+			padding: 5px;
+			font-size: 16px;
+			background-color: #527486;
+			border-radius: 6px;
+			border: 1px solid #0016b0;
+			width: 10%;
+			float: left;
 		}
 	}
 
@@ -931,9 +1011,10 @@ a {
 		}
 
 		.botonAConsulta{
-			padding: 5px;
+			padding: 3px;
 			font-size: 13px;
 			margin-top: 7%;
+			width: 40%;
 		}
 
 		i {
@@ -961,12 +1042,26 @@ a {
 
 		#titulo_consulta {
 			margin-top: 8%;
-			font-size: 25px;
+			font-size: 21px;
 		}
 
 		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed{
 			font-size: 11px;
 		} 
+
+		.botonAtrasConsulG {
+			padding: 5px;
+			font-size: 16px;
+			background-color: #527486;
+			border-radius: 6px;
+			border: 1px solid #0016b0;
+			width: 15%;
+			float: left;
+		}
+
+		.boton-atras {
+			margin-top:-8%;
+		}
 
 	}
 
@@ -1060,7 +1155,9 @@ a {
 		}
 		#inputFechaSintomas{
 			font-size: 11px;
-			width: 70%;
+			width: 90%;
+			height: 7%;
+			border-radius: 8px;
 		}
 
 		#sltMedico, #selectServicio{
@@ -1084,9 +1181,10 @@ a {
 		}
 
 		.botonAConsulta{
-			padding: 5px;
+			padding: 2px;
 			font-size: 13px;
 			margin-top: 7%;
+			width: 40%;
 		}
 
 		i {
@@ -1114,15 +1212,28 @@ a {
 
 		#titulo_consulta {
 			margin-top: 8%;
-			font-size: 20px;
+			font-size: 18px;
 		}
 
 		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed{
 			font-size: 11px;
+		}
+		.botonAtrasConsulG {
+			padding: 5px;
+			font-size: 13px;
+			background-color: #527486;
+			border-radius: 6px;
+			border: 1px solid #0016b0;
+			width: 15%;
+			float: left;
 		} 
+
+		.boton-atras {
+			margin-top:-10%;
+		}
 	}
 
-@media(max-width: 359px){
+	@media(max-width: 359px){
 		.contenedor_imedico {
 			display: flex;
 			flex-direction: column;
@@ -1236,9 +1347,10 @@ a {
 		}
 
 		.botonAConsulta{
-			padding: 5px;
-			font-size: 13px;
+			padding: 2px;
+			font-size: 11px;
 			margin-top: 7%;
+			width: 40%;
 		}
 
 		i {
@@ -1271,5 +1383,19 @@ a {
 
 		#diagnosticoP, #diagnosticoD, #inputPruebas, #diagnosticoDef, #inputMed{
 			font-size: 11px;
+		} 
+
+		.boton-atras {
+			margin-top:-10%;
+		}
+
+		.botonAtrasConsulG {
+			padding: 5px;
+			font-size: 13px;
+			background-color: #527486;
+			border-radius: 6px;
+			border: 1px solid #0016b0;
+			width: 15%;
+			float: left;
 		} 
 	}

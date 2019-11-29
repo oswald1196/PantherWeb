@@ -104,79 +104,103 @@ if ($_SESSION["autenticado"] != "SI") {
 
             function alert_eliminarCita(url) {
 
-            $(".boton").click(function(){ 
-              var fecha = "";
+              $(".boton").click(function(){ 
+                var fecha = "";
 
                 $(this).parents("tr").find('#fecha').each(function(){
                   fecha = $(this).html();      
-                var fecha_actual = document.getElementById("fechaActual").value;
-                if (fecha_actual > fecha){
-                  Swal.fire({
-                    type:'error',
-                    title:'ERROR',
-                    text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
-                  });
-                }
-                else {
-              event.preventDefault();
+                  var fecha_actual = document.getElementById("fechaActual").value;
+                  if (fecha_actual > fecha){
+                    Swal.fire({
+                      type:'error',
+                      title:'ERROR',
+                      text:'IMPOSIBLE BORRAR UN SERVICIO DE DÍAS ANTERIORES'
+                    });
+                  }
+                  else {
+                    event.preventDefault();
 
-              Swal.fire({
-                title: 'Estás seguro de eliminar esta estética?',
-                text: "No podrás recuperar el registro",
-                type: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Si, borrar!',
-                cancelButtonText: 'Cancelar',
-              }).then((result) => {
-                if (result.value) {
-                  Swal.fire(
-                    'Borrado!',
-                    'Se ha borrado la cita.',
-                    'success'
+                    Swal.fire({
+                      title: 'Estás seguro de eliminar esta estética?',
+                      text: "No podrás recuperar el registro",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Si, borrar!',
+                      cancelButtonText: 'Cancelar',
+                    }).then((result) => {
+                      if (result.value) {
+                        Swal.fire(
+                          'Borrado!',
+                          'Se ha borrado la cita.',
+                          'success'
 
-                    ) 
+                          ) 
 
-                  window.location.href = url;
-                }
+                        window.location.href = url;
+                      }
+                    });
+                  }
+                  return false;
+                });
               });
             }
-              return false;
-              });
-              });
-          }
             
           </script>
 
           <script type="text/javascript">
             function alert_terminarCita(url) {
-            $(".btnEstetica").click(function(){
-              var estatus = "";
+              $(".btnEstetica").click(function(){
+                var estatus = "";
 
-              $(this).parents("tr").find('#filaEstatus').each(function(){
-                estatus = $(this).html();      
-                if (estatus == " TERMINADA"){
-                  Swal.fire({
-                    type:'error',
-                    title:'ERROR',
-                    text:'EL SERVICIO YA FUE TERMINADO'
-                  });
-                }
-                else   {
-                  window.location.href = url;
+                $(this).parents("tr").find('#filaEstatus').each(function(){
+                  estatus = $(this).html();      
+                  if (estatus == " TERMINADA"){
+                    Swal.fire({
+                      type:'error',
+                      title:'ERROR',
+                      text:'EL SERVICIO YA FUE TERMINADO'
+                    });
+                  }
+                  else   {
+                    event.preventDefault();
 
-                }           
-                 });
-            });
-          }
-        </script>
+                    Swal.fire({
+                      title: 'Estás seguro de terminar este servicio de estética?',
+                      text: "Cambiará su estatus",
+                      type: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#3085d6',
+                      cancelButtonColor: '#d33',
+                      confirmButtonText: 'Si, terminar!',
+                      cancelButtonText: 'Cancelar',
+                    }).then((result) => {
+                      if (result.value) {
+                    event.preventDefault();
+                        
+                        Swal.fire(
+                          'Correcto!',
+                          'Se ha dado por terminada la estética.',
+                          'success'
 
-      </tbody>
-    </table>
+                          ) 
+                        window.location.href = url;
+
+                      }           
+                    });
+                  }
+                  return false;
+                });
+              });
+            }
+          </script>
+
+        </tbody>
+      </table>
+    </div>
+
   </div>
-
-</div>
 </body>
 </html>
 

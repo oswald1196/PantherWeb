@@ -62,9 +62,9 @@ if ($_SESSION["autenticado"] != "SI") {
 </script>
 <p id="titulo-pagina">Agregar desparasitación</p> 
 
-<div class="container">
+<div class="container_Desp">
   <form class="form_add_cita" id="frmDesp" action="insertar_desparasitacion_gral.php" method="POST" onsubmit=" return validadDesp();">
-    <div>
+    <div id="div_paciente">
       <label id="lblPacientesD">Paciente</label>
       <select id="selectPacienteD" name="paciente">
         <option value="">Elige paciente</option>
@@ -80,7 +80,7 @@ if ($_SESSION["autenticado"] != "SI") {
       </select>    
     </div>
     <div id="contenedor">
-      <div class="form-leftV">
+      <div class="form-leftD">
         <label id="lblFechaD">Fecha</label>
         <input type="date" class="input-append date" id="inputFechaD" name="fecha" tabindex="1">
         <input type="hidden" name="empresa" value="<?php echo $codigo ?>">
@@ -389,7 +389,7 @@ if ($_SESSION["autenticado"] != "SI") {
       return true;
     }
   </script>
-  <div class="form-right">
+  <div class="form-rightD">
     <div class="form-group">
       <label id="lblCitaPD"> <i class="fas fa-calendar-day"></i>&nbsp;&nbsp; Programar cita</label>
       <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" name="pCita" checked>
@@ -417,7 +417,9 @@ if ($_SESSION["autenticado"] != "SI") {
 </div>
 </form>  
 </div> 
-<button class="botonAtrasDG" onclick="goBack();"> Atrás </button>
+<div id="div_atrasV">
+  <button class="botonAtrasDG" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
   function goBack() {

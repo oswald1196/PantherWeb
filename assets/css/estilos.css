@@ -6,12 +6,59 @@
 	justify-content:flex-start;
 }
 
+#principal{
+	width: 90%;
+	max-width: 1000px;
+	margin: 20px auto;
+	overflow: hidden;
+}
+
+#slides{
+	width: 100%;
+}
+
+#slides img {
+	width: 100%;
+}
+
+.slidejs-pagination {
+	background:#424242;
+	list-style: none;
+	overflow: hidden;
+}
+
+.slidejs-pagination li{
+	float: left;
+}
+
+.slidejs-pagination li a{
+	display: block;
+	padding: 10px 20px;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.slidejs-pagination li a:hover{
+	background: #000;
+}
+
+.slidejs-navigation {
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+	display: inline-block;
+	padding: 10px 20px;
+	float: right;
+}
+
+#slides .active {
+	background: #000;
+}
 .logotipo img{
 	width: 15%;
 }
 
 .frmIngreso button{
-	
 	display: flex;
 	flex-direction: row;
 	margin-left: 90px;
@@ -20,60 +67,60 @@
 }
 
 .saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 30px;
-  	margin-top: 2%;
+	font-family: 'Nunito', sans-serif;	
+	font-size: 30px;
+	margin-top: 2%;
 	color: white;
 	text-align: center;
 }
 
 @media (min-width: 901px) and (max-width: 1366px) {
 	.saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 26px;
-  	margin-top: 2%;
-	color: white;
-	text-align: center;
-}
+		font-family: 'Nunito', sans-serif;	
+		font-size: 26px;
+		margin-top: 2%;
+		color: white;
+		text-align: center;
+	}
 }
 
 @media (min-width: 731px) and (max-width: 900px) {
 	.saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 23px;
-  	margin-top: 10%;
-	color: white;
-	text-align: center;
-}
+		font-family: 'Nunito', sans-serif;	
+		font-size: 23px;
+		margin-top: 10%;
+		color: white;
+		text-align: center;
+	}
 }
 
 @media (min-width: 568px) and (max-width: 731px) {
 	.saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 22px;
-  	margin-top: 10%;
-	color: white;
-	text-align: center;
-}
+		font-family: 'Nunito', sans-serif;	
+		font-size: 22px;
+		margin-top: 10%;
+		color: white;
+		text-align: center;
+	}
 }
 
 
 @media (min-width: 360px) and (max-width: 567px) {
 	.saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 20px;
-  	margin-top: 8%;
-	color: white;
-	text-align: center;
-}
+		font-family: 'Nunito', sans-serif;	
+		font-size: 20px;
+		margin-top: 8%;
+		color: white;
+		text-align: center;
+	}
 }
 
 @media (min-width: 320px) and (max-width: 359px) {
 	.saludo {
-  	font-family: 'Nunito', sans-serif;	
-  	font-size: 15px;
-  	margin-top: 10%;
-	color: white;
-	text-align: center;
-}
+		font-family: 'Nunito', sans-serif;	
+		font-size: 15px;
+		margin-top: 10%;
+		color: white;
+		text-align: center;
+	}
 }
