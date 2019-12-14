@@ -69,7 +69,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
 		</div>
 		<div id="contenedor">
-			<button id="botonACita"> <a href="agenda_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+			<button id="botonACita"> <a id="enlace_est" href="agenda_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <i class="fas fa-plus-square"></i>&nbsp;&nbsp; </a> </button> 
 
 			<table id="tbl_citas">
 				<tbody>
@@ -95,7 +95,7 @@ if ($_SESSION["autenticado"] != "SI") {
 							<td class="columnades"> <?php echo $fila['vchTipoMotivo'] ?></td>
 							<td class="columnaf" id="fecha"> <?php echo $fila['dtFecha'] ?> </td>
 							<td class="columnah"> <?php echo $fila['vchHora'] ?></td>
-							<td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_cita.php?idD=<?php echo $fila['iCodTranCalendario']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+							<td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_cita.php?idD=<?php echo $fila['iCodTranCalendario']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img src="assets/img/bote.png"> </a> </td>
 						</tr>
 						<?php
 					}

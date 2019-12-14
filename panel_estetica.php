@@ -59,7 +59,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
     </div>
     <div id="contenedor_citas">
-      <button class="botonAEst"> <a href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="imgAdd" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      <button class="botonAEst"> <a id="enlace_est" href="agenda_estetica_agregar.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>">Agregar <i class="fas fa-plus-square"></i>&nbsp;&nbsp;</a> </button> 
 
       <table id="tbl_estetica">
         <tbody>
@@ -91,9 +91,9 @@ if ($_SESSION["autenticado"] != "SI") {
               <td class="columnades"> <?php echo $fila['dtHoraIni'] ?></td>
               <td class="columnades"> <?php echo $fila['dPrecio'] ?></td>
               <td class="columnaf"> <?php echo $fila['vchObservaciones'] ?> </td>
-              <td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgTrash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+              <td class="columnad"> <a onclick="alert_eliminarCita(this.href); return false;" class="boton" href="eliminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgTrash" src="assets/img/bote.png"> </a> </td>
               <td class="columnah" id="filaEstatus"> <?php echo $fila['vchEstatus'] ?></td>
-              <td class="columnai"> <a onclick="alert_terminarCita(this.href); return false;" class="btnEstetica" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="https://img.icons8.com/ultraviolet/30/000000/checkmark.png"> </a> </td>
+              <td class="columnai"> <a onclick="alert_terminarCita(this.href); return false;" class="btnEstetica" href="terminar_estetica.php?idEst=<?php echo $fila['iCodTranAgendaEstetica']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img id="imgEstatus" src="assets/img/check.png"> </a> </td>
               
             </tr>
             <?php

@@ -614,6 +614,10 @@ a:hover{
 			margin-top: 15px;
 		}
 
+		.botonAtrasConsul {
+			width: 10%;
+		}
+
 	}
 	/********* FIN SEGUNDO MEDIA QUERY ***********/
 

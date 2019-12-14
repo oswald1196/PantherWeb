@@ -433,7 +433,6 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: gray;
-	color: #FA8072;
 }
 
 #inputPaterno{
@@ -447,7 +446,6 @@
 	border-radius: 10px;
 	border: 2px solid #40444745;
 	color: gray;
-	color: #FA8072;
 }
 
 #inputMaterno{
@@ -472,7 +470,7 @@
 	text-transform: uppercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	color: #FA8072;
+	color: gray;
 }
 
 #inputTelefonoDos {
@@ -497,7 +495,7 @@
 	text-transform: lowercase;
 	border-radius: 10px;
 	border: 2px solid #40444745;
-	color: #FA8072;
+	color: gray;
 }
 
 #inputDireccion{

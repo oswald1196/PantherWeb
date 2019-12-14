@@ -28,6 +28,7 @@
 #div_boton {
 	margin-top: -5%;
 	height: 22%;
+	width: 100%;
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-box;
@@ -105,6 +106,7 @@
 }
 
 #inputhoraini{
+	font-family: 'Nunito', sans-serif;
 	font-size: 17px;
 	width: 15%;
 	height: 15%;
@@ -117,6 +119,7 @@
 
 #inputServicio {
 	font-size: 17px;
+	font-family: 'Nunito', sans-serif;
 	width: 160px;
 	height: 40px;
 	background-color: white;
@@ -308,11 +311,8 @@
 	margin-left: 9%;
 }
 .botonAgregar {
-	margin-left: 45%;
 	margin-top: 10%;
     font-size: 18px;
-    color: #ffffff;
-    border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 45%;
@@ -348,6 +348,10 @@
 #lblFechaA {
 	font-size: 20px;
 	margin-left: 5%;
+}
+
+.botonAtrasCita {
+	width: 8%;
 }
 
 #inputfecha1{
@@ -404,12 +408,8 @@
 	margin-left: 1%;
 }
 .botonAgregar {
-	margin-left: 45%;
 	margin-top: 15%;
     font-size: 18px;
-    color: #ffffff;
-    border-radius: 10px;
-    border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 45%;
@@ -470,13 +470,24 @@
 
 #lblMotivos{
 	font-size: 18px;
-	margin-left: 3%;
+	margin-left: 6%;
 }
 #inputMotivos{
 	font-size: 14px;
 	width: 30%;
 	height: 20%;
 	margin-left: 2%;
+}
+
+.botonAtrasCita {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 0%;
+    border-radius: 6px;
+    border: 1px solid #8585ad;
+    width: 8%;
 }
 
 #inputMotivo {
@@ -500,14 +511,11 @@
 	margin-left: -5%;
 }
 .botonAgregar {
-	margin-left: 45%;
 	margin-top: 12%;
     font-size: 15px;
-    color: #ffffff;
-    background-color: red;
     border-radius: 6px;
-    border: 1px solid #0016b0;
 }
+
 #div_nuevo_motivo {
 	width: 45%;
 	height: 50%;
@@ -570,7 +578,7 @@
 
 #lblMotivos{
 	font-size: 18px;
-	margin-left: 16%;
+	margin-left: 19%;
 }
 #inputMotivos{
 	font-size: 13px;
@@ -600,14 +608,13 @@
 	font-size: 18px;
 	margin-left: 20%;
 }
+
 .botonAgregar {
-	margin-left: 40%;
 	margin-top: 5%;
     font-size: 13px;
-    color: #ffffff;
     border-radius: 7px;
-    border: 1px solid #0016b0;
 }
+
 #div_nuevo_motivo {
 	width: 100%;
 	height: 50%;
@@ -615,6 +622,15 @@
 	margin-left: 0%;
 	float: left;
 }
+
+.botonAtrasCita {
+    padding: 5px;
+    font-size: 15px;
+    margin-top: 0%;
+    border-radius: 6px;
+    width: 8%;
+}
+
 }
 
 @media(min-width: 414px) and (max-width: 567px){
@@ -663,6 +679,21 @@
 	color: gray;
 	font-size: 12px;
 }	
+
+#div_boton {
+	margin-top: -5%;
+	height: 22%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
 #lblTodoDia{
 	margin-left: 40%;	
 	margin-top: -1%;	
@@ -682,7 +713,7 @@
 }
 
 #inputMotivo {
-	width: 45%;
+	width: 55%;
 	height: 30%;
 	margin-left: 10px;
 	border-radius: 10px;
@@ -699,22 +730,18 @@
 }
 #lblNuevaCita{
 	font-size: 15px;
-	margin-left: 20%;
+	margin-left: 15%;
 }
 
 .botonAtrasCita {
     font-size: 13px;
     width: 15%;
-    margin-left: 46%;
 }
 
 .botonAgregar {
-	margin-left: 40%;
 	margin-top: 8%;
     font-size: 13px;
-    color: #ffffff;
     border-radius: 7px;
-    border: 1px solid #0016b0;
 }
 #div_nuevo_motivo {
 	width: 100%;
@@ -786,7 +813,7 @@
 
 #lblMotivos{
 	font-size: 13px;
-	margin-left: 15%;
+	margin-left: 14%;
 }
 #inputMotivos{
 	font-size: 11px;
@@ -823,17 +850,13 @@
 .botonAtrasCita {
     font-size: 13px;
     width: 15%;
-    margin-left: 46%;
 }
 
 .botonAgregar {
-	margin-left: 40%;
 	margin-top: 15%;
     font-size: 12px;
     padding: 5px;
-    color: #ffffff;
     border-radius: 5px;
-    border: 1px solid #0016b0;
 }
 
 #div_nuevo_motivo {
@@ -879,7 +902,7 @@
 	color: gray;
 	border-radius: 8px;
 	padding: 1px;
-	height: 12%;
+	height: 15%;
 	font-size: 10px;
 }
 
@@ -891,7 +914,7 @@
 
 #inputhoraini{
 	width: 24%;
-	height: 12%;
+	height: 15%;
 	margin-left: 1%;
 	border-radius: 8px;
 	margin-top: 8%;
@@ -936,18 +959,15 @@
 
 #lblNuevaCita{
 	font-size: 12px;
-	margin-left: 12%;
+	margin-left: 15%;
 	margin-top: 2%;
 }
 
 .botonAgregar {
-	margin-left: 35%;
 	margin-top: 10%;
-    font-size: 12px;
-    padding: 5px;
-    color: #ffffff;
+    font-size: 11px;
+    padding: 3px;
     border-radius: 5px;
-    border: 1px solid #0016b0;
 }
 
 #div_nuevo_motivo {
@@ -959,9 +979,8 @@
 }
 
 .botonAtrasCita {
-    font-size: 13px;
+    font-size: 11px;
     width: 15%;
-    margin-left: 46%;
 }
 
 }

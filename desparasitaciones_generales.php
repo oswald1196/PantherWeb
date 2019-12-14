@@ -367,7 +367,7 @@ if ($_SESSION["autenticado"] != "SI") {
         return false;
       }
 
-      /*$.ajax({
+      $.ajax({
         type: "POST",
         url: "insertar_desparasitacion_gral.php",
         data: datos,
@@ -384,21 +384,21 @@ if ($_SESSION["autenticado"] != "SI") {
           }
         }
       });
-      return false;*/
+      return false;
 
       return true;
     }
   </script>
   <div class="form-rightD">
     <div class="form-group">
-      <label id="lblCitaPD"> <i class="fas fa-calendar-day"></i>&nbsp;&nbsp; Programar cita</label>
+      <label id="lblCitaPD"> Programar cita</label>
       <input type="checkbox" id="inputCitaP" onchange="habilitar(this.checked);" name="pCita" checked>
     </div>
     <input type="text" name="motivoCita" id="motivoCita" value="DESPARASITACIÓN">
   </select>
-  <label id="lblFechaCitaD"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp; Fecha </label>
+  <label id="lblFechaCitaD"> Fecha </label>
   <input type="date" name="fechaCita" id="fechaCitaD">
-  <label id="lblHoraCitaD"> <i class="far fa-clock"></i>&nbsp;&nbsp; Hora </label>
+  <label id="lblHoraCitaD"> Hora </label>
   <input type="time" name="hora" id="inputHoraCitaD">
   <select id="inputProxima" name="medico">
     <option value="0">** MÉDICO INDISTINTO **</option>
@@ -412,7 +412,7 @@ if ($_SESSION["autenticado"] != "SI") {
     }
     ?>
   </select>
-  <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
+  <button class="boton" name="submit" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar desparasitación</button>
 </div>
 </div>
 </form>  

@@ -30,6 +30,20 @@
 	/*background-image: url(img/header-midnightBlue.jpg);*/
 }
 
+#div_atrasPrev{
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
 #div-border {
 	position:absolute;
 	margin-left:600px;
@@ -133,11 +147,10 @@
 	padding: 5px;
 	font-size: 20px;
 	margin-top: 1%;
-	color: #ffffff;
-	background-color: #527486;
+	border: 2px solid #8585ad;
+	background-color: #D6D5E1;
 	border-radius: 6px;
-	margin-left: 45%;
-	width: 10%;
+	width: 8%;
 }
 
 #inputProductoDes {
@@ -620,10 +633,10 @@ body {
 	text-decoration: none;
 	padding: 10px;
 	font-size: 20px;
-	color: #ffffff;
-	background-color: #527486;
+	color: black;
+	background-color: #D6D5E1;
 	border-radius: 6px;
-	border: 1px solid;
+	border: 2px solid #8585ad;
 }
 
 @media (min-width: 768px) and (max-width: 825px){
@@ -644,9 +657,7 @@ body {
 		padding: 5px;
 		font-size: 14px;
 		margin-top: 1%;
-		color: #ffffff;
 		border-radius: 6px;
-		margin-left: 42%;
 		width: 15%;
 	}
 
@@ -739,10 +750,7 @@ body {
 		text-decoration: none;
 		padding: 10px;
 		font-size: 14px;
-		color: #ffffff;
-		background-color: #527486;
 		border-radius: 6px;
-		border: 1px solid #0016b0;
 		margin-top: 5%;
 	}
 
@@ -775,7 +783,6 @@ body {
 		font-size: 12px;
 		margin-top: 1%;
 		border-radius: 6px;
-		margin-left: 42%;
 		width: 15%;
 	}
 
@@ -876,10 +883,7 @@ body {
 		text-decoration: none;
 		padding: 10px;
 		font-size: 12px;
-		color: #ffffff;
-		background-color: #527486;
 		border-radius: 6px;
-		border: 1px solid #0016b0;
 		margin-top: 5%;
 	}
 
@@ -920,7 +924,6 @@ body {
 		font-size: 11px;
 		margin-top: 2%;
 		border-radius: 6px;
-		margin-left: 42%;
 		width: 15%;
 	}
 
@@ -1008,12 +1011,9 @@ body {
 	.boton {
 		font-family: 'Nunito', sans-serif;
 		text-decoration: none;
-		padding: 10px;
+		padding: 5px;
 		font-size: 11px;
-		color: #ffffff;
-		background-color: #527486;
 		border-radius: 6px;
-		border: 1px solid #0016b0;
 		margin-top: 5%;
 	}
 }
@@ -1053,7 +1053,6 @@ body {
 		font-size: 11px;
 		margin-top: 2%;
 		border-radius: 6px;
-		margin-left: 42%;
 		width: 15%;
 	}
 
@@ -1145,12 +1144,9 @@ body {
 	.boton {
 		font-family: 'Nunito', sans-serif;
 		text-decoration: none;
-		padding: 10px;
+		padding:5px;
 		font-size: 10px;
-		color: #ffffff;
-		background-color: #527486;
 		border-radius: 6px;
-		border: 1px solid #0016b0;
 		margin-top: 5%;
 	}
 
@@ -1192,9 +1188,7 @@ body {
 		padding: 5px;
 		font-size: 9px;
 		margin-top: 2%;
-		color: #ffffff;
 		border-radius: 6px;
-		margin-left: 43%;
 		width: 15%;
 	}
 

@@ -246,7 +246,7 @@ if ($_SESSION["autenticado"] != "SI") {
     }
     ?>
   </select>
-    <button class="boton" type="submit">Agregar ectoparásito</button>
+    <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar ectoparásito</button>
   </div>
 </div>
 

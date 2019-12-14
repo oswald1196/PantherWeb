@@ -254,7 +254,7 @@ if ($_SESSION["autenticado"] != "SI") {
     }
     ?>
   </select>
-    <button class="boton" type="submit">Agregar ectoparásito</button>
+    <button class="boton" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar ectoparásito</button>
   </div>
 </div>
 <script type="text/javascript">
@@ -333,7 +333,7 @@ if ($_SESSION["autenticado"] != "SI") {
       return false;
     }
 
-    /*$.ajax({
+    $.ajax({
       type: "POST",
       url: "insertar_ecto.php",
       data: datos,
@@ -352,13 +352,14 @@ if ($_SESSION["autenticado"] != "SI") {
     });
     return false;
 
-    return true;*/
+    return true;
   }
 </script>
 </form>  
 </div> 
+<div id="div_atrasPrev">
 <button class="botonAtrasV" onclick="goBack();"> Atrás </button>
-
+</div>
 <script>
   function goBack() {
     window.history.go(-1);

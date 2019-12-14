@@ -207,6 +207,14 @@
     border-color: #D6D5E1; 
    }
 
+   a {
+    color: black;
+   }
+
+   a:hover {
+    color: black;
+    text-decoration: none;
+   }
 
   .botonAddVacuna {
     font-family: 'Nunito', sans-serif;

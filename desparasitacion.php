@@ -286,7 +286,7 @@ if ($_SESSION["autenticado"] != "SI") {
     }
     ?>
   </select>
-  <button class="boton" name="submit" type="submit">Agregar desparasitación</button>
+  <button class="boton" name="submit" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar desparasitación</button>
 </div>
 </div>
 
@@ -417,7 +417,9 @@ if ($_SESSION["autenticado"] != "SI") {
 
 </form>  
 </div>  
+<div id="div_atrasPrev">
 <button class="botonAtrasV" onclick="goBack();"> Atrás </button>
+</div>
 
 <script>
   function goBack() {

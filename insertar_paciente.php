@@ -90,7 +90,7 @@
 		$esteril = "0";
 	} 
 
-	$carpeta_destino = $_SERVER['DOCUMENT_ROOT'].'/';
+	$carpeta_destino = "uploads/";
 
 	move_uploaded_file($_FILES['imagen']['tmp_name'],$carpeta_destino.$nombreImagen);
 

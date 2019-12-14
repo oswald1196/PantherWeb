@@ -67,7 +67,7 @@ require 'conexion.php';
        });
      </script>
      <div id="boton_estado">
-      <a>  <img id="imagen_libro" src="https://img.icons8.com/ultraviolet/64/000000/health-book.png"> Estado </a> 
+      <a>  <img id="imagen_libro" src="assets/img/status.png"> Estado </a> 
     </div>
     <?php 
     $query = "SELECT DISTINCT TI.iCodTranInformeMedico, TI.iCodPaciente, TI.iCodInformeMedico, TI.iCodMedico, TI.vchNumInformeMedico, TI.vchProblema,  TI.dtFechaInformeMedico, TI.siAtencion, TI.vchMotivo As sMotivoConsulta, TI.dtFechaSintomatologia, TI.vchNota, TI.iInformeMedico, CONCAT (CM.vchNombre, ' ', CM.vchPaterno, ' ', CM.vchMaterno) As vchMedico, TI.siFrecuenciaCardiaca, TI.dTemperatura, TI.siFrecuenciaRespiratoria, TI.siCodMucosa, TI.sMucosa, TI.iTiempoLlenadoCapilar, TI.dPeso, TI.siPadecimiento, TI.sDiagnosticoPresuntivo, TI.sDiagnosticoDiferencial, TI.sPruebasRequeridas, TI.sResultado, TI.siDiagnostico, TI.vchProblema, TI.iCodServicio, TI.vchServicio, TI.dPrecioMenudeo, TI.dPrecioCosto, TI.iCodCuentaCliente, TI.vchReceta, TI.dMeses, TI.dAltura, TI.sPresionArterial, TI.dPerimetroCefalico, TI.dNoTransaccionCloud, TI.dtFechaInformeMedico FROM TranInformeMedico TI INNER JOIN CatMedico CM ON CM.iCodMedico = TI.iCodMedico WHERE TI.iCodPaciente = '$codigoP' AND CM.iCodEmpresa = '$codigoE' AND iCodTranInformeMedico = '$codigoInf'";
@@ -122,7 +122,7 @@ require 'conexion.php';
      </script>
 
      <div id="boton_diagnostico">
-      <a> <img id="imagen" src="https://img.icons8.com/ultraviolet/64/000000/treatment-plan.png"> Diagnóstico </a>
+      <a> <img id="imagen" src="assets/img/librod.png"> Diagnóstico </a>
     </div>
     <div id="div-diagnostico">
       <textarea type="text" id="diagnosticoP" name="dp" placeholder="Diagnóstico presuntivo"><?php echo $fila['sDiagnosticoPresuntivo']?></textarea>

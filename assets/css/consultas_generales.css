@@ -308,16 +308,16 @@ a {
 	text-decoration: none;
 	padding: 5px;
 	font-size: 20px;
-	color: #ffffff;
-	background-color: #527486;
+	color: black;
+	background-color: #D6D5E1;
 	border-radius: 6px;
-	border: 1px solid #0016b0;
-	width: 10%;
+	border: 2px solid #8585ad;
+	width: 5%;
 	float: left;
 }
 
 .boton-atras{
-	margin-top: -3%;
+	margin-top: -1%;
 	height: 50px;
 	width: 100%;
 	display: -webkit-box;
@@ -449,14 +449,22 @@ a {
 		width: 45px;
 	}
 
+	a {
+		color: black;
+	}
+
+	a:hover{
+	color: #9353A1;
+}
+
 	.botonAConsulta{
 		text-decoration: none;
 		padding: 5px;
 		font-size: 20px;
-		color: #ffffff;
-		background-color: #527486;
+		color: black;
+		background-color: #D6D5E1;
 		border-radius: 5px;
-		border: 1px solid #527486;
+		border: 2px solid #0016b047;
 		width: 15%;
 		margin-top: 5px;
 	}
@@ -732,8 +740,6 @@ a {
 		.botonAConsulta{
 			padding: 3px;
 			font-size: 17px;
-			color: #ffffff;
-			background-color: #527486;
 			border-radius: 5px;
 			border: 1px solid #527486;
 			width: 20%;
@@ -878,8 +884,6 @@ a {
 		.botonAConsulta{
 			padding: 3px;
 			font-size: 16px;
-			color: #ffffff;
-			background-color: #527486;
 			border-radius: 5px;
 			border: 1px solid #527486;
 			width: 30%;
@@ -889,7 +893,6 @@ a {
 		.botonAtrasConsulG {
 			padding: 5px;
 			font-size: 16px;
-			background-color: #527486;
 			border-radius: 6px;
 			border: 1px solid #0016b0;
 			width: 10%;
@@ -1052,7 +1055,6 @@ a {
 		.botonAtrasConsulG {
 			padding: 5px;
 			font-size: 16px;
-			background-color: #527486;
 			border-radius: 6px;
 			border: 1px solid #0016b0;
 			width: 15%;
@@ -1221,7 +1223,6 @@ a {
 		.botonAtrasConsulG {
 			padding: 5px;
 			font-size: 13px;
-			background-color: #527486;
 			border-radius: 6px;
 			border: 1px solid #0016b0;
 			width: 15%;
@@ -1392,7 +1393,6 @@ a {
 		.botonAtrasConsulG {
 			padding: 5px;
 			font-size: 13px;
-			background-color: #527486;
 			border-radius: 6px;
 			border: 1px solid #0016b0;
 			width: 15%;

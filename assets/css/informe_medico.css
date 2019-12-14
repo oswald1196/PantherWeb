@@ -28,6 +28,16 @@
   color:black;
 }
 
+a{
+  color: black;
+}
+
+
+a:hover{
+  color: black;
+  text-decoration: none;
+}
+
 #tabla_informe {
   border: 1px solid;
   border-color: #D6D5E1;

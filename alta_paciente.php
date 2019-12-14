@@ -56,7 +56,7 @@ $fecha_actual = date("Y-m-d");
 ?>
 
 <div class="principal">
-  <form method="POST" class="form-alta" id="register-form" action="insertar_paciente.php" onsubmit="return validarPaciente(); return getPacienteExistente();" enctype="multipart/form-data">
+  <form method="POST" class="form-alta" id="form_alta" action="insertar_paciente.php" onsubmit="return validarPaciente(); return getPacienteExistente();" enctype="multipart/form-data">
 
     <div class="title">
       <p id="lblNPaciente"> Alta Paciente </p>
@@ -266,7 +266,7 @@ $fecha_actual = date("Y-m-d");
 
         <input type="hidden" id="inputExistePaciente"/>
 
-        <input type="submit" value="Agregar" class="btnAlta" id="btnAltaPac" name=""/>
+        <button class="btnAlta" onclick="getCitasExistentes();" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar</button>
 
         <script type="text/javascript">
           function validarPaciente() {
@@ -281,6 +281,9 @@ $fecha_actual = date("Y-m-d");
             var txtExiste = document.getElementById("inputExistePaciente").value;
             var avatar = document.getElementById("avatar").value;
 
+            var datos = $('#form_alta').serialize();
+
+
             if(txtExiste == 1){
               Swal.fire({
                 type: 'error',
@@ -294,7 +297,7 @@ $fecha_actual = date("Y-m-d");
               Swal.fire({
                 type:'error',
                 title:'ERROR',
-                text:'Falta nombre de paciente'
+                text:'FALTA NOMBRE DE PACIENTE'
               });
               return false;
             }
@@ -303,7 +306,7 @@ $fecha_actual = date("Y-m-d");
               Swal.fire({
                 type:'error',
                 title:'ERROR',
-                text:'Falta especie'
+                text:'FALTA ESPECIE'
               });
               return false;
             }
@@ -312,7 +315,7 @@ $fecha_actual = date("Y-m-d");
              Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta raza'
+              text:'FALTA RAZA'
             });
              return false;
            }
@@ -321,7 +324,7 @@ $fecha_actual = date("Y-m-d");
              Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta color'
+              text:'FALTA COLOR'
             });
              return false;
            }
@@ -330,7 +333,7 @@ $fecha_actual = date("Y-m-d");
              Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta avatar'
+              text:'FALTA AVATAR'
             });
              return false;
            }
@@ -339,7 +342,7 @@ $fecha_actual = date("Y-m-d");
             Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta nombre del propietario'
+              text:'FALTA NOMBRE DEL PROPIETARIO'
             });
             return false;
           }
@@ -348,7 +351,7 @@ $fecha_actual = date("Y-m-d");
             Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta apellido paterno del propietario'
+              text:'FALTA APELLIDO PATERNO DEL PROPIETARIO'
             });
             return false;
           }
@@ -357,7 +360,7 @@ $fecha_actual = date("Y-m-d");
             Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta teléfono del propietario'
+              text:'FALTA TELÉFONO DEL PROPIETARIO'
             });
             return false;
           }
@@ -366,10 +369,29 @@ $fecha_actual = date("Y-m-d");
             Swal.fire({
               type:'error',
               title:'ERROR',
-              text:'Falta correo del propietario, en caso de no tener agregar el de su clínica'
+              text:'FALTA CORREO DEL PROPIETARIO, EN CASO DE NO TENER, AGREGAR EL DE SU CLÍNICA'
             });
             return false;
           }
+
+          $.ajax({
+            type: "POST",
+            url: "insertar_paciente.php",
+            data: datos,
+            success:function(r){
+              if (r==1){
+                alert("Error");
+              }
+              else{
+                Swal.fire({
+                  type:'success',
+                  title: 'CORRECTO',
+                  text:'PACIENTE AGREGADO CORRECTAMENTE'
+                }) 
+              }
+            }
+          });
+          return false;
 
           return true;
         }

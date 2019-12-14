@@ -39,10 +39,10 @@
 	text-decoration: none;
     padding: 5px;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #527486;
+    color: #000000;
+    background-color: #D6D5E1;
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 2px solid #8585ad;
     width: 5%;
    	float: left;
 }
@@ -276,13 +276,13 @@
 .botonAgregar {
 	font-family: 'Nunito', sans-serif;
 	text-decoration: none;
-	padding: 10px;
+	padding: 5px;
 	font-size: 20px;
-	color: #ffffff;
-	height: 40%;
-	background-color: #527486;
+	color: black;
+	height: 35%;
+	background-color: #D6D5E1;
 	border-radius: 4px;
-	border: 1px solid #0016b0;
+	border: 2px solid #8585ad;
 }
 
 @media(min-width: 1200px) and (max-width: 1366px){

@@ -85,7 +85,7 @@ if ($_SESSION["autenticado"] != "SI") {
       <input type="hidden" name="" id="fechaActual" value="<?php echo " ".$fecha_actual?>">
     </div>
 
-    <button class="botonAddInformeM"> <a href="consultas.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addI" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+    <button class="botonAddInformeM"> <a href="consultas.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <i class="fas fa-plus-square"></i>&nbsp;&nbsp; </a> </button> 
 
     <?php
 
@@ -106,12 +106,12 @@ if ($_SESSION["autenticado"] != "SI") {
         <td id="column_pa"> P.A. <?php echo $fila ['sPresionArterial']?> </td>
         <td id="column_tllc"> TLLC. <?php echo $fila ['iTiempoLlenadoCapilar']?> </td>
         <td id="column_peso"> Peso. <?php echo $fila ['dPeso']. ' kg'?> </td>
-        <td id="column_edit">  <a onclick="alert_editarInforme(this.href); return false;" class="btnEditar" href="modificar_consulta.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img id="pencil" src="https://img.icons8.com/ultraviolet/30/000000/pencil-tip.png"> </td>
-          <td id="column_delete"> <a onclick="alert_eliminarInforme(this.href); return false;" class="boton" href="eliminar_informe.php?idI=<?php echo $fila['iCodTranInformeMedico'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" > <img id="trash" src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+        <td id="column_edit">  <a onclick="alert_editarInforme(this.href); return false;" class="btnEditar" href="modificar_consulta.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente) ?>&ci=<?php echo base64_encode($codigoInf) ?>"> <img id="pencil" src="assets/img/lapiz.png"> </td>
+          <td id="column_delete"> <a onclick="alert_eliminarInforme(this.href); return false;" class="boton" href="eliminar_informe.php?idI=<?php echo $fila['iCodTranInformeMedico'] ?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>" > <img id="trash" src="assets/img/bote.png"> </a> </td>
         </tr>
         <tr>
           <td id="column_dat"> </td>
-          <td id="column_medico" colspan="8"> <img id="img_medico" src="https://img.icons8.com/ultraviolet/30/000000/doctor-male.png"> <?php echo $fila ['vchMedico']?> </td>
+          <td id="column_medico" colspan="8"> <img id="img_medico" src="assets/img/doctor.png"> <?php echo $fila ['vchMedico']?> </td>
         </tr>
         <tr id="motivo_receta">
           <th id="cabecera_motivo" colspan="2">Motivo consulta</th>

@@ -56,7 +56,7 @@ if ($_SESSION["autenticado"] != "SI") {
       
     </div>
     <div id="contenedorD">
-      <button class="botonAddDesp"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <img id="simbolo_addD" src="https://img.icons8.com/office/24/000000/plus-math.png"> </a> </button> 
+      <button class="botonAddDesp"> <a href="desparasitacion.php?id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> Agregar <i class="fas fa-plus-square"></i>&nbsp;&nbsp; </a> </button> 
 
       <table id="carnet_vacunaD">
         <tbody>
@@ -90,7 +90,7 @@ if ($_SESSION["autenticado"] != "SI") {
               <td class="columna5D"> <?php echo date("Y-m-d",strtotime($fila['sFechaProxima'])); ?></td>
               <td class="columna6D"> <?php echo $fila['sNumeroLote'] ?> </td>
               <td class="columna7D"> <?php echo date("Y-m-d",strtotime($fila['sFechaCaducidad'])); ?> </td>
-              <td class="columna8D"> <a onclick="alert_eliminarDesp(this.href); return false;" class="boton" href="eliminar_desp.php?idD=<?php echo $fila['iCodTranDesparacitacion']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img src="https://img.icons8.com/ultraviolet/30/000000/delete.png"> </a> </td>
+              <td class="columna8D"> <a onclick="alert_eliminarDesp(this.href); return false;" class="boton" href="eliminar_desp.php?idD=<?php echo $fila['iCodTranDesparacitacion']?>&id=<?php echo base64_encode($codigo)?>&codigo=<?php echo base64_encode($codigoPaciente)?>&cm=<?php echo base64_encode($cMedico)?>"> <img src="assets/img/bote.png"> </a> </td>
             </tr>
             <?php
           }

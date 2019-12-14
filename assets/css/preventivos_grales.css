@@ -116,11 +116,11 @@
     padding: 5px;
     font-size: 20px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
+    color: black;  
+    background-color: #D6D5E1;
     border-radius: 6px;
-    width: 10%;
-    border: 1px solid #0016b0;
+    width: 7%;
+    border: 1px solid #8585ad;
 }
 
 .botonAtrasDG {
@@ -129,11 +129,11 @@
     padding: 5px;
     font-size: 20px;
     margin-top: 1%;
-    color: #ffffff;
+    color: black;
     border-radius: 6px;
-    width: 10%;
-    background-color: #527486;
-    border: 1px solid #0016b0;
+    width: 7%;
+    background-color: #D6D5E1;
+    border: 1px solid #8585ad;
 }
 
 .botonAtrasEctoG {
@@ -142,11 +142,11 @@
     padding: 5px;
     font-size: 20px;
     margin-top: 1%;
-    color: #ffffff;
+    color: black;
     border-radius: 6px;
-    width: 10%;
-    background-color: #527486;
-    border: 1px solid #0016b0;
+    width: 5%;
+    background-color: #D6D5E1;
+    border: 1px solid #8585ad;
 }
 
 #contenedor .form-left label{
@@ -454,9 +454,9 @@
 #inputAnter{
 	font-family: 'Nunito', sans-serif;
 	font-size: 15px;
-	width:15px;
+	width:20px;
 	margin-left: 5px;
-	height:15px;
+	height:20px;
 }
 
 #despAnt {
@@ -825,10 +825,10 @@ body {
 	text-decoration: none;
     padding: 10px;
     font-size: 20px;
-    color: #ffffff;
-    background-color: #527486;
+    color: black;
+    background-color: #D6D5E1;
     border-radius: 6px;
-    border: 1px solid #0016b0;
+    border: 2px solid #8585ad;
 }
 
 #lblFechaD, #lblProductoDes, #lblProductoDespa, #lblLoteD, #lblPesoD, #lblPrecioD, #lblFechaCadD, #lblCitaPD, #lblHoraCitaD, #lblCantidadD,
@@ -864,11 +864,211 @@ body {
 	justify-content: center;
 }
 
+
+@media(min-width: 1024px) and (max-width: 1366px){
+.container {
+	height: 510px;
+	}
+
+.container_ecto {
+	height: 580px;
+	}
+
+.container_Desp {
+	height: 600px;
+	}
+
+.form-rightV {
+	height: 465px;
+}
+
+.form-leftV {
+	height: 465px;
+}
+
+.form-rightD {
+	height: 535px;
+}
+
+.form-leftD {
+	height: 540px;
+}
+
+.form-rightE {
+	height: 530px;
+}
+
+.form-leftE {
+	height: 527px;
+}
+/*Titulo pagina*/
+#titulo-pagina {
+	margin-top: 30px;
+	font-size: 20px;
+	color:white;
+	text-align: center;
+}
+
+/*Inputs*/
+
+#inputfecha, #inputFechaD, #inputLab, #inputProducto, #inputProductoDesp, #inputProductoDespa, #inputPrecioD, #inputLoteD, #inputLoteVac, #inputPrecioVac, #inputFechaCad, #inputPeso, 
+#inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita, #inputFechaCadD,
+#motivoCita, #fechaCita, #inputLoteEcto {
+	font-size: 14px;
+	width: 240px;
+	height: 30px;
+	padding: 1px;
+}
+
+#despAnt{
+	height: 15px;
+	width: 15px;
+}
+
+#inputLote, #inputPrecio{
+font-size: 14px;
+	width: 240px;
+	height: 30px;
+	padding: 1px;
+}
+#inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputProximaE, #inputHoraCitaE,
+ #fechaCitaE, #motivoCitaE{
+	font-size: 14px;
+	width: 220px;
+	height: 30px;
+	padding: 1px;
+}
+
+#inputCitaP{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:15px;
+	margin-left: 5px;
+	height:15px;
+}
+
+#selectProxima{
+	font-family: 'Nunito', sans-serif;
+	font-size: 15px;
+	width:300px;
+	height:40px;
+}
+
+#lblPacientesV{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 12%;
+	margin-top: 1%;
+	font-size: 18px;
+}
+
+#lblPacientesD{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 28%;
+	margin-top: 1%;
+	font-size: 18px;
+}
+
+#lblPacientesE{
+	font-family: 'Nunito', sans-serif;
+	margin-left: 28%;
+	margin-top: 1%;
+	font-size: 18px;
+}
+
+
+#selectPacienteV {	
+	font-family: 'Nunito', sans-serif;
+	font-size: 13px;
+	width: 240px;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 1%;
+	border-radius: 10px;
+	padding: 1px;
+}
+
+#selectPacienteD {	
+	font-size: 13px;
+	width: 300px;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 1%;
+	border-radius: 10px;
+	padding: 1px;
+}
+
+#selectPacienteE {	
+	font-size: 13px;
+	width: 300px;
+	height: 30px;
+	margin-top: 2%;
+	margin-left: 1%;
+	border-radius: 10px;
+	padding: 1px;
+}
+
+
+
+#lblFecha, #lblFechaD, #lblLab, #lblProducto, #lblProductoDes, #lblProductoDespa, #lblLote, #lblLoteD, #lblPrecioD, #lblPeso, #lblProducto, #lblLote, #lblPeso,
+ #lblPrecio, #lblFechaCad, #lblFechaCadD, #lblCitaP, #lblFechaCita, #lblHoraCita, #lblPesoD, #lblCantidad, #lblCantidadD, 
+ #lblFechaCitaD, #lblHoraCitaD, #lblCitaPD, #lblVacAnter, #ectoAnt, #lblDespAnt, #lblEctoAnt {
+	font-size: 16px;
+}
+
+.boton {
+    padding: 6px;
+    font-size: 14px;
+}
+
+.botonAtrasVG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size: 14px;
+    margin-top: 1%;
+    border-radius: 6px;
+    width: 10%;
+    border: 1px solid #0016b0;
+}
+
+.botonAtrasDG, .botonAtrasEctoG {
+	font-family: 'Nunito', sans-serif;
+	text-decoration: none;
+    padding: 5px;
+    font-size:14px;
+    margin-top: 1%;
+    border-radius: 6px;
+    width: 12%;
+    border: 1px solid #0016b0;
+}
+
+#div_atrasV {
+	height: 50px;
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+}
+
 @media(min-width: 768px) and (max-width: 1023px){
 #lblPacientesV{
 	margin-left: 20%;
 	margin-top: 0%;
 	font-size: 23px;
+}
+
+#despAnt {
+	font-size: 15px;
+	width:15px;
+	height:15px;
 }
 
 #selectPacienteE {	
@@ -884,6 +1084,11 @@ body {
 	color: gray;
 }
 
+#selectPacienteV {	
+	margin-top: 0.5%;
+}
+
+
 #lblPacientesE{
 	margin-left: 20%;
 	margin-top: 0%;
@@ -894,12 +1099,17 @@ body {
 	height: 680px;
 	}
 
+	.boton {
+    padding: 6px;
+    font-size: 14px;
+}
+
 .form-rightV {
 	height: 650px;
 }
 
 .form-leftV {
-	height: 655px;
+	height: 665px;
 }
 
 .form-rightE {
@@ -923,10 +1133,18 @@ body {
 #titulo-paginaE {
 	margin-top: 3%;
 }
+
+#inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputProximaE, #inputHoraCitaE,
+ #fechaCitaE, #motivoCitaE{
+	font-size: 14px;
+	width: 230px;
+	height: 30px;
+	padding: 1px;
+}
+
 .botonAtrasVG {
     font-size: 20px;
     margin-top: 1%;
-    color: #ffffff;  
     width: 10%;
 }
 
@@ -935,6 +1153,7 @@ body {
 }
 
 .botonAtrasEctoG {
+    font-size: 16px;
     width: 10%;
 }
 
@@ -1110,26 +1329,18 @@ font-size: 14px;
 }
 
 .botonAtrasVG {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
     padding: 5px;
     font-size: 14px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 10%;
     border: 1px solid #0016b0;
 }
 
 .botonAtrasDG, .botonAtrasEctoG {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
     padding: 5px;
     font-size:14px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 12%;
     border: 1px solid #0016b0;
@@ -1151,7 +1362,7 @@ font-size: 14px;
 
 }
 
-@media(min-width: 414px) and (max-width: 567px){
+@media(min-width: 411px) and (max-width: 567px){
 .container {
 	height: 510px;
 	}
@@ -1225,7 +1436,7 @@ font-size: 14px;
 #inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputProximaE, #inputHoraCitaE,
  #fechaCitaE, #motivoCitaE{
 	font-size: 12px;
-	width: 160px;
+	width: 150px;
 	height: 30px;
 	padding: 1px;
 }
@@ -1269,9 +1480,9 @@ font-size: 14px;
 #selectPacienteV {	
 	font-size: 13px;
 	width: 260px;
-	height: 30px;
+	height: 27px;
 	padding: 1px;
-	margin-top: 1%;
+	margin-top: 0.5%;
 }
 
 #selectPacienteE {	
@@ -1296,31 +1507,29 @@ font-size: 14px;
 }
 
 .boton {
-    padding: 6px;
+    padding: 3px;
     font-size: 14px;
 }
 
 .botonAtrasVG {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
     padding: 5px;
     font-size:14px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 12%;
     border: 1px solid #0016b0;
 }
 
+#inputAnter{
+	font-size: 12px;
+	width:15px;
+	height:15px;
+}
+
 .botonAtrasDG, .botonAtrasEctoG {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
-    padding: 5px;
+   padding: 5px;
     font-size:14px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 12%;
     border: 1px solid #0016b0;
@@ -1341,7 +1550,7 @@ font-size: 14px;
 }
 }
 
-@media(min-width: 360px) and (max-width: 413px){
+@media(min-width: 360px) and (max-width: 410px){
 .container {
 	height: 510px;
 	}
@@ -1357,6 +1566,12 @@ font-size: 14px;
 .form-leftV {
 	height: 480px;
 	width: 50%;
+}
+
+#inputAnter{
+	font-size: 12px;
+	width:15px;
+	height:15px;
 }
 
 .form-rightV {
@@ -1393,7 +1608,7 @@ font-size: 14px;
 #inputfecha, #inputFechaD, #inputLab, #inputProducto, #inputLoteVac, #inputPrecioVac, #inputFechaCad, 
 #inputFechaCadD, #inputPeso, #inputProxima, #inputPesoD, #inputCantidad, #inputCantidadD, #inputProductoD, #inputHoraCita,
 #motivoCita, #fechaCita, #inputLote, #inputLoteD, #inputPrecio, #inputPrecioD, #inputHoraCitaD, #fechaCitaD, #inputLoteEcto {
-	font-size: 11px;
+	font-size: 9.5px;
 	width: 140px;
 	height: 25px;
 	padding: 1px;
@@ -1406,16 +1621,22 @@ font-size: 14px;
 	padding: 1px;
 }
 
-#inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputProximaE, #inputHoraCitaE,
+#inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputHoraCitaE,
  #fechaCitaE, #motivoCitaE{
 	font-family: 'Nunito', sans-serif;
-	font-size: 11px;
-	width: 140px;
+	font-size: 10px;	
+	width: 130px;
 	height: 25px;
 	padding: 1px;
-
 }
 
+#inputProximaE {
+	font-family: 'Nunito', sans-serif;
+	font-size: 9px;	
+	width: 130px;
+	height: 25px;
+	padding: 1px;	
+}
 #inputLote, #inputPrecio{
 	font-size: 11px;
 	width: 140px;
@@ -1507,13 +1728,9 @@ font-size: 14px;
 }
 
 .botonAtrasVG, .botonAtrasEctoG {
-	font-family: 'Nunito', sans-serif;
-	text-decoration: none;
     padding: 5px;
     font-size: 11px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 12%;
     border: 1px solid #0016b0;
@@ -1556,6 +1773,11 @@ font-size: 14px;
 	height: 480px;
 }
 
+#inputAnter{
+	font-size: 12px;
+	width:15px;
+	height:15px;
+}
 .form-leftV {
 	height: 453px;
 	width: 50%;
@@ -1617,20 +1839,24 @@ font-size: 14px;
 	padding: 1px;
 }
 
+#inputCitaP {
+	height: 11px;
+	height: 11px;
+	font-size: 11px;
+}
+
 #inputProductoE, #inputLoteEcto, #inputFechaCadE, #inputPrecioE, #inputFechaE, #inputProximaE, #inputHoraCitaE,
  #fechaCitaE, #motivoCitaE{
  	font-size: 9px;
-	width: 130px;
+	width: 120px;
 	height: 20px;
 	padding: 1px;
 }
 
-#inputCitaP{
-	font-family: 'Nunito', sans-serif;
-	font-size: 11px;
-	width:15px;
-	margin-left: 5px;
-	height:15px;
+
+#ectoAnt {
+	height: 12px;
+	width: 12px;
 }
 
 #selectProxima{
@@ -1647,13 +1873,21 @@ font-size: 14px;
 	font-size: 11px;
 }
 
-#selectPacienteV, #selectPacienteE {	
+#selectPacienteV {	
 	font-size: 9px;
 	width: 200px;
 	height: 20px;
 	padding: 0px;
 	margin-top: 1%;
 }
+
+ #selectPacienteE {
+ 	font-size: 9px;
+	width: 160px;
+	height: 20px;
+	padding: 0px;
+	margin-top: 1%;
+ }
 
 
 #lblFecha, #lblFechaD, #lblLab, #lblProducto, #lblProductoDes, #lblProductoDespa, #lblLote, #lblLoteD, #lblFechaCadD,
@@ -1662,9 +1896,13 @@ font-size: 14px;
 	font-size: 11px;
 }
 
+#lblCitaP {
+	font-size: 10px;
+}
+
 .boton {
-    padding: 6px;
-    font-size: 11px;
+    padding: 3px;
+    font-size: 9px;
 }
 
 .botonAtrasVG {
@@ -1673,8 +1911,6 @@ font-size: 14px;
     padding: 5px;
     font-size: 11px;
     margin-top: 1%;
-    color: #ffffff;  
-    background-color: #527486;
     border-radius: 6px;
     width: 12%;
     border: 1px solid #0016b0;

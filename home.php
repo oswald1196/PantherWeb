@@ -46,9 +46,7 @@ $cMedico = base64_decode($_GET['cm']);
 	<!--SLIDER-->
 	<div id="principal">
 		<div id="slides">
-			<img src="assets/img/1524913221_572475_1524913364_noticia_normal.jpg" title="Logo 1 Panther">
-			<img src="assets/img/1527497974_415003_1527501170_noticia_normal.jpg" title="Logo 2 Panther">
-			<img src="assets/img/mascotas-se-comportan-como-humanos.jpg" title="Logo 3 Panther"> 
+			<img src="assets/img/1524913221_572475_1524913364_noticia_normal.jpg" title="" alt="Logo_PantherWeb">
 		</div>
 	</div>
 
@@ -60,7 +58,7 @@ $cMedico = base64_decode($_GET['cm']);
 	<script src="assets/js/jquery.slides.js"></script>
 	<script src="assets/js/jquery.slides.js"></script>
 
-	<script type="text/javascript">
+	<!--<script type="text/javascript">
 		$(function(){
 			$("#slides").slidesjs({
 				play: {
@@ -74,7 +72,7 @@ $cMedico = base64_decode($_GET['cm']);
 				}
 			});
 		});
-	</script>
+	</script>-->
 
 </body>
 

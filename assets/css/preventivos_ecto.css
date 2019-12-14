@@ -46,6 +46,15 @@
   border-color: #D6D5E1;
 }
 
+a {
+  color: black;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+}
+
 .columna1E, .columna2E, .columna3E, .columna4E, .columna5E, .columna6E, .columna7E, .columna8E {
   font-family: 'Nunito', sans-serif;  
   font-size: 20px;
@@ -87,6 +96,11 @@
 
 #c_cadD{ 
   width: 10%;
+  border: 1px solid;
+  border-color: #D6D5E1; 
+ }
+
+ th {
   border: 1px solid;
   border-color: #D6D5E1; 
  }

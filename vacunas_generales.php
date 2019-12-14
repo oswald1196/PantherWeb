@@ -95,9 +95,9 @@ $fecha_actual = date("Y-m-d");
         <input type="hidden" name="empresa" value="<?php echo $codigo ?>">
         
 
-        <label id="lblFecha"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha</label>
+        <label id="lblFecha">Fecha</label>
         <input type="date" class="input-append date" id="inputfecha" name="fechaVacuna" tabindex="1">
-        <label id="lblLab" for="inputLab"> <i class="fas fa-vials"></i>&nbsp;&nbsp; Laboratorio </label>
+        <label id="lblLab" for="inputLab">  Laboratorio </label>
         <select id="inputLab" name="laboratorio" onchange="ShowSelected();">
           <!--:v-->
           <option value="">Elegir Laboratorio</option>
@@ -212,12 +212,12 @@ $fecha_actual = date("Y-m-d");
           }
         </script>
 
-        <label id="lblProducto"> <i class="fas fa-syringe"></i>&nbsp;&nbsp; Vacuna </label>
+        <label id="lblProducto">  Vacuna </label>
         <select id="inputProducto" name="vacuna" onchange="ShowSelectedTwo(); precioVacuna(); stockVacuna(); stockMinimoV();"> </select>
 
-        <label id="lblLote"> <i class="fas fa-boxes"></i>&nbsp;&nbsp; Lote </label>
+        <label id="lblLote"> Lote </label>
         <select id="inputLoteVac" name="lote" onchange="precioVacunaLote(); caducidadVacuna();"> </select>      
-        <label id="lblPrecio"><i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;Precio</label>
+        <label id="lblPrecio">Precio</label>
         <input type="text" id="inputPrecioVac" name="precio" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
 
         <input type="hidden" name="" id="fechaActual" value="<?php echo $fecha_actual?>">
@@ -226,10 +226,10 @@ $fecha_actual = date("Y-m-d");
         <input type="hidden" id="tipoProducto">
         <input type="hidden" name="cantidad" value="1">
 
-        <label for="inputfechacad" id="lblFechaCad"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Caducidad</label>
+        <label for="inputfechacad" id="lblFechaCad">Caducidad</label>
         <input type="date" class="input-append date" id="inputFechaCad" name="fechaC">
         <p id="msg"></p>
-        <label id="lblPeso"><i class="fas fa-weight-hanging"></i>&nbsp;&nbsp;Peso</label>
+        <label id="lblPeso">Peso</label>
         <input type="text" id="inputPeso" name="peso" onkeypress="return event.charCode >= 46 && event.charCode <= 57">
         <label id="lblVacAnter">Vacunas anteriores</label>
         <input type="checkbox" id="inputAnter" name="chkAnteriores">
@@ -237,7 +237,7 @@ $fecha_actual = date("Y-m-d");
       <!--Panel derecho -->
       <div class="form-rightV">
         <div class="form-group">
-          <label id="lblCitaP"><i class="fas fa-calendar-day"></i>&nbsp;&nbsp;Programar cita</label>
+          <label id="lblCitaP">Programar cita</label>
           <input type="checkbox" id="inputCitaP" name="citaP" onchange="habilitar(this.checked);" checked>
         </div>
         <script text/javascript>
@@ -264,7 +264,7 @@ $fecha_actual = date("Y-m-d");
     }
   </script>
 
-  <label id="lblCitaP"><i class="fas fa-syringe"></i>&nbsp;&nbsp;Próxima vacuna</label>    
+  <label id="lblCitaP">Próxima vacuna</label>    
   <select id="inputProxima" name="motivoProxima">
    <option value="">VACUNA</option>
 
@@ -278,9 +278,9 @@ $fecha_actual = date("Y-m-d");
   }
   ?>
 </select>
-<label id="lblFechaCita"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;Fecha de la cita </label>
+<label id="lblFechaCita">Fecha de la cita </label>
 <input type="date" name="fechaCita" id="fechaCita">
-<label id="lblFechaCita"><i class="far fa-clock"></i>&nbsp;&nbsp;Hora</label>
+<label id="lblFechaCita"> Hora</label>
 <input type="time" name="horaCita" id="inputHoraCita">
 <select id="inputProxima" name="medico">
     <option value="0">** MÉDICO INDISTINTO **</option>

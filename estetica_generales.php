@@ -182,7 +182,7 @@ if ($_SESSION["autenticado"] != "SI") {
 
     </div>
     <div id="botonAgregarEG">
-      <button class="botonAgregarG" onclick="getCitasExistentes();" type="submit">Agregar estética</button>    
+      <button class="botonAgregarG" onclick="getCitasExistentes();" type="submit"><i class="fas fa-plus-square"></i>&nbsp;&nbsp;Agregar estética</button>    
     </div>
   </form>  
 </div>  
